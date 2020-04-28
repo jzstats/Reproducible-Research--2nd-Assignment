@@ -2,5 +2,5 @@
 title: "Untitled"
 author: "JZstats"
 date: "4/26/2020"
-output: html_document
+output: md_document
 ---
