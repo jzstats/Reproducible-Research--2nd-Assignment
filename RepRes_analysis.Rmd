@@ -309,7 +309,7 @@ that was created to showcase this project.
 
 <br>  
 
-<font size="1">[back to start of this section](#ind-2-2--About-The-Script)</font>  
+<font size="1">[back to start of this section](#ind-2-2--About-The-Main-Script)</font>  
 <font size="1">[back to start of this chapter](#ind-2--PROLOGUE)</font>  
 <font size="1">[back to *TABLE OF CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>  
 
@@ -333,7 +333,7 @@ that are hosted at the [webpage
 created to showcase the this project:  
 
 1. [Report(versions:html_document)
-](https://jzstats.github.io/Reproducible-Research--2nd-Assignment/Report(version:html_document).html)
+](https://jzstats.github.io/Reproducible-Research--2nd-Assignment/Report(version:html_document).html)  
    * The simplest version of the report 
    that is a direct analog of the Markdown document [RepRes_analysis.md
    ](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.md).
