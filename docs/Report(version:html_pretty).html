@@ -44,6 +44,7 @@
 
 
 <section class="main-content">
+<p><font size="2"><a href="#ind-3--SYNOPSIS">read the SYNOPSIS</a></font></p>
 <p><br><br />
 <br></p>
 <hr />
@@ -57,7 +58,7 @@
 <ul>
 <li><a href="#ind-2-1--About-The-Assignment">2.1 About The Assignment</a><br />
 </li>
-<li><a href="#ind-2-2--About-The-Script">2.2 About The Script</a><br />
+<li><a href="#ind-2-2--About-The-Main-Script">2.2 About The Main Script</a><br />
 </li>
 <li><a href="#ind-2-3--About-The-Report">2.3 About The Report</a><br />
 </li>
@@ -396,12 +397,62 @@
 <div id="ind-2--PROLOGUE" class="section level1">
 <h1>2 PROLOGUE</h1>
 <hr />
+<p>To provide some context for the reader with respect to <em>what this is all about</em>, some general information was included:</p>
+<ul>
+<li><a href="#ind-2-1--About-The-Assignment">2.1 About The Assignment</a><br />
+</li>
+<li><a href="#ind-2-2--About-The-Main-Script">2.2 About The Main Script</a><br />
+</li>
+<li><a href="#ind-2-3--About-The-Report">2.3 About The Report</a></li>
+</ul>
+<p>A summary for the analysis was not included in this chapter, but can be found at the chapter <a href="#ind-3--SYNOPSIS">SYNOPSIS</a>.</p>
 <p><br></p>
 <p><font size="1"><a href="#ind-2--PROLOGUE">back to start of this chapter</a></font><br />
 <font size="1"><a href="#ind-1--TABLE-OF-CONTENTS">back to <em>TABLE OF CONTENTS</em></a></font></p>
 <p><br></p>
 <div id="ind-2-1--About-The-Assignment" class="section level2">
 <h2>2.1 About The Assignment</h2>
+<p>This project was created for the 2nd peer-graded assignment of:</p>
+<blockquote>
+<p>Course 5: Reproducible Research,<br />
+from Data Science Specialization,<br />
+by Johns Hopkins University,<br />
+at Coursera</p>
+</blockquote>
+<p>The course is taught by:</p>
+<ul>
+<li>Jeff Leek, PhD<br />
+</li>
+<li>Roger D. Peng, PhD<br />
+</li>
+<li>Brian Caffo, PhD</li>
+</ul>
+<p>As putted by the teachers of the course:</p>
+<blockquote>
+<p>The basic goal of this assignment is to explore the NOAA Storm Database and answer some basic questions about severe weather events. You must use the database to answer the questions below and show the code for your entire analysis. Your analysis can consist of tables, figures, or other summaries. You may use any R package you want to support your analysis.</p>
+</blockquote>
+<p>The assignment requests to address 2 questions:</p>
+<blockquote>
+<p>Your data analysis must address the following questions:</p>
+<p><strong>Question 1:</strong> Across the United States, which types of events (as indicated in the EVTYPE variable) are most harmful with respect to population health?</p>
+<p><strong>Question 2:</strong> Across the United States, which types of events have the greatest economic consequences?</p>
+</blockquote>
+<p>based on the observation from the <a href="https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2">supplied dataset</a>:</p>
+<blockquote>
+<p>The data for this assignment come in the form of a comma-separated-value file compressed via the bzip2 algorithm to reduce its size.</p>
+</blockquote>
+<p>Some quite general guidelines and a tip were provided:</p>
+<blockquote>
+<p>Consider writing your report as if it were to be read by a government or municipal manager who might be responsible for preparing for severe weather events and will need to prioritize resources for different types of events. However, there is no need to make any specific recommendations in your report.</p>
+</blockquote>
+<blockquote>
+<p>The events in the database start in the year 1950 and end in November 2011. In the earlier years of the database there are generally fewer events recorded, most likely due to a lack of good records. More recent years should be considered more complete.</p>
+</blockquote>
+<p>It was deliberately decided to adopt a more educational approach aiming to produce a well-justified and self-explained product that can serve as guide to a beginner on how a basic pipeline can be constructed in order to obtain a report with an analysis from scratch.</p>
+<p><strong>All the requirements for the assignment were followed, with one exception:</strong></p>
+<ul>
+<li><strong>due to the book-like structure that was adopted for the report it was considered more appropriate to include the <a href="#ind-3--SYNOPSIS">SYNOPSIS</a> not immediately after the title, but as a separate chapter after the <a href="#ind-2--PROLOGUE">PROLOGUE</a></strong></li>
+</ul>
 <p><br></p>
 <p><font size="1"><a href="#ind-2-1--About-The-Assignment">back to start of this section</a></font><br />
 <font size="1"><a href="#ind-2--PROLOGUE">back to start of this chapter</a></font><br />
@@ -410,8 +461,11 @@
 <br><br />
 <br></p>
 </div>
-<div id="ind-2-2--About-The-Script" class="section level2">
-<h2>2.2 About The Script</h2>
+<div id="ind-2-2--About-The-Main-Script" class="section level2">
+<h2>2.2 About The Main Script</h2>
+<p>In the github repository <a href="https://github.com/jzstats/Reproducible-Research--2nd-Assignment" class="uri">https://github.com/jzstats/Reproducible-Research--2nd-Assignment</a>, that hosts all the material relevant to this project the main script <a href="https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.Rmd">RepRes_____analysis.Rmd</a> that contains the code used to conduct the analysis can be found.</p>
+<p>When <em>knitted</em> directly from RStudio, it produces the Markdown file <a href="https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.md">RepRes_____analysis.md</a> with the analysis.</p>
+<p>In addition, it was rendered with appropriate scripts, (as explained at the following section of this chapter, <a href="#ind-2-3--About-The-Report">2.3 About The Report</a>) to produce some html variations of the report that were used to populate the <a href="https://jzstats.github.io/Reproducible-Research--2nd-Assignment/">webpage</a> that was created to showcase this project.</p>
 <p><br></p>
 <p><font size="1"><a href="#ind-2-2--About-The-Script">back to start of this section</a></font><br />
 <font size="1"><a href="#ind-2--PROLOGUE">back to start of this chapter</a></font><br />
@@ -422,6 +476,23 @@
 </div>
 <div id="ind-2-3--About-The-Report" class="section level2">
 <h2>2.3 About The Report</h2>
+<p>The main Rmd file, <a href="https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.Rmd">RepRes_analysis.Rmd</a> that contains the code to conduct the analysis and produces the Markdown document <a href="https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.md">RepRes_analysis.md</a> was rendered by appropriate scripts to create alternative html versions of the report with the analysis, that are hosted at the <a href="https://jzstats.github.io/Reproducible-Research--2nd-Assignment/">webpage</a> created to showcase the this project:</p>
+<ol style="list-style-type: decimal">
+<li><a href="https://jzstats.github.io/Reproducible-Research--2nd-Assignment/Report(version:html_document).html">Report(versions:html_document)</a>
+<ul>
+<li>The simplest version of the report that is a direct analog of the Markdown document <a href="https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.md">RepRes_analysis.md</a>. It was produced by rendering the <a href="https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.Rmd">RepRes_analysis.Rmd</a> with the script <a href="https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/rendering_scripts/render_report_____html_document.R">render_report_____html_document.R</a>.<br />
+</li>
+</ul></li>
+<li><a href="https://jzstats.github.io/Reproducible-Research--2nd-Assignment/Report(version:html_pretty).html">Report(version:html_pretty)</a>
+<ul>
+<li>A more visually appealing version of the report powered by the <a href="https://cran.rstudio.com/web/packages/prettydoc/index.html">prettydocs</a> library. It was produced by rendering the <a href="https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.Rmd">RepRes_analysis.Rmd</a> with the script <a href="https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/rendering_scripts/render_report_____html_pretty.R">render_report_____html_pretty.R</a>.<br />
+</li>
+</ul></li>
+<li><a href="https://jzstats.github.io/Reproducible-Research--2nd-Assignment/Report(version:readthedown).html">Report(version:readthedown)</a>
+<ul>
+<li>A more visually appealing and practical (due to the sidepanel with contents that contains) book-like version of the report powered by the <a href="https://cran.rstudio.com/web/packages/rmdformats/index.html">rmdformats</a> library. It was produced by rendering the <a href="https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.Rmd">RepRes_analysis.Rmd</a> with the script <a href="https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/rendering_scripts/render_report_____readthedown.R">render_report_____readthedown.R</a>. This is the version that was uploaded to RPubs at this <a href="https://rpubs.com/JZstats/Reproducible-Research--2nd-Assignment">link</a>.</li>
+</ul></li>
+</ol>
 <p><br></p>
 <p><font size="1"><a href="#ind-2-3--About-The-Report">back to start of this section</a></font><br />
 <font size="1"><a href="#ind-2--PROLOGUE">back to start of this chapter</a></font><br />
@@ -438,6 +509,17 @@
 <div id="ind-3--SYNOPSIS" class="section level1">
 <h1>3 SYNOPSIS</h1>
 <hr />
+<p>The U.S. National Oceanic and Atmospheric Administration’s (NOAA) <em>Storm Events Database</em>, was explored to identify the most harmful weather event types, among the weather phenomena defined in <em>NATIONAL WEATHER SERVICE INSTRUCTION 10-1605, AUGUST 17, 2007 (<em>at chapter 7</em>)</em>, with respect to population health and economy.</p>
+<p>The raw data was loaded in R from the supplied file, preproccessed, the target data subset was extracted, in-record validation was conducted, the majority of missing values were imputed (via a deterministic and conservative approach), the observations were cross validated and finally the table with the processed data was created, which contained all information needed to address the two questions of interest:</p>
+<ol style="list-style-type: decimal">
+<li>Across the United States, which types of events (as indicated in the EVTYPE variable) are most harmful with respect to population health?<br />
+</li>
+<li>Across the United States, which types of events have the greatest economic consequences?</li>
+</ol>
+<p>For the first question, the harm on population health by each weather event type was evaluated (separately) based on the average impact of the observations that resulted in non-zero damage over each of the three perspectives (fatalities, injuries and casualties) that were considered to be of importance.</p>
+<p>Similarly for the second question, the harm on economy by each weather event type was evaluated (separately) based on the average impact from the observations that resulted in non-zero damage over each of the three perspectives (property damage, crop damage and economic damage) that were considered to be of importance.</p>
+<p>Although for both questions the main criterion to rank the included weather event types (from the most harmful to the least) for each perspective was the overall average damage observed (with respect to each perspective) based on the observations that caused non-zero damage, the average for the 90% of cases with lowest impact versus the average for the 10% of cases with the highest impact (for each of the included weather event types) was reported to provide a more complete and insightful ‘picture’ of the consequences observed by each weather event type, due to the fact that for all perspectives, the majority of weather event types were highly positively skewed.</p>
+<p>The analysis was structured, performed and documented in such way that fortifies the reproducibility of the report and explains every required detail so that even the non-expert can follow the procedure and understand the thought process behind the decision making at each stage.</p>
 <p><br></p>
 <p><font size="1"><a href="#ind-3--SYNOPSIS">back to start of this chapter</a></font><br />
 <font size="1"><a href="#ind-1--TABLE-OF-CONTENTS">back to <em>TABLE OF CONTENTS</em></a></font></p>
