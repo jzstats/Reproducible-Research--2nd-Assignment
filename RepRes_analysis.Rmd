@@ -5,6 +5,7 @@ date: "4/26/2020"
 output: md_document
 ---
 
+<font size="2">[read the SYNOPSIS](#ind-3--SYNOPSIS)</font>  
 
 <br>  
 <br>  
