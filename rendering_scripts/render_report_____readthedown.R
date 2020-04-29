@@ -2,7 +2,7 @@
 # ABOUT THIS SCRIPT: 'render_report_____readthedown.R'
 ################################################################################
 
-# DESCRIPTION: This script renders and exports the script 'RepRes_analysis.Rmd'
+# DESCRIPTION: This script renders the script 'RepRes_analysis.Rmd'
 #              to produce the 'readthedown' version of the report
 #              that gets exported as 'Report(version:readthedown).html'
 #              at the 'docs' folder of the working directory.

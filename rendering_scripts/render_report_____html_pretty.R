@@ -2,7 +2,7 @@
 # ABOUT THIS SCRIPT: 'render_report_____html_pretty.R'
 ################################################################################
 
-# DESCRIPTION: This script renders and exports the script 'RepRes_analysis.Rmd'
+# DESCRIPTION: This script renders the script 'RepRes_analysis.Rmd'
 #              to produce the 'html_pretty' version of the report
 #              that gets exported as 'Report(version:html_pretty).html'
 #              at the 'docs' folder of the working directory.
