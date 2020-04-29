@@ -1,3 +1,5 @@
+<font size="2">[read the SYNOPSIS](#ind-3--SYNOPSIS)</font>
+
 <br>  
 <br>
 
@@ -11,7 +13,7 @@
 -   [1 TABLE OF CONTENTS](#ind-1--TABLE-OF-CONTENTS)  
 -   [2 PROLOGUE](#ind-2--PROLOGUE)
     -   [2.1 About The Assignment](#ind-2-1--About-The-Assignment)  
-    -   [2.2 About The Script](#ind-2-2--About-The-Script)  
+    -   [2.2 About The Main Script](#ind-2-2--About-The-Main-Script)  
     -   [2.3 About The Report](#ind-2-3--About-The-Report)  
 -   [3 SYNOPSIS](#ind-3--SYNOPSIS)  
 -   [4 STORM EVENTS DATASET](#ind-4--STORM-EVENTS-DATASET)
@@ -342,6 +344,16 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ------------------------------------------------------------------------
 
+To provide some context for the reader with respect to *what this is all
+about*, some general information was included:
+
+-   [2.1 About The Assignment](#ind-2-1--About-The-Assignment)  
+-   [2.2 About The Main Script](#ind-2-2--About-The-Main-Script)  
+-   [2.3 About The Report](#ind-2-3--About-The-Report)
+
+A summary for the analysis was not included in this chapter, but can be
+found at the chapter [SYNOPSIS](#ind-3--SYNOPSIS).
+
 <br>
 
 <font size="1">[back to start of this
@@ -353,6 +365,72 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 2.1 About The Assignment
 ------------------------
+
+This project was created for the 2nd peer-graded assignment of:
+
+> Course 5: Reproducible Research,  
+> from Data Science Specialization,  
+> by Johns Hopkins University,  
+> at Coursera
+
+The course is taught by:
+
+-   Jeff Leek, PhD  
+-   Roger D. Peng, PhD  
+-   Brian Caffo, PhD
+
+As putted by the teachers of the course:
+
+> The basic goal of this assignment is to explore the NOAA Storm
+> Database and answer some basic questions about severe weather events.
+> You must use the database to answer the questions below and show the
+> code for your entire analysis. Your analysis can consist of tables,
+> figures, or other summaries. You may use any R package you want to
+> support your analysis.
+
+The assignment requests to address 2 questions:
+
+> Your data analysis must address the following questions:
+>
+> **Question 1:** Across the United States, which types of events (as
+> indicated in the EVTYPE variable) are most harmful with respect to
+> population health?
+>
+> **Question 2:** Across the United States, which types of events have
+> the greatest economic consequences?
+
+based on the observation from the [supplied
+dataset](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2):
+
+> The data for this assignment come in the form of a
+> comma-separated-value file compressed via the bzip2 algorithm to
+> reduce its size.
+
+Some quite general guidelines and a tip were provided:
+
+> Consider writing your report as if it were to be read by a government
+> or municipal manager who might be responsible for preparing for severe
+> weather events and will need to prioritize resources for different
+> types of events. However, there is no need to make any specific
+> recommendations in your report.
+
+> The events in the database start in the year 1950 and end in November
+> 2011. In the earlier years of the database there are generally fewer
+> events recorded, most likely due to a lack of good records. More
+> recent years should be considered more complete.
+
+It was deliberately decided to adopt a more educational approach aiming
+to produce a well-justified and self-explained product that can serve as
+guide to a beginner on how a basic pipeline can be constructed in order
+to obtain a report with an analysis from scratch.
+
+**All the requirements for the assignment were followed, with one
+exception:**
+
+-   **due to the book-like structure that was adopted for the report it
+    was considered more appropriate to include the
+    [SYNOPSIS](#ind-3--SYNOPSIS) not immediately after the title, but as
+    a separate chapter after the [PROLOGUE](#ind-2--PROLOGUE)**
 
 <br>
 
@@ -367,8 +445,25 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>  
 <br>
 
-2.2 About The Script
---------------------
+2.2 About The Main Script
+-------------------------
+
+In the github repository
+<a href="https://github.com/jzstats/Reproducible-Research--2nd-Assignment" class="uri">https://github.com/jzstats/Reproducible-Research--2nd-Assignment</a>,
+that hosts all the material relevant to this project the main script
+[RepRes\_\_\_\_\_analysis.Rmd](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.Rmd)
+that contains the code used to conduct the analysis can be found.
+
+When *knitted* directly from RStudio, it produces the Markdown file
+[RepRes\_\_\_\_\_analysis.md](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.md)
+with the analysis.
+
+In addition, it was rendered with appropriate scripts, (as explained at
+the following section of this chapter, [2.3 About The
+Report](#ind-2-3--About-The-Report)) to produce some html variations of
+the report that were used to populate the
+[webpage](https://jzstats.github.io/Reproducible-Research--2nd-Assignment/)
+that was created to showcase this project.
 
 <br>
 
@@ -385,6 +480,43 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 2.3 About The Report
 --------------------
+
+The main Rmd file,
+[RepRes\_analysis.Rmd](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.Rmd)
+that contains the code to conduct the analysis and produces the Markdown
+document
+[RepRes\_analysis.md](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.md)
+was rendered by appropriate scripts to create alternative html versions
+of the report with the analysis, that are hosted at the
+[webpage](https://jzstats.github.io/Reproducible-Research--2nd-Assignment/)
+created to showcase the this project:
+
+1.  [Report(versions:html\_document)](https://jzstats.github.io/Reproducible-Research--2nd-Assignment/Report(version:html_document).html)
+    -   The simplest version of the report that is a direct analog of
+        the Markdown document
+        [RepRes\_analysis.md](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.md).
+        It was produced by rendering the
+        [RepRes\_analysis.Rmd](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.Rmd)
+        with the script
+        [render\_report\_\_\_\_\_html\_document.R](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/rendering_scripts/render_report_____html_document.R).  
+2.  [Report(version:html\_pretty)](https://jzstats.github.io/Reproducible-Research--2nd-Assignment/Report(version:html_pretty).html)
+    -   A more visually appealing version of the report powered by the
+        [prettydocs](https://cran.rstudio.com/web/packages/prettydoc/index.html)
+        library. It was produced by rendering the
+        [RepRes\_analysis.Rmd](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.Rmd)
+        with the script
+        [render\_report\_\_\_\_\_html\_pretty.R](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/rendering_scripts/render_report_____html_pretty.R).  
+3.  [Report(version:readthedown)](https://jzstats.github.io/Reproducible-Research--2nd-Assignment/Report(version:readthedown).html)
+    -   A more visually appealing and practical (due to the sidepanel
+        with contents that contains) book-like version of the report
+        powered by the
+        [rmdformats](https://cran.rstudio.com/web/packages/rmdformats/index.html)
+        library. It was produced by rendering the
+        [RepRes\_analysis.Rmd](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.Rmd)
+        with the script
+        [render\_report\_\_\_\_\_readthedown.R](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/rendering_scripts/render_report_____readthedown.R).
+        This is the version that was uploaded to RPubs at this
+        [link](https://rpubs.com/JZstats/Reproducible-Research--2nd-Assignment).
 
 <br>
 
@@ -408,6 +540,53 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 ==========
 
 ------------------------------------------------------------------------
+
+The U.S. National Oceanic and Atmospheric Administration’s (NOAA) *Storm
+Events Database*, was explored to identify the most harmful weather
+event types, among the weather phenomena defined in *NATIONAL WEATHER
+SERVICE INSTRUCTION 10-1605, AUGUST 17, 2007 (*at chapter 7*)*, with
+respect to population health and economy.
+
+The raw data was loaded in R from the supplied file, preproccessed, the
+target data subset was extracted, in-record validation was conducted,
+the majority of missing values were imputed (via a deterministic and
+conservative approach), the observations were cross validated and
+finally the table with the processed data was created, which contained
+all information needed to address the two questions of interest:
+
+1.  Across the United States, which types of events (as indicated in the
+    EVTYPE variable) are most harmful with respect to population
+    health?  
+2.  Across the United States, which types of events have the greatest
+    economic consequences?
+
+For the first question, the harm on population health by each weather
+event type was evaluated (separately) based on the average impact of the
+observations that resulted in non-zero damage over each of the three
+perspectives (fatalities, injuries and casualties) that were considered
+to be of importance.
+
+Similarly for the second question, the harm on economy by each weather
+event type was evaluated (separately) based on the average impact from
+the observations that resulted in non-zero damage over each of the three
+perspectives (property damage, crop damage and economic damage) that
+were considered to be of importance.
+
+Although for both questions the main criterion to rank the included
+weather event types (from the most harmful to the least) for each
+perspective was the overall average damage observed (with respect to
+each perspective) based on the observations that caused non-zero damage,
+the average for the 90% of cases with lowest impact versus the average
+for the 10% of cases with the highest impact (for each of the included
+weather event types) was reported to provide a more complete and
+insightful ‘picture’ of the consequences observed by each weather event
+type, due to the fact that for all perspectives, the majority of weather
+event types were highly positively skewed.
+
+The analysis was structured, performed and documented in such way that
+fortifies the reproducibility of the report and explains every required
+detail so that even the non-expert can follow the procedure and
+understand the thought process behind the decision making at each stage.
 
 <br>
 
