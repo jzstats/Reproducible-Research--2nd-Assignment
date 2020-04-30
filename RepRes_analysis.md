@@ -468,7 +468,7 @@ that was created to showcase this project.
 <br>
 
 <font size="1">[back to start of this
-section](#ind-2-2--About-The-Script)</font>  
+section](#ind-2-2--About-The-Main-Script)</font>  
 <font size="1">[back to start of this
 chapter](#ind-2--PROLOGUE)</font>  
 <font size="1">[back to *TABLE OF
@@ -609,6 +609,25 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ------------------------------------------------------------------------
 
+To conduct the analysis for this project, the file with the raw data
+[repdata\_data\_StormData.csv.bz2](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2)
+was used, which contains data from the *Storm Events Dataset* gathered
+and made publicly available by U.S. National Oceanic and Atmospheric
+Administration (NOAA).
+
+Some [general information](#ind-4-1--General-Informations) as well as
+two [points of interest](#ind-4-2--Points-Of-Interest) about the
+dataset:
+
+-   [4.2.1 Changes in the composition of weather event
+    types](#ind-4-2-1--Changes-in-the-composition-of-weather-event-types)  
+-   [4.2.2 Eligibility criteria for inclusion of weather events in the
+    dataset](#ind-4-2-2--Eligibility-criteria-for-inclusion-of-weather-events-in-the-dataset)
+
+were discussed to provide the nessecary insights in order to understand
+why the decisions which govern the approach adopted in this analysis
+were made.
+
 <br>
 
 <font size="1">[back to start of this
@@ -620,6 +639,44 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 4.1 General Informations
 ------------------------
+
+The version of the dataset used in this analysis contains observations
+for the severe weather events that happened (or more accurately begun)
+from January 1950 to November 2011 at United States.
+
+Further details about the dataset (which was used in this analysis) can
+be accessed by the supplemental material provided at the instructions of
+the assignment:
+
+-   [NATIONAL WEATHER SERVICE INSTRUCTION 10-1605 (AUGUST
+    17, 2007)](https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2Fpd01016005curr.pdf)
+    (also available at the GitHub repository created to support this
+    project through [this
+    link](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/supplemental_information/NATIONAL%20WEATHER%20SERVICE%20INSTRUCTION%2010-1605%20(AUGUST%2017%2C%202007).pdf))
+
+-   [Storm Data Faq
+    Page](https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2FNCDC%20Storm%20Events-FAQ%20Page.pdf)
+    (also available at the GitHub repository created to support this
+    project through [this
+    link](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/supplemental_information/NCDC%20Storm%20Events-FAQ%20Page.pdf))
+
+For additional information on the Storm Events Dataset, as well as an
+updated and cleaner version of the data, with observations from January
+1950 up to January 2020 (at the time this report was produced, but it is
+expected to continue updating), it is recommended to visit and explore:
+
+-   [NOAA’s Storm Events Dataset official
+    wepbage](https://www.ncdc.noaa.gov/stormevents)
+
+Finally, a document with detailed information for the history of the
+dataset, was available at [NOAA’s Storm Events Dataset wepbage for the
+version history](https://www.ncdc.noaa.gov/stormevents/versions.jsp):
+
+-   [The History of the Storm Events
+    Database](https://www1.ncdc.noaa.gov/pub/data/swdi/stormevents/The-History-of-the-Storm-Events-Database.docx)
+    (also available at the GitHub repository created to support this
+    project through [this
+    link](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/supplemental_information/The-History-of-the-Storm-Events-Database.docx))
 
 <br>
 
@@ -637,6 +694,25 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 4.2 Points Of Interest
 ----------------------
 
+In order to understand why some of the decisions which govern the
+approach adopted in this analysis were made, it is essential to take
+into account two crucial facts with respect to the observations recorded
+in the dataset:
+
+-   [4.2.1 Changes in the composition of weather event
+    types](#ind-4-2-1--Changes-in-the-composition-of-weather-event-types)
+    -   Both the composition of the weather events types that were
+        recorded in the dataset and the way the data was entered in the
+        system (the data entry procedure and the database software)
+        changed several times across the years.  
+-   [4.2.2 Eligibility criteria for inclusion of weather events in the
+    dataset](#ind-4-2-2--Eligibility-criteria-for-inclusion-of-weather-events-in-the-dataset)
+    -   Not every weather event that occurred in the period that the
+        dataset spans, was automatically eligible to be recorded in the
+        dataset. Only those that have caused harm (either to population
+        health or to economy)  
+        or have gathered public interest were recorded.
+
 <br>
 
 <font size="1">[back to start of this
@@ -649,6 +725,31 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ### 4.2.1 Changes in the composition of weather event types
+
+Through the years, as the publicity of the dataset soared, several
+aspects governing the data collection procedure changed in order to
+expand, enrich and fortify the quality of the data.
+
+As a result the number of defined weather event types that were
+collected increased several times starting from just one (*TORNADO*) for
+the first few years and expanding into 48 defined weather event times at
+the time the dataset used in this analysis was created. Consequently
+there are inconsistencies in the the composition of weather event types
+between different periods that could affect the integrity of the
+analysis.
+
+Furthermore for the period 1996 up to 2000 while the weather event types
+that were being recorded had already been significantly increased, the
+values for the weather event type entries were entered though a free
+text field resulting in more than 950 different unique entries.
+
+For this reason **it was decided to use for the analysis only the part
+with observations since January 2001**, for which as a result of the
+introduction of a drop down menu and the removal of the free text field
+for the entries of the weather event type values, the majority of
+observations don’t suffer from such problems and the weather event types
+contained include the majority of the latest defined weather event
+types.
 
 <br>
 
@@ -665,6 +766,51 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ### 4.2.2 Eligibility criteria for inclusion of weather events in the dataset
+
+Out of all weather events that happened in the period from January 2001
+to November 2011 at United States and were classified as one of the
+types that were recorded (at the period they occurred), only those in
+the subset that belonged to at least one of the following three groups
+were eligible to be included in the dataset:
+
+1.  The occurrence of storms and other significant weather phenomena
+    having sufficient intensity to cause loss of life, injuries,
+    significant property damage, and/or disruption to commerce.  
+2.  Rare, unusual, weather phenomena that generate media attention.  
+3.  Other significant meteorological events, such as record maximum or
+    minimum temperatures or precipitation that occur in connection with
+    another event.
+
+An important implication of the above policy must be highlighted:
+
+-   From all the weather phenomena that happened in the period from
+    January 2001 to November 2011 at United States and were of a type
+    that was recorded at the time they occurred, the dataset contains
+    only the subset with those that either resulted in harm (to
+    population health or to economy) or gathered high publicity.  
+-   On the contrary all the weather phenomena that happened in the
+    period from January 2001 to November 2011 at United States and
+    neither caused any harm (to population health or to economy) nor
+    gathered high public interest, were ignored, even if they were of a
+    type that was recorded at the time they occurred.
+
+Consequently any conclusion made for a weather event type in *general*
+will inevitably be biased, as it will overestimate the consequences with
+respect to the harm they caused (either to population health or to
+economy) due to the fact that the available sample is not representative
+of the the overall population of weather phenomena (of the types that
+were recorded) by default.
+
+For this reason **it was decided to use for the analysis:**
+
+-   **Only the subset of observations that resulted in non-zero harm
+    with respect to each of the perspectives of interest (fatalities,
+    injuries and casualties) in order to determine the most harmful
+    weather event types for the population health.**  
+-   **Only the subset of observations that resulted in non-zero harm
+    with respect to each of the perspectives of interest (property
+    damage, crop damage and economic damage) in order to determine the
+    most harmful weather event types for the economy.**
 
 <br>
 
