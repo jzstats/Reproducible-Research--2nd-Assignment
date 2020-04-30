@@ -691,7 +691,23 @@ for the economy.__
 # 5 PRELIMINARY ACTIVITIES {#ind-5--PRELIMINARY-ACTIVITIES}  
 ***  
 
+Executes four preliminary tasks 
+in order to ensure (and set when it is needed and possible) 
+that the working directory and the R session 
+are ready to proceed with the analysis:  
 
+* [5.1 Set The Random Seed](#ind-5-1--Set-The-Random-Seed)  
+  * Sets a random seed to make the random events reproducible.  
+* [5.2 Load All Required Libraries](#ind-5-2--Load-All-Required-Libraries)  
+  * Loads all libraries required to conduct the analysis and produce the report.  
+* [5.3 Create All Required Directories](#ind-5-3--Create-All-Required-Directories)  
+  * Creates (if it doesn't exist) a directory tree (at the working directory) 
+  in which the output files will be exported.  
+* [5.4 Access The File With The Raw Data](#ind-5-4--Access-The-File-With-The-Raw-Data)  
+  * Downloads the file with the raw data, [repdata_data_StormData.csv.bz2
+  ](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2) 
+  in the working directory, if it doesn't already exist.  
+ 
 
 <br>  
 
@@ -702,6 +718,30 @@ for the economy.__
 
 ## 5.1 Set The Random Seed {#ind-5-1--Set-The-Random-Seed}  
 
+In an attempt to fortify the reproducibility of the random events, 
+the number *1234567890* was explicitly chosen and set as the random seed.  
+
+```{r set_a_random_seed_for_the_execution_of_the_script}
+
+# Select a random seed.
+selected_random_seed <- 1234567890
+
+# Set the selected random seed.
+set.seed(selected_random_seed)
+
+```
+
+*Note that the only random events that took place in this analysis 
+were the assignment of random positions for the labels at the plots:  * 
+
+* _[Plot 1.1.4](#ind-8-1-4-1-4--Create-The-Plot-1-1-4)_  
+* _[Plot 1.2.4](#ind-8-2-4-1-4--Create-The-Plot-1-2-4)_  
+* _[Plot 1.3.4](#ind-8-3-4-1-4--Create-The-Plot-1-3-4)_  
+* _[Plot 2.1.4](#ind-9-1-4-1-4--Create-The-Plot-2-1-4)_  
+* _[Plot 2.2.4](#ind-9-2-4-1-4--Create-The-Plot-2-2-4)_  
+* _[Plot 2.3.4](#ind-9-3-4-1-4--Create-The-Plot-2-3-4)_  
+
+*by the function geom_repel_label() from the ggrepel library.*  
 
 
 <br>  
@@ -718,7 +758,40 @@ for the economy.__
 
 ## 5.2 Load All Required Libraries {#ind-5-2--Load-All-Required-Libraries}  
 
+Loads all libraries required to conduct the analysis and produce the report.  
 
+```{r load_all_required_libraries}
+
+# Load all required libraries.
+library(tools)
+library(rmarkdown)
+library(knitr)
+library(kableExtra)
+library(magrittr)
+library(DT)
+library(rmdformats)
+library(data.table)
+library(validate)
+library(stringr)
+library(moments)
+library(ggplot2)
+library(ggrepel)
+library(grid)
+library(gridExtra)
+
+```
+
+*Note that the libraries:*  
+
+- *prettydocs*  
+  - *was only used to produce the [Report(version:html_pretty)
+  ](https://jzstats.github.io/Reproducible-Research--2nd-Assignment/Report(version:html_pretty).html)*  
+- *rmdformats*  
+  - *was only used to produce the [Report(version:readthedown)
+](https://jzstats.github.io/Reproducible-Research--2nd-Assignment/Report(version:readthedown).html)*  
+
+*are not essential to conduct the analysis 
+or were used for any other purpose in this project.* 
 
 <br>  
 
@@ -734,7 +807,75 @@ for the economy.__
 
 ## 5.3 Create All Required Directories {#ind-5-3--Create-All-Required-Directories}  
 
+During the execution of the main script, [RepRes_analysis.Rmd
+   ](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.Rmd) 
+several outputs are produced, 
+(that are also included in the report), 
+mostly to enhance further the reproducibility of the analysis. 
 
+All those files are exported in appropriate sub-directories 
+inside the directory with name *outputs* 
+which is created at the working directory.  
+
+```{r create_the_directory_tree_for_the_outputs_of_the_script}
+
+# Create a list with the paths to all sub-directories 
+# of the directory tree for the outputs of this analysis
+directory_tree_____outputs <- list(
+    "filepath_____outputs_____processed_data" = 
+        file.path("outputs", "processed_data"),
+    "filepath_____outputs_____harm_on_population_health_____figures" = 
+        file.path("outputs", "harm_on_population_health", "figures"),
+    "filepath_____outputs_____harm_on_population_health_____results" = 
+        file.path("outputs", "harm_on_population_health", "results"),
+    "filepath_____outputs_____harm_on_economy_____figures" = 
+        file.path("outputs", "harm_on_economy", "figures"),
+    "filepath_____outputs_____harm_on_economy_____results" = 
+        file.path("outputs", "harm_on_economy", "results"),
+    "filepath_____outputs_____reproducibility_support_____r_session" = 
+        file.path("outputs", "reproducibility_support", "r_session"),
+    "filepath_____outputs_____reproducibility_support_____MD5_checksums" =
+        file.path("outputs", "reproducibility_support", "MD5_checksums")
+    
+)
+
+# Create the directory tree for the outputs of the analysis.  
+invisible(lapply(
+    X = directory_tree_____outputs,
+    FUN = function(filepath_of_subdirectory) {
+        if ( ! dir.exists(filepath_of_subdirectory) ) {
+            dir.create(filepath_of_subdirectory, recursive = TRUE)
+        }
+    }
+))
+
+
+# Check if all subdirectories of the directory for the outputs of the analysis 
+# were successfully created.
+do_the_directories_exists <- vapply(
+    X = directory_tree_____outputs,
+    FUN = dir.exists,
+    FUN.VALUE = logical(1)
+)
+
+# If failed to created any of the sub-directories 
+# required for the outputs of the analysis 
+# the process terminates
+if (any(!do_the_directories_exists)) {
+    stop(
+        "\n",
+        "Failed to create the directories: ", "\n",
+        paste0("\t", directory_tree_____outputs[!do_the_directories_exists], "\n"),
+        "The process is aborted for now.", "\n",
+        "Please rerun the script or create the required sub-directories manually.", 
+        "\n"
+    )
+}
+    
+```
+
+*If failed to created any of the sub-directories in the directory tree 
+for the outputs of the analysis, the process terminates.*
 
 <br>  
 
@@ -750,7 +891,69 @@ for the economy.__
 
 ## 5.4 Access The File With The Raw Data {#ind-5-4--Access-The-File-With-The-Raw-Data}  
 
+The file with name [repdata_data_StormData.csv.bz2
+](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2), 
+which contains data from the [Storm Events Dataset](#ind-4--STORM-EVENTS-DATASET)
+was supplied for this assignment and used to conduct the analysis.  
 
+If the file doesn't already exists at the working directory,
+an attempt will be made to download it automatically.  
+
+```{r access_the_file_with_the_compressed_raw_data}
+
+# Path to the file with the compressed raw data.
+filepath_____unprocessed_data <- "repdata_data_StormData.csv.bz2"
+
+# The link supplied by the instuctions of the assignment 
+# to download the file with the compressed raw data.
+url_to_download_the_data_file <- 
+  "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2"
+
+# Check if the file 'repdata_data_StormData.csv.bz2', 
+# with the compressed raw data is available at the working directory. 
+## if it doesn't exist...
+if ( !file.exists(filepath_____unprocessed_data) ) {
+
+  message(
+    "\n", 
+    "The file, '", filepath_____unprocessed_data, "'", "\n", 
+    "doesn't exists at the working directory.",
+    "\n"
+  )
+  message(
+    "\n", "Trying to download the file, ", "\n",
+    "'", filepath_____unprocessed_data, "' ", "\n",
+    "with the raw data from the url: ", "\n",
+    "\t", "'",  url_to_download_the_data_file, "'"
+  )
+  
+  ### ...an attempt is made to download it from the link supplied by assignment
+  try(
+    download.file(
+      url = url_to_download_the_data_file,
+      destfile = filepath_____unprocessed_data)
+  )
+  
+  ## Checks if the file 'repdata_data_StormData.csv.bz2' 
+  ## was successfully downloaded.  
+  ### in case the file is not found at the working directory 
+  ### after the attempt to download 
+  ### the process terminates with an informative message 
+  ### that explains the situation to the user
+  if ( !file.exists(filepath_____unprocessed_data)  ) {
+    stop(
+      "\n", 
+      "Failed to download the required file,", "\n",
+      "'", filepath_____unprocessed_data, "'", "\n",
+      "with the raw data.", "\n",
+      "The process is aborted for now."
+    )
+  } 
+} 
+
+```
+
+*If the download fails, the process terminates.*
 
 <br>  
 
