@@ -1,4 +1,6 @@
-# [Harm From Severe Weather Events To Population Health And Economy In United States.](https://rpubs.com/JZstats/Reproducible-Research--2nd-Assignment)  
+# Harm From Severe Weather Events To Population Health And Economy In United States.
+
+[**read the Report at RPubs**](https://rpubs.com/JZstats/Reproducible-Research--2nd-Assignment)  
 
 <br>  
 
@@ -72,7 +74,7 @@ that contains the code to conduct the analysis
 and produces the Markdown document [RepRes_analysis.md
 ](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.md) 
 was rendered by appropriate scripts 
-to create alternative html versions of the report with the analysis:    
+to create alternative html versions of the report with the analysis:  
 
 1. [Report(versions:html_document)
 ](https://jzstats.github.io/Reproducible-Research--2nd-Assignment/Report(version:html_document).html)  
@@ -89,7 +91,7 @@ to create alternative html versions of the report with the analysis:
    * A more visually appealing and practical 
    (due to the sidepanel with contents that contains) 
    book-like version of the report powered by the [rmdformats
-   ](https://cran.rstudio.com/web/packages/rmdformats/index.html) library. 
+   ](https://cran.rstudio.com/web/packages/rmdformats/index.html) library.  
 
 
 
