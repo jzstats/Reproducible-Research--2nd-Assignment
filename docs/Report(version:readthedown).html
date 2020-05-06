@@ -2526,6 +2526,45 @@ or have gathered public interest were recorded.</li>
 <div id="ind-6--DATA-PROCESSING" class="section level1">
 <h1>6 DATA PROCESSING</h1>
 <hr />
+<p>The data processing pipeline, started with a supplied file, <a href="https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2"><em>repdata_data_StormData.csv.bz2</em></a> that contained raw data from the <a href="#ind-4--STORM-EVENTS-DATASET"><em>Storm Events Dataset</em></a> and produced the <a href="#ind-7--PROCESSED-DATA">table with the processed data</a>.</p>
+<p>The pipeline consists of seven distinct stages:</p>
+<ol style="list-style-type: decimal">
+<li><a href="#ind-6-1--Load-The-Raw-Data-In_R"><strong>Load The Raw Data In R</strong></a>
+<ul>
+<li>The table with the raw data was created by loading in R the raw data from the supplied file with the compressed raw data with all variables coerced to character type. Post validation was conducted and an overview of the table with the raw data was presented.<br />
+</li>
+</ul></li>
+<li><a href="#ind-6-2--Preprocess-The-Raw-Data"><strong>Preprocess The Raw Data</strong></a>
+<ul>
+<li>From the data at the table with the raw data, in order to create the table with the preprocessed data prerequisites were verified about the variables required for the analysis before they were selected, coerced to their appropriate types and a key was set for the table. Post validation was conducted and an overview of the table with the preprocessed data was presented.<br />
+</li>
+</ul></li>
+<li><a href="#ind-6-3--Extract-The-Target-Data-Subset"><strong>6.3 Extract The Target Data Subset</strong></a>
+<ul>
+<li>From the table with the preprocessed data only the subset of data that includes the observations for the weather events that happened in the period from 2001 to 2011 and caused non-zero fatalities, injuries, property damage or crop damage were extracted. Post validation was conducted and an overview of the table with the target data subset was presented.<br />
+</li>
+</ul></li>
+<li><a href="#ind-6-4--Conduct-In-Record-Data-Validation"><strong>Conduct In-Record Data Validation</strong></a>
+<ul>
+<li>The values of each variable at the table with the target data subset were validated against appropriate constrains for each column separately (independently of the other variables) and those entries that were found invalid got substituted with NAs to create the table with the in-record validated data. Post validation was conducted and an overview of the table with the in-record validated data was presented.<br />
+</li>
+</ul></li>
+<li><a href="#ind-6-5--Impute-Missing-Values"><strong>Impute Missing Values</strong></a>
+<ul>
+<li>The missing values at each variable from the table with the in-record validated data were examined and the those that could be retrieved (via a deterministic and conservative way) were imputed, to produce the table with the imputed data. Post validation was conducted and an overview of the table with the imputed data was presented.<br />
+</li>
+</ul></li>
+<li><a href="#ind-6-6--Conduct-Cross-Record-Data-Validation"><strong>Conduct Cross-Record Data Validation</strong></a>
+<ul>
+<li>Each observations from the table with the imputed data was validated against appropriate constrains that spanned across all available variables and only those that were found valid were used to create the table with the cross-record validated data. Post validation was conducted and an overview of the table with the cross-record validated data was presented.<br />
+</li>
+</ul></li>
+<li><a href="#ind-6-7--Produce-The-Processed-Data"><strong>6.7 Produce The Processed Data</strong></a>
+<ul>
+<li>From the table with the cross-record validated data, by transforming appropriately the available information, the table with the processed data was created that contained the variables required to identify the most harmful weather event types with respect to the population health and for the economy. Post validation was conducted.</li>
+</ul></li>
+</ol>
+<p>At each stage of the data processing procedure any fact that played a major role was highlighted and examined when it was needed, in compliance with the spirit of the assignment, aiming to supply all the facts necessary to understand how and why the decision making behind this analysis happened in order to create a well justified and documented, reproducible report.</p>
 <p><br></p>
 <p><font size="1"><a href="#ind-6--DATA-PROCESSING">back to start of this chapter</a></font><br />
 <font size="1"><a href="#ind-1--TABLE-OF-CONTENTS">back to <em>TABLE OF CONTENTS</em></a></font></p>
