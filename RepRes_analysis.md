@@ -8861,7 +8861,7 @@ information that was used in the chapters:
 -   [8 HARM ON POPULATION HEALTH](#ind-8--HARM-ON-POPULATION-HEALTH)  
 -   [9 HARM ON ECONOMY](#ind-9--HARM-ON-ECONOMY)
 
-in order to adress the two questions of interest for this analysis.
+in order to address the two questions of interest for this analysis.
 
 [Details about the
 variables](#ind-7-1--Information-For-The-Table-With-The-Processed-Data)
@@ -8892,7 +8892,7 @@ There are 8 variable at the table with the processed data:
     and was used as the key of the table  
 2.  **EVENT\_TYPE** (chr) : the type of each weather event type  
 3.  **FATALITIES** (int) : the number of fatalities  
-4.  **INJURIES** (int) : the numbe of injuries  
+4.  **INJURIES** (int) : the number of injuries  
 5.  **CASUALTIES** (int) : the number of casualties (injuries and
     fatalities)  
 6.  **PROPERTY\_DAMAGE** (num) : the property damage in dollars  
