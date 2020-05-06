@@ -3,6 +3,7 @@ title: "Harm From Severe Weather Events To Population Health And Economy In Unit
 author: "JZstats"
 date: "4/26/2020"
 output: md_document
+always_allow_html: true
 ---
 
 <font size="2">[read the SYNOPSIS](#ind-3--SYNOPSIS)</font>  
