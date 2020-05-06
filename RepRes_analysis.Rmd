@@ -4560,7 +4560,25 @@ kable(
 # 7 PROCESSED DATA {#ind-7--PROCESSED-DATA}  
 ***  
 
+The table with the processed data (which was the result 
+of the [data processing pipeline](#ind-6--DATA-PROCESSING)) 
+contains all the information that was used in the chapters:  
 
+* [8 HARM ON POPULATION HEALTH](#ind-8--HARM-ON-POPULATION-HEALTH)  
+* [9 HARM ON ECONOMY](#ind-9--HARM-ON-ECONOMY)  
+
+in order to adress the two questions of interest for this analysis.  
+
+[Details about the variables
+](#ind-7-1--Information-For-The-Table-With-The-Processed-Data)
+it contains and 
+[a short overview](#ind-7-2--Overview-Of-The-Table-With-The-Processed-Data) 
+are presented in this chapter. 
+
+Finally in order to assist any attempt to reproduce the analysis 
+[a file with the processed data was exported
+](#ind-7-3--Export-The-Table-With-The-Processed-Data) 
+to serve as *checkpoint*.  
 
 <br>  
 
@@ -4571,7 +4589,18 @@ kable(
 
 ## 7.1 Information For The Table With The Processed Data {#ind-7-1--Information-For-The-Table-With-The-Processed-Data}  
 
-
+There are 8 variable at the table with the processed data:  
+    
+1. **REFNUM** (int) : a value that uniquely identifies each observation 
+and was used as the key of the table  
+2. **EVENT_TYPE** (chr) : the type of each weather event type  
+3. **FATALITIES** (int) : the number of fatalities  
+4. **INJURIES** (int) : the numbe of injuries  
+5. **CASUALTIES** (int) : the number of casualties (injuries and fatalities)  
+6. **PROPERTY_DAMAGE** (num) : the property damage in dollars  
+7. **CROP_DAMAGE** (num) : the crop damage in dollars  
+8. **ECONOMIC_DAMAGE** (num): the economic damage in dollars 
+(property damage and crop damage)  
 
 <br>  
 
@@ -4587,7 +4616,78 @@ kable(
 
 ## 7.2 Overview Of The Table With The Processed Data {#ind-7-2--Overview-Of-The-Table-With-The-Processed-Data}  
 
+The processed data consists of 8 variables and 144571 observations.  
 
+The variable REFNUM was set as the key of this table.  
+
+```{r print_the_structure_of_the_table_with_the_processed_data}
+
+# Print the structure of the table with the processed data.
+str(processed_data)
+
+```
+
+All the observations included in the processed data table are complete. 
+
+```{r create_a_kable_with_the_number_of_complete_cases_at_the_table_with_the_processed_data}
+
+# Create a kable to present the number of complete cases 
+# at the table with the processed data.
+kable(
+    x = data.table(
+        "Percentage Of Complete Observations" = 
+            paste0(mean(complete.cases(processed_data))*100, "%")
+    ),
+    caption = paste0(
+        "Table 7.2-1: ",
+        "The percentage of complete observations ",
+        "at the table with the processed data."
+    )
+) %>% 
+    kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+    )
+
+
+```
+
+The number of distinct values comply with what was expected from each variable.
+
+```{r create_a_kable_with_the_number_of_distinct_values_for_the_variables_at_the_table_with_the_processed_data}
+
+# Create a kable to present the number of distinct values 
+# for each variable at the table with the processed data.
+kable(
+    x = data.table(
+        "Variable" = names(processed_data),
+        "Number of Distinct Values" = 
+            vapply(
+                X = processed_data, 
+                FUN = function(x) length(unique(x[!is.na(x)])), 
+                FUN.VALUE = integer(1)
+            )
+    ),
+    caption = paste0(
+        "Table 7.2-2: ",
+        "The number of distinct values ",
+        "for each variable at the table with the processed data."
+    )
+) %>% 
+    kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+    ) %>% 
+  footnote(
+    general = paste0(
+      "The table with the processed data consists of 8 variables ", "\n",
+      "and 144571 observations."
+    )
+  )
+
+```
 
 <br>  
 
@@ -4603,7 +4703,38 @@ kable(
 
 ## 7.3 Export The Table With The Processed Data {#ind-7-3--Export-The-Table-With-The-Processed-Data}  
 
+The table with the processed data was exported (as an R file), 
+in the sub-directory of the working directory: 
+    
+* *outputs --> processed_data* 
+    
+with filename:  
+    
+* *table_with_the_precessed_data.R*
+    
+```{r exprot_the_table_with_processed_data}
 
+# Supply the filepath at which the table with the summary
+# for the harm on population health will be exported.
+filepath_____processed_data <-
+    file.path(
+        directory_tree_____outputs[[
+            "filepath_____outputs_____processed_data"
+            ]],
+        "table_with_the_processed_data.R"
+    )
+
+# Export the table with the summary for the harm on population health
+# with respect to fatalities.
+saveRDS(
+    object = processed_data,
+    file = filepath_____processed_data
+)
+
+```
+
+*The main reason for exporting the a file with the processed data 
+was to supply a checkpoint for any attempts to reproduce the analysis.*
 
 <br>  
 
