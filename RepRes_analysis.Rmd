@@ -45,23 +45,40 @@ output: md_document
     * [6.2.4 Overview of the table with the preprocessed data](#ind-6-2-4--Overview-of-the-table-with-the-preprocessed-data)  
   * [6.3 Extract The Target Data Subset](#ind-6-3--Extract-The-Target-Data-Subset)  
     * [6.3.1 Identify the target subset of observations](#ind-6-3-1--Identify-the-target-subset-of-observations)  
+      * [6.3.1.1 Verify the consistency of date format](#ind-6-3-1-1--Verify-the-consistency-of-date-format)  
+      * [6.3.1.2 Identify the eligible observations](#ind-6-3-1-2--Identify-the-eligible-observations)  
     * [6.3.2 Create the table with the target data subset](#ind-6-3-2--Create-the-table-with-the-target-data-subset)  
     * [6.3.3 Conduct post validation for the table with the target data subset](#ind-6-3-3--Conduct-post-validation-for-the-table-with-the-target-data-subset)  
     * [6.3.4 Overview of the table with the target data subset](#ind-6-3-4--Overview-of-the-table-with-the-target-data-subset)  
   * [6.4 Conduct In-Record Data Validation](#ind-6-4--Conduct-In-Record-Data-Validation)  
     * [6.4.1 Introduce information from the Strom Data Documentation](#ind-6-4-1--Introduce-information-from-the-Strom-Data-Documentation)  
+      * [6.4.1.1 Valid values for the EVTYPE variable](#ind-6-4-1-1--Valid-values-for-the-EVTYPE-variable)  
+      * [6.4.1.2 Valid values for the PROPDMGEXP variable](#ind-6-4-1-2--Valid-values-for-the-PROPDMGEX-variable)  
+      * [6.4.1.3 Valid values for the CROPDMGEXP variable](#ind-6-4-1-3--Valid-values-for-the-CROPDMGEX-variable)  
     * [6.4.2 Conduct in-record data validation for each variable](#ind-6-4-2--Conduct-in-record-data-validation-for-each-variable)  
     * [6.4.3 Create the table with the in-record validated data](#ind-6-4-3--Create-the-table-with-the-in-record-validated-data)  
     * [6.4.4 Conduct post validation for the table with the in-record validated data](#ind-6-4-4--Conduct-post-validation-for-the-table-with-the-in-record-validated-data)  
     * [6.4.5 Overview of the table with the in-record validated data](#ind-6-4-5--Overview-of-the-table-with-the-in-record-validated-data)  
   * [6.5 Impute Missing Values](#ind-6-5--Impute-Missing-Values)  
     * [6.5.1 Impute missing values at the variable EVTYPE](#ind-6-5-1--Impute-missing-values-at-the-variable-EVTYPE)  
+      * [6.5.1.1 Examine the invalid values from the variable EVTYPE](#ind-6-5-1-1--Examine-the-invalid-values-from-the-variable-EVTYPE)  
+      * [6.5.1.2 Associate plausible substitutions to the invalid values from the variable EVTYPE](#ind-6-5-1-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-EVTYPE)  
+      * [6.5.1.3 Identify the imputable missing values at the variable EVTYPE](#ind-6-5-1-3--Identify-the-imputable-missing-values-at-the-variable-EVTYPE)  
+      * [6.5.1.4 Substitute the imputable missing values at the variable EVTYPE](#ind-6-5-1-4--Substitute-the-imputable-missing-values-at-the-variable-EVTYPE)  
     * [6.5.2 Impute missing values at the variable PROPDMGEXP](#ind-6-5-2--Impute-missing-values-at-the-variable-PROPDMGEXP)  
+      * [6.5.2.1 Examine the invalid values from the variable PROPDMGEXP](#ind-6-5-2-1--Examine-the-invalid-values-from-the-variable-PROPDMGEXP)     
+      * [6.5.2.2 Associate plausible substitutions to the invalid values from the variable PROPDMGEXP](#ind-6-5-2-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-PROPDMGEXP)  
+      * [6.5.2.3 Identify the imputable missing values at the variable PROPDMGEXP](#ind-6-5-2-3--Identify-the-imputable-missing-values-at-the-variable-PROPDMGEXP)  
+      * [6.5.2.4 Substitute the imputable missing values at the variable PROPDMGEXP](#ind-6-5-2-4--Substitute-the-imputable-missing-values-at-the-variable-PROPDMGEXP)  
     * [6.5.3 Impute missing values at the variable CROPDMGEXP](#ind-6-5-3--Impute-missing-values-at-the-variable-CROPDMGEXP)  
+      * [6.5.3.1 Examine the invalid values from the variable CROPDMGEXP](#ind-6-5-3-1--Examine-the-invalid-values-from-the-variable-CROPDMGEXP)     
+      * [6.5.3.2 Associate plausible substitutions to the invalid values from the variable CROPDMGEXP](#ind-6-5-3-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-CROPDMGEXP)  
+      * [6.5.3.3 Identify the imputable missing values at the variable CROPDMGEXP](#ind-6-5-3-3--Identify-the-imputable-missing-values-at-the-variable-CROPDMGEXP)  
+      * [6.5.3.4 Substitute the imputable missing values at the variable CROPDMGEXP](#ind-6-5-3-4--Substitute-the-imputable-missing-values-at-the-variable-CROPDMGEXP)  
     * [6.5.4 Conduct post validation for the table with the imputed data](#ind-6-5-4--Conduct-post-validation-for-the-table-with-the-imputed-data)  
     * [6.5.5 Overview of the table with the imputed data](#ind-6-5-5--Overview-of-the-table-with-the-imputed-data)  
   * [6.6 Conduct Cross-Record Data Validation](#ind-6-6--Conduct-Cross-Record-Data-Validation)  
-    * [6.6.1 Conduct cross-record data validation for each observation](#ind-6-6-1--Conduct-cross-record-data-validation-for-each-observation)  
+    * [6.6.1 Identify all valid observations](#ind-6-6-1--Identify-all-valid-observations)  
     * [6.6.2 Create the table with the cross-record validated data](#ind-6-6-2--Create-the-table-with-the-cross-record-validated-data)  
     * [6.6.3 Conduct post validation for table with the cross-record validated data](#ind-6-6-3--Conduct-post-validation-for-table-with-the-cross-record-validated-data)  
     * [6.6.4 Overview of the table with the cross-record validated data](#ind-6-6-4--Overview-of-the-table-with-the-cross-record-validated-data)  
@@ -178,7 +195,7 @@ output: md_document
 <br>  
 
 
-
+      
 
 
 
@@ -988,7 +1005,29 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ## 6.1 Load The Raw Data In R {#ind-6-1--Load-The-Raw-Data-In_R}  
 
+<font size="3"><u><strong>Summary</strong></u></font>  
 
+The raw data was loaded in R 
+from the supplied file [*repdata_data_StormData.csv.bz2*
+](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2) 
+(which contains data from the 
+[Storm Events Dataset](#ind-4--STORM-EVENTS-DATASET)), 
+to create the table with the raw data which was 
+then post validated and some basics fact about it were highlighted.  
+
+<font size="3"><u><strong>Steps</strong></u></font>  
+
+* [6.1.1 Create the table with the raw data
+](#ind-6-1-1--Create-the-table-with-the-raw-data)  
+  * Reads the file [*repdata_data_StormData.csv.bz2*
+  ](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2) 
+  in R, to create the table with the raw data.   
+* [6.1.2 Conduct post validation for the table with the raw data
+](#ind-6-1-2--Conduct-post-validation-for-the-table-with-the-raw-data)  
+  * Ensures that the raw data was loaded correctly.    
+* [6.1.3 Overview of the table with the raw data
+](#ind-6-1-3--Overview-of-the-table-with-the-raw-data)  
+  * Presents some basic facts about the table with the raw data.  
 
 <br>  
 
@@ -1000,7 +1039,35 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ### 6.1.1 Create the table with the raw data {#ind-6-1-1--Create-the-table-with-the-raw-data}  
 
+The raw data was loaded in R directly from the supplied file 
+[repdata_data_StormData.csv.bz2
+](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2) 
+(which was a CSV file, compressed via a bzip2 algorithm),
+with all variables deliberately coerced to character type 
+in order to ensure that no information was lost or altered 
+as a side effect of coercion. 
+The first row of the file includes headers that were used 
+to automatically assign the names of all the variables 
+at the table with the raw data that was created.  
 
+```{r create_the_table_with_the_raw_data}
+
+# Load the raw data in R from the supplied file:
+#     "repdata_data_StormData.csv.bz2"
+# and create the table with the raw data.
+raw_data <- fread(
+  ## the file is expected to exist at the working directory
+  file = filepath_____unprocessed_data,
+  ## the variables in the file are separated via a comma
+  sep = ",",
+  ## the first row of the file contains the names of the variables
+  header = TRUE,
+  ## all variables were deliberately loaded as character type
+  ## to avoid any loss or alteration of information as a side effect of coercion
+  colClasses = "character"
+)
+
+```
 
 <br>  
 
@@ -1015,7 +1082,72 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ### 6.1.2 Conduct post validation for the table with the raw data {#ind-6-1-2--Conduct-post-validation-for-the-table-with-the-raw-data}  
 
+The table with the raw data was post validated to ensure 
+that the data from the file was loaded in R correctly.  
+Three simple constrains were applied:  
 
+   1. It should contain 37 variables.  
+   2. It should contain 902297 observations.  
+   3. The type of all variables should be 'character'.  
+
+*(The expected number of variables and the expected number of observations, 
+were acquired interactively before the execution of the main script 
+[RepRes_analysis.Rmd
+](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.Rmd) 
+and were then used to form the constrains for the post validation.)*
+
+```{r conduct_post_validation_for_the_table_with_the_raw_data}
+
+# Create a validator with constrains for the validity of loaded raw data. 
+V_____loaded_raw_data <- validator(
+  ## create a character vector that captures the class of each variable
+  classes_of_varirables := vapply(
+    X = ., 
+    ### although it is not expected to get an output 
+    ### with more than one element for the class of each variable, 
+    ### in general it is possible to happen, 
+    ### so proper care is taken to collapse the elements of such vector 
+    ### in a single element so that the vapply() function 
+    ### won't fail with an error in such case
+    FUN = function(x) paste(class(x), collapse = ","), 
+    FUN.VALUE = character(1)
+  ),
+  "expected_number_of_variables" = ( length(.) == 37 ),
+  "expected_number_of_observations" = ( nrow(.) == 902297 ),
+  "expected_variable_types" = ( classes_of_varirables == "character" )
+)
+
+# Confront the table with the raw data with the validator
+# which constrains the constrains for the validity of raw data.
+CF_____loaded_raw_data <- confront(dat = raw_data, V_____loaded_raw_data)
+
+```
+
+The table with the raw data was valid.  
+
+```{r create_a_kable_with_the_results_from_post_validation_of_the_table_with_the_raw_data}
+
+# Create a kable with the results of post validation 
+# for the table with the raw data. 
+kable(
+  x = summary(CF_____loaded_raw_data)[
+    , 
+    c("name", "items", "passes", "fails", "nNA", "error", "warning")
+    ], 
+  caption = paste0(
+    "TABLE 6.1.3-1: ", 
+    "The results of post validation for the table with the raw data."
+  )
+) %>% 
+  kable_styling(
+    bootstrap_options = c(
+      "striped", "hover", "condensed", "responsive", "bordered"
+    ), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  )
+
+```
 
 <br>  
 
@@ -1030,7 +1162,71 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ### 6.1.3 Overview of the table with the raw data {#ind-6-1-3--Overview-of-the-table-with-the-raw-data}  
 
+The table with the raw data 
+contained 37 variables that were all of type 'character' 
+and 902297 observations.
 
+```{r print_the_structure_of_the_table_with_the_raw_data}
+
+# Print the structure of the table with the raw data.
+str(raw_data)
+
+```
+
+There were no missing values (coded as NAs) 
+at any of the variables it contained, 
+but there were a lot of empty values 
+which probably represent missing values. 
+For some of the variables, 
+a suspiciously large or small number of distinct values was observed.  
+
+```{r create_a_kable_to_present_facts_for_the_table_with_the_raw_data}
+
+# Create a kable to highlight some facts 
+# about the variables at the table with the raw data.
+kable(
+  data.table(
+    "Variable" = names(raw_data),
+    "Number of Distinct Values" = vapply(
+      X = raw_data, 
+      FUN = function(x) length(unique(x)), 
+      FUN.VALUE = integer(1)
+      ),
+    "Number of NAs" = vapply(
+      X = raw_data, 
+      FUN = function(x) sum(is.na(x)),
+      FUN.VALUE = integer(1)
+      ),
+    # from the output with the structure of the table with the raw data 
+    # it was found that some empty values exist at some variables 
+    # and the exact number that each of them contains was reported
+    "Number of Empty Values" = vapply(
+      X = raw_data, 
+      FUN = function(x) sum(x == ""), 
+      FUN.VALUE = integer(1))
+    
+  ),
+  caption = paste0(
+    "TABLE 6.1.3-2: ", 
+    "Facts about the variables at the table with the raw data."
+  )
+) %>% 
+  kable_styling(
+    bootstrap_options = c(
+      "striped", "hover", "condensed", "responsive", "bordered"
+    ), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  ) %>% 
+  footnote(
+    general = paste0(
+      "The table with the raw data contains 37 variables ", 
+      "that are all of type 'character'", "\n",
+      "and 902297 observations."
+    )
+  )
+
+```
 
 <br>  
 
@@ -1047,7 +1243,71 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ## 6.2 Preprocess The Raw Data {#ind-6-2--Preprocess-The-Raw-Data}  
 
+<font size="3"><u><strong>Summary</strong></u></font>  
 
+From the table with the raw data which contains 37 variables, 
+only 9 were selected to create the table with preprocessed data 
+and proceed with this analysis:  
+
+  1. **REFNUM** : an id that uniquely identifies each observation  
+  2. **BGN_DATE** : the date when each weather event begun  
+  3. **EVTYPE** : the type of each weather event  
+  4. **FATALITIES** : the number of fatalities  
+  5. **INJURIES** : the number of injuries  
+  6. **PROPDMG** : the magnitude value of the damage caused in properties 
+  that could have been expressed in thousands, millions or billions of dollars, 
+  depending on the corresponding indicator value at the variable *PROPDMGEXP*  
+  7. **PROPDMGEXP** : an indicator value that denotes 
+  whether the corresponding magnitude value at the variable *PROPDMG*
+  refers to thousands, millions or billions of dollars  
+  8. **CROPDMG** : the magnitude value of the damage caused in crops 
+  that could have been expressed in thousands, millions or billions of dollars, 
+  depending on the corresponding indicator value at the variable *CROPDMGEXP*  
+  9. **CROPDMGEXP** : an indicator value that denotes 
+  whether the corresponding magnitude value at the variable *CROPDMG*
+  refers to thousands, millions or billions of dollars  
+
+Due to the fact that all variables at the table with the raw data 
+were (deliberately) loaded as type 'character' 
+some prerequisites were needed to get verified 
+for the format of the character string values that they contained
+before they were coerced to their appropriate type.   
+
+The variable *REFNUM* after having verified 
+that the values it contained uniquely identify each observation, 
+was set as the key for the table with the preprocessed data. 
+
+Finally post validation was conducted 
+and some facts about the table with the preprocessed data were highlighted.  
+
+<font size="3"><u><strong>Steps</strong></u></font>  
+
+* [6.2.1 Verify the prerequisites for the selected variables
+](#ind-6-2-1--Verify-the-prerequisites-for-the-selected-variables)  
+  * Checks two key points for the values of selected variables 
+  from the table with the raw data:  
+    * [6.2.1.1 Verify the coercibility of the values for the selected variables
+    ](#ind-6-2-1-1--Verify-the-coercibility-for-the-values-at-the-selected-variables)  
+      * The character values at the selected variables were checked to verify 
+      if their format was compatible with the variable type 
+      that each of the them should be coerced to. 
+    * [6.2.1.2 Verify the uniqueness of the key values
+    ](#ind-6-2-1-2--Verify-the-uniqueness-of-the-key-values)  
+      * The values of the variable that was intended to be used as the key 
+      of the table with the preprocessed data were checked to verify 
+      if they uniquely identify each observation.  
+* [6.2.2 Create the table with the preprocessed data
+](#ind-6-2-2--Create-the-table-with-the-preprocessed-data)  
+  * Creates the table with the preprocessed data, 
+  by selecting the required variahles, 
+  coercing them to their appropriate type 
+  and setting a key was set for the table.  
+* [6.2.3 Conduct post validation for the table with the preprocessed data
+](#ind-6-2-3--Conduct-post-validation-for-the-table-with-the-preprocessed-data)
+  * Ensures that the raw data was preprocessed data correctly.  
+* [6.2.4 Overview of the table with the preprocessed data
+](#ind-6-2-4--Overview-of-the-table-with-the-preprocessed-data)
+  * Presents some basic fact about the table with the preprocessed data.  
 
 <br>  
 
@@ -1059,7 +1319,23 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ### 6.2.1 Verify the prerequisites for the selected variables {#ind-6-2-1--Verify-the-prerequisites-for-the-selected-variables}  
 
+Two key points were checked for the values of the selected variables 
+from the table with raw data before proceeding 
+to create the table with the preprocessed data:  
 
+* [6.2.1.1 Verify the coercibility of the values for the selected variables
+](#ind-6-2-1-1--Verify-the-coercibility-for-the-values-at-the-selected-variables)  
+  * Checks if the format of the character string values 
+  of the selected variables from the table with the raw data 
+  are compatible with the (variable) type 
+  that each of them should be coerced to.  
+* [6.2.1.2 Verify the uniqueness of the key values
+](#ind-6-2-1-2--Verify-the-uniqueness-of-the-key-values)  
+  * Checked if the values of the variable *REFNUM* 
+  (when coerced to type 'integer')
+  that was intended to be used as the key 
+  of the table preprocessed data 
+  uniquely identifies each observation.  
 
 <br>  
 
@@ -1072,7 +1348,94 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 #### 6.2.1.1 Verify the coercibility of the values for the selected variables {#ind-6-2-1-1--Verify-the-coercibility-for-the-values-at-the-selected-variables}  
 
+The format of the character string values of the selected variables, 
+*REFNUM*, *BGN_DATE*, *EVTYPE*, *FATALITIES*, *INJURIES*, 
+*PROPDMG*, *PROPDMGEXP*, *CROPDMG* and *CROPDMGEXP*, 
+from the table with the raw data were checked in order to verify that 
+they were compatible with the new variable type 
+that each them should be coerced to, 
+so as not to lose any information without knowing it 
+(or in other words to avoid the side effect of automatic substitution by NAs, 
+of the values that were incompatible 
+with the new variable type that each of them should be coerced to).  
 
+The variables *EVTYPE*, *BGN_DATE*, *PROPDMGEXP* and *CROPDMGEXP* 
+were already in their appropriate type (which is 'character'),
+so no further adjustments were needed. 
+On the other hand the variables *REFNUM*, *FATALITIES* and *INJURIES* 
+had to be coerced from 'character' type to 'integer',
+while the type of the remaining two variables, 
+*PROPDMG* and *CROPDMG* had to change from 'character' to 'double'.  
+
+A validation was conducted to verify that:  
+  
+  1. the values of the variable *REFNUM* can be coerced to 'integer' type  
+  2. the values of the variable *FATALITIES* can be coerced to 'integer' type  
+  3. the values of the variable *INJURIES* can be coerced to 'integer' type  
+  4. the values of the variable *PROPDMG* can be coerced to 'double' type  
+  5. the values of the variable *CROPDMG* can be coerced to 'double' type  
+  
+```{r verify_the_coercibility_of_the_format_of_the_character_string_values_for_the_selected_variables}
+
+# Create a validator with the constrains needed to verify 
+# that the formats of the character string values 
+# at the selected variables from the table with the raw data 
+# are compatible with the variable types that they should be coerced to.
+V_____coercibible_format_of_the_character_string_values <- 
+  validator(
+    "REFNUM_value_is_coercible_to_integer" = 
+      ( grepl("^\\d{1,}\\.00$", REFNUM) ),
+    "FATALITIES_value_is_coercible_to_integer" = 
+      ( grepl("^\\d{1,}\\.00$", FATALITIES) ),
+    "INJURIES_value_is_coercible_to_integer" = 
+      ( grepl("^\\d{1,}\\.00$", INJURIES) ),
+    "PROPDMG_value_is_coercible_to_double" = 
+      ( grepl("^\\d{1,}\\.\\d{2}$", PROPDMG) ),
+    "CROPDMG_value_is_coercible_to_double" = 
+      ( grepl("^\\d{1,}\\.\\d{2}$", CROPDMG) )
+  )
+
+# Confront the table with the raw data with the validator 
+# which contains the constrains for the formats of the character string values 
+# at the selected variables from the table with the raw data.
+CF_____coercibible_format_of_the_character_string_values <- 
+  confront(
+    dat = raw_data,
+    V_____coercibible_format_of_the_character_string_values
+  )
+
+```
+
+The values of all selected variables 
+were found to be compatible with the new type 
+that each of them should be coerced to. 
+
+```{r create_a_kable_to_present_the_results_for_the_coercibility_of_the_format_of_the_character_string_values_for_the_selected_variables}
+
+# Create a kable to present the results validation 
+# for the format of the character string values 
+# at the selected variables from the table with the raw data.
+kable(
+  x = summary(
+    CF_____coercibible_format_of_the_character_string_values
+  )[, c("name", "items", "passes", "fails", "nNA", "error", "warning")],
+  caption = paste0(
+    "Table 6.2.1.1-1: ",
+    "The results of the validation ", 
+    "for the compatibility of the format of the character string values ", 
+    "at the selected variables from the table with raw data ",
+    "with the appropriate type that each of them should be coerced to, ",
+    "at the table of preprocessed data."
+  )
+) %>% 
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  )   
+
+
+```
 
 <br>  
 
@@ -1086,7 +1449,74 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 #### 6.2.1.2 Verify the uniqueness of the key values {#ind-6-2-1-2--Verify-the-uniqueness-of-the-key-values}  
 
+The variable *REFNUM*, coerced to its proper type (that is 'integer'),
+should and was expected to uniquely identify each observation, 
+making it an excellent choice 
+for the key of the table with the preprocessed data, 
+(as well as for the rest of the tables that were generated 
+at the following stages of the data processing pipeline).  
 
+Before proceeding to set the *REFNUM* as the key, 
+the claim that *it uniquely identifies each observations* 
+was checked to avoid unexpected surprises 
+that may jeopardize the reproducibility of the analysis.  
+
+```{r verify_the_uniqueness_of_values_for_the_key_variable}
+
+# Create a validator for the uniqueness of values at the variable REFNUM.
+V_____uniqueness_of_values_for_the_key_of_the_table <- validator(
+  "value_uniquely_identifies_the_observation" = (
+    # the values of the variable REFNUM will be first coerced 
+    # to their appropriate variable type, which is 'integer' 
+    # and then checked for uniqueness
+    as.integer(REFNUM) %in% 
+      names(table(as.integer(REFNUM)))[table(as.integer(REFNUM)) == 1]
+  )
+)
+
+# Confront the table with raw data with the validator 
+# for the uniqueness of values at REFNUM variable 
+CF_____uniqueness_of_values_for_the_key_of_the_table <- confront(
+  dat = raw_data,
+  V_____uniqueness_of_values_for_the_key_of_the_table
+)
+
+```
+
+All values of the variable *REFNUM* were found to be distinct,
+and consequently they uniquely identify each observation.  
+
+```{r create_a_kable_to_present_the_results_for_the_uniqueness_of_values_for_the_key_variable}
+
+# Create a kable to present the results from the validation 
+# for the uniqueness of each value at the variable REFNUM 
+# at the table with the raw data. 
+kable(
+  x = summary(CF_____uniqueness_of_values_for_the_key_of_the_table)[
+    , c("name", "items", "passes", "fails", "nNA", "error", "warning")
+    ], 
+  caption = paste0(
+    "Table 6.2.1.2-1: ",
+    "The results from the validation ",
+    "for the uniqueness of values from REFNUM variable ", 
+    "at the table with the raw data."
+  )
+) %>% 
+  kable_styling(
+    bootstrap_options = c(
+      "striped", "hover", "condensed", "responsive", "bordered"
+    ), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  ) %>% 
+  footnote(
+    general = paste0(
+      "The values at REFNUM variable were coerced to 'integer' type ", "\n",
+      "before checking if they uniquely identify each observation."
+    )
+  )
+
+```
 
 <br>  
 
@@ -1103,7 +1533,56 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ### 6.2.2 Create the table with the preprocessed data {#ind-6-2-2--Create-the-table-with-the-preprocessed-data}  
 
+Having identify the variables from the table with the raw data 
+(*REFNUM*, *BGN_DATE*, *EVTYPE*, *FATALITIES*, *INJURIES*, 
+*PROPDMG*, *PROPDMGEXP*, *CROPDMG* and *CROPDMGEXP*) 
+that were required to proceed with the analysis, 
+and [verified that they satisfied the necessary prerequisites
+](#ind-6-2-1--Verify-the-prerequisites-for-the-selected-variables), 
+the table with preprocessed data was created,
+by selecting those 9 variables, 
+coercing them to their appropriate type:  
 
+1. *REFNUM* was selected and coerced from 'character' type to 'integer'  
+2. *BGN_DATE* was selected 
+(no coercion happened as it was already of the proper type, 'character')  
+3. *EVTYPE* was selected 
+(no coercion happened as it was already of the proper type, 'character')  
+4. *FATALITIES* was selected and coerced from 'character' type to 'integer'  
+5. *INJURIES* was selected and coerced from 'character' type to 'integer'  
+6. *PROPDMG* was selected and coerced from 'character' type to 'double'  
+7. *PROPDMGEXP*  was selected 
+(no coercion happened as it was already of the proper type, 'character')  
+8. *CROPDMG* was selected and coerced from 'character' type to 'double'  
+9. *CROPDMGEXP*  was selected 
+(no coercion happened as it was already of the proper type, 'character')  
+
+and finally setting the variable *REFNUM* as the key of the table.  
+
+```{r create_the_table_with_the_preprocessed_data}
+
+# Create the table with the preprocessed data 
+# with the selected variables from the table with the raw data, 
+# coerced to their appropriate type.
+preprocessed_data <- raw_data[
+  ,
+  list(
+    "REFNUM" = as.integer(REFNUM),
+    "BGN_DATE" = BGN_DATE,
+    "EVTYPE" = EVTYPE,
+    "FATALITIES" = as.integer(FATALITIES),
+    "INJURIES" = as.integer(INJURIES),
+    "PROPDMG" = as.double(PROPDMG),
+    "PROPDMGEXP" = PROPDMGEXP,
+    "CROPDMG" = as.double(CROPDMG),
+    "CROPDMGEXP" = CROPDMGEXP
+  )
+  ]
+
+# Set REFNUM as the key of the table with the preprocessed data
+setkey(preprocessed_data, REFNUM)
+
+```
 
 <br>  
 
@@ -1118,6 +1597,86 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ### 6.2.3 Conduct post validation for the table with the preprocessed data {#ind-6-2-3--Conduct-post-validation-for-the-table-with-the-preprocessed-data}  
 
+The table with the preprocessed data was post validated to ensure that:
+
+  1. all and only, the variables required for the analysis were included  
+  2. all the observations from table with raw data were transfered  
+  3. each of the selected variables was coerced to its appropriate type  
+  4. no missing values were introduced as a result of the coercion  
+  5. *REFNUM* was set as the key of the table  
+  
+```{r conduct_post_validation_for_the_table_with_the_preprocessed_data}
+
+# Create a vector with the names of the expected variables 
+# at the table with the preprocessed data.
+expected_variables_at_the_table_with_preprocessed_data <- c(
+  "REFNUM", "BGN_DATE", "EVTYPE", "FATALITIES", "INJURIES", 
+  "PROPDMG","PROPDMGEXP","CROPDMG","CROPDMGEXP"
+)
+
+# Create a validator for the post validation of the preprocessed data.
+V_____post_validation_of_table_with_preprocessed_data <- validator(
+  # check if the table contains all and only the required variables 
+  "all_and_only_the_required_variables_are_included" = 
+    ( names(.) == expected_variables_at_the_table_with_preprocessed_data ),
+  # check if all the observations were included.
+  "all_observations_were_transfered" = nrow(.) == nrow(raw_data),
+  # checks if each variable is coerced to its appropriate type
+  "REFNUM_is_integer" = 
+    ( paste(class(.[["REFNUM"]]), collapse = ",") == "integer" ),
+  "BGN_DATE_is_character" = 
+    ( paste(class(.[["BGN_DATE"]]), collapse = ",") == "character" ),
+  "EVTYPE_is_character" = 
+    ( paste(class(.[["EVTYPE"]]), collapse = ",") == "character" ),
+  "FATALITIES_is_integer" = 
+    ( paste(class(.[["FATALITIES"]]), collapse = ",") == "integer" ),
+  "INJURIES_is_integer" = 
+    ( paste(class(.[["INJURIES"]]), collapse = ",") == "integer" ),
+  "PROPDMG_is_numeric" = 
+    ( paste(class(.[["PROPDMG"]]), collapse = ",") == "numeric" ),
+  "PROPDMGEXP_is_character" = 
+    ( paste(class(.[["PROPDMGEXP"]]), collapse = ",") == "character" ),
+  "CROPDMG_is_numeric" = 
+    ( paste(class(.[["CROPDMG"]]), collapse = ",") == "numeric" ),
+  "CROPDMGEXP_is_character" = 
+    ( paste(class(.[["CROPDMGEXP"]]), collapse = ",") == "character" ),
+  # check that no missing values were introduced as a result of coercion
+  "no_missing_values_introduced" = ( mean(complete.cases(.)) == 1 ),
+  # checks if the REFNUM is set as the key of the table
+  "REFNUM_is_the_key_of_the_table" = ( attributes(.)[["sorted"]] == "REFNUM" )
+)
+
+# Confront the table with the preprocessed data with the validator 
+# which contains the constrains for the validity of preprocessed data. 
+CF_____post_validation_of_table_with_preprocessed_data <- confront(
+  dat = preprocessed_data,
+  V_____post_validation_of_table_with_preprocessed_data
+)
+
+```
+
+The table with the preprocessed data was valid.
+
+```{r create_a_kable_with_the_results_from_post_validation_of_the_table_with_the_preprocessed_data}
+
+# Create a kable was to present the results of post validation 
+# for table with the preprocessed data. 
+kable(
+  x = summary(CF_____post_validation_of_table_with_preprocessed_data)[
+    , c("name", "items", "passes", "fails", "nNA", "error", "warning")
+    ], 
+  caption = paste0(
+    "Table 6.2.3-1: ",
+    "The results of post validation for the table with the preprocessed data."
+  )
+) %>% 
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  )
+
+```
 
 
 <br>  
@@ -1133,7 +1692,17 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ### 6.2.4 Overview of the table with the preprocessed data {#ind-6-2-4--Overview-of-the-table-with-the-preprocessed-data}  
 
+The table with the preprocessed data, 
+contained 9 variables and 902297 observations.  
 
+The variable *REFNUM* was set as the key of the table.  
+
+```{r print_the_structure_of_the_table_with_the_preprocessed_data}
+
+# Print the structure of the table with the preprocessed data.
+str(preprocessed_data)
+
+```
 
 <br>  
 
@@ -1150,7 +1719,52 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ## 6.3 Extract The Target Data Subset {#ind-6-3--Extract-The-Target-Data-Subset}  
 
+<font size="3"><u><strong>Summary</strong></u></font>  
 
+From all available observations 
+that the table with the preprocessed data contains, 
+only the subset of the weather phenomena 
+that begun at 2001 or later 
+and resulted in non-zero harm either to population health 
+(caused fatalities or injuries) 
+or to economy (caused property damage or crop damage) 
+will be used for this analysis (for the reasons that were discussed in detail 
+at the section [4.2 Points Of Interest](#ind-4-2--Points-Of-Interest) 
+about the *Storm Events Dataset*).  
+
+The consistency of the format of dates at the *BGN_DATE* variable 
+(that indicates when each weather phenomenon begun)
+was checked, as it was intended to be used for the identification,
+the eligible observations for the target data subset were identified, 
+and got extracted to create the table with the target data subset.  
+
+Finally post validation was conducted 
+and some facts about the table with the target data subset were highlighted.  
+
+<font size="3"><u><strong>Steps</strong></u></font>  
+
+* [6.3.1 Identify the target subset of observations
+](#ind-6-3-1--Identify-the-target-subset-of-observations)  
+  * Verifies prerequisites and identifies the eligible observations 
+  for the table with the target data subset:  
+    * [6.3.1.1 Verify the consistency of date format
+    ](#ind-6-3-1-1--Verify-the-consistency-of-date-format)  
+      * Verifies that the character string format of the values 
+      at *BGN_DATE* variable are consistent.  
+    * [6.3.1.2 Identify the eligible observations
+    ](#ind-6-3-1-2--Identify-the-eligible-observations)  
+      * Identifies the eligible observations 
+      for the table with the target data subset by their key value.  
+* [6.3.2 Create the table with the target data subset
+](#ind-6-3-2--Create-the-table-with-the-target-data-subset)  
+  * Creates the table with the target data subset 
+  by identifying and extracting the eligible observations by their key values.  
+* [6.3.3 Conduct post validation for the table with the target data subset
+](#ind-6-3-3--Conduct-post-validation-for-the-table-with-the-target-data-subset)  
+  * Ensures that the target data was extracted correctly.  
+* [6.3.4 Overview of the table with the target data subset
+](#ind-6-3-4--Overview-of-the-table-with-the-target-data-subset)  
+  * Presents some basic facts about the table with the target data subset.  
 
 <br>  
 
@@ -1162,10 +1776,252 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ### 6.3.1 Identify the target subset of observations {#ind-6-3-1--Identify-the-target-subset-of-observations}  
 
+Out of all available observations it was decided to use for the analysis 
+the subset that includes only the weather phenomena 
+that happened from 2001 and later (due to the implications of 
+[changes in the composition of weather event types
+](#ind-4-2-1--Changes-in-the-composition-of-weather-event-types)) 
+and resulted in non-zero harm either to population health 
+(caused fatalities or injuries) or to economy 
+(caused property damage or crop damage) (due to the implications of the 
+[eligibility criteria for inclusion of weather events in the dataset
+](#ind-4-2-2--Eligibility-criteria-for-inclusion-of-weather-events-in-the-dataset)).  
 
+The format of the date values at *BGN_DATE* variable 
+from the table with preprocessed data 
+had to be checked to see if it is consistent across all observations, 
+before it was used to form the first of the two constrains. 
+
+The eligible observations were finally identified by their key value 
+(denoted by the variable *REFNUM*).  
+
+* [6.3.1.1 Verify the consistency of date format
+](#ind-6-3-1-1--Verify-the-consistency-of-date-format`)  
+  * Verifies that the character string format of the values 
+    at *BGN_DATE* variable are consistent. 
+* [6.3.1.2 Identify the eligible observations
+](#ind-6-3-1-2--Identify-the-eligible-observations)  
+  * Identifies by their key value 
+  the observations at the table with preprocessed data 
+  that begun from 2001 or later and resulted in non-zero harm 
+  either to population health (caused fatalities or injuries) 
+  or to economy (caused property damage or crop damage)
 
 <br>  
 
+<font size="1">[back to start of this subsection](#ind-6-3-1--Identify-the-target-subset-of-observations)</font>  
+<font size="1">[back to start of this section](#ind-6-3--Extract-The-Target-Data-Subset)</font>  
+<font size="1">[back to start of this chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>  
+
+<br>  
+
+#### 6.3.1.1 Verify the consistency of date format {#ind-6-3-1-1--Verify-the-consistency-of-date-format}  
+
+The year in the value of date at the variable *BGN_DATE* 
+was intended to be used as one of the two criteria to 
+identify the eligible observations for the target data subset at the 
+[next subsubsection](#ind-6-3-1-2--Identify-the-eligible-observations).  
+
+That's why it is crucial at this point, 
+to verify that the values of date are in the expected format, 
+which as indicated by the [overview of the table with preprocessed data
+](#ind-6-2-4--Overview-of-the-table-with-the-preprocessed-data) 
+(as well as some interactive examination) seems to be:  
+
+* **MM/DD/YYYY 0:00:00**
+  * *MM* stands for 2 characters for the month  
+  * *DD* stands for 2 characters for the day  
+  * *YYYY* stands for 4 characters for the year  
+  * the value of year is followed by a space  
+  * *0:00:00* is a dummy part that stands for the time  
+
+```{r verify_the_consistency_of_format_for_the_values_of_begin_date}
+
+# Create a validator for the format 
+# of the character string values of the dates.
+V____expected_character_string_format_for_begin_date <- validator(
+  "expected_character_string_format_of_date" = 
+    grepl("^\\d{1,2}/\\d{1,2}/\\d{4} 0:00:00$", BGN_DATE)
+)
+
+# Confront the table with the preprocessed data with the validator 
+# for the format of the character string values of dates.
+CF____expected_character_string_format_for_begin_date <- confront(
+  dat = preprocessed_data,
+  V____expected_character_string_format_for_begin_date
+)
+
+```
+
+Indeed all values for dates were found to be in the expected format.  
+
+```{r create_a_kable_to_present_the_results_for_the_consistency_of_format_for_the_values_of_begin_date}
+
+# Create a kable to present the results of the confrontation 
+# for the format of the character string values of dates.
+kable(
+  x = summary(CF____expected_character_string_format_for_begin_date)[
+    , c("name", "items", "passes", "fails", "nNA", "error", "warning")
+    ],
+  caption = paste0(
+    "Table 6.3.1.1-1: ",
+    "The results of the validation ",
+    "for the format of the character sting values of dates ", 
+    "from the variable BGN_DATE at the table with preprocessed data." 
+  )
+) %>% 
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  )
+
+```
+
+<br>  
+
+<font size="1">[back to start of this subsubsection](#ind-6-3-1-1--Verify-the-consistency-of-date-format)</font>  
+<font size="1">[back to start of this subsection](#ind-6-3-1--Identify-the-target-subset-of-observations)</font>  
+<font size="1">[back to start of this section](#ind-6-3--Extract-The-Target-Data-Subset)</font>  
+<font size="1">[back to start of this chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>  
+
+<br>  
+
+#### 6.3.1.2 Identify the eligible observations {#ind-6-3-1-2--Identify-the-eligible-observations}
+
+According to the discussion for the two 
+[points of interest for the Storm Events Dataset](#ind-4-2--Points-Of-Interest) 
+only a subset of observations will be used for this analysis. 
+This target data subset includes only the observations which refer to 
+weather phenomena that simultaneously satisfy the following two criteria:  
+
+* **begun at Jan 2011 and later** due to the implications of 
+  [changes in the composition of weather event types
+  ](#ind-4-2-1--Changes-in-the-composition-of-weather-event-types)  
+  * the year (that was extracted from the date value of the *BGN_DATE* variable  
+  coerced to integer) must be found equal or larger than 2001  
+* **resulted in non-zero harm either to population health (caused fatalities or injuries) 
+or to economy (caused property damage or crop damage)** due to the implications of the 
+[eligibility criteria for inclusion of weather events in the dataset
+](#ind-4-2-2--Eligibility-criteria-for-inclusion-of-weather-events-in-the-dataset)
+  * the value of at least one of the variables, 
+  *FATALITIES*, *INJURIES*, *PROPDMG* and *CROPDMG* must be positive  
+
+```{r identify_the_target_data_subset_of_observations}
+
+# Create a validator with the eligibility criteria 
+# for the inclusion of observations at the target data subset. 
+V____criteria_for_target_data_subset_of_observations <- validator(
+  "begin_date_from_2001_and_later" = (
+    as.integer(
+      str_extract(
+        string = BGN_DATE,
+        pattern = "(?<=^\\d{1,2}/\\d{1,2}/)\\d{4}"
+      )
+    ) %in%
+      c(2001:2011)
+  ),
+  "non_zero_damage_to_population_health_or_economy" = (
+    (as.integer(FATALITIES) > 0) |
+      (as.integer(INJURIES) > 0) |
+      (as.double(PROPDMG) > 0) |
+      (as.double(CROPDMG) > 0)
+  )
+)
+
+# Confront the table with the preprocessed data with the validator 
+# with the eligibility criteria for the inclusion of observations 
+# at the target data subset.
+CF____criteria_for_target_data_subset_of_observations <- confront(
+  dat = preprocessed_data,
+  V____criteria_for_target_data_subset_of_observations
+)
+
+```
+
+Out of 902297 observation from the table with preprocessed data, 
+there were found:  
+
+* 488692 observations which refer to weather phenomena 
+that begun at 2001 or later  
+* 254633 observations which refer to weather phenomena that resulted in 
+non-zero harm either to population health (caused fatalities or injuries) 
+or to economy (caused property damage or crop damage)  
+
+```{r create_a_kable_to_present_the_results_for_the_identification_of_observations_for_the_target_data_subset}
+
+# Create a kable to present the results of the test 
+# for the inclusion of observations at the target data subset.
+kable( 
+  x = summary(CF____criteria_for_target_data_subset_of_observations)[
+    , c("name", "items", "passes", "fails", "nNA", "error", "warning")
+    ],
+  caption = paste0(
+    "Table 6.3.1.2-1: ",
+    "The results for the eligibility criteria for inclusion of observations ",
+    "from the table with the preprocessed data in the target data subset."
+  )
+) %>% 
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  )
+
+```
+
+The observations that satisfied simultaneously the two criteria
+which determine which observation would be included in the target data subset 
+were identified by their key value (denoted by the variable *REFNUM*).
+
+```{r identify_the_target_data_subset_of_observations_by_their_key_value}
+
+# Identify the observations eligible to be included in the target data subset 
+# by their key value denoted by the variable REFNUM.
+criterion_by_REFNUM_____eligible_observations_for_the_target_data_subset <- with(
+  data = CF____criteria_for_target_data_subset_of_observations[["._value"]],
+  expr = preprocessed_data[
+    begin_date_from_2001_and_later &
+      non_zero_damage_to_population_health_or_economy,
+    REFNUM
+    ]
+)
+
+```
+
+Exactly 144826 observations 
+were found eligible to be included in the table with the target data subset.
+
+```{r create_a_kable_to_present_the_number_of_eligible_observations_for_the_target_data_subset}
+
+# Create a table that presents the number of observations 
+# that were found eligible to be included in the target data subset.
+kable(
+  x = data.table(
+    "Number of Eligible Observations for the Target Data Subset" = 
+      length(
+        criterion_by_REFNUM_____eligible_observations_for_the_target_data_subset
+      )
+  ),
+  caption = paste0(
+    "Table 6.3.1.2-2: ",
+    "The number of observations that were found eligible ", "\n",
+    "to get included in the table with the target data subset."
+  )
+) %>% 
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  )
+
+```
+
+<br>  
+
+<font size="1">[back to start of this subsubsection](#ind-6-3-1-2--Identify-the-eligible-observations)</font>  
 <font size="1">[back to start of this subsection](#ind-6-3-1--Identify-the-target-subset-of-observations)</font>  
 <font size="1">[back to start of this section](#ind-6-3--Extract-The-Target-Data-Subset)</font>  
 <font size="1">[back to start of this chapter](#ind-6--DATA-PROCESSING)</font>  
@@ -1177,7 +2033,31 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ### 6.3.2 Create the table with the target data subset {#ind-6-3-2--Create-the-table-with-the-target-data-subset}  
 
+From the table with the preprocessed data, 
+the table with the target data subset was created 
+by including only those observation that simultaneous satisfied two criteria:   
 
+* begun at Jan 2011 and later (due to the implications of 
+  [changes in the composition of weather event types
+  ](#ind-4-2-1--Changes-in-the-composition-of-weather-event-types))  
+* resulted in non-zero harm either to population health (caused fatalities or injuries) 
+or to economy (caused property damage or crop damage) (due to the implications of the 
+[eligibility criteria for inclusion of weather events in the dataset
+](#ind-4-2-2--Eligibility-criteria-for-inclusion-of-weather-events-in-the-dataset))  
+
+The observations were identified and extracted by their key value 
+(denoted by the variable *REFNUM*).  
+
+```{r create_the_table_with_the_target_data_subset}
+
+# Create the table with the target data subset 
+# by including only the observations that were found eligible 
+# from those included at the table with the preprocessed data.
+target_data_subset <- preprocessed_data[
+  criterion_by_REFNUM_____eligible_observations_for_the_target_data_subset
+  ]
+
+```
 
 <br>  
 
@@ -1192,7 +2072,62 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ### 6.3.3 Conduct post validation for the table with the target data subset {#ind-6-3-3--Conduct-post-validation-for-the-table-with-the-target-data-subset}  
 
+Post validation was conducted to verify that all observations 
+contained at the table with the target data subset were eligible.  
 
+The same constrains that were used to 
+[identify the eligible observations from the table with preprocessed data
+](#ind-6-3-1-2--Identify-the-eligible-observations) 
+were used to verify the eligibility of observations 
+at the table with the target data subset.  
+
+```{r conduct_post_validation_for_the_table_with_the_target_data_subset}
+
+# The table with the target data subset was post validated 
+# to verify that it contained only eligible observations 
+# from the table with the preprocessed data.
+CF____post_validation_of_target_data_subset_table <- confront(
+  dat = target_data_subset,
+  # The validator that was created and used to identify 
+  # the eligible observations for the target data subset 
+  # was used to ensure the validity of the table with the target data subset.
+  V____criteria_for_target_data_subset_of_observations
+)
+
+```
+
+All observations contained at the table with the target data subset 
+were eligible.  
+
+```{r create_a_kable_to_present_the_results_from_post_validation_of_the_table_with_the_target_data_subset}
+
+# Create a kable to present the results of post validation 
+# for the table with the target data subset.
+kable(
+  x = summary(CF____post_validation_of_target_data_subset_table)[
+    , c("name", "items", "passes", "fails", "nNA", "error", "warning")
+    ],
+  caption = paste0(
+    "Table 6.3.3-1: ",
+    "The results of the post validation ", 
+    "from the table with the target data subset."
+  )
+) %>% 
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  ) %>% 
+  footnote(
+    general = paste0(
+      "The same constrains that were used to identify the eligible observations ", 
+      "from the table with the preprocessed data, ", "\n",
+      "were used for the post validation of the observations ", 
+      "at the table with the target data subset."
+    )
+  )
+
+```
 
 <br>  
 
@@ -1207,7 +2142,52 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ### 6.3.4 Overview of the table with the target data subset {#ind-6-3-4--Overview-of-the-table-with-the-target-data-subset}  
 
+The table with the target data subset contained 9 variables
+and 144826 observations.  
 
+The variable *REFNUM* was set as the key of the table.  
+
+```{r print_the_structure_of_the_table_with_the_target_data_subset}
+
+# Print the structure of the table with target data subset.
+str(target_data_subset) 
+
+```
+
+The variables *EVTYPE*, *PROPDMGEXP* and *CROPDMGEXP* contained 
+a suspiciously large number of distinct values.
+
+```{r create_a_kable_to_present_facts_for_the_table_with_the_target_data_subset} 
+
+# Create a kable to highlight some facts about the target data subset table.
+kable(
+  x = data.table(
+    "Variable Name" = names(target_data_subset),
+    "Number of Distinct Values" = vapply(
+      X = target_data_subset, 
+      FUN = function(x) length(unique(x[!is.na(x)])), 
+      FUN.VALUE = integer(1))
+  ),
+  caption = paste0(
+    "Table 6.3.4: ",
+    "Facts about the variables at the table with the target data subset."
+  )
+) %>% 
+  kable_styling(
+    bootstrap_options = c(
+      "striped", "hover", "condensed", "responsive", "bordered"
+    ), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  ) %>% 
+  footnote(
+    general = paste0(
+      "The table with the target data subset contains 9 variables ", "\n",
+      "and 144826 observations without any missing value (coded as NA)."
+    )
+  )
+
+```
 
 <br>  
 
@@ -1224,7 +2204,49 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ## 6.4 Conduct In-Record Data Validation {#ind-6-4--Conduct-In-Record-Data-Validation}  
 
+<font size="3"><u><strong>Summary</strong></u></font>  
 
+Through the in-record data validation stage
+the values of each variable from the table with the target data subset 
+were examined independently of the corresponding values at other variables, 
+in order to identify invalid entries 
+which were then substituted by missing values (coded properly as NA)
+to create the table with the in-record validated data.  
+
+Finally post validation was conducted 
+and some facts about the table with the in-record validated data 
+were highlighted.  
+
+<font size="3"><u><strong>Steps</strong></u></font>  
+
+* [6.4.1 Introduce information from the Strom Data Documentation
+](#ind-6-4-1--Introduce-information-from-the-Strom-Data-Documentation)  
+  * Creates constants with information about the permitted values 
+  of some variables that will be used to form validity contains.  
+    * [6.4.1.1 Valid values for the EVTYPE variable
+    ](#ind-6-4-1-1--Valid-values-for-the-EVTYPE-variable)  
+      * The valid values for EVTYPE variable were introduced.  
+    * [6.4.1.2 Valid values for the PROPDMGEXP variable
+    ](#ind-6-4-1-2--Valid-values-for-the-PROPDMGEX-variable)  
+      * The valid values for PROPDMGEXP variable were introduced.  
+    * [6.4.1.3 Valid values for the CROPDMGEXP variable
+    ](#ind-6-4-1-3--Valid-values-for-the-CROPDMGEXP-variable)  
+      * The valid values for PROPDMGEXP variable were introduced.  
+* [6.4.2 Conduct in-record data validation for each variable
+](#ind-6-4-2--Conduct-in-record-data-validation-for-each-variable)  
+  * Identifies the invalid values for each variable.  
+* [6.4.3 Create the table with the in-record validated data
+](#ind-6-4-3--Create-the-table-with-the-in-record-validated-data)  
+  * Creates the table with the in-record validated data 
+  by substituting all invalid values that were identified as invalid, 
+  with NAs.  
+* [6.4.4 Conduct post validation for the table with the in-record validated data
+](#ind-6-4-4--Conduct-post-validation-for-the-table-with-the-in-record-validated-data)  
+  * Ensures that all values of each variable 
+  at the table with the in-record validated data are valid.  
+* [6.4.5 Overview of the table with the in-record validated data
+](#ind-6-4-5--Overview-of-the-table-with-the-in-record-validated-data)  
+  * Presents some basic facts about the table with the in-record validated data.  
 
 <br>  
 
@@ -1236,10 +2258,220 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ### 6.4.1 Introduce information from the Strom Data Documentation {#ind-6-4-1--Introduce-information-from-the-Strom-Data-Documentation}  
 
+Some constants with the valid values 
+for the variables *EVTYPE*, *PROPDMGEXP* and *CROPDMGEXP* 
+(as stated at the [Storm Data Documentation
+](https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2Fpd01016005curr.pdf))
+were created and used in order to form their respective constrains.
 
+* [6.4.1.1 Valid values for the EVTYPE variable](#ind-6-4-1-1--Valid-values-for-the-EVTYPE-variable)  
+  * The 48 valid values for EVTYPE variable were introduced.  
+* [6.4.1.2 Valid values for the PROPDMGEXP variable](#ind-6-4-1-2--Valid-values-for-the-PROPDMGEXP-variable)  
+  * The 3 valid values for PROPDMGEXP variable were introduced.  
+* [6.4.1.3 Valid values for the CROPDMGEXP variable](#ind-6-4-1-3--Valid-values-for-the-CROPDMGEXP)-variable)  
+  * The 3 valid values for CROPDMGEXP variable were introduced.  
+ 
+<br>  
+
+<font size="1">[back to start of this subsection](#ind-6-4-1--Introduce-information-from-the-Strom-Data-Documentation)</font>  
+<font size="1">[back to start of this section](#ind-6-4--Conduct-In-Record-Data-Validation)</font>  
+<font size="1">[back to start of this chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>  
 
 <br>  
 
+#### 6.4.1.1 Valid values for the EVTYPE variable {#ind-6-4-1-1--Valid-values-for-the-EVTYPE-variable}  
+
+The entries of the variable *EVTYPE* according to the 
+[NATIONAL WEATHER SERVICE INSTRUCTION 10-1605, AUGUST 17, 2007
+](https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2Fpd01016005curr.pdf)
+(at chapter 7), must take one of the 48 character values 
+that correspond to the defined weather event types:  
+
+<div class = "row">
+  
+ <div class = "col-md-4">
+  1. ASTRONOMICAL LOW TIDE  
+  2. AVALANCHE  
+  3. BLIZZARD  
+  4. COASTAL FLOOD  
+  5. COLD/WIND CHILL  
+  6. DEBRIS FLOW  
+  7. DENSE FOG  
+  8. DENSE SMOKE  
+  9. DROUGHT  
+  10. DUST DEVIL  
+  11. DUST STORM  
+  12. EXCESSIVE HEAT  
+  13. EXTREME COLD/WIND CHILL  
+  14. FLASH FLOOD  
+  15. FLOOD  
+  16. FROST/FREEZE  
+ </div>
+  
+ <div class = "col-md-4">
+  17. FUNNEL CLOUD  
+  18. FREEZING FOG  
+  19. HAIL  
+  20. HEAT  
+  21. HEAVY RAIN  
+  22. HEAVY SNOW  
+  23. HIGH SURF  
+  24. HIGH WIND  
+  25. HURRICANE/TYPHOON  
+  26. ICE STORM  
+  27. LAKE-EFFECT SNOW  
+  28. LAKESHORE FLOOD  
+  29. LIGHTNING  
+  30. MARINE HAIL  
+  31. MARINE HIGH WIND  
+  32. MARINE STRONG WIND  
+ </div>
+
+ <div class = "col-md-4">
+  33. MARINE THUNDERSTORM WIND  
+  34. RIP CURRENT  
+  35. SEICHE  
+  36. SLEET  
+  37. STORM SURGE/TIDE  
+  38. STRONG WIND  
+  39. THUNDERSTORM WIND  
+  40. TORNADO  
+  41. TROPICAL DEPRESSION  
+  42. TROPICAL STORM  
+  43. TSUNAMI  
+  44. VOLCANIC ASH  
+  45. WATERSPOUT  
+  46. WILDFIRE  
+  47. WINTER STORM  
+  48. WINTER WEATHER  
+ </div>
+
+</div>
+
+```{r supply_information_for_the_defined_weather_event_type}
+
+# Create a vector that includes the 48 values of the defined weather event types.
+defined_event_types <- c(
+  "ASTRONOMICAL LOW TIDE", 
+  "AVALANCHE", 
+  "BLIZZARD", 
+  "COASTAL FLOOD", 
+  "COLD/WIND CHILL", 
+  "DEBRIS FLOW", 
+  "DENSE FOG", 
+  "DENSE SMOKE", 
+  "DROUGHT", 
+  "DUST DEVIL", 
+  "DUST STORM",
+  "EXCESSIVE HEAT",
+  "EXTREME COLD/WIND CHILL", 
+  "FLASH FLOOD", 
+  "FLOOD", 
+  "FROST/FREEZE", 
+  "FUNNEL CLOUD", 
+  "FREEZING FOG", 
+  "HAIL", 
+  "HEAT",
+  "HEAVY RAIN", 
+  "HEAVY SNOW", 
+  "HIGH SURF", 
+  "HIGH WIND", 
+  "HURRICANE/TYPHOON", 
+  "ICE STORM", 
+  "LAKE-EFFECT SNOW", 
+  "LAKESHORE FLOOD", 
+  "LIGHTNING",
+  "MARINE HAIL", 
+  "MARINE HIGH WIND",
+  "MARINE STRONG WIND", 
+  "MARINE THUNDERSTORM WIND", 
+  "RIP CURRENT", 
+  "SEICHE", 
+  "SLEET", 
+  "STORM SURGE/TIDE",
+  "STRONG WIND", 
+  "THUNDERSTORM WIND",
+  "TORNADO", 
+  "TROPICAL DEPRESSION", 
+  "TROPICAL STORM", 
+  "TSUNAMI", 
+  "VOLCANIC ASH", 
+  "WATERSPOUT", 
+  "WILDFIRE",
+  "WINTER STORM", 
+  "WINTER WEATHER"
+)
+
+```
+
+<br>  
+
+<font size="1">[back to start of this subsubsection](#ind-6-4-1-1--Valid-values-for-the-EVTYPE-variable)</font>  
+<font size="1">[back to start of this subsection](#ind-6-4-1--Introduce-information-from-the-Strom-Data-Documentation)</font>  
+<font size="1">[back to start of this section](#ind-6-4--Conduct-In-Record-Data-Validation)</font>  
+<font size="1">[back to start of this chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>  
+
+<br>  
+
+#### 6.4.1.2 Valid values for the PROPDMGEXP variable {#ind-6-4-1-2--Valid-values-for-the-PROPDMGEX-variable} 
+
+The entries of the variable *PROPDMGEXP* 
+that indicates whether the magnitude for the economic damage,
+(denoted by the *PROPDMG* variable),
+refers to thousands, millions or billions of dollars, 
+according to the information provided by 
+[NATIONAL WEATHER SERVICE INSTRUCTION 10-1605, AUGUST 17, 2007
+](https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2Fpd01016005curr.pdf)
+(at chapter 2.7), must take one of the following 3 character values :  
+
+  1. **K** which corresponds to thousands of dollars  
+  2. **M** which corresponds to millions of dollars  
+  3. **B** which corresponds to billions of dollars  
+
+```{r supply_information_for_the_defined_property_damage_exponent}
+
+# Create a vector that includes the defined values for the variable PROPDGMEXP.
+defined_property_damage_exponents <- c("K", "M", "B")
+
+```
+
+<br>  
+
+<font size="1">[back to start of this subsubsection](#ind-6-4-1-2--Valid-values-for-the-EVTYPE-variable)</font>  
+<font size="1">[back to start of this subsection](#ind-6-4-1--Introduce-information-from-the-Strom-Data-Documentation)</font>  
+<font size="1">[back to start of this section](#ind-6-4--Conduct-In-Record-Data-Validation)</font>  
+<font size="1">[back to start of this chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>  
+
+<br>  
+
+#### 6.4.1.3 Valid values for the CROPDMGEXP variable {#ind-6-4-1-3--Valid-values-for-the-PROPDMGEXP-variable} 
+
+The entries of the variable *CROPDMGEXP* 
+that indicates whether the magnitude for the economic damage,
+(denoted by the *CROPDMG* variable),
+refers to thousands, millions or billions of dollars, 
+according to the information provided by 
+[NATIONAL WEATHER SERVICE INSTRUCTION 10-1605, AUGUST 17, 2007
+](https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2Fpd01016005curr.pdf)
+(at chapter 2.7), must take one of the following 3 character values :  
+
+  1. **K** which corresponds to thousands of dollars  
+  2. **M** which corresponds to millions of dollars  
+  3. **B** which corresponds to billions of dollars  
+
+```{r supply_information_for_the_defined_crop_damage_exponent} 
+
+# Create a vector that includes the defined values for the variable CROPDGMEXP.
+defined_crop_damage_exponents <- c("K", "M", "B")
+
+```
+
+<br>  
+
+<font size="1">[back to start of this subsubsection](#ind-6-4-1-3--Valid-values-for-the-CROPDMGEXP-variable)</font>  
 <font size="1">[back to start of this subsection](#ind-6-4-1--Introduce-information-from-the-Strom-Data-Documentation)</font>  
 <font size="1">[back to start of this section](#ind-6-4--Conduct-In-Record-Data-Validation)</font>  
 <font size="1">[back to start of this chapter](#ind-6--DATA-PROCESSING)</font>  
@@ -1251,7 +2483,114 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ### 6.4.2 Conduct in-record data validation for each variable {#ind-6-4-2--Conduct-in-record-data-validation-for-each-variable}  
 
+To create the constrains for the in-record validation for each variable 
+from the table with the target data subset, some 'common world knowledge' 
+combined with information provided by the *Storm Data Documentation* 
+about the [valid values of the available variables
+](#ind-6-4-1--Introduce-information-from-the-Strom-Data-Documentation) 
+were used.  
 
+Specifically:  
+
+1. The *REFNUM* variable's values must be unique for each observations.  
+2. the *BGN_DATE* variable's value must contain a year part that is from 2001 up to 2011
+3. The *EVTYPE* variable's values must be one of the 
+[48 defined events types](#ind-6-4-1-1--Valid-values-for-the-EVTYPE-variable).  
+4. The *FATALITIES* variable's values must be non-negative.  
+5. The *INJURIES* variable's values must be non-negative. 
+6. The *PROPDMG* variable's values must be non-negative.  
+7. The *PROPDMGEXP* variable's values must be *K*, *M* or *B*.  
+8. The *CROPDMG* variable's values must be non negative.  
+9. The *CROPDMGEXP* variable's values must be *K*, *M* or *B*.
+
+Although unnecessary to test the constrains for all variables,
+that were included in the table with the target data subset 
+(the uniqueness of the values in key variable *REFNUM*,
+the fact the year indicated in the *BGN_DATE* variable was from 2001 to 2011 
+as well as the fact that the values of the variables 
+*FATALITIES*, *INJURIES*, *CROPDMG*, *PROPDMG* were non-negative), 
+because some of them had been verified 
+in previous stages of the data processing procedure,
+such tests were included in order to provided a detailed and complete 
+overview of all the in-record constrains for the entries  
+of each variable at the validated data table.  
+
+Actually only the variables *EVTYPE*, *PROPDMGEXP* and *CROPDMGEXP* 
+needed to be validated in this stage, 
+as these were the ones that haven't been checked properly yet.  
+
+```{r conduct_in_record_validation_for_the_variables_at_the_table_with_the_target_data_subset}
+
+# Create a validator with constrains for the in-record validation 
+# for the values of each variable.
+V____constrains_for_the_in_record_data_validation <- validator(
+  "REFNUM" = ( REFNUM %in% names(table(REFNUM))[table(REFNUM) == 1] ),
+  "BGN_DATE" = ( 
+    as.integer(
+      str_extract(BGN_DATE, "(?<=^\\d{1,2}/\\d{1,2}/)\\d{4}(?= 0:00:00$)")
+    ) %in%
+      c(2001:2011)
+  ),
+  "EVTYPE" = ( EVTYPE %in% defined_event_types ),
+  "FATALITIES" = ( FATALITIES >= 0 ),
+  "INJURIES" = ( INJURIES >= 0 ),
+  "PROPDMG" = ( PROPDMG >= 0 ),
+  "PROPDMGEXP" = ( PROPDMGEXP %in% defined_property_damage_exponents ),
+  "CROPDMG" = ( CROPDMG >= 0 ),
+  "CROPDMGEXP" = ( CROPDMGEXP %in% defined_crop_damage_exponents )
+)
+
+# Confront the table with target data subset with the validator 
+# which contains the constrains for the in-record data validation. 
+CF____constrains_for_the_in_record_data_validation <- confront(
+  dat = target_data_subset,
+  V____constrains_for_the_in_record_data_validation
+)
+
+```
+
+According to the results of the in-record data validation, 
+there is a significant proportion of invalid values found 
+at the variables *EVTYPE*, *PROPDMGEXP* and *CROPDMGEXP*.  
+
+```{r create_a_kable_to_present_the_results_from_the_in_record_validation_for_the_variables_at_the_table_with_the_target_data_subset}
+
+# Create a kable to present the results of the in-record data validation 
+# with the table with target data subset.
+kable(
+  x = summary(CF____constrains_for_the_in_record_data_validation)[
+    , c("name", "items", "passes", "fails", "nNA", "error", "warning")
+    ],
+  caption = paste0(
+    "Table 6.4.2-1: ",
+    "The results of the in-record data validation ",
+    "for the table with the target data subset."
+  )
+) %>% 
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  )
+
+```
+
+The invalid values for each variable were identified by their key value 
+(denoted by the variable *REFNUM*). 
+
+```{r identify_the_invalid_observations_at_each_variable_of_table_with_the_target_data_subset_by_their_key_value}
+
+# Identify the values that were found invalid for each variable 
+# by the key value. 
+criterion_by_REFNUM_____invalid_values_of_each_variable <- 
+  lapply(
+    X = CF____constrains_for_the_in_record_data_validation[["._value"]],
+    FUN = function(x) {
+      target_data_subset[!x, REFNUM]
+    }
+  )
+
+```
 
 <br>  
 
@@ -1266,7 +2605,32 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ### 6.4.3 Create the table with the in-record validated data {#ind-6-4-3--Create-the-table-with-the-in-record-validated-data}  
 
+The table with the in-record validated data was obtained, 
+by substituting with NAs all values 
+that were identified as invalid at the table with the target data subset.  
 
+The invalid values for each variable were identified and substituted 
+by their key value (denoted by the variable *REFNUM*).  
+
+```{r create_the_table_with_the_in_record_validated_data}
+
+# Create a dummy table as a copy of the table with the target data subset. 
+in_record_validated_data <- copy(target_data_subset)
+
+# Create the table with the in-record validated data 
+# by substituted with NAs the invalid values of each variable.
+for ( var_name in names(criterion_by_REFNUM_____invalid_values_of_each_variable) ) {
+  set(x = in_record_validated_data,
+      i = which(
+        in_record_validated_data$REFNUM %in%
+          criterion_by_REFNUM_____invalid_values_of_each_variable[[var_name]]
+      ),
+      j = var_name,
+      value = NA
+  )
+}
+
+```
 
 <br>  
 
@@ -1281,7 +2645,57 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ### 6.4.4 Conduct post validation for the table with the in-record validated data {#ind-6-4-4--Conduct-post-validation-for-the-table-with-the-in-record-validated-data}  
 
+Post validation was conducted to verify that the values of variables 
+at the table with the in-record validated data were valid 
+according to the same constrains that were used to 
+[identify the invalid values for each variable
+](#ind-6-4-2--Conduct-in-record-data-validation-for-each-variable) 
+at the table with the target data subset.  
 
+```{r conduct_post_validation_for_the_table_with_the_in_record_validated_data}
+
+# The table with the in-record validated data was post validated to verify 
+# that all values for each of variable it contained were valid.
+CF____post_validation_of_the_table_with_the_in_record_validated_data <- 
+  confront(
+    dat = in_record_validated_data,
+    V____constrains_for_the_in_record_data_validation
+)
+
+```
+
+All the values for each variable at the table with the in-record validated data 
+were valid.  
+
+```{r create_a_kable_to_present_the_results_from_post_validation_of_the_table_with_the_in_record_validated_data}
+
+# Create a kable to present the results of the post validation 
+# for the table with the in-record validated data.  
+kable(
+  x = summary(CF____post_validation_of_the_table_with_the_in_record_validated_data)[
+    , c("name", "items", "passes", "fails", "nNA", "error", "warning")
+    ],
+  caption = paste0(
+    "Table 6.4.4-1: ",
+    "The results of post validation ", 
+    "for the table with the in-record validated data."
+  )
+) %>% 
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  ) %>% 
+  footnote(
+    general = paste0(
+      "The same constrains that were used to identify the invalid values ", 
+      "of each variable at the table with the target data subset, ", "\n",
+      "were used for the post validation of the observations ", 
+      "at the table with the in-record validated data."
+    )
+  )
+
+```
 
 <br>  
 
@@ -1296,7 +2710,63 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ### 6.4.5 Overview of the table with the in-record validated data {#ind-6-4-5--Overview-of-the-table-with-the-in-record-validated-data}  
 
+The table with the in-record validated data contained 9 variables 
+and 144826 observations.  
 
+The variable *REFNUM* was set as the key of table.
+
+```{r print_the_structure_of_the_table_with_the_in_record_validated_data}
+
+# Print the structure of the table with the in-record validated data table .
+str(in_record_validated_data)
+
+```
+
+There were plenty of missing values, 
+that were introduced as a result of the in-record validation procedure
+for the variables *EVTYPE*, *PROPDMGEXP* and *CROPDMGEXP*, 
+but the number of distinct values didn't indicate any more 
+the presence of obvious abnormalities.  
+
+```{r create_a_kable_to_present_facts_for_the_table_with_the_in_record_validated_data}
+
+# Create a kable to highlight some facts 
+# about the table with the in-record validated data.
+kable(
+  x = data.table(
+    "Variable" = names(in_record_validated_data),
+    "Number of Distinct Values" = vapply(
+      X = in_record_validated_data, 
+      FUN = function(x) length(unique(x[!is.na(x)])), 
+      FUN.VALUE = integer(1)
+    ),
+    "Number of NAs" = vapply(
+      X = in_record_validated_data, 
+      FUN = function(x) sum(is.na(x)), 
+      FUN.VALUE = integer(1)),
+    "Percentage of NAs" = 
+      vapply(
+        X = in_record_validated_data, 
+        FUN = function(x) mean(is.na(x)), 
+        FUN.VALUE =double(1))
+  ),
+  caption = "Table 6.4.5-1: Facts about the table with in-record validated data."
+) %>% 
+  kable_styling(
+    bootstrap_options = c(
+      "striped", "hover", "condensed", "responsive", "bordered"
+      ), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  ) %>% 
+  footnote(
+    general = paste0(
+      "The table with the in-record validated data contained 9 variables ", 
+      "and 144826 observations."
+    )
+  )
+
+```
 
 <br>  
 
@@ -1313,7 +2783,106 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ## 6.5 Impute Missing Values {#ind-6-5--Impute-Missing-Values}  
 
+<font size="3"><u><strong>Summary</strong></u></font>  
 
+In this stage of data processing procedure,
+an attempt was made to maximize 
+the amount of available information for the analysis,
+by imputing some of the missing values 
+that exist at the table with the in-record validated data 
+with plausible values.
+
+There were 3 variables (*EVTYPE*, *PROPDMGEXP* and *CROPDMGEXP*) 
+that contained NAs, all of which were introduced through the 
+[in-record data validation stage](#ind-6-4--Conduct-In-Record-Data-Validation). 
+
+Via a conservative deterministic approach 
+which aimed to retrieve the missing values 
+only for the cases that there were almost no doubt 
+about the values that were imputed,
+the majority of those entries got successfully restored.
+
+However it is highlighted that for the variable *EVTYPE*, 
+there is no guarantee that the values imputed are error-free, 
+due to the fact that the associations were made based on the invalid values 
+found at the table with the target data subset, 
+that were substituted by NAs and the information available in 
+[NATIONAL WEATHER SERVICE INSTRUCTION 10-1605, AUGUST 17, 2007
+](https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2Fpd01016005curr.pdf)
+(at chapter 7)*  
+by the analyst who has **no expertise neither on weather nor in meteorology**. 
+
+On the other hand, the missing values that were imputed 
+for the variables *PROPDMGEXP* and *CROPDMGEXP* 
+are almost certainly correct 
+(and even if they are not,
+it didn't affect in any significant way the results of the analysis 
+as they all correspond to observations 
+that resulted in 0 property and crop damage respectively 
+while the analysis focused on the observations for the weather events 
+that caused non-zero harm).  
+
+```{r create_a_dummy_table_for_imputed_data_as_a_copy_of_the_table_with_in_record_validated_data} 
+
+# Create a dummy table by coping the table with the in-record validated data 
+# at which the missing values for the variable EVTYPE, PROPDMGEXP and CROPDMGEXP 
+# will be imputed to get the table with the imputed data.
+imputed_data <- copy(in_record_validated_data)
+
+```
+
+<font size="3"><u><strong>Steps</strong></u></font>  
+
+* [6.5.1 Impute missing values at the variable EVTYPE](#ind-6-5-1--Impute-missing-values-at-the-variable-EVTYPE)  
+  * Imputes the missing values at the variable EVTYPE 
+  with plausible substitutions based on the invalid values they corresponded:  
+    * [6.5.1.1 Examine the invalid values from the variable EVTYPE
+    ](#ind-6-5-1-1--Examine-the-invalid-values-from-the-variable-EVTYPE)  
+      * Examine the invalid values that have been substituted by NAs.  
+    * [6.5.1.2 Associate plausible substitutions to the invalid values from the variable EVTYPE
+    ](#ind-6-5-1-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-EVTYPE)  
+      * Associated the invalid values with plausible substitutions.  
+    * [6.5.1.3 Identify the imputable missing values at the variable EVTYPE
+    ](#ind-6-5-1-3--Identify-the-imputable-missing-values-at-the-variable-EVTYPE)  
+      * Identified the imputable missing values according to associations by their key value.   
+    * [6.5.1.4 Substitute the imputable missing values at the variable EVTYPE
+    ](#ind-6-5-1-4--Substitute-the-imputable-missing-values-at-the-variable-EVTYPE)  
+      * Substituted the imputable missing values with valid ones.  
+* [6.5.2 Impute missing values at the variable PROPDMGEXP](#ind-6-5-2--Impute-missing-values-at-the-variable-PROPDMGEXP)  
+  * Imputes the missing values at the variable PROPDMGEXP 
+  with plausible substitutions based on the invalid values they corresponded:  
+    * [6.5.2.1 Examine the invalid values from the variable PROPDMGEXP
+    ](#ind-6-5-2-1--Examine-the-invalid-values-from-the-variable-PROPDMGEXP)  
+      * Examine the invalid values that have been substituted by NAs.  
+    * [6.5.2.2 Associate plausible substitutions to the invalid values from the variable PROPDMGEXP
+    ](#ind-6-5-2-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-PROPDMGEXP)  
+      * Associated the invalid values with plausible substitutions.  
+    * [6.5.2.3 Identify the imputable missing values at the variable PROPDMGEXP
+    ](#ind-6-5-2-3--Identify-the-imputable-missing-values-at-the-variable-PROPDMGEXP)  
+      * Identified the imputable missing values according to associations by their key value.   
+    * [6.5.2.4 Substitute the imputable missing values at the variable PROPDMGEXP
+    ](#ind-6-5-2-4--Substitute-the-imputable-missing-values-at-the-variable-PROPDMGEXP)  
+      * Substituted the imputable missing values with valid ones.  
+* [6.5.3 Impute missing values at the variable CROPDMGEXP](#ind-6-5-3--Impute-missing-values-at-the-variable-CROPDMGEXP)  
+  * Imputes the missing values at the variable CROPDMGEXP 
+  with plausible substitutions based on the invalid values they corresponded:  
+    * [6.5.3.1 Examine the invalid values from the variable CROPDMGEXP
+    ](#ind-6-5-3-1--Examine-the-invalid-values-from-the-variable-CROPDMGEXP)  
+      * Examine the invalid values that have been substituted by NAs.  
+    * [6.5.3.2 Associate plausible substitutions to the invalid values from the variable CROPDMGEXP
+    ](#ind-6-5-3-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-CROPDMGEXP)  
+      * Associated the invalid values with plausible substitutions.  
+    * [6.5.3.3 Identify the imputable missing values at the variable CROPDMGEXP
+    ](#ind-6-5-3-3--Identify-the-imputable-missing-values-at-the-variable-CROPDMGEXP)  
+      * Identified the imputable missing values according to associations by their key value.   
+    * [6.5.3.4 Substitute the imputable missing values at the variable CROPDMGEXP
+    ](#ind-6-5-3-4--Substitute-the-imputable-missing-values-at-the-variable-CROPDMGEXP)  
+      * Substituted the imputable missing values with valid ones.  
+* [6.5.4 Conduct post validation for the table with the imputed data](#ind-6-5-4--Conduct-post-validation-for-the-table-with-the-imputed-data)
+  * Ensures that all values of each variable 
+  at the table with the imputed data are valid.  
+* [6.5.5 Overview of the table with the imputed data](#ind-6-5-5--Overview-of-the-table-with-the-imputed-data)  
+  * Presents some basic facts about the table with the imputed data.  
 
 <br>  
 
@@ -1325,10 +2894,462 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ### 6.5.1 Impute missing values at the variable EVTYPE {#ind-6-5-1--Impute-missing-values-at-the-variable-EVTYPE}  
 
+The invalid values for the variable EVTYPE 
+at the table with the target data subset 
+(before they got substituted by NAs at the 
+[in-record data validation stage](#ind-6-4--Conduct-In-Record-Data-Validation))
+were examined and associations were made to plausible valid substitutions. 
+Those observations with missing values 
+that corresponded to successfully associated plausible substitutions, 
+were identified by their key values and were imputed.
+
+
+* [6.5.1.1 Examine the invalid values from the variable EVTYPE
+](#ind-6-5-1-1--Examine-the-invalid-values-from-the-variable-EVTYPE)  
+  * Examine the invalid values that have been substituted by NAs.  
+* [6.5.1.2 Associate plausible substitutions to the invalid values from the variable EVTYPE
+](#ind-6-5-1-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-EVTYPE)  
+  * Associated the invalid values with plausible substitutions.  
+* [6.5.1.3 Identify the imputable missing values at the variable EVTYPE ](#ind-6-5-1-3--Identify-the-imputable-missing-values-at-the-variable-EVTYPE)  
+  * Identified the imputable missing values according to associations by their key value.   
+* [6.5.1.4 Substitute the imputable missing values at the variable EVTYPE ](#ind-6-5-1-4--Substitute-the-imputable-missing-values-at-the-variable-EVTYPE)  
+  * Substituted the imputable missing values with valid ones.  
+
+<br>  
+
+<font size="1">[back to start of this subsection](#ind-6-5-1--Impute-missing-values-at-the-variable-EVTYPE)</font>  
+<font size="1">[back to start of this section](#ind-6-5--Impute-Missing-Values)</font>  
+<font size="1">[back to start of this chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>  
+
+<br>  
+
+#### 6.5.1.1 Examine the invalid values from the variable EVTYPE {#ind-6-5-1-1--Examine-the-invalid-values-from-the-variable-EVTYPE}  
+
+For the variable *EVTYPE* at the table with the in-record validated data, 
+out of the total 144826 observations 32775 (22.63%) were NAs.  
+
+```{r create_a_kable_to_present_the_facts_about_the_variable_EVTYPE_at_the_table_with_the_in_record_validated_data} 
+
+# Create a kable to present information on the missing values 
+# for the variable EVTYPE at the table with the imputed data.
+kable(
+  x = data.table(
+    "Variable" = "EVTYPE",
+    "Total Number of Values" = length(in_record_validated_data$EVTYPE),
+    "Number of Missing Values" = sum(is.na(in_record_validated_data$EVTYPE)),
+    "Percentage of Missing Values" = mean(is.na(in_record_validated_data$EVTYPE))
+  ),
+  caption = paste0(
+    "Table 6.5.1.1-1: ",
+    "Information on the missing values ", 
+    "for the variable EVTYPE at the table with the target data subset."
+  )
+) %>% 
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  )
+
+```
+
+These 32775 missing values at the table with the in-record validated data, 
+corresponded to 51 distinct invalid entries 
+at the table with the target data subset 
+before they got substituted by NAs at the 
+[in-record data validation stage](#ind-6-4--Conduct-In-Record-Data-Validation).
+
+```{r create_a_kable_to_present_the_distinct_invalid_values_for_the_the_variable_EVTYPE_at_the_table_with_the_target_data_subset}
+
+# Create a kable to presents information on the distinct invalid values 
+# for the variable EVTYPE at the table with the target data subset 
+# that were substituted by NAs at the in-record validation stage.
+kable(
+  x = target_data_subset[
+    is.na(in_record_validated_data$EVTYPE), .N, by = EVTYPE][
+      order(N,decreasing = TRUE)],
+  col.names = c("Invalid Values", "Number of Occurrences"),
+  caption = paste0(
+    "Table 6.5.1.1-2: ",
+    "Information on the distinct invalid values ", 
+    "for the variable EVTYPE at the table with the target data subset ",
+    "which got substituted by NAs at the in-record validation stage."
+  )
+) %>% 
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  )
+
+```
+
+<br>  
+
+<font size="1">[back to start of this subsubsection](#ind-6-5-1-1--Examine-the-invalid-values-from-the-variable-EVTYPE)</font>  
+<font size="1">[back to start of this subsection](#ind-6-5-1--Impute-missing-values-at-the-variable-EVTYPE)</font>  
+<font size="1">[back to start of this section](#ind-6-5--Impute-Missing-Values)</font>  
+<font size="1">[back to start of this chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>  
+
+<br>  
+
+#### 6.5.1.2 Associate plausible substitutions to the invalid values from the variable EVTYPE {#ind-6-5-1-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-EVTYPE}
+
+To impute the corresponding NAs associations were made 
+from the invalid entries to defined weather event types.  
+
+* Some of the associations were based solely on the invalid values,
+which directly corresponded to defined event types 
+as they seem to be either typos 
+(e.g. "RIP CURRENTS" instead of "RIP CURRENT") 
+or acronyms of the expected values 
+(e.g. "TSTM WIND" instead of "THUNDERSTORM WIND").  
+* While for others the description for each one of the 48 event types 
+that was available in 
+[NATIONAL WEATHER SERVICE INSTRUCTION 10-1605, AUGUST 17, 2007
+](https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2Fpd01016005curr.pdf)
+*(at chapter 7)* was taken into account 
+for cases where a variation of the defined value had been supplied 
+(e.g. "URBAN/SML STREAM FLD" instead of "HEAVY RAIN").  
+
+**Nevertheless it is stressed 
+that the associations mainly depend on 'common sense' judgment 
+(instead of solid professional expertise)
+and in no way they are guaranteed to be error-free,
+despite the best efforts made to impute only the most obvious cases.**  
+
+In total, 28 distinct invalid values were associated 
+to some of the 48 defined weather event types:
+
+<div class = "row">
+  
+ <div class = "col-md-6">
+  1. 'COASTAL FLOODING' --> **COASTAL FLOOD**  
+  2. 'COLD WEATHER' --> **COLD/WIND CHILL**  
+  3. 'LANDSLIDE' --> **DEBRIS FLOW**  
+  4. 'MUDSLIDE' --> **DEBRIS FLOW**  
+  5. 'MUD SLIDE' --> **DEBRIS FLOW**  
+  6. 'DROWNING' --> **DROUGHT**  
+  7. 'EXTREME COLD' --> **EXTREME COLD/WIND CHILL**  
+  8. 'EXTREME WINDCHILL' --> **EXTREME COLD/WIND CHILL**  
+  9. 'FREEZE' --> **FROST/FREEZE**  
+  10. 'SMALL HAIL' --> **HAIL**  
+  11. 'URBAN/SML STREAM FLD' --> **HEAVY RAIN**  
+  12. 'HEAVY SURF/HIGH SURF' --> **HIGH SURF**  
+  13. 'HEAVY SURF' --> **HIGH SURF**  
+  14. 'HAZARDOUS SURF' --> **HIGH SURF**  
+ </div>
+  
+ <div class = "col-md-6">
+  15. '   HIGH SURF ADVISORY' --> **HIGH SURF**  
+  16. 'HURRICANE' --> **HURRICANE/TYPHOON**  
+  17. 'LAKE EFFECT SNOW' --> **LAKE-EFFECT SNOW**  
+  18. 'MARINE TSTM WIND' --> **MARINE THUNDERSTORM WIND**  
+  19. 'RIP CURRENTS' --> **RIP CURRENT**  
+  20. 'STORM SURGE' --> **STORM SURGE/TIDE**  
+  21. 'STRONG WINDS' --> **STRONG WIND**  
+  22. 'TSTM WIND' --> **THUNDERSTORM WIND**  
+  23. 'DRY MICROBURST' --> **THUNDERSTORM WIND**  
+  24. 'THUNDERSTORM' --> **THUNDERSTORM WIND**  
+  25. 'WILD/FOREST FIRE' --> **WILDFIRE**  
+  26. 'BRUSH FIRE' --> **WILDFIRE**  
+  27. 'WINTER WEATHER/MIX' --> **WINTER WEATHER**  
+  28. 'WINTER WEATHER MIX' --> **WINTER WEATHER**  
+ </div>
+
+</div>
+
+*( The 15th invalid value contained __3 spaces__ before the 'HIGH SURF ADVISORY', 
+but for some unknown reason after rendering it seems to be only 1 space.)*  
+
+```{r create_the_associations_of_distinct_invalid_values_from_variable_EVTYPE_at_the_target_data_subset_to_defined_weather_event_types}
+
+# Create a list the associations made from the invalid entries 
+# for the variable EVTYPE at the table with the target data subset 
+# to defined weather event types.
+associations_on_defined_event_types <- list(
+  "COASTAL FLOOD" = c("COASTAL FLOODING"),
+  "COLD/WIND CHILL" = c("COLD WEATHER"),
+  "DEBRIS FLOW" = c("LANDSLIDE", "MUDSLIDE", "MUD SLIDE"),
+  "DROUGHT" = c("DROWNING"),
+  "EXTREME COLD/WIND CHILL" = c("EXTREME COLD", "EXTREME WINDCHILL"),
+  "FROST/FREEZE" = c("FREEZE"),
+  "HAIL" = c("SMALL HAIL"),
+  "HEAVY RAIN" = c("URBAN/SML STREAM FLD"),
+  "HIGH SURF" = c(
+    "HEAVY SURF/HIGH SURF", "HEAVY SURF", "HAZARDOUS SURF",
+    "   HIGH SURF ADVISORY"),
+  "HURRICANE/TYPHOON" = c("HURRICANE"),
+  "LAKE-EFFECT SNOW" = c("LAKE EFFECT SNOW"),
+  "MARINE THUNDERSTORM WIND" = c("MARINE TSTM WIND"),
+  "RIP CURRENT" = c("RIP CURRENTS"),
+  "STORM SURGE/TIDE" = c("STORM SURGE"),
+  "STRONG WIND" = c("STRONG WINDS"),
+  "THUNDERSTORM WIND" = c("TSTM WIND", "DRY MICROBURST", "THUNDERSTORM"),
+  "WILDFIRE" = c("WILD/FOREST FIRE", "BRUSH FIRE"),
+  "WINTER WEATHER" = c("WINTER WEATHER/MIX", "WINTER WEATHER MIX")
+)
+
+```
+
+On the other hand there were 23 distinct invalid values
+were not possible to get associated (with relatively high confidence)
+with any of the 48 defined event types: 
+
+<div class = "row">
+  
+ <div class = "col-md-6">
+  1. 'FOG'  
+  2. 'LIGHT SNOW'  
+  3. 'WIND'  
+  4. 'LIGHT FREEZING RAIN'  
+  5. 'MIXED PRECIPITATION'  
+  6. 'ASTRONOMICAL HIGH TIDE'  
+  7. 'GUSTY WINDS'  
+  8. 'SNOW'  
+  9. 'HIGH SEAS'  
+  10. 'ROUGH SEAS'  
+  11. 'SNOW SQUALLS'  
+  12. 'FALLING SNOW/ICE'  
+ </div>
+  
+ <div class = "col-md-6">
+  13. 'GUSTY WIND'  
+  14. 'HIGH WATER'  
+  15. 'OTHER'  
+  16. 'BLOWING DUST'  
+  17. 'ICE ON ROAD'  
+  18. 'LATE SEASON SNOW'  
+  19. 'NON TSTM WIND'  
+  20. 'NON-TSTM WIND'  
+  21. 'ROGUE WAVE'  
+  22. 'WHIRLWIND'  
+  23. 'TSTM WIND/HAIL'  
+ </div>
+
+</div>
+
+```{r create_a_vector_with_the_ambiguous_distinct_invalid_values_from_the_variable_EVTYPE}
+
+# Create a list with the distinct invalid values of the variable EVTYPE 
+# at the table with target data subset that couldn't be safely associated 
+# with any of defined weather event types.
+ambiguous_entries_on_EVTYPE <- list(
+  "FOG", 
+  "LIGHT SNOW", 
+  "WIND", 
+  "LIGHT FREEZING RAIN",
+  "MIXED PRECIPITATION", 
+  "ASTRONOMICAL HIGH TIDE", 
+  "GUSTY WINDS", 
+  "SNOW",
+  "HIGH SEAS", 
+  "ROUGH SEAS", 
+  "SNOW SQUALLS",
+  "FALLING SNOW/ICE", 
+  "GUSTY WIND", 
+  "HIGH WATER", 
+  "OTHER", 
+  "BLOWING DUST",
+  "ICE ON ROAD", 
+  "LATE SEASON SNOW",
+  "NON TSTM WIND", 
+  "NON-TSTM WIND", 
+  "ROGUE WAVE",
+  "WHIRLWIND", 
+  "TSTM WIND/HAIL"
+)
+
+```
+
+<br>  
+
+<font size="1">[back to start of this subsubsection](#ind-6-5-1-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-EVTYPE)</font>  
+<font size="1">[back to start of this subsection](#ind-6-5-1--Impute-missing-values-at-the-variable-EVTYPE)</font>  
+<font size="1">[back to start of this section](#ind-6-5--Impute-Missing-Values)</font>  
+<font size="1">[back to start of this chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>  
+
+<br>  
+
+#### 6.5.1.3 Identify the imputable missing values at the variable EVTYPE {#ind-6-5-1-3--Identify-the-imputable-missing-values-at-the-variable-EVTYPE}
+
+After having established the 
+[associations for the invalid entries of the variable *EVTYPE*
+](#ind-6-5-1-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-EVTYPE) 
+the observations that contained values that could be retrieved were identified.
+
+```{r identify_the_observations_which_contain_imputable_missing_values_at_the_variable_EVTYPE}
+
+# Create a validator to identify which observations for the variable EVTYPE 
+# contain a missing value that correspond to one of the invalid values 
+# at the table with target data subset that can be retrieved 
+# according to the list with the association. 
+V_________identification_test_of_imputable_missing_values_for_EVTYPE <- validator(
+  "COASTAL FLOOD" = EVTYPE %in% associations_on_defined_event_types[["COASTAL FLOOD"]],
+  "COLD WIND CHILL" = EVTYPE %in% associations_on_defined_event_types[["COLD/WIND CHILL"]],
+  "DEBRIS FLOW" = EVTYPE %in% associations_on_defined_event_types[["DEBRIS FLOW"]],
+  "DROUGHT" = EVTYPE %in% associations_on_defined_event_types[["DROUGHT"]],
+  "EXTREME COLD/WIND CHILL" = EVTYPE %in% associations_on_defined_event_types[["EXTREME COLD/WIND CHILL"]],
+  "FROST/FREEZE" = EVTYPE %in% associations_on_defined_event_types[["FROST/FREEZE"]],
+  "HAIL" = EVTYPE %in% associations_on_defined_event_types[["HAIL"]],
+  "HEAVY RAIN" = EVTYPE %in% associations_on_defined_event_types[["HEAVY RAIN"]],
+  "HIGH SURF" = EVTYPE %in% associations_on_defined_event_types[["HIGH SURF"]],
+  "HURRICANE/TYPHOON" = EVTYPE %in% associations_on_defined_event_types[["HURRICANE/TYPHOON"]],
+  "LAKE-EFFECT SNOW" = EVTYPE %in% associations_on_defined_event_types[["LAKE-EFFECT SNOW"]],
+  "MARINE THUNDERSTORM WIND" = EVTYPE %in% associations_on_defined_event_types[["MARINE THUNDERSTORM WIND"]],
+  "RIP CURRENT" = EVTYPE %in% associations_on_defined_event_types[["RIP CURRENT"]],
+  "STORM SURGE/TIDE" = EVTYPE %in% associations_on_defined_event_types[["STORM SURGE/TIDE"]],
+  "STRONG WIND" = EVTYPE %in% associations_on_defined_event_types[["STRONG WIND"]],
+  "THUNDERSTORM WIND" = EVTYPE %in% associations_on_defined_event_types[["THUNDERSTORM WIND"]],
+  "WILDFIRE" = EVTYPE %in% associations_on_defined_event_types[["WILDFIRE"]],
+  "WINTER WEATHER" = EVTYPE %in% associations_on_defined_event_types[["WINTER WEATHER"]]
+)
+
+# Confront the table with the target data subset with the validator with 
+# the criteria for the association of invalid entries for the variable EVTYPE.
+CF_________identification_test_of_imputable_missing_values_for_EVTYPE <- confront(
+  dat = target_data_subset[is.na(in_record_validated_data[["EVTYPE"]])],
+  V_________identification_test_of_imputable_missing_values_for_EVTYPE
+)
+
+```
+
+Out of the total 32775 missing values 
+for the variable *EVTYPE* at the in-record validation data table, 
+32520 (99.22%) could be imputed 
+while for only 255 (0.78%) values it wasn't possible 
+to safely associate them with some of the 48 defined event types.
+
+```{r create_a_kable_to_present_the_results_for_the_imputable_and_not_imputable_missing_values_at_the_variable_EVTYPE}
+
+# Create a kable to presents information 
+# on the imputable and not imputable missing values at the variable EVTYPE.
+kable(
+  x = data.table(
+    "variable" = "EVTYPE",
+    "n_missing" = sum(is.na(in_record_validated_data$EVTYPE)),
+    "n_imputable" = sum(
+      vapply(
+        X = CF_________identification_test_of_imputable_missing_values_for_EVTYPE[["._value"]],
+        FUN = sum,
+        FUN.VALUE = integer(1)
+      )
+    )
+  )[,"n_not_imputable" := n_missing - n_imputable][
+      , "perc_imputable" := n_imputable/n_missing][
+        ,"perc_not_imputable" := n_not_imputable/n_missing], 
+  col.names = c(
+    "Variable",
+    "Number of Missing Values",
+    "Number of Imputable Missing Values",
+    "Number of Not Imputable Missing Values",
+    "Percentage of Imputable Missing Values",
+    "Percentage of Not Imputable Missing Values"
+  ),
+  caption = paste0(
+    "Table 6.5.1.3-1: ",
+    "Information on the imputable and not imputable missing values ", 
+    "at the variable EVTYPE."
+  )
+) %>% 
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  )
+
+```
+
+The imputed missing values were distributed according to the associations 
+at 18 defined event types.  
+
+```{r create_a_kable_to_present_the_results_of_identification_of_observations_which_contain_imputable_missing_values_at_the_variable_EVTYPE}
+
+# Create a kable to presents the results from the identification 
+# of the imputable missing values 
+# by each of the associated defined weather event types. 
+kable(
+  x = summary(CF_________identification_test_of_imputable_missing_values_for_EVTYPE)[
+    , c("name", "items", "passes", "fails", "nNA", "error", "warning")
+    ],
+  caption = paste0(
+    "Table 6.5.1.3-2: ",
+    "Information on the number of invalid values ",
+    "that can be imputed by one the 48 defined weather event types ",
+    "for the variable EVTYPE at the table with the imputed data."
+  )
+) %>% 
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  ) %>% 
+  footnote(
+    general = paste0(
+      "The subset of the 32775 observations with missing values ", "\n",
+      "was used for the identification of imputable invalid values."
+    )
+  )
+
+```
+
+The key value (denoted by the *REFNUM* variable) 
+for the observations that successfully 
+got associated with a defined weather event type was identified.  
+
+```{r identify_the_observations_which_contain_imputable_missing_values_at_the_variable_EVTYPE_by_their_key_value}
+
+# Identify the missing values that can be imputed 
+# with one of the defined event type values 
+# by their key value (denoted by the variable REFNUM)
+criterion_by_REFNUM_____imputable_entries_for_EVTYPE <- lapply(
+  X = CF_________identification_test_of_imputable_missing_values_for_EVTYPE[["._value"]],
+  FUN = function(x) in_record_validated_data[is.na(EVTYPE), REFNUM][x]
+) 
+
+```
+
+<br>  
+
+<font size="1">[back to start of this subsubsection](#ind-6-5-1-3--Identify-the-imputable-missing-values-at-the-variable-EVTYPE)</font>  
+<font size="1">[back to start of this subsection](#ind-6-5-1--Impute-missing-values-at-the-variable-EVTYPE)</font>  
+<font size="1">[back to start of this section](#ind-6-5--Impute-Missing-Values)</font>  
+<font size="1">[back to start of this chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>  
+
+<br>  
+
+#### 6.5.1.4 Substitute the imputable missing values at the variable EVTYPE {#ind-6-5-1-4--Substitute-the-imputable-missing-values-at-the-variable-EVTYPE}  
+
+The associated value for each of the 28 distinct invalid values 
+at the variable *EVTYPE* was imputed at the corresponding observations 
+which were identified by their key value.  
+
+```{r impute_the_retrievable_missing_values_at_the_variable_EVTYPE}
+
+# Impute the retrievable missing values at the EVTYPE variable 
+# with the defined values
+for (i in seq_along(criterion_by_REFNUM_____imputable_entries_for_EVTYPE)) {
+  set(
+    x = imputed_data,
+    i = which(
+      imputed_data$REFNUM %in%
+        criterion_by_REFNUM_____imputable_entries_for_EVTYPE[[i]],
+    ),
+    j = "EVTYPE",
+    value = names(associations_on_defined_event_types)[i]
+  )
+}
+
+``` 
 
 
 <br>  
 
+<font size="1">[back to start of this subsubsection](#ind-6-5-1-4--Substitute-the-imputable-missing-values-at-the-variable-EVTYPE)</font>  
 <font size="1">[back to start of this subsection](#ind-6-5-1--Impute-missing-values-at-the-variable-EVTYPE)</font>  
 <font size="1">[back to start of this section](#ind-6-5--Impute-Missing-Values)</font>  
 <font size="1">[back to start of this chapter](#ind-6--DATA-PROCESSING)</font>  
@@ -1340,10 +3361,254 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ### 6.5.2 Impute missing values at the variable PROPDMGEXP {#ind-6-5-2--Impute-missing-values-at-the-variable-PROPDMGEXP}  
 
+The invalid values for the variable PROPDMGEXP 
+at the table with the target data subset 
+(before they got substituted by NAs at the 
+[in-record data validation stage](#ind-6-4--Conduct-In-Record-Data-Validation))
+were examined and associations were made to plausible valid substitutions. 
+Those observations with missing values 
+that corresponded to successfully associated plausible substitutions, 
+were identified by their key values and were imputed.
 
+* [6.5.2.1 Examine the invalid values from the variable PROPDMGEXP
+](#ind-6-5-2-1--Examine-the-invalid-values-from-the-variable-PROPDMGEXP)  
+  * Examine the invalid values that have been substituted by NAs.  
+* [6.5.2.2 Associate plausible substitutions to the invalid values from the variable PROPDMGEXP
+](#ind-6-5-2-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-PROPDMGEXP)  
+  * Associated the invalid values with plausible substitutions.  
+* [6.5.2.3 Identify the imputable missing values at the variable PROPDMGEXP ](#ind-6-5-2-3--Identify-the-imputable-missing-values-at-the-variable-PROPDMGEXP)  
+  * Identified the imputable missing values according to associations by their key value.   
+* [6.5.2.4 Substitute the imputable missing values at the variable PROPDMGEXP ](#ind-6-5-2-4--Substitute-the-imputable-missing-values-at-the-variable-PROPDMGEXP)  
+  * Substituted the imputable missing values with valid ones.  
 
 <br>  
 
+<font size="1">[back to start of this subsection](#ind-6-5-2--Impute-missing-values-at-the-variable-PROPDMGEXP)</font>  
+<font size="1">[back to start of this section](#ind-6-5--Impute-Missing-Values)</font>  
+<font size="1">[back to start of this chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>  
+
+<br>  
+
+#### 6.5.2.1 Examine the invalid values from the variable PROPDMGEXP {#ind-6-5-2-1--Examine-the-invalid-values-from-the-variable-PROPDMGEXP}  
+
+For the variable *PROPDMGEXP*, at the table with the in-record validated data, 
+out of the total 144826 observations, 4158 (2.87%) were NAs.
+
+```{r create_a_kable_to_present_facts_about_the_variable_PROPDMGEXP} 
+
+# Create a kable to present information on the missing values 
+# for the variable PROPDMGEXP at the table with the in-record validated data.
+kable(
+  x = data.table(
+    "Variable" = "PROPDMGEXP",
+    "Total Number of Values" = length(in_record_validated_data$PROPDMGEXP),
+    "Number of Missing Values" = sum(is.na(in_record_validated_data$PROPDMGEXP)),
+    "Percentage of Missing Values" = mean(is.na(in_record_validated_data$PROPDMGEXP))
+  ),
+  caption = paste0(
+    "Table 6.5.2.1-1: ",
+    "Information on missing values for the variable PROPDMGEXP ", 
+    "at the table with the in-record validated data."
+    )
+  
+) %>% 
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  )
+
+```
+
+Those 4158 missing values at the table with the in-record validated data,
+corresponded to empty values at the table with the target data subset 
+before they got substituted by NAs at the 
+[in-record data validation stage](#ind-6-4--Conduct-In-Record-Data-Validation).
+
+```{r create_a_kable_to_present_the_distinct_invalid_values_for_the_the_variable_PROPDMGEXP}
+
+# Create a kable to presents the distinct invalid values 
+# of the variable PROPDMGEXP at the table with the target data subset 
+# that were substituted by NAs at the in-record data validation stage.
+kable(
+  x = target_data_subset[
+    REFNUM %in% in_record_validated_data[
+      is.na(PROPDMGEXP), REFNUM
+      ],
+    list(
+      "distinct_values" = PROPDMGEXP
+    )
+    ][
+      ,
+      .N,
+      distinct_values
+      ],
+  col.names = c(
+    "Distinct Values", 
+    "Number of Observations"
+  ),
+  caption = paste0(
+    "Table 6.5.2.1-2: ",
+    "The distinct invalid values for the variable 'PROPDMGEXP' ", 
+    "that were substituted by NAs at the in-record data validation stage."
+  )
+) %>% 
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  )
+
+```
+
+<br>  
+
+<font size="1">[back to start of this subsubsection](#ind-6-5-2-1--Examine-the-invalid-values-from-the-variable-PROPDMGEXP)</font>  
+<font size="1">[back to start of this subsection](#ind-6-5-2--Impute-missing-values-at-the-variable-PROPDMGEXP)</font>  
+<font size="1">[back to start of this section](#ind-6-5--Impute-Missing-Values)</font>  
+<font size="1">[back to start of this chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>  
+
+<br>  
+
+#### 6.5.2.2 Associate plausible substitutions to the invalid values from the variable PROPDMGEXP {#ind-6-5-2-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-PROPDMGEXP}
+
+A single association (which works perfectly as shown in the [next subsubsection
+](#ind-6-5-2-3--Identify-the-imputable-missing-values-at-the-variable-PROPDMGEXP) 
+was made for the missing values that corresponded to empty values: 
+
+  * The entries that correspond to property damage with zero magnitude, 
+  (denoted by the value 0 at the variable *PROPDMG*) 
+  could be associated with any of the valid values ("K", "M", "B").  
+
+<br>  
+
+<font size="1">[back to start of this subsubsection](#ind-6-5-2-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-PROPDMGEXP)</font>  
+<font size="1">[back to start of this subsection](#ind-6-5-2--Impute-missing-values-at-the-variable-PROPDMGEXP)</font>  
+<font size="1">[back to start of this section](#ind-6-5--Impute-Missing-Values)</font>  
+<font size="1">[back to start of this chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>  
+
+<br>  
+
+#### 6.5.2.3 Identify the imputable missing values at the variable PROPDMGEXP {#ind-6-5-2-3--Identify-the-imputable-missing-values-at-the-variable-PROPDMGEXP}
+
+The observations that satisfied the criterion imposed by the 
+[association made for the invalid values from the variable *PROPDMGEXP*
+](#ind-6-5-2-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-PROPDMGEXP) 
+were identified.  
+
+```{r identify_the_observations_which_contain_imputable_missing_values_at_the_variable_PROPDMGEXP} 
+
+# Create a validator with the criterion to identify 
+# the imputable missing values for the variable PROPDMGEXP.
+V_____imputable_missing_values_at_the_variable_PROPDMGEXP <- validator(
+  "imputable_missing_values_at_PROPDMGEXP" = ( 
+    (PROPDMG == 0) & is.na(PROPDMGEXP) 
+  )
+)
+
+# Confront the subset of observations with missing values 
+# in the variable PROPDMGEXP at the in-record validated data 
+# with the validator with the criterion to identify 
+# the imputable missing values at the variable PROPDMGEXP. 
+CF_____imputable_missing_values_at_the_variable_PROPDMGEXP <- 
+  confront(
+    dat = in_record_validated_data[is.na(PROPDMGEXP)],
+    V_____imputable_missing_values_at_the_variable_PROPDMGEXP
+  )
+
+```
+
+All missing values at the variable *PROPDMGEXP* (4158 in total), 
+corresponded to observations for which the magnitude of property damage 
+(denoted by the variable *PROPDMG*) was zero. 
+
+```{r create_a_kable_to_present_the_results_for_the_observations_which_contain_imputable_missing_values_at_the_variable_PROPDMGEXP}
+
+# Create a kable to present the number of imputable missing values for the 
+# variable PROPDMGEXP at the table with the in-record validated data subset.
+kable(
+  x = summary(CF_____imputable_missing_values_at_the_variable_PROPDMGEXP)[
+    , c("name", "items", "passes", "fails", "nNA", "error", "warning")
+    ],
+  caption = paste0(
+    "Table 6.5.2.3-1: ",
+    "Results from identification of imputable missing values ", 
+    "at the variable PROPDMGEXP."
+  )
+) %>% 
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  ) %>% 
+  footnote(
+    general = paste0(
+      "The subset of the 4158 observations with missing values ", 
+      "was used for the identification of imputable invalid values"
+    )
+  )
+
+
+```
+
+The key values (denoted by the variable *REFNUM*) of the observations 
+for which the missing values at the variable *PROPDMGEXP* could be retrieved 
+were identified.  
+
+```{r identify_the_observations_which_contain_imputable_missing_values_at_the_variable_PROPDMGEXP_by_their_key_value}
+
+# Identify the observations for which the missing value 
+# at the variable PROPDMGEXP can be safely imputed, 
+# by their key value denoted by the variable REFNUM.
+criterion_by_REFNUM_____imputable_missing_values_at_the_variable_PROPDMGEXP <- 
+  with(
+    data = CF_____imputable_missing_values_at_the_variable_PROPDMGEXP[["._value"]],
+    expr = in_record_validated_data[is.na(PROPDMGEXP), REFNUM]
+  )
+
+```
+
+<br>  
+
+<font size="1">[back to start of this subsubsection](#ind-6-5-2-3--Identify-the-imputable-missing-values-at-the-variable-PROPDMGEXP)</font>  
+<font size="1">[back to start of this subsection](#ind-6-5-2--Impute-missing-values-at-the-variable-PROPDMGEXP)</font>  
+<font size="1">[back to start of this section](#ind-6-5--Impute-Missing-Values)</font>  
+<font size="1">[back to start of this chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>  
+
+<br>  
+
+#### 6.5.2.4 Substitute the imputable missing values at the variable PROPDMGEXP {#ind-6-5-2-4--Substitute-the-imputable-missing-values-at-the-variable-PROPDMGEXP}  
+
+The value *"K"* was imputed to all observations with imputable missing values 
+at the variable *PROPDMGEXP* (which were identified by their key value).
+
+```{r impute_the_retrievable_missing_values_for_the_variable_PROPDMGEXP}
+
+# Set the imputable missing values at the variable PROPDMGEXP 
+# with the value "K".
+set(
+  x = imputed_data,
+  i = which(
+    imputed_data$REFNUM %in% 
+      criterion_by_REFNUM_____imputable_missing_values_at_the_variable_PROPDMGEXP
+  ),
+  j = "PROPDMGEXP",
+  value = "K"
+)
+
+```
+
+*(They could have been substituted by any of the valid values ("K", "M" or "B") 
+for the variable PROPDMGEXP without changing the fact 
+that they refer to 0$ property damage.)*  
+
+<br>  
+
+<font size="1">[back to start of this subsubsection](#ind-6-5-2-4--Substitute-the-imputable-missing-values-at-the-variable-PROPDMGEXP)</font>  
 <font size="1">[back to start of this subsection](#ind-6-5-2--Impute-missing-values-at-the-variable-PROPDMGEXP)</font>  
 <font size="1">[back to start of this section](#ind-6-5--Impute-Missing-Values)</font>  
 <font size="1">[back to start of this chapter](#ind-6--DATA-PROCESSING)</font>  
@@ -1355,10 +3620,257 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ### 6.5.3 Impute missing values at the variable CROPDMGEXP {#ind-6-5-3--Impute-missing-values-at-the-variable-CROPDMGEXP}  
 
+The invalid values for the variable PROPDMGEXP 
+at the table with the target data subset 
+(before they got substituted by NAs at the 
+[in-record data validation stage](#ind-6-4--Conduct-In-Record-Data-Validation))
+were examined and associations were made to plausible valid substitutions. 
+Those observations with missing values 
+that corresponded to successfully associated plausible substitutions, 
+were identified by their key values and were imputed.
 
+* [6.5.3.1 Examine the invalid values from the variable CROPDMGEXP
+](#ind-6-5-3-1--Examine-the-invalid-values-from-the-variable-CROPDMGEXP)  
+  * Examine the invalid values that have been substituted by NAs.  
+* [6.5.3.2 Associate plausible substitutions to the invalid values from the variable CROPDMGEXP
+](#ind-6-5-3-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-CROPDMGEXP)  
+  * Associated the invalid values with plausible substitutions.  
+* [6.5.3.3 Identify the imputable missing values at the variable CROPDMGEXP ](#ind-6-5-3-3--Identify-the-imputable-missing-values-at-the-variable-CROPDMGEXP)  
+  * Identified the imputable missing values according to associations by their key value.   
+* [6.5.3.4 Substitute the imputable missing values at the variable CROPDMGEXP ](#ind-6-5-3-4--Substitute-the-imputable-missing-values-at-the-variable-CROPDMGEXP)  
+  * Substituted the imputable missing values with valid ones.  
 
 <br>  
 
+<font size="1">[back to start of this subsection](#ind-6-5-3--Impute-missing-values-at-the-variable-CROPDMGEXP)</font>  
+<font size="1">[back to start of this section](#ind-6-5--Impute-Missing-Values)</font>  
+<font size="1">[back to start of this chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>  
+
+<br>  
+
+#### 6.5.3.1 Examine the invalid values from the variable CROPDMGEXP {#ind-6-5-3-1--Examine-the-invalid-values-from-the-variable-CROPDMGEXP}  
+
+For the variable *CROPDMGEXP* at the table with the in-record validated data, 
+out of the total 144826 observations 55041 (38.00%) were NAs.
+
+```{r create_a_kable_to_present_the_facts_about_the_variable_CROPDMGEXP} 
+
+# Create a kable to present information on the missing values 
+# for the variable CROPDMGEXP at the table with the in-record validated data.
+kable(
+  x = data.table(
+    "Variable" = "CROPDMGEXP",
+    "Total Number of Values" = length(in_record_validated_data$CROPDMGEXP),
+    "Number of Missing Values" = sum(is.na(in_record_validated_data$CROPDMGEXP)),
+    "Percentage of Missing Values" = mean(is.na(in_record_validated_data$CROPDMGEXP))
+  ),
+  caption = paste0(
+    "Table 6.5.3.1-1: ",
+    "Information on missing values for the variable CROPDMGEXP ", 
+    "at the table with the in-record validated data."
+    )
+  
+) %>% 
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  )
+
+```
+
+Those 55041 missing values at the table with the in-record validated data,
+corresponded to empty values at the table with the target data subset 
+before they got substituted by NAs at the 
+[in-record data validation stage](#ind-6-4--Conduct-In-Record-Data-Validation).
+
+```{r create_a_kable_to_present_the_distinct_invalid_values_for_the_the_variable_CROPDMGEXP}
+
+# Create a kable to presents the distinct invalid values 
+# of the variable CROPDMGEXP at the table with the target data subset 
+# that were substituted by NAs at the in-record data validation stage.
+kable(
+  x = target_data_subset[
+    REFNUM %in% in_record_validated_data[
+      is.na(CROPDMGEXP), REFNUM
+      ],
+    list(
+      "distinct_values" = CROPDMGEXP
+    )
+    ][
+      ,
+      .N,
+      distinct_values
+      ],
+  col.names = c(
+    "Distinct Values", 
+    "Number of Observations"
+  ),
+  caption = paste0(
+    "Table 6.5.3.1-2: ",
+    "The distinct invalid values for the variable 'CROPDMGEXP' ", 
+    "that were substituted by NAs at the in-record data validation stage."
+  )
+) %>% 
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  )
+
+```
+
+<br>  
+
+<font size="1">[back to start of this subsubsection](#ind-6-5-3-1--Examine-the-invalid-values-from-the-variable-CROPDMGEXP)</font>  
+<font size="1">[back to start of this subsection](#ind-6-5-3--Impute-missing-values-at-the-variable-CROPDMGEXP)</font>  
+<font size="1">[back to start of this section](#ind-6-5--Impute-Missing-Values)</font>  
+<font size="1">[back to start of this chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>  
+
+<br>  
+
+#### 6.5.3.2 Associate plausible substitutions to the invalid values from the variable CROPDMGEXP {#ind-6-5-3-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-CROPDMGEXP}
+
+A single association (which works perfectly as shown in the [next subsubsection
+](#ind-6-5-3-3--Identify-the-imputable-missing-values-at-the-variable-CROPDMGEXP) 
+was made for the missing values that corresponded to empty values: 
+
+  * The entries that correspond to crop damage with zero magnitude, 
+  (denoted by the value 0 at the variable *CROPDMG*) 
+  could be associated with any of the valid values ("K", "M", "B").  
+
+<br>  
+
+<font size="1">[back to start of this subsubsection](#ind-6-5-3-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-CROPDMGEXP)</font>  
+<font size="1">[back to start of this subsection](#ind-6-5-3--Impute-missing-values-at-the-variable-CROPDMGEXP)</font>  
+<font size="1">[back to start of this section](#ind-6-5--Impute-Missing-Values)</font>  
+<font size="1">[back to start of this chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>  
+
+<br>  
+
+#### 6.5.3.3 Identify the imputable missing values at the variable CROPDMGEXP {#ind-6-5-3-3--Identify-the-imputable-missing-values-at-the-variable-CROPDMGEXP}
+
+The observations that satisfied the criterion imposed by the 
+[association made for the invalid values from the variable *CROPDMGEXP*
+](#ind-6-5-3-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-CROPDMGEXP) 
+were identified.  
+
+```{r identify_the_observations_which_contain_imputable_missing_values_at_the_variable_CROPDMGEXP} 
+
+# Create a validator with the criterion to identify 
+# the imputable missing values for the variable CROPDMGEXP.
+V_____imputable_missing_values_at_the_variable_CROPDMGEXP <- validator(
+  "imputable_missing_values_at_CROPDMGEXP" = ( 
+    (CROPDMG == 0) & is.na(CROPDMGEXP) 
+  )
+)
+
+# Confront the subset of observations with missing values 
+# in the variable PROPDMGEXP at the in-record validated data 
+# with the validator with the criterion to identify 
+# the imputable missing values at the variable CROPDMGEXP. 
+CF_____imputable_missing_values_at_the_variable_CROPDMGEXP <- 
+  confront(
+    dat = in_record_validated_data[is.na(CROPDMGEXP)],
+    V_____imputable_missing_values_at_the_variable_CROPDMGEXP
+  )
+
+```
+
+The key values (denoted by the variable *REFNUM*) of the observations 
+for which the missing values at the variable *CROPDMGEXP* could be retrieved 
+were identified.  
+
+```{r create_a_kable_to_present_the_results_for_the_observations_which_contain_imputable_missing_values_at_the_variable_CROPDMGEXP}
+
+# Create a kable to present the number of imputable missing values for the 
+# variable CROPDMGEXP at the table with the in-record validated data subset.
+kable(
+  x = summary(CF_____imputable_missing_values_at_the_variable_CROPDMGEXP)[
+    , c("name", "items", "passes", "fails", "nNA", "error", "warning")
+    ],
+  caption = paste0(
+    "Table 6.5.3.3-1: ",
+    "Results from identification of imputable missing values ", 
+    "at the variable CROPDMGEXP."
+  )
+) %>% 
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  ) %>% 
+  footnote(
+    general = paste0(
+      "The subset of the 55041 observations with missing values ",
+      "was used for the identification of imputable invalid values."
+    )
+  )
+
+
+```
+
+The key values (denoted by the variable *REFNUM*) of the observations 
+for which the missing values at the variable *CROPDMGEXP* could be retrieved 
+were identified. 
+
+```{r identify_the_observations_which_contain_imputable_missing_values_at_the_variable_CROPDMGEXP_by_their_key_value}
+
+# Identify the observations for which the missing value 
+# at the variable CROPDMGEXP can be safely imputed, 
+# by their key value denoted by the variable REFNUM.
+criterion_by_REFNUM_____imputable_missing_values_at_the_variable_CROPDMGEXP <- 
+  with(
+    data = CF_____imputable_missing_values_at_the_variable_CROPDMGEXP[["._value"]],
+    expr = in_record_validated_data[is.na(CROPDMGEXP), REFNUM]
+  )
+
+```
+
+<br>  
+
+<font size="1">[back to start of this subsubsection](#ind-6-5-3-3--Identify-the-imputable-missing-values-at-the-variable-CROPDMGEXP)</font>  
+<font size="1">[back to start of this subsection](#ind-6-5-3--Impute-missing-values-at-the-variable-CROPDMGEXP)</font>  
+<font size="1">[back to start of this section](#ind-6-5--Impute-Missing-Values)</font>  
+<font size="1">[back to start of this chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>  
+
+<br>  
+
+#### 6.5.3.4 Substitute the imputable missing values at the variable CROPDMGEXP {#ind-6-5-3-4--Substitute-the-imputable-missing-values-at-the-variable-CROPDMGEXP}  
+
+The value *"K"* was imputed to all observations with imputable missing values 
+at the variable *CROPDMGEXP* (which were identified by their key value).
+
+```{r impute_the_retrievable_missing_values_for_the_variable_CROPDMGEXP}
+
+# Set the imputable missing values at the variable CROPDMGEXP 
+# with the value "K".
+set(
+  x = imputed_data,
+  i = which(
+    imputed_data$REFNUM %in% 
+      criterion_by_REFNUM_____imputable_missing_values_at_the_variable_CROPDMGEXP
+  ),
+  j = "CROPDMGEXP",
+  value = "K"
+)
+
+
+```
+
+*(They could have been substituted by any of the valid values ("K", "M" or "B") 
+for the variable PROPDMGEXP without changing the fact 
+that they refer to 0$ property damage.)*  
+
+<br>  
+
+<br>  
+
+<font size="1">[back to start of this subsubsection](#ind-6-5-3-4--Substitute-the-imputable-missing-values-at-the-variable-CROPDMGEXP)</font>  
 <font size="1">[back to start of this subsection](#ind-6-5-3--Impute-missing-values-at-the-variable-CROPDMGEXP)</font>  
 <font size="1">[back to start of this section](#ind-6-5--Impute-Missing-Values)</font>  
 <font size="1">[back to start of this chapter](#ind-6--DATA-PROCESSING)</font>  
@@ -1370,7 +3882,53 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ### 6.5.4 Conduct post validation for the table with the imputed data {#ind-6-5-4--Conduct-post-validation-for-the-table-with-the-imputed-data}  
 
+Post validation was conducted to verify that the values of variables 
+at the table with imputed data were valid 
+according to the same constrains that were used to 
+[identify the invalid values for each variable
+](#ind-6-4-2--Conduct-in-record-data-validation-for-each-variable) 
+at the table with the target data subset.  
 
+```{r conduct_post_validation_for_the_table_with_the_imputed_data}
+
+# The table with the imputed data was post validated to verify 
+# that all values for each of the variables it contained were valid.
+CF____post_validation_of_the_table_with_the_imputed_data <- confront(
+  dat = imputed_data,
+  V____constrains_for_the_in_record_data_validation
+)
+
+```
+
+All values for each variable at the table with the imputed data were valid.
+
+```{r create_a_kable_with_the_results_from_post_validation_of_the_table_with_the_imputed_data}
+
+# Present the results of the post validation for the table with imputed data
+kable(
+  x = summary(CF____post_validation_of_the_table_with_the_imputed_data)[
+    , c("name", "items", "passes", "fails", "nNA", "error", "warning")
+    ],
+  caption = paste0(
+    "Table 6.5.4-1: ", 
+    "The results of post validation for the table with the imputed data."
+  )
+) %>% 
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  ) %>% 
+  footnote(
+     general = paste0(
+      "The same constrains that were used to identify the invalid values ", 
+      "of each variable at the table with the target data subset, ", "\n",
+      "were used for the post validation of the observations ", 
+      "at the table with the imputed data."
+    )
+  )
+
+```
 
 <br>  
 
@@ -1385,7 +3943,55 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ### 6.5.5 Overview of the table with the imputed data {#ind-6-5-5--Overview-of-the-table-with-the-imputed-data}  
 
+The table with the imputed data contained 9 variables and 144826 observations.  
 
+The variable *REFNUM* was set as the key of the this table.  
+
+```{r print_the_structure_of_the_table_with_the_imputed_data}
+
+# Print the structure of the table with the imputed data.
+str(imputed_data)
+
+```
+
+There were 255 missing values left only at the variable *EVTYTE* 
+(which were those that couldn't be safely imputed). 
+The number of distinct values at any of the variables didn't indicate 
+the presence of obvious abnormalities.  
+
+```{r create_a_kable_with_facts_for_the_table_with_the_imputed_data}
+
+# Create a kable to highlight some facts about the table with the imputed data.
+kable(
+  x = data.table(
+    "Variable" = names(imputed_data),
+    "Number of Distinct Values" = vapply(imputed_data, function(x) length(unique(x[!is.na(x)])), integer(1)),
+    "Number of Missing Values" = vapply(
+      X = imputed_data, 
+      FUN = function(x) sum(is.na(x)), 
+      FUN.VALUE = integer(1)),
+    "Percentage of Missing Values" = vapply(
+      X = imputed_data, 
+      FUN = function(x) mean(is.na(x)),
+      FUN.VALUE = double(1))
+  ),
+  caption = paste0(
+    "Table 6.5.5-1: Facts about the table with the imputed data."
+  )
+) %>% 
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  ) %>% 
+  footnote(
+    general = paste0(
+      "The table with the imputed data contained 9 variables ", 
+      "and 144826 observations."
+    )
+  )
+
+```
 
 <br>  
 
@@ -1402,7 +4008,30 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ## 6.6 Conduct Cross-Record Data Validation {#ind-6-6--Conduct-Cross-Record-Data-Validation}  
 
+<font size="3"><u><strong>Summary</strong></u></font>  
 
+Each observation at the table with imputed data was checked to verify 
+if it contains entries which were valid across all variables simultaneous. 
+Those observations that were valid 
+were used to create the table with the cross-record validated data.  
+
+<font size="3"><u><strong>Steps</strong></u></font>  
+
+* [6.6.1 Identify all valid observations
+](#ind-6-6-1--Identify-all-valid-observations)  
+  * Identifies the valid observations according to a criterion 
+  that spans across all variables.  
+* [6.6.2 Create the table with the cross-record validated data
+](#ind-6-6-2--Create-the-table-with-the-cross-record-validated-data)  
+  * Creates the table with the cross-record validated data 
+  extracting only the valid observations.  
+* [6.6.3 Conduct post validation for table with the cross-record validated data
+](#ind-6-6-3--Conduct-post-validation-for-table-with-the-cross-record-validated-data)  
+  * Ensures that all observations 
+  at the table with the cross-record validated data are valid.  
+* [6.6.4 Overview of the table with the cross-record validated data
+](#ind-6-6-4--Overview-of-the-table-with-the-cross-record-validated-data)  
+  * Presents some basic facts about the table with the cross-validated data.  
 
 <br>  
 
@@ -1412,13 +4041,97 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 <br>  
 
-### 6.6.1 Conduct cross-record data validation for each observation {#ind-6-6-1--Conduct-cross-record-data-validation-for-each-observation}  
+### 6.6.1 Identify all valid observations {#ind-6-6-1--Identify-all-valid-observations}  
 
+A single constrain that spanned across all available variables 
+at the table with the imputed data was created and used 
+to identify the valid observations.  
 
+Specifically, each observation must simultaneous satisfy the 4 criteria below 
+in order to be considered valid:  
+  
+  1. The id must be unique (and non-missing).  
+  2. The weather event type value must be 
+  one of the defined weather events (and non-missing).  
+  3. The year must be in the period from 2001 to 2011 (and non-missing).  
+  4. There must be non-zero harm either to population health or to economy, so:
+     * either fatalities must be positive (and non-missing), 
+     * or injuries must be positive (and non-missing), 
+     * or property damage (in dollars) must be retrievable and positive (and non-missing), 
+     * or crop damage (in dollars) must be retrievable and positive (and non-missing).  
+
+```{r conduct_cross_record_validation_for_the_observations_at_table_with_the_imputed_data}
+
+# A validator was created that contains a constrain 
+# for the validity of each observation 
+# that spans across all variables .  
+V_____cross_record_constrains <- validator(
+  "valid_observations" = (
+    ( REFNUM %in% names(table(REFNUM)[table(REFNUM) == 1]) ) &
+      ( !is.na(EVTYPE) ) & 
+      ( as.integer(str_extract(BGN_DATE, "(?<=^\\d{1,2}/\\d{1,2}/)\\d{4}(?= 0:00:00$)")) %in%
+          c(2001:2011) ) &
+      (
+        ( FATALITIES > 0 ) |
+          ( INJURIES > 0 ) |
+          ( PROPDMG > 0 & !is.na(PROPDMGEXP) ) |
+          ( CROPDMG > 0 & !is.na(CROPDMGEXP) )
+      )
+  )
+)
+
+# The imputed data table was confronted 
+# with the validator that identifies 
+# the observations that contain valid values across all variables. 
+CF_____cross_record_constrains <- confront(
+  dat = imputed_data,
+  V_____cross_record_constrains
+)
+
+```
+
+Out of the total of 144826 observation at the table with the imputed data 
+144571 were valid across all variables while only 255 were found to be invalid.
+
+```{r create_a_kable_with_the_results_of_cross_record_validation_for_the_observations_at_the_table_with_the_imputed_data}
+
+# Present the result of cross-record validation 
+# for the observations contained at the table with imputed data.  
+kable(
+  x = summary(CF_____cross_record_constrains)[
+    , c("name", "items", "passes", "fails", "nNA", "error", "warning")
+    ],
+  caption = paste0(
+    "Table 6.6.1-1: ",
+    "The table contains the results of the cross-record data validation ",
+    "for the observation contained at the imputed data table."
+  )
+) %>% 
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  )
+
+```
+
+The value of the key (denoted by the variable *REFNUM*) 
+was used to identify the observations that were valid. 
+
+```{r identify_the_cross_record_valid_observation_at_the_table_with_the_imputed_data_by_their_key_value}
+
+# Identify the valid observations found through the cross-record validation 
+# by the their key value.  
+criterion_by_REFNUM_____cross_validated_observations <- imputed_data[
+  CF_____cross_record_constrains[["._value"]][["valid_observations"]],
+  REFNUM
+  ]
+
+```
 
 <br>  
 
-<font size="1">[back to start of this subsection](#ind-6-6-1--Conduct-cross-record-data-validation-for-each-observation)</font>  
+<font size="1">[back to start of this subsection](#ind-6-6-1--Identify-all-valid-observations)</font>  
 <font size="1">[back to start of this section](#ind-6-6--Conduct-Cross-Record-Data-Validation)</font>  
 <font size="1">[back to start of this chapter](#ind-6--DATA-PROCESSING)</font>  
 <font size="1">[back to *TABLE OF CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>  
@@ -1429,7 +4142,20 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ### 6.6.2 Create the table with the cross-record validated data {#ind-6-6-2--Create-the-table-with-the-cross-record-validated-data}  
 
+From the table with the imputed data, 
+the table with the cross-record validated data was created, 
+by including only the observations 
+that contained valid (and non-missing) values across all variables. 
 
+```{r create_the_table_with_the_cross_record_validated_data}
+
+# Create the table with cross-record data validation 
+# by using only the valid observations.
+cross_validated_data <- imputed_data[
+  REFNUM %in% criterion_by_REFNUM_____cross_validated_observations
+  ]
+
+```
 
 <br>  
 
@@ -1444,6 +4170,47 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ### 6.6.3 Conduct post validation for table with the cross-record validated data {#ind-6-6-3--Conduct-post-validation-for-table-with-the-cross-record-validated-data}  
 
+Post validation was conducted to verify that all observations 
+at the table with the cross-validated data were valid 
+according to the same constrains that were used to 
+[identify the valid observation](#ind-6-6-1--Identify-all-valid-observations) 
+at the table with the imputed data.  
+
+```{r conduct_post_validation_for_the_table_with_the_cross_record_validated_data}
+
+# The table with the cross-record validated data was post validated to verify 
+# that all observations were valid.
+CF_________post_validation_of_cross_validated_data <- confront(
+  dat = cross_validated_data,
+  V_____cross_record_constrains
+)
+
+```
+
+All the observations at the table with the cross-record validated data 
+were valid.  
+
+```{r create_a_kable_with_the_results_from_post_validation_of_the_table_with_the_cross_record_validated_data}
+
+# Create a kable to present the results of the post validation 
+# for the table with the cross-record validated data.
+kable(
+  x = summary(CF_________post_validation_of_cross_validated_data)[
+    , c("name", "items", "passes", "fails", "nNA", "error", "warning")
+    ],
+  caption = paste0(
+    "Table 6.6.3-1: ",
+    "Presents the result of the post validation ", 
+    "for the table with cross validated data."
+  )
+) %>% 
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  )
+
+```
 
 
 <br>  
@@ -1459,7 +4226,21 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ### 6.6.4 Overview of the table with the cross-record validated data {#ind-6-6-4--Overview-of-the-table-with-the-cross-record-validated-data}
 
+The table with the cross-validated data contained 9 variables and 144571 observations.  
 
+The variable *REFNUM* was set as the key of this table.  
+
+```{r print_the_structure_of_the_table_with_the_cross_record_validated_data}
+
+# Print the structure of the table with the cross-record validated data.
+str(cross_validated_data)
+
+```
+
+All the observation at the table with the cross-validated data are complete 
+as indicated by the results of 
+[post validation for the table with cross-validated data
+](#ind-6-6-3--Conduct-post-validation-for-table-with-the-cross-record-validated-data).  
 
 <br>  
 
@@ -1476,7 +4257,26 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ## 6.7 Produce The Processed Data {#ind-6-7--Produce-The-Processed-Data}  
 
+<font size="3"><u><strong>Summary</strong></u></font>  
 
+Having identified, validated and imputed 
+the target data for the period of interest,
+by transforming the variables from the table with cross-record validated data, 
+the processed data table was constructed 
+that contained all information that was necessary 
+in order to proceed with this analysis 
+and address the two questions of interest.  
+
+<font size="3"><u><strong>Steps</strong></u></font>  
+
+* [6.7.1 Create the table with the processed data
+](#ind-6-7-1--Create-the-table-with-the-processed-data)  
+  * Transforms the variables from the table with cross-validated data 
+  to created the table with the processed data.
+* [6.7.2 Conduct post validation for the table with the processed data
+](#ind-6-7-2--Conduct-post-validation-for-the-table-with-the-processed-data)  
+  * Ensures that all observations at the table with the processed data 
+  are valid.
 
 <br>  
 
@@ -1488,7 +4288,101 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ### 6.7.1 Create the table with the processed data {#ind-6-7-1--Create-the-table-with-the-processed-data}  
 
+The following transformations were applied 
+at the variables from the table with the cross-record validated data, 
+in order to construct the table with the processed data: 
+  
+  1. the variable **REFNUM** was transfered unchanged  
+  2. the variable *BGN_DATE* was omitted  
+  3. the variable *EVTYPE* was transfered and renamed to **EVENT_TYPE**  
+  4. the variable **FATALITIES** was transfered unchanged  
+  5. the variable **INJURIES** was transfered unchanged  
+  6. the variables *FATALITIES* and *INJURIES* were added  
+  in order to create the variable **CASUALTIES**  
+  7. the variables *PROPDMG* (that denoted the magnitude of property damage) 
+  and *PROPDMGEXP* (that indicated if the value of *PROPDMG* referred to 
+  thousands, millions or billions)
+  were combined appropriately to retrieve the property damage in dollars 
+  in order to create the variable **PROPERTY_DAMAGE**  
+  8. the variables *CROPDMG* (that denoted the magnitude of crop damage) 
+  and *CROPDMGEXP* (that indicated if the value of *CROPDMG* referred to 
+  thousands, millions or billions)
+  were combined appropriately to retrieve the crop damage in dollars 
+  in order to create the variable **CROP_DAMAGE**  
+  9. the variables *PROPERTY_DAMAGE* and *CROP_DAMAGE* were added 
+  in order to create the variable **ECONOMIC_DAMAGE**  
 
+```{r create_the_table_with_the_processed_data}
+
+# Create the table with the processed data 
+# from the information contained 
+# at the table with cross-record validated data.
+processed_data <- cross_validated_data[
+  ,
+  list(
+    # REFNUM variable doesn't need to change
+    "REFNUM" = REFNUM,
+    # EVTYPE variable should be renamed to EVENT_TYPE
+    "EVENT_TYPE" = EVTYPE,
+    # FATALITIES variable doesn't need to change
+    "FATALITIES" = FATALITIES,
+    # INJURIES variable doesn't need to change
+    "INJURIES" = INJURIES,
+    # PROPERTY_DAMAGE is created by combining the information
+    # from the PROPDMG variable which denotes the magnitude of property damage
+    # and the PROPDMGEXP variable that indicates if the magnitude
+    # refers to thousands (K), millions (M) or billions (B) of dollars
+    "PROPERTY_DAMAGE" = (function(magnitude, coded_exponent, code_dictionary) {
+      recoded_exponent <- str_replace_all(
+        string = coded_exponent,
+        code_dictionary
+      ) %>%
+        as.integer()
+      ## the magnitude is multiplied by a coefficient
+      ## with base 10 raised to the appropriate power
+      ## (3 for thousands, 6 for millions or 9 for billions)
+      ## to retrieve the value of property damage 
+      reconstructed_number <- magnitude * 10^recoded_exponent
+    })(PROPDMG, PROPDMGEXP, c("K" = "3", "M" = "6", "B" = "9")),
+    # CROP_DAMAGE is created by combining the information
+    # from the CROPDMG variable which denotes the magnitude of crop damage
+    # and the CROPDMGEXP variable that indicates if the magnitude
+    # refers to thousands (K), millions (M) or billions (B) of dollars
+    "CROP_DAMAGE" = (function(magnitude, coded_exponent, code_dictionary) {
+      recoded_exponent <- str_replace_all(
+        string = coded_exponent,
+        code_dictionary
+      ) %>%
+        as.integer()
+      ## the magnitude is multiplied by a coefficient
+      ## with base 10 raised to the appropriate power
+      ## (3 for thousands, 6 for millions or 9 for billions)
+      ## to retrieve the value of crop damage 
+      reconstructed_number <- magnitude * 10^recoded_exponent
+    })(CROPDMG, CROPDMGEXP, c("K" = "3", "M" = "6", "B" = "9"))
+  )
+  ][
+    ,
+    # Create a variable with the number of casualties
+    # caused by each weather event type 
+    # by adding the fatalities and injuries
+    CASUALTIES := FATALITIES + INJURIES][
+      ,
+      # Create a variable with the economic damage
+      # caused by each weather event type 
+      # by adding the property damage and crop damage
+      ECONOMIC_DAMAGE := PROPERTY_DAMAGE + CROP_DAMAGE
+      ][
+        ,
+        # Re-arrange the order of the variables 
+        list(
+          REFNUM, EVENT_TYPE, 
+          FATALITIES, INJURIES, CASUALTIES,
+          PROPERTY_DAMAGE, CROP_DAMAGE, ECONOMIC_DAMAGE
+        )
+        ]
+
+```
 
 <br>  
 
@@ -1503,6 +4397,75 @@ if ( !file.exists(filepath_____unprocessed_data) ) {
 
 ### 6.7.2 Conduct post validation for the table with the processed data {#ind-6-7-2--Conduct-post-validation-for-the-table-with-the-processed-data}  
 
+Post validation was conducted to verify that all observations 
+contained at the table with the processed data were valid 
+across all variables it contained.  
+
+One constrain was created and used, which consists of three parts 
+that must hold simultaneous for each observation:  
+  
+  * The key for each observation denoted by the variable *REFNUM* must be unique.  
+  * The event type for each observation denoted by the variable *EVENT_TYPE* 
+  must be one of 48 defined weather event types according to the 
+  *NATIONAL WEATHER SERVICE INSTRUCTION 10-1605, AUGUST 17, 2007 (at chapter 7)*  
+  * At least one of the six variables that indicate the harm 
+  (either to population health or to economy), 
+  denoted by the variables *FATALITIES*, *INJURIES*, *CASUALTIES*, 
+  *PROPERTY_DAMAGE*, *CROP_DAMAGE* or *EC0NOMIC_DAMAGE* must be positive.  
+
+```{r conduct_post_validation_for_the_table_with_the_processed_data}
+
+# Create a validator that contains a constrain 
+# that spans across all variables contained 
+# at the table with the processed data 
+# for each observation it includes.
+V_____post_validation_of_table_with_the_processed_data <- validator(
+  "valid_observation" = (
+    ( REFNUM %in% table(REFNUM)[names(table(REFNUM)[table(REFNUM) == 1])] ) &
+      ( EVENT_TYPE %in% defined_event_types ) &
+      ( FATALITIES > 0 ) |
+      ( INJURIES > 0 ) |
+      ( CASUALTIES > 0) |
+      ( PROPERTY_DAMAGE > 0 ) |
+      ( CROP_DAMAGE > 0) |
+      ( ECONOMIC_DAMAGE > 0 )
+  )
+)
+
+# Confront the table with the processed data with 
+# validator that verifies the validity of each observation it contains 
+# across all variables.
+CF_____post_validation_of_table_with_the_processed_data <- confront(
+  dat = processed_data,
+  V_____post_validation_of_table_with_the_processed_data
+)
+
+
+```
+
+All the 144571 observations included in the processed data table 
+were found to satisfy the condition.
+
+```{r create_a_kable_with_the_results_from_post_validation_of_the_table_with_the_processed_data}
+
+# Create a kable to resents the results of post validation 
+# for the table with the processed data.
+kable(
+  x = summary(CF_____post_validation_of_table_with_the_processed_data)[
+    , c("name", "items", "passes", "fails", "nNA", "error", "warning", "error", "warning")
+    ],
+  caption = paste0(
+    "Table 6.7.2-1: ",
+    "The results of post validation for the table with the processed data."
+  )
+) %>% 
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+    full_width = FALSE,
+    fixed_thead = TRUE
+  )
+
+```
 
 
 <br>  
