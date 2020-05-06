@@ -8854,6 +8854,26 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ------------------------------------------------------------------------
 
+The table with the processed data (which was the result of the [data
+processing pipeline](#ind-6--DATA-PROCESSING)) contains all the
+information that was used in the chapters:
+
+-   [8 HARM ON POPULATION HEALTH](#ind-8--HARM-ON-POPULATION-HEALTH)  
+-   [9 HARM ON ECONOMY](#ind-9--HARM-ON-ECONOMY)
+
+in order to adress the two questions of interest for this analysis.
+
+[Details about the
+variables](#ind-7-1--Information-For-The-Table-With-The-Processed-Data)
+it contains and [a short
+overview](#ind-7-2--Overview-Of-The-Table-With-The-Processed-Data) are
+presented in this chapter.
+
+Finally in order to assist any attempt to reproduce the analysis [a file
+with the processed data was
+exported](#ind-7-3--Export-The-Table-With-The-Processed-Data) to serve
+as *checkpoint*.
+
 <br>
 
 <font size="1">[back to start of this
@@ -8865,6 +8885,20 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 7.1 Information For The Table With The Processed Data
 -----------------------------------------------------
+
+There are 8 variable at the table with the processed data:
+
+1.  **REFNUM** (int) : a value that uniquely identifies each observation
+    and was used as the key of the table  
+2.  **EVENT\_TYPE** (chr) : the type of each weather event type  
+3.  **FATALITIES** (int) : the number of fatalities  
+4.  **INJURIES** (int) : the numbe of injuries  
+5.  **CASUALTIES** (int) : the number of casualties (injuries and
+    fatalities)  
+6.  **PROPERTY\_DAMAGE** (num) : the property damage in dollars  
+7.  **CROP\_DAMAGE** (num) : the crop damage in dollars  
+8.  **ECONOMIC\_DAMAGE** (num): the economic damage in dollars (property
+    damage and crop damage)
 
 <br>
 
@@ -8882,6 +8916,194 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 7.2 Overview Of The Table With The Processed Data
 -------------------------------------------------
 
+The processed data consists of 8 variables and 144571 observations.
+
+The variable REFNUM was set as the key of this table.
+
+    # Print the structure of the table with the processed data.
+    str(processed_data)
+
+    ## Classes 'data.table' and 'data.frame':   144571 obs. of  8 variables:
+    ##  $ REFNUM         : int  413607 413608 413609 413610 413611 413612 413613 413614 413615 413616 ...
+    ##  $ EVENT_TYPE     : chr  "THUNDERSTORM WIND" "THUNDERSTORM WIND" "THUNDERSTORM WIND" "THUNDERSTORM WIND" ...
+    ##  $ FATALITIES     : int  0 0 0 0 0 0 0 0 0 0 ...
+    ##  $ INJURIES       : int  0 0 0 0 0 0 0 4 0 0 ...
+    ##  $ CASUALTIES     : int  0 0 0 0 0 0 0 4 0 0 ...
+    ##  $ PROPERTY_DAMAGE: num  10000 8000 2000 15000 5000 3000 10000 450000 150000 3000 ...
+    ##  $ CROP_DAMAGE    : num  0 0 0 0 0 0 0 0 0 0 ...
+    ##  $ ECONOMIC_DAMAGE: num  10000 8000 2000 15000 5000 3000 10000 450000 150000 3000 ...
+    ##  - attr(*, ".internal.selfref")=<externalptr> 
+    ##  - attr(*, "sorted")= chr "REFNUM"
+
+All the observations included in the processed data table are complete.
+
+    # Create a kable to present the number of complete cases 
+    # at the table with the processed data.
+    kable(
+        x = data.table(
+            "Percentage Of Complete Observations" = 
+                paste0(mean(complete.cases(processed_data))*100, "%")
+        ),
+        caption = paste0(
+            "Table 7.2-1: ",
+            "The percentage of complete observations ",
+            "at the table with the processed data."
+        )
+    ) %>% 
+        kable_styling(
+            bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+            full_width = FALSE,
+            fixed_thead = TRUE
+        )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 7.2-1: The percentage of complete observations at the table with
+the processed data.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Percentage Of Complete Observations
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+100%
+</td>
+</tr>
+</tbody>
+</table>
+The number of distinct values comply with what was expected from each
+variable.
+
+    # Create a kable to present the number of distinct values 
+    # for each variable at the table with the processed data.
+    kable(
+        x = data.table(
+            "Variable" = names(processed_data),
+            "Number of Distinct Values" = 
+                vapply(
+                    X = processed_data, 
+                    FUN = function(x) length(unique(x[!is.na(x)])), 
+                    FUN.VALUE = integer(1)
+                )
+        ),
+        caption = paste0(
+            "Table 7.2-2: ",
+            "The number of distinct values ",
+            "for each variable at the table with the processed data."
+        )
+    ) %>% 
+        kable_styling(
+            bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+            full_width = FALSE,
+            fixed_thead = TRUE
+        ) %>% 
+      footnote(
+        general = paste0(
+          "The table with the processed data consists of 8 variables ", "\n",
+          "and 144571 observations."
+        )
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 7.2-2: The number of distinct values for each variable at the
+table with the processed data.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Variable
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Number of Distinct Values
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+REFNUM
+</td>
+<td style="text-align:right;">
+144571
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EVENT\_TYPE
+</td>
+<td style="text-align:right;">
+47
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FATALITIES
+</td>
+<td style="text-align:right;">
+31
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INJURIES
+</td>
+<td style="text-align:right;">
+101
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CASUALTIES
+</td>
+<td style="text-align:right;">
+113
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PROPERTY\_DAMAGE
+</td>
+<td style="text-align:right;">
+1369
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CROP\_DAMAGE
+</td>
+<td style="text-align:right;">
+331
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ECONOMIC\_DAMAGE
+</td>
+<td style="text-align:right;">
+1647
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<sup></sup> The table with the processed data consists of 8 variables
+<br>and 144571 observations.
+</td>
+</tr>
+</tfoot>
+</table>
 <br>
 
 <font size="1">[back to start of this
@@ -8897,6 +9119,37 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 7.3 Export The Table With The Processed Data
 --------------------------------------------
+
+The table with the processed data was exported (as an R file), in the
+sub-directory of the working directory:
+
+-   *outputs –&gt; processed\_data*
+
+with filename:
+
+-   *table\_with\_the\_precessed\_data.R*
+
+<!-- -->
+
+    # Supply the filepath at which the table with the summary
+    # for the harm on population health will be exported.
+    filepath_____processed_data <-
+        file.path(
+            directory_tree_____outputs[[
+                "filepath_____outputs_____processed_data"
+                ]],
+            "table_with_the_processed_data.R"
+        )
+
+    # Export the table with the summary for the harm on population health
+    # with respect to fatalities.
+    saveRDS(
+        object = processed_data,
+        file = filepath_____processed_data
+    )
+
+*The main reason for exporting the a file with the processed data was to
+supply a checkpoint for any attempts to reproduce the analysis.*
 
 <br>
 
