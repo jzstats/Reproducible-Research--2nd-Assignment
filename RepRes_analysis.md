@@ -58,7 +58,11 @@
     -   [6.3 Extract The Target Data
         Subset](#ind-6-3--Extract-The-Target-Data-Subset)
         -   [6.3.1 Identify the target subset of
-            observations](#ind-6-3-1--Identify-the-target-subset-of-observations)  
+            observations](#ind-6-3-1--Identify-the-target-subset-of-observations)
+            -   [6.3.1.1 Verify the consistency of date
+                format](#ind-6-3-1-1--Verify-the-consistency-of-date-format)  
+            -   [6.3.1.2 Identify the eligible
+                observations](#ind-6-3-1-2--Identify-the-eligible-observations)  
         -   [6.3.2 Create the table with the target data
             subset](#ind-6-3-2--Create-the-table-with-the-target-data-subset)  
         -   [6.3.3 Conduct post validation for the table with the target
@@ -69,7 +73,13 @@
     -   [6.4 Conduct In-Record Data
         Validation](#ind-6-4--Conduct-In-Record-Data-Validation)
         -   [6.4.1 Introduce information from the Strom Data
-            Documentation](#ind-6-4-1--Introduce-information-from-the-Strom-Data-Documentation)  
+            Documentation](#ind-6-4-1--Introduce-information-from-the-Strom-Data-Documentation)
+            -   [6.4.1.1 Valid values for the EVTYPE
+                variable](#ind-6-4-1-1--Valid-values-for-the-EVTYPE-variable)  
+            -   [6.4.1.2 Valid values for the PROPDMGEXP
+                variable](#ind-6-4-1-2--Valid-values-for-the-PROPDMGEX-variable)  
+            -   [6.4.1.3 Valid values for the CROPDMGEXP
+                variable](#ind-6-4-1-3--Valid-values-for-the-CROPDMGEX-variable)  
         -   [6.4.2 Conduct in-record data validation for each
             variable](#ind-6-4-2--Conduct-in-record-data-validation-for-each-variable)  
         -   [6.4.3 Create the table with the in-record validated
@@ -81,11 +91,44 @@
             data](#ind-6-4-5--Overview-of-the-table-with-the-in-record-validated-data)  
     -   [6.5 Impute Missing Values](#ind-6-5--Impute-Missing-Values)
         -   [6.5.1 Impute missing values at the variable
-            EVTYPE](#ind-6-5-1--Impute-missing-values-at-the-variable-EVTYPE)  
+            EVTYPE](#ind-6-5-1--Impute-missing-values-at-the-variable-EVTYPE)
+            -   [6.5.1.1 Examine the invalid values from the variable
+                EVTYPE](#ind-6-5-1-1--Examine-the-invalid-values-from-the-variable-EVTYPE)  
+            -   [6.5.1.2 Associate plausible substitutions to the
+                invalid values from the variable
+                EVTYPE](#ind-6-5-1-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-EVTYPE)  
+            -   [6.5.1.3 Identify the imputable missing values at the
+                variable
+                EVTYPE](#ind-6-5-1-3--Identify-the-imputable-missing-values-at-the-variable-EVTYPE)  
+            -   [6.5.1.4 Substitute the imputable missing values at the
+                variable
+                EVTYPE](#ind-6-5-1-4--Substitute-the-imputable-missing-values-at-the-variable-EVTYPE)  
         -   [6.5.2 Impute missing values at the variable
-            PROPDMGEXP](#ind-6-5-2--Impute-missing-values-at-the-variable-PROPDMGEXP)  
+            PROPDMGEXP](#ind-6-5-2--Impute-missing-values-at-the-variable-PROPDMGEXP)
+            -   [6.5.2.1 Examine the invalid values from the variable
+                PROPDMGEXP](#ind-6-5-2-1--Examine-the-invalid-values-from-the-variable-PROPDMGEXP)  
+            -   [6.5.2.2 Associate plausible substitutions to the
+                invalid values from the variable
+                PROPDMGEXP](#ind-6-5-2-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-PROPDMGEXP)  
+            -   [6.5.2.3 Identify the imputable missing values at the
+                variable
+                PROPDMGEXP](#ind-6-5-2-3--Identify-the-imputable-missing-values-at-the-variable-PROPDMGEXP)  
+            -   [6.5.2.4 Substitute the imputable missing values at the
+                variable
+                PROPDMGEXP](#ind-6-5-2-4--Substitute-the-imputable-missing-values-at-the-variable-PROPDMGEXP)  
         -   [6.5.3 Impute missing values at the variable
-            CROPDMGEXP](#ind-6-5-3--Impute-missing-values-at-the-variable-CROPDMGEXP)  
+            CROPDMGEXP](#ind-6-5-3--Impute-missing-values-at-the-variable-CROPDMGEXP)
+            -   [6.5.3.1 Examine the invalid values from the variable
+                CROPDMGEXP](#ind-6-5-3-1--Examine-the-invalid-values-from-the-variable-CROPDMGEXP)  
+            -   [6.5.3.2 Associate plausible substitutions to the
+                invalid values from the variable
+                CROPDMGEXP](#ind-6-5-3-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-CROPDMGEXP)  
+            -   [6.5.3.3 Identify the imputable missing values at the
+                variable
+                CROPDMGEXP](#ind-6-5-3-3--Identify-the-imputable-missing-values-at-the-variable-CROPDMGEXP)  
+            -   [6.5.3.4 Substitute the imputable missing values at the
+                variable
+                CROPDMGEXP](#ind-6-5-3-4--Substitute-the-imputable-missing-values-at-the-variable-CROPDMGEXP)  
         -   [6.5.4 Conduct post validation for the table with the
             imputed
             data](#ind-6-5-4--Conduct-post-validation-for-the-table-with-the-imputed-data)  
@@ -93,8 +136,8 @@
             data](#ind-6-5-5--Overview-of-the-table-with-the-imputed-data)  
     -   [6.6 Conduct Cross-Record Data
         Validation](#ind-6-6--Conduct-Cross-Record-Data-Validation)
-        -   [6.6.1 Conduct cross-record data validation for each
-            observation](#ind-6-6-1--Conduct-cross-record-data-validation-for-each-observation)  
+        -   [6.6.1 Identify all valid
+            observations](#ind-6-6-1--Identify-all-valid-observations)  
         -   [6.6.2 Create the table with the cross-record validated
             data](#ind-6-6-2--Create-the-table-with-the-cross-record-validated-data)  
         -   [6.6.3 Conduct post validation for table with the
@@ -1138,6 +1181,29 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 6.1 Load The Raw Data In R
 --------------------------
 
+<font size="3"><u><strong>Summary</strong></u></font>
+
+The raw data was loaded in R from the supplied file
+[*repdata\_data\_StormData.csv.bz2*](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2)
+(which contains data from the [Storm Events
+Dataset](#ind-4--STORM-EVENTS-DATASET)), to create the table with the
+raw data which was then post validated and some basics fact about it
+were highlighted.
+
+<font size="3"><u><strong>Steps</strong></u></font>
+
+-   [6.1.1 Create the table with the raw
+    data](#ind-6-1-1--Create-the-table-with-the-raw-data)
+    -   Reads the file
+        [*repdata\_data\_StormData.csv.bz2*](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2)
+        in R, to create the table with the raw data.  
+-   [6.1.2 Conduct post validation for the table with the raw
+    data](#ind-6-1-2--Conduct-post-validation-for-the-table-with-the-raw-data)
+    -   Ensures that the raw data was loaded correctly.  
+-   [6.1.3 Overview of the table with the raw
+    data](#ind-6-1-3--Overview-of-the-table-with-the-raw-data)
+    -   Presents some basic facts about the table with the raw data.
+
 <br>
 
 <font size="1">[back to start of this
@@ -1150,6 +1216,30 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ### 6.1.1 Create the table with the raw data
+
+The raw data was loaded in R directly from the supplied file
+[repdata\_data\_StormData.csv.bz2](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2)
+(which was a CSV file, compressed via a bzip2 algorithm), with all
+variables deliberately coerced to character type in order to ensure that
+no information was lost or altered as a side effect of coercion. The
+first row of the file includes headers that were used to automatically
+assign the names of all the variables at the table with the raw data
+that was created.
+
+    # Load the raw data in R from the supplied file:
+    #     "repdata_data_StormData.csv.bz2"
+    # and create the table with the raw data.
+    raw_data <- fread(
+      ## the file is expected to exist at the working directory
+      file = filepath_____unprocessed_data,
+      ## the variables in the file are separated via a comma
+      sep = ",",
+      ## the first row of the file contains the names of the variables
+      header = TRUE,
+      ## all variables were deliberately loaded as character type
+      ## to avoid any loss or alteration of information as a side effect of coercion
+      colClasses = "character"
+    )
 
 <br>
 
@@ -1167,6 +1257,167 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 6.1.2 Conduct post validation for the table with the raw data
 
+The table with the raw data was post validated to ensure that the data
+from the file was loaded in R correctly.  
+Three simple constrains were applied:
+
+1.  It should contain 37 variables.  
+2.  It should contain 902297 observations.  
+3.  The type of all variables should be ‘character’.
+
+*(The expected number of variables and the expected number of
+observations, were acquired interactively before the execution of the
+main script
+[RepRes\_analysis.Rmd](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.Rmd)
+and were then used to form the constrains for the post validation.)*
+
+    # Create a validator with constrains for the validity of loaded raw data. 
+    V_____loaded_raw_data <- validator(
+      ## create a character vector that captures the class of each variable
+      classes_of_varirables := vapply(
+        X = ., 
+        ### although it is not expected to get an output 
+        ### with more than one element for the class of each variable, 
+        ### in general it is possible to happen, 
+        ### so proper care is taken to collapse the elements of such vector 
+        ### in a single element so that the vapply() function 
+        ### won't fail with an error in such case
+        FUN = function(x) paste(class(x), collapse = ","), 
+        FUN.VALUE = character(1)
+      ),
+      "expected_number_of_variables" = ( length(.) == 37 ),
+      "expected_number_of_observations" = ( nrow(.) == 902297 ),
+      "expected_variable_types" = ( classes_of_varirables == "character" )
+    )
+
+    # Confront the table with the raw data with the validator
+    # which constrains the constrains for the validity of raw data.
+    CF_____loaded_raw_data <- confront(dat = raw_data, V_____loaded_raw_data)
+
+The table with the raw data was valid.
+
+    # Create a kable with the results of post validation 
+    # for the table with the raw data. 
+    kable(
+      x = summary(CF_____loaded_raw_data)[
+        , 
+        c("name", "items", "passes", "fails", "nNA", "error", "warning")
+        ], 
+      caption = paste0(
+        "TABLE 6.1.3-1: ", 
+        "The results of post validation for the table with the raw data."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c(
+          "striped", "hover", "condensed", "responsive", "bordered"
+        ), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+TABLE 6.1.3-1: The results of post validation for the table with the raw
+data.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+name
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+items
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+passes
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+fails
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+nNA
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+error
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+warning
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+expected\_number\_of\_variables
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+expected\_number\_of\_observations
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+expected\_variable\_types
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+</tbody>
+</table>
 <br>
 
 <font size="1">[back to start of this
@@ -1183,6 +1434,655 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 6.1.3 Overview of the table with the raw data
 
+The table with the raw data contained 37 variables that were all of type
+‘character’ and 902297 observations.
+
+    # Print the structure of the table with the raw data.
+    str(raw_data)
+
+    ## Classes 'data.table' and 'data.frame':   902297 obs. of  37 variables:
+    ##  $ STATE__   : chr  "1.00" "1.00" "1.00" "1.00" ...
+    ##  $ BGN_DATE  : chr  "4/18/1950 0:00:00" "4/18/1950 0:00:00" "2/20/1951 0:00:00" "6/8/1951 0:00:00" ...
+    ##  $ BGN_TIME  : chr  "0130" "0145" "1600" "0900" ...
+    ##  $ TIME_ZONE : chr  "CST" "CST" "CST" "CST" ...
+    ##  $ COUNTY    : chr  "97.00" "3.00" "57.00" "89.00" ...
+    ##  $ COUNTYNAME: chr  "MOBILE" "BALDWIN" "FAYETTE" "MADISON" ...
+    ##  $ STATE     : chr  "AL" "AL" "AL" "AL" ...
+    ##  $ EVTYPE    : chr  "TORNADO" "TORNADO" "TORNADO" "TORNADO" ...
+    ##  $ BGN_RANGE : chr  "0.00" "0.00" "0.00" "0.00" ...
+    ##  $ BGN_AZI   : chr  "" "" "" "" ...
+    ##  $ BGN_LOCATI: chr  "" "" "" "" ...
+    ##  $ END_DATE  : chr  "" "" "" "" ...
+    ##  $ END_TIME  : chr  "" "" "" "" ...
+    ##  $ COUNTY_END: chr  "0.00" "0.00" "0.00" "0.00" ...
+    ##  $ COUNTYENDN: chr  "" "" "" "" ...
+    ##  $ END_RANGE : chr  "0.00" "0.00" "0.00" "0.00" ...
+    ##  $ END_AZI   : chr  "" "" "" "" ...
+    ##  $ END_LOCATI: chr  "" "" "" "" ...
+    ##  $ LENGTH    : chr  "14.00" "2.00" "0.10" "0.00" ...
+    ##  $ WIDTH     : chr  "100.00" "150.00" "123.00" "100.00" ...
+    ##  $ F         : chr  "3" "2" "2" "2" ...
+    ##  $ MAG       : chr  "0.00" "0.00" "0.00" "0.00" ...
+    ##  $ FATALITIES: chr  "0.00" "0.00" "0.00" "0.00" ...
+    ##  $ INJURIES  : chr  "15.00" "0.00" "2.00" "2.00" ...
+    ##  $ PROPDMG   : chr  "25.00" "2.50" "25.00" "2.50" ...
+    ##  $ PROPDMGEXP: chr  "K" "K" "K" "K" ...
+    ##  $ CROPDMG   : chr  "0.00" "0.00" "0.00" "0.00" ...
+    ##  $ CROPDMGEXP: chr  "" "" "" "" ...
+    ##  $ WFO       : chr  "" "" "" "" ...
+    ##  $ STATEOFFIC: chr  "" "" "" "" ...
+    ##  $ ZONENAMES : chr  "" "" "" "" ...
+    ##  $ LATITUDE  : chr  "3040.00" "3042.00" "3340.00" "3458.00" ...
+    ##  $ LONGITUDE : chr  "8812.00" "8755.00" "8742.00" "8626.00" ...
+    ##  $ LATITUDE_E: chr  "3051.00" "0.00" "0.00" "0.00" ...
+    ##  $ LONGITUDE_: chr  "8806.00" "0.00" "0.00" "0.00" ...
+    ##  $ REMARKS   : chr  "" "" "" "" ...
+    ##  $ REFNUM    : chr  "1.00" "2.00" "3.00" "4.00" ...
+    ##  - attr(*, ".internal.selfref")=<externalptr>
+
+There were no missing values (coded as NAs) at any of the variables it
+contained, but there were a lot of empty values which probably represent
+missing values. For some of the variables, a suspiciously large or small
+number of distinct values was observed.
+
+    # Create a kable to highlight some facts 
+    # about the variables at the table with the raw data.
+    kable(
+      data.table(
+        "Variable" = names(raw_data),
+        "Number of Distinct Values" = vapply(
+          X = raw_data, 
+          FUN = function(x) length(unique(x)), 
+          FUN.VALUE = integer(1)
+          ),
+        "Number of NAs" = vapply(
+          X = raw_data, 
+          FUN = function(x) sum(is.na(x)),
+          FUN.VALUE = integer(1)
+          ),
+        # from the output with the structure of the table with the raw data 
+        # it was found that some empty values exist at some variables 
+        # and the exact number that each of them contains was reported
+        "Number of Empty Values" = vapply(
+          X = raw_data, 
+          FUN = function(x) sum(x == ""), 
+          FUN.VALUE = integer(1))
+        
+      ),
+      caption = paste0(
+        "TABLE 6.1.3-2: ", 
+        "Facts about the variables at the table with the raw data."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c(
+          "striped", "hover", "condensed", "responsive", "bordered"
+        ), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      ) %>% 
+      footnote(
+        general = paste0(
+          "The table with the raw data contains 37 variables ", 
+          "that are all of type 'character'", "\n",
+          "and 902297 observations."
+        )
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+TABLE 6.1.3-2: Facts about the variables at the table with the raw data.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Variable
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Number of Distinct Values
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Number of NAs
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Number of Empty Values
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+STATE\_\_
+</td>
+<td style="text-align:right;">
+70
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BGN\_DATE
+</td>
+<td style="text-align:right;">
+16335
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BGN\_TIME
+</td>
+<td style="text-align:right;">
+3608
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TIME\_ZONE
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+COUNTY
+</td>
+<td style="text-align:right;">
+557
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+COUNTYNAME
+</td>
+<td style="text-align:right;">
+29601
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1589
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+STATE
+</td>
+<td style="text-align:right;">
+72
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EVTYPE
+</td>
+<td style="text-align:right;">
+985
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BGN\_RANGE
+</td>
+<td style="text-align:right;">
+272
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BGN\_AZI
+</td>
+<td style="text-align:right;">
+35
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+547332
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BGN\_LOCATI
+</td>
+<td style="text-align:right;">
+54429
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+287743
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+END\_DATE
+</td>
+<td style="text-align:right;">
+6663
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+243411
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+END\_TIME
+</td>
+<td style="text-align:right;">
+3647
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+238978
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+COUNTY\_END
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+COUNTYENDN
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+902297
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+END\_RANGE
+</td>
+<td style="text-align:right;">
+266
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+END\_AZI
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+724837
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+END\_LOCATI
+</td>
+<td style="text-align:right;">
+34506
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+499225
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LENGTH
+</td>
+<td style="text-align:right;">
+568
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WIDTH
+</td>
+<td style="text-align:right;">
+293
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+F
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+843563
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MAG
+</td>
+<td style="text-align:right;">
+226
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FATALITIES
+</td>
+<td style="text-align:right;">
+52
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INJURIES
+</td>
+<td style="text-align:right;">
+200
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PROPDMG
+</td>
+<td style="text-align:right;">
+1390
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PROPDMGEXP
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+465934
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CROPDMG
+</td>
+<td style="text-align:right;">
+432
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CROPDMGEXP
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+618413
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WFO
+</td>
+<td style="text-align:right;">
+542
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+142069
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+STATEOFFIC
+</td>
+<td style="text-align:right;">
+250
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+248769
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ZONENAMES
+</td>
+<td style="text-align:right;">
+25112
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+594029
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LATITUDE
+</td>
+<td style="text-align:right;">
+1781
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+47
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LONGITUDE
+</td>
+<td style="text-align:right;">
+3841
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LATITUDE\_E
+</td>
+<td style="text-align:right;">
+1729
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+40
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LONGITUDE\_
+</td>
+<td style="text-align:right;">
+3778
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+REMARKS
+</td>
+<td style="text-align:right;">
+436906
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+287433
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+REFNUM
+</td>
+<td style="text-align:right;">
+902297
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<sup></sup> The table with the raw data contains 37 variables that are
+all of type ‘character’<br>and 902297 observations.
+</td>
+</tr>
+</tfoot>
+</table>
 <br>
 
 <font size="1">[back to start of this
@@ -1201,6 +2101,76 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 6.2 Preprocess The Raw Data
 ---------------------------
 
+<font size="3"><u><strong>Summary</strong></u></font>
+
+From the table with the raw data which contains 37 variables, only 9
+were selected to create the table with preprocessed data and proceed
+with this analysis:
+
+1.  **REFNUM** : an id that uniquely identifies each observation  
+2.  **BGN\_DATE** : the date when each weather event begun  
+3.  **EVTYPE** : the type of each weather event  
+4.  **FATALITIES** : the number of fatalities  
+5.  **INJURIES** : the number of injuries  
+6.  **PROPDMG** : the magnitude value of the damage caused in properties
+    that could have been expressed in thousands, millions or billions of
+    dollars, depending on the corresponding indicator value at the
+    variable *PROPDMGEXP*  
+7.  **PROPDMGEXP** : an indicator value that denotes whether the
+    corresponding magnitude value at the variable *PROPDMG* refers to
+    thousands, millions or billions of dollars  
+8.  **CROPDMG** : the magnitude value of the damage caused in crops that
+    could have been expressed in thousands, millions or billions of
+    dollars, depending on the corresponding indicator value at the
+    variable *CROPDMGEXP*  
+9.  **CROPDMGEXP** : an indicator value that denotes whether the
+    corresponding magnitude value at the variable *CROPDMG* refers to
+    thousands, millions or billions of dollars
+
+Due to the fact that all variables at the table with the raw data were
+(deliberately) loaded as type ‘character’ some prerequisites were needed
+to get verified for the format of the character string values that they
+contained before they were coerced to their appropriate type.
+
+The variable *REFNUM* after having verified that the values it contained
+uniquely identify each observation, was set as the key for the table
+with the preprocessed data.
+
+Finally post validation was conducted and some facts about the table
+with the preprocessed data were highlighted.
+
+<font size="3"><u><strong>Steps</strong></u></font>
+
+-   [6.2.1 Verify the prerequisites for the selected
+    variables](#ind-6-2-1--Verify-the-prerequisites-for-the-selected-variables)
+    -   Checks two key points for the values of selected variables from
+        the table with the raw data:
+        -   [6.2.1.1 Verify the coercibility of the values for the
+            selected
+            variables](#ind-6-2-1-1--Verify-the-coercibility-for-the-values-at-the-selected-variables)
+            -   The character values at the selected variables were
+                checked to verify if their format was compatible with
+                the variable type that each of the them should be
+                coerced to.
+        -   [6.2.1.2 Verify the uniqueness of the key
+            values](#ind-6-2-1-2--Verify-the-uniqueness-of-the-key-values)
+            -   The values of the variable that was intended to be used
+                as the key of the table with the preprocessed data were
+                checked to verify if they uniquely identify each
+                observation.  
+-   [6.2.2 Create the table with the preprocessed
+    data](#ind-6-2-2--Create-the-table-with-the-preprocessed-data)
+    -   Creates the table with the preprocessed data, by selecting the
+        required variahles, coercing them to their appropriate type and
+        setting a key was set for the table.  
+-   [6.2.3 Conduct post validation for the table with the preprocessed
+    data](#ind-6-2-3--Conduct-post-validation-for-the-table-with-the-preprocessed-data)
+    -   Ensures that the raw data was preprocessed data correctly.  
+-   [6.2.4 Overview of the table with the preprocessed
+    data](#ind-6-2-4--Overview-of-the-table-with-the-preprocessed-data)
+    -   Presents some basic fact about the table with the preprocessed
+        data.
+
 <br>
 
 <font size="1">[back to start of this
@@ -1213,6 +2183,22 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ### 6.2.1 Verify the prerequisites for the selected variables
+
+Two key points were checked for the values of the selected variables
+from the table with raw data before proceeding to create the table with
+the preprocessed data:
+
+-   [6.2.1.1 Verify the coercibility of the values for the selected
+    variables](#ind-6-2-1-1--Verify-the-coercibility-for-the-values-at-the-selected-variables)
+    -   Checks if the format of the character string values of the
+        selected variables from the table with the raw data are
+        compatible with the (variable) type that each of them should be
+        coerced to.  
+-   [6.2.1.2 Verify the uniqueness of the key
+    values](#ind-6-2-1-2--Verify-the-uniqueness-of-the-key-values)
+    -   Checked if the values of the variable *REFNUM* (when coerced to
+        type ‘integer’) that was intended to be used as the key of the
+        table preprocessed data uniquely identifies each observation.
 
 <br>
 
@@ -1229,6 +2215,239 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 #### 6.2.1.1 Verify the coercibility of the values for the selected variables
 
+The format of the character string values of the selected variables,
+*REFNUM*, *BGN\_DATE*, *EVTYPE*, *FATALITIES*, *INJURIES*, *PROPDMG*,
+*PROPDMGEXP*, *CROPDMG* and *CROPDMGEXP*, from the table with the raw
+data were checked in order to verify that they were compatible with the
+new variable type that each them should be coerced to, so as not to lose
+any information without knowing it (or in other words to avoid the side
+effect of automatic substitution by NAs, of the values that were
+incompatible with the new variable type that each of them should be
+coerced to).
+
+The variables *EVTYPE*, *BGN\_DATE*, *PROPDMGEXP* and *CROPDMGEXP* were
+already in their appropriate type (which is ‘character’), so no further
+adjustments were needed. On the other hand the variables *REFNUM*,
+*FATALITIES* and *INJURIES* had to be coerced from ‘character’ type to
+‘integer’, while the type of the remaining two variables, *PROPDMG* and
+*CROPDMG* had to change from ‘character’ to ‘double’.
+
+A validation was conducted to verify that:
+
+1.  the values of the variable *REFNUM* can be coerced to ‘integer’
+    type  
+2.  the values of the variable *FATALITIES* can be coerced to ‘integer’
+    type  
+3.  the values of the variable *INJURIES* can be coerced to ‘integer’
+    type  
+4.  the values of the variable *PROPDMG* can be coerced to ‘double’
+    type  
+5.  the values of the variable *CROPDMG* can be coerced to ‘double’ type
+
+<!-- -->
+
+    # Create a validator with the constrains needed to verify 
+    # that the formats of the character string values 
+    # at the selected variables from the table with the raw data 
+    # are compatible with the variable types that they should be coerced to.
+    V_____coercibible_format_of_the_character_string_values <- 
+      validator(
+        "REFNUM_value_is_coercible_to_integer" = 
+          ( grepl("^\\d{1,}\\.00$", REFNUM) ),
+        "FATALITIES_value_is_coercible_to_integer" = 
+          ( grepl("^\\d{1,}\\.00$", FATALITIES) ),
+        "INJURIES_value_is_coercible_to_integer" = 
+          ( grepl("^\\d{1,}\\.00$", INJURIES) ),
+        "PROPDMG_value_is_coercible_to_double" = 
+          ( grepl("^\\d{1,}\\.\\d{2}$", PROPDMG) ),
+        "CROPDMG_value_is_coercible_to_double" = 
+          ( grepl("^\\d{1,}\\.\\d{2}$", CROPDMG) )
+      )
+
+    # Confront the table with the raw data with the validator 
+    # which contains the constrains for the formats of the character string values 
+    # at the selected variables from the table with the raw data.
+    CF_____coercibible_format_of_the_character_string_values <- 
+      confront(
+        dat = raw_data,
+        V_____coercibible_format_of_the_character_string_values
+      )
+
+The values of all selected variables were found to be compatible with
+the new type that each of them should be coerced to.
+
+    # Create a kable to present the results validation 
+    # for the format of the character string values 
+    # at the selected variables from the table with the raw data.
+    kable(
+      x = summary(
+        CF_____coercibible_format_of_the_character_string_values
+      )[, c("name", "items", "passes", "fails", "nNA", "error", "warning")],
+      caption = paste0(
+        "Table 6.2.1.1-1: ",
+        "The results of the validation ", 
+        "for the compatibility of the format of the character string values ", 
+        "at the selected variables from the table with raw data ",
+        "with the appropriate type that each of them should be coerced to, ",
+        "at the table of preprocessed data."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      )   
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 6.2.1.1-1: The results of the validation for the compatibility of
+the format of the character string values at the selected variables from
+the table with raw data with the appropriate type that each of them
+should be coerced to, at the table of preprocessed data.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+name
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+items
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+passes
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+fails
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+nNA
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+error
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+warning
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+REFNUM\_value\_is\_coercible\_to\_integer
+</td>
+<td style="text-align:right;">
+902297
+</td>
+<td style="text-align:right;">
+902297
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FATALITIES\_value\_is\_coercible\_to\_integer
+</td>
+<td style="text-align:right;">
+902297
+</td>
+<td style="text-align:right;">
+902297
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INJURIES\_value\_is\_coercible\_to\_integer
+</td>
+<td style="text-align:right;">
+902297
+</td>
+<td style="text-align:right;">
+902297
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PROPDMG\_value\_is\_coercible\_to\_double
+</td>
+<td style="text-align:right;">
+902297
+</td>
+<td style="text-align:right;">
+902297
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CROPDMG\_value\_is\_coercible\_to\_double
+</td>
+<td style="text-align:right;">
+902297
+</td>
+<td style="text-align:right;">
+902297
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+</tbody>
+</table>
 <br>
 
 <font size="1">[back to start of this
@@ -1246,6 +2465,134 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 #### 6.2.1.2 Verify the uniqueness of the key values
 
+The variable *REFNUM*, coerced to its proper type (that is ‘integer’),
+should and was expected to uniquely identify each observation, making it
+an excellent choice for the key of the table with the preprocessed data,
+(as well as for the rest of the tables that were generated at the
+following stages of the data processing pipeline).
+
+Before proceeding to set the *REFNUM* as the key, the claim that *it
+uniquely identifies each observations* was checked to avoid unexpected
+surprises that may jeopardize the reproducibility of the analysis.
+
+    # Create a validator for the uniqueness of values at the variable REFNUM.
+    V_____uniqueness_of_values_for_the_key_of_the_table <- validator(
+      "value_uniquely_identifies_the_observation" = (
+        # the values of the variable REFNUM will be first coerced 
+        # to their appropriate variable type, which is 'integer' 
+        # and then checked for uniqueness
+        as.integer(REFNUM) %in% 
+          names(table(as.integer(REFNUM)))[table(as.integer(REFNUM)) == 1]
+      )
+    )
+
+    # Confront the table with raw data with the validator 
+    # for the uniqueness of values at REFNUM variable 
+    CF_____uniqueness_of_values_for_the_key_of_the_table <- confront(
+      dat = raw_data,
+      V_____uniqueness_of_values_for_the_key_of_the_table
+    )
+
+All values of the variable *REFNUM* were found to be distinct, and
+consequently they uniquely identify each observation.
+
+    # Create a kable to present the results from the validation 
+    # for the uniqueness of each value at the variable REFNUM 
+    # at the table with the raw data. 
+    kable(
+      x = summary(CF_____uniqueness_of_values_for_the_key_of_the_table)[
+        , c("name", "items", "passes", "fails", "nNA", "error", "warning")
+        ], 
+      caption = paste0(
+        "Table 6.2.1.2-1: ",
+        "The results from the validation ",
+        "for the uniqueness of values from REFNUM variable ", 
+        "at the table with the raw data."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c(
+          "striped", "hover", "condensed", "responsive", "bordered"
+        ), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      ) %>% 
+      footnote(
+        general = paste0(
+          "The values at REFNUM variable were coerced to 'integer' type ", "\n",
+          "before checking if they uniquely identify each observation."
+        )
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 6.2.1.2-1: The results from the validation for the uniqueness of
+values from REFNUM variable at the table with the raw data.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+name
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+items
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+passes
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+fails
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+nNA
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+error
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+warning
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+value\_uniquely\_identifies\_the\_observation
+</td>
+<td style="text-align:right;">
+902297
+</td>
+<td style="text-align:right;">
+902297
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<sup></sup> The values at REFNUM variable were coerced to ‘integer’ type
+<br>before checking if they uniquely identify each observation.
+</td>
+</tr>
+</tfoot>
+</table>
 <br>
 
 <font size="1">[back to start of this
@@ -1265,6 +2612,56 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 6.2.2 Create the table with the preprocessed data
 
+Having identify the variables from the table with the raw data
+(*REFNUM*, *BGN\_DATE*, *EVTYPE*, *FATALITIES*, *INJURIES*, *PROPDMG*,
+*PROPDMGEXP*, *CROPDMG* and *CROPDMGEXP*) that were required to proceed
+with the analysis, and [verified that they satisfied the necessary
+prerequisites](#ind-6-2-1--Verify-the-prerequisites-for-the-selected-variables),
+the table with preprocessed data was created, by selecting those 9
+variables, coercing them to their appropriate type:
+
+1.  *REFNUM* was selected and coerced from ‘character’ type to
+    ‘integer’  
+2.  *BGN\_DATE* was selected (no coercion happened as it was already of
+    the proper type, ‘character’)  
+3.  *EVTYPE* was selected (no coercion happened as it was already of the
+    proper type, ‘character’)  
+4.  *FATALITIES* was selected and coerced from ‘character’ type to
+    ‘integer’  
+5.  *INJURIES* was selected and coerced from ‘character’ type to
+    ‘integer’  
+6.  *PROPDMG* was selected and coerced from ‘character’ type to
+    ‘double’  
+7.  *PROPDMGEXP* was selected (no coercion happened as it was already of
+    the proper type, ‘character’)  
+8.  *CROPDMG* was selected and coerced from ‘character’ type to
+    ‘double’  
+9.  *CROPDMGEXP* was selected (no coercion happened as it was already of
+    the proper type, ‘character’)
+
+and finally setting the variable *REFNUM* as the key of the table.
+
+    # Create the table with the preprocessed data 
+    # with the selected variables from the table with the raw data, 
+    # coerced to their appropriate type.
+    preprocessed_data <- raw_data[
+      ,
+      list(
+        "REFNUM" = as.integer(REFNUM),
+        "BGN_DATE" = BGN_DATE,
+        "EVTYPE" = EVTYPE,
+        "FATALITIES" = as.integer(FATALITIES),
+        "INJURIES" = as.integer(INJURIES),
+        "PROPDMG" = as.double(PROPDMG),
+        "PROPDMGEXP" = PROPDMGEXP,
+        "CROPDMG" = as.double(CROPDMG),
+        "CROPDMGEXP" = CROPDMGEXP
+      )
+      ]
+
+    # Set REFNUM as the key of the table with the preprocessed data
+    setkey(preprocessed_data, REFNUM)
+
 <br>
 
 <font size="1">[back to start of this
@@ -1281,6 +2678,414 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 6.2.3 Conduct post validation for the table with the preprocessed data
 
+The table with the preprocessed data was post validated to ensure that:
+
+1.  all and only, the variables required for the analysis were
+    included  
+2.  all the observations from table with raw data were transfered  
+3.  each of the selected variables was coerced to its appropriate type  
+4.  no missing values were introduced as a result of the coercion  
+5.  *REFNUM* was set as the key of the table
+
+<!-- -->
+
+    # Create a vector with the names of the expected variables 
+    # at the table with the preprocessed data.
+    expected_variables_at_the_table_with_preprocessed_data <- c(
+      "REFNUM", "BGN_DATE", "EVTYPE", "FATALITIES", "INJURIES", 
+      "PROPDMG","PROPDMGEXP","CROPDMG","CROPDMGEXP"
+    )
+
+    # Create a validator for the post validation of the preprocessed data.
+    V_____post_validation_of_table_with_preprocessed_data <- validator(
+      # check if the table contains all and only the required variables 
+      "all_and_only_the_required_variables_are_included" = 
+        ( names(.) == expected_variables_at_the_table_with_preprocessed_data ),
+      # check if all the observations were included.
+      "all_observations_were_transfered" = nrow(.) == nrow(raw_data),
+      # checks if each variable is coerced to its appropriate type
+      "REFNUM_is_integer" = 
+        ( paste(class(.[["REFNUM"]]), collapse = ",") == "integer" ),
+      "BGN_DATE_is_character" = 
+        ( paste(class(.[["BGN_DATE"]]), collapse = ",") == "character" ),
+      "EVTYPE_is_character" = 
+        ( paste(class(.[["EVTYPE"]]), collapse = ",") == "character" ),
+      "FATALITIES_is_integer" = 
+        ( paste(class(.[["FATALITIES"]]), collapse = ",") == "integer" ),
+      "INJURIES_is_integer" = 
+        ( paste(class(.[["INJURIES"]]), collapse = ",") == "integer" ),
+      "PROPDMG_is_numeric" = 
+        ( paste(class(.[["PROPDMG"]]), collapse = ",") == "numeric" ),
+      "PROPDMGEXP_is_character" = 
+        ( paste(class(.[["PROPDMGEXP"]]), collapse = ",") == "character" ),
+      "CROPDMG_is_numeric" = 
+        ( paste(class(.[["CROPDMG"]]), collapse = ",") == "numeric" ),
+      "CROPDMGEXP_is_character" = 
+        ( paste(class(.[["CROPDMGEXP"]]), collapse = ",") == "character" ),
+      # check that no missing values were introduced as a result of coercion
+      "no_missing_values_introduced" = ( mean(complete.cases(.)) == 1 ),
+      # checks if the REFNUM is set as the key of the table
+      "REFNUM_is_the_key_of_the_table" = ( attributes(.)[["sorted"]] == "REFNUM" )
+    )
+
+    # Confront the table with the preprocessed data with the validator 
+    # which contains the constrains for the validity of preprocessed data. 
+    CF_____post_validation_of_table_with_preprocessed_data <- confront(
+      dat = preprocessed_data,
+      V_____post_validation_of_table_with_preprocessed_data
+    )
+
+The table with the preprocessed data was valid.
+
+    # Create a kable was to present the results of post validation 
+    # for table with the preprocessed data. 
+    kable(
+      x = summary(CF_____post_validation_of_table_with_preprocessed_data)[
+        , c("name", "items", "passes", "fails", "nNA", "error", "warning")
+        ], 
+      caption = paste0(
+        "Table 6.2.3-1: ",
+        "The results of post validation for the table with the preprocessed data."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 6.2.3-1: The results of post validation for the table with the
+preprocessed data.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+name
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+items
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+passes
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+fails
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+nNA
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+error
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+warning
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+all\_and\_only\_the\_required\_variables\_are\_included
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+all\_observations\_were\_transfered
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+REFNUM\_is\_integer
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BGN\_DATE\_is\_character
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EVTYPE\_is\_character
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FATALITIES\_is\_integer
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INJURIES\_is\_integer
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PROPDMG\_is\_numeric
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PROPDMGEXP\_is\_character
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CROPDMG\_is\_numeric
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CROPDMGEXP\_is\_character
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+no\_missing\_values\_introduced
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+REFNUM\_is\_the\_key\_of\_the\_table
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+</tbody>
+</table>
 <br>
 
 <font size="1">[back to start of this
@@ -1296,6 +3101,27 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ### 6.2.4 Overview of the table with the preprocessed data
+
+The table with the preprocessed data, contained 9 variables and 902297
+observations.
+
+The variable *REFNUM* was set as the key of the table.
+
+    # Print the structure of the table with the preprocessed data.
+    str(preprocessed_data)
+
+    ## Classes 'data.table' and 'data.frame':   902297 obs. of  9 variables:
+    ##  $ REFNUM    : int  1 2 3 4 5 6 7 8 9 10 ...
+    ##  $ BGN_DATE  : chr  "4/18/1950 0:00:00" "4/18/1950 0:00:00" "2/20/1951 0:00:00" "6/8/1951 0:00:00" ...
+    ##  $ EVTYPE    : chr  "TORNADO" "TORNADO" "TORNADO" "TORNADO" ...
+    ##  $ FATALITIES: int  0 0 0 0 0 0 0 0 1 0 ...
+    ##  $ INJURIES  : int  15 0 2 2 2 6 1 0 14 0 ...
+    ##  $ PROPDMG   : num  25 2.5 25 2.5 2.5 2.5 2.5 2.5 25 25 ...
+    ##  $ PROPDMGEXP: chr  "K" "K" "K" "K" ...
+    ##  $ CROPDMG   : num  0 0 0 0 0 0 0 0 0 0 ...
+    ##  $ CROPDMGEXP: chr  "" "" "" "" ...
+    ##  - attr(*, ".internal.selfref")=<externalptr> 
+    ##  - attr(*, "sorted")= chr "REFNUM"
 
 <br>
 
@@ -1315,6 +3141,52 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 6.3 Extract The Target Data Subset
 ----------------------------------
 
+<font size="3"><u><strong>Summary</strong></u></font>
+
+From all available observations that the table with the preprocessed
+data contains, only the subset of the weather phenomena that begun at
+2001 or later and resulted in non-zero harm either to population health
+(caused fatalities or injuries) or to economy (caused property damage or
+crop damage) will be used for this analysis (for the reasons that were
+discussed in detail at the section [4.2 Points Of
+Interest](#ind-4-2--Points-Of-Interest) about the *Storm Events
+Dataset*).
+
+The consistency of the format of dates at the *BGN\_DATE* variable (that
+indicates when each weather phenomenon begun) was checked, as it was
+intended to be used for the identification, the eligible observations
+for the target data subset were identified, and got extracted to create
+the table with the target data subset.
+
+Finally post validation was conducted and some facts about the table
+with the target data subset were highlighted.
+
+<font size="3"><u><strong>Steps</strong></u></font>
+
+-   [6.3.1 Identify the target subset of
+    observations](#ind-6-3-1--Identify-the-target-subset-of-observations)
+    -   Verifies prerequisites and identifies the eligible observations
+        for the table with the target data subset:
+        -   [6.3.1.1 Verify the consistency of date
+            format](#ind-6-3-1-1--Verify-the-consistency-of-date-format)
+            -   Verifies that the character string format of the values
+                at *BGN\_DATE* variable are consistent.  
+        -   [6.3.1.2 Identify the eligible
+            observations](#ind-6-3-1-2--Identify-the-eligible-observations)
+            -   Identifies the eligible observations for the table with
+                the target data subset by their key value.  
+-   [6.3.2 Create the table with the target data
+    subset](#ind-6-3-2--Create-the-table-with-the-target-data-subset)
+    -   Creates the table with the target data subset by identifying and
+        extracting the eligible observations by their key values.  
+-   [6.3.3 Conduct post validation for the table with the target data
+    subset](#ind-6-3-3--Conduct-post-validation-for-the-table-with-the-target-data-subset)
+    -   Ensures that the target data was extracted correctly.  
+-   [6.3.4 Overview of the table with the target data
+    subset](#ind-6-3-4--Overview-of-the-table-with-the-target-data-subset)
+    -   Presents some basic facts about the table with the target data
+        subset.
+
 <br>
 
 <font size="1">[back to start of this
@@ -1328,8 +3200,402 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 6.3.1 Identify the target subset of observations
 
+Out of all available observations it was decided to use for the analysis
+the subset that includes only the weather phenomena that happened from
+2001 and later (due to the implications of [changes in the composition
+of weather event
+types](#ind-4-2-1--Changes-in-the-composition-of-weather-event-types))
+and resulted in non-zero harm either to population health (caused
+fatalities or injuries) or to economy (caused property damage or crop
+damage) (due to the implications of the [eligibility criteria for
+inclusion of weather events in the
+dataset](#ind-4-2-2--Eligibility-criteria-for-inclusion-of-weather-events-in-the-dataset)).
+
+The format of the date values at *BGN\_DATE* variable from the table
+with preprocessed data had to be checked to see if it is consistent
+across all observations, before it was used to form the first of the two
+constrains.
+
+The eligible observations were finally identified by their key value
+(denoted by the variable *REFNUM*).
+
+-   [6.3.1.1 Verify the consistency of date
+    format](#ind-6-3-1-1--Verify-the-consistency-of-date-format%60)
+    -   Verifies that the character string format of the values at
+        *BGN\_DATE* variable are consistent.
+-   [6.3.1.2 Identify the eligible
+    observations](#ind-6-3-1-2--Identify-the-eligible-observations)
+    -   Identifies by their key value the observations at the table with
+        preprocessed data that begun from 2001 or later and resulted in
+        non-zero harm either to population health (caused fatalities or
+        injuries) or to economy (caused property damage or crop damage)
+
 <br>
 
+<font size="1">[back to start of this
+subsection](#ind-6-3-1--Identify-the-target-subset-of-observations)</font>  
+<font size="1">[back to start of this
+section](#ind-6-3--Extract-The-Target-Data-Subset)</font>  
+<font size="1">[back to start of this
+chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF
+CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
+
+<br>
+
+#### 6.3.1.1 Verify the consistency of date format
+
+The year in the value of date at the variable *BGN\_DATE* was intended
+to be used as one of the two criteria to identify the eligible
+observations for the target data subset at the [next
+subsubsection](#ind-6-3-1-2--Identify-the-eligible-observations).
+
+That’s why it is crucial at this point, to verify that the values of
+date are in the expected format, which as indicated by the [overview of
+the table with preprocessed
+data](#ind-6-2-4--Overview-of-the-table-with-the-preprocessed-data) (as
+well as some interactive examination) seems to be:
+
+-   **MM/DD/YYYY 0:00:00**
+    -   *MM* stands for 2 characters for the month  
+    -   *DD* stands for 2 characters for the day  
+    -   *YYYY* stands for 4 characters for the year  
+    -   the value of year is followed by a space  
+    -   *0:00:00* is a dummy part that stands for the time
+
+<!-- -->
+
+    # Create a validator for the format 
+    # of the character string values of the dates.
+    V____expected_character_string_format_for_begin_date <- validator(
+      "expected_character_string_format_of_date" = 
+        grepl("^\\d{1,2}/\\d{1,2}/\\d{4} 0:00:00$", BGN_DATE)
+    )
+
+    # Confront the table with the preprocessed data with the validator 
+    # for the format of the character string values of dates.
+    CF____expected_character_string_format_for_begin_date <- confront(
+      dat = preprocessed_data,
+      V____expected_character_string_format_for_begin_date
+    )
+
+Indeed all values for dates were found to be in the expected format.
+
+    # Create a kable to present the results of the confrontation 
+    # for the format of the character string values of dates.
+    kable(
+      x = summary(CF____expected_character_string_format_for_begin_date)[
+        , c("name", "items", "passes", "fails", "nNA", "error", "warning")
+        ],
+      caption = paste0(
+        "Table 6.3.1.1-1: ",
+        "The results of the validation ",
+        "for the format of the character sting values of dates ", 
+        "from the variable BGN_DATE at the table with preprocessed data." 
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 6.3.1.1-1: The results of the validation for the format of the
+character sting values of dates from the variable BGN\_DATE at the table
+with preprocessed data.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+name
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+items
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+passes
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+fails
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+nNA
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+error
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+warning
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+expected\_character\_string\_format\_of\_date
+</td>
+<td style="text-align:right;">
+902297
+</td>
+<td style="text-align:right;">
+902297
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+
+<font size="1">[back to start of this
+subsubsection](#ind-6-3-1-1--Verify-the-consistency-of-date-format)</font>  
+<font size="1">[back to start of this
+subsection](#ind-6-3-1--Identify-the-target-subset-of-observations)</font>  
+<font size="1">[back to start of this
+section](#ind-6-3--Extract-The-Target-Data-Subset)</font>  
+<font size="1">[back to start of this
+chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF
+CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
+
+<br>
+
+#### 6.3.1.2 Identify the eligible observations
+
+According to the discussion for the two [points of interest for the
+Storm Events Dataset](#ind-4-2--Points-Of-Interest) only a subset of
+observations will be used for this analysis. This target data subset
+includes only the observations which refer to weather phenomena that
+simultaneously satisfy the following two criteria:
+
+-   **begun at Jan 2011 and later** due to the implications of [changes
+    in the composition of weather event
+    types](#ind-4-2-1--Changes-in-the-composition-of-weather-event-types)
+    -   the year (that was extracted from the date value of the
+        *BGN\_DATE* variable  
+        coerced to integer) must be found equal or larger than 2001  
+-   **resulted in non-zero harm either to population health (caused
+    fatalities or injuries) or to economy (caused property damage or
+    crop damage)** due to the implications of the [eligibility criteria
+    for inclusion of weather events in the
+    dataset](#ind-4-2-2--Eligibility-criteria-for-inclusion-of-weather-events-in-the-dataset)
+    -   the value of at least one of the variables, *FATALITIES*,
+        *INJURIES*, *PROPDMG* and *CROPDMG* must be positive
+
+<!-- -->
+
+    # Create a validator with the eligibility criteria 
+    # for the inclusion of observations at the target data subset. 
+    V____criteria_for_target_data_subset_of_observations <- validator(
+      "begin_date_from_2001_and_later" = (
+        as.integer(
+          str_extract(
+            string = BGN_DATE,
+            pattern = "(?<=^\\d{1,2}/\\d{1,2}/)\\d{4}"
+          )
+        ) %in%
+          c(2001:2011)
+      ),
+      "non_zero_damage_to_population_health_or_economy" = (
+        (as.integer(FATALITIES) > 0) |
+          (as.integer(INJURIES) > 0) |
+          (as.double(PROPDMG) > 0) |
+          (as.double(CROPDMG) > 0)
+      )
+    )
+
+    # Confront the table with the preprocessed data with the validator 
+    # with the eligibility criteria for the inclusion of observations 
+    # at the target data subset.
+    CF____criteria_for_target_data_subset_of_observations <- confront(
+      dat = preprocessed_data,
+      V____criteria_for_target_data_subset_of_observations
+    )
+
+Out of 902297 observation from the table with preprocessed data, there
+were found:
+
+-   488692 observations which refer to weather phenomena that begun at
+    2001 or later  
+-   254633 observations which refer to weather phenomena that resulted
+    in non-zero harm either to population health (caused fatalities or
+    injuries) or to economy (caused property damage or crop damage)
+
+<!-- -->
+
+    # Create a kable to present the results of the test 
+    # for the inclusion of observations at the target data subset.
+    kable( 
+      x = summary(CF____criteria_for_target_data_subset_of_observations)[
+        , c("name", "items", "passes", "fails", "nNA", "error", "warning")
+        ],
+      caption = paste0(
+        "Table 6.3.1.2-1: ",
+        "The results for the eligibility criteria for inclusion of observations ",
+        "from the table with the preprocessed data in the target data subset."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 6.3.1.2-1: The results for the eligibility criteria for inclusion
+of observations from the table with the preprocessed data in the target
+data subset.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+name
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+items
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+passes
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+fails
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+nNA
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+error
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+warning
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+begin\_date\_from\_2001\_and\_later
+</td>
+<td style="text-align:right;">
+902297
+</td>
+<td style="text-align:right;">
+488692
+</td>
+<td style="text-align:right;">
+413605
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+non\_zero\_damage\_to\_population\_health\_or\_economy
+</td>
+<td style="text-align:right;">
+902297
+</td>
+<td style="text-align:right;">
+254633
+</td>
+<td style="text-align:right;">
+647664
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+</tbody>
+</table>
+The observations that satisfied simultaneously the two criteria which
+determine which observation would be included in the target data subset
+were identified by their key value (denoted by the variable *REFNUM*).
+
+    # Identify the observations eligible to be included in the target data subset 
+    # by their key value denoted by the variable REFNUM.
+    criterion_by_REFNUM_____eligible_observations_for_the_target_data_subset <- with(
+      data = CF____criteria_for_target_data_subset_of_observations[["._value"]],
+      expr = preprocessed_data[
+        begin_date_from_2001_and_later &
+          non_zero_damage_to_population_health_or_economy,
+        REFNUM
+        ]
+    )
+
+Exactly 144826 observations were found eligible to be included in the
+table with the target data subset.
+
+    # Create a table that presents the number of observations 
+    # that were found eligible to be included in the target data subset.
+    kable(
+      x = data.table(
+        "Number of Eligible Observations for the Target Data Subset" = 
+          length(
+            criterion_by_REFNUM_____eligible_observations_for_the_target_data_subset
+          )
+      ),
+      caption = paste0(
+        "Table 6.3.1.2-2: ",
+        "The number of observations that were found eligible ", "\n",
+        "to get included in the table with the target data subset."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 6.3.1.2-2: The number of observations that were found eligible to
+get included in the table with the target data subset.
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Number of Eligible Observations for the Target Data Subset
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+144826
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+
+<font size="1">[back to start of this
+subsubsection](#ind-6-3-1-2--Identify-the-eligible-observations)</font>  
 <font size="1">[back to start of this
 subsection](#ind-6-3-1--Identify-the-target-subset-of-observations)</font>  
 <font size="1">[back to start of this
@@ -1343,6 +3609,29 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ### 6.3.2 Create the table with the target data subset
+
+From the table with the preprocessed data, the table with the target
+data subset was created by including only those observation that
+simultaneous satisfied two criteria:
+
+-   begun at Jan 2011 and later (due to the implications of [changes in
+    the composition of weather event
+    types](#ind-4-2-1--Changes-in-the-composition-of-weather-event-types))  
+-   resulted in non-zero harm either to population health (caused
+    fatalities or injuries) or to economy (caused property damage or
+    crop damage) (due to the implications of the [eligibility criteria
+    for inclusion of weather events in the
+    dataset](#ind-4-2-2--Eligibility-criteria-for-inclusion-of-weather-events-in-the-dataset))
+
+The observations were identified and extracted by their key value
+(denoted by the variable *REFNUM*).
+
+    # Create the table with the target data subset 
+    # by including only the observations that were found eligible 
+    # from those included at the table with the preprocessed data.
+    target_data_subset <- preprocessed_data[
+      criterion_by_REFNUM_____eligible_observations_for_the_target_data_subset
+      ]
 
 <br>
 
@@ -1360,6 +3649,149 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 6.3.3 Conduct post validation for the table with the target data subset
 
+Post validation was conducted to verify that all observations contained
+at the table with the target data subset were eligible.
+
+The same constrains that were used to [identify the eligible
+observations from the table with preprocessed
+data](#ind-6-3-1-2--Identify-the-eligible-observations) were used to
+verify the eligibility of observations at the table with the target data
+subset.
+
+    # The table with the target data subset was post validated 
+    # to verify that it contained only eligible observations 
+    # from the table with the preprocessed data.
+    CF____post_validation_of_target_data_subset_table <- confront(
+      dat = target_data_subset,
+      # The validator that was created and used to identify 
+      # the eligible observations for the target data subset 
+      # was used to ensure the validity of the table with the target data subset.
+      V____criteria_for_target_data_subset_of_observations
+    )
+
+All observations contained at the table with the target data subset were
+eligible.
+
+    # Create a kable to present the results of post validation 
+    # for the table with the target data subset.
+    kable(
+      x = summary(CF____post_validation_of_target_data_subset_table)[
+        , c("name", "items", "passes", "fails", "nNA", "error", "warning")
+        ],
+      caption = paste0(
+        "Table 6.3.3-1: ",
+        "The results of the post validation ", 
+        "from the table with the target data subset."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      ) %>% 
+      footnote(
+        general = paste0(
+          "The same constrains that were used to identify the eligible observations ", 
+          "from the table with the preprocessed data, ", "\n",
+          "were used for the post validation of the observations ", 
+          "at the table with the target data subset."
+        )
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 6.3.3-1: The results of the post validation from the table with
+the target data subset.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+name
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+items
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+passes
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+fails
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+nNA
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+error
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+warning
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+begin\_date\_from\_2001\_and\_later
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+non\_zero\_damage\_to\_population\_health\_or\_economy
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<sup></sup> The same constrains that were used to identify the eligible
+observations from the table with the preprocessed data, <br>were used
+for the post validation of the observations at the table with the target
+data subset.
+</td>
+</tr>
+</tfoot>
+</table>
 <br>
 
 <font size="1">[back to start of this
@@ -1376,6 +3808,161 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 6.3.4 Overview of the table with the target data subset
 
+The table with the target data subset contained 9 variables and 144826
+observations.
+
+The variable *REFNUM* was set as the key of the table.
+
+    # Print the structure of the table with target data subset.
+    str(target_data_subset) 
+
+    ## Classes 'data.table' and 'data.frame':   144826 obs. of  9 variables:
+    ##  $ REFNUM    : int  413607 413608 413609 413610 413611 413612 413613 413614 413615 413616 ...
+    ##  $ BGN_DATE  : chr  "1/19/2001 0:00:00" "1/19/2001 0:00:00" "1/19/2001 0:00:00" "1/19/2001 0:00:00" ...
+    ##  $ EVTYPE    : chr  "TSTM WIND" "TSTM WIND" "TSTM WIND" "TSTM WIND" ...
+    ##  $ FATALITIES: int  0 0 0 0 0 0 0 0 0 0 ...
+    ##  $ INJURIES  : int  0 0 0 0 0 0 0 4 0 0 ...
+    ##  $ PROPDMG   : num  10 8 2 15 5 3 10 450 150 3 ...
+    ##  $ PROPDMGEXP: chr  "K" "K" "K" "K" ...
+    ##  $ CROPDMG   : num  0 0 0 0 0 0 0 0 0 0 ...
+    ##  $ CROPDMGEXP: chr  "" "" "" "" ...
+    ##  - attr(*, ".internal.selfref")=<externalptr> 
+    ##  - attr(*, "sorted")= chr "REFNUM"
+
+The variables *EVTYPE*, *PROPDMGEXP* and *CROPDMGEXP* contained a
+suspiciously large number of distinct values.
+
+    # Create a kable to highlight some facts about the target data subset table.
+    kable(
+      x = data.table(
+        "Variable Name" = names(target_data_subset),
+        "Number of Distinct Values" = vapply(
+          X = target_data_subset, 
+          FUN = function(x) length(unique(x[!is.na(x)])), 
+          FUN.VALUE = integer(1))
+      ),
+      caption = paste0(
+        "Table 6.3.4: ",
+        "Facts about the variables at the table with the target data subset."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c(
+          "striped", "hover", "condensed", "responsive", "bordered"
+        ), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      ) %>% 
+      footnote(
+        general = paste0(
+          "The table with the target data subset contains 9 variables ", "\n",
+          "and 144826 observations without any missing value (coded as NA)."
+        )
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 6.3.4: Facts about the variables at the table with the target data
+subset.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Variable Name
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Number of Distinct Values
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+REFNUM
+</td>
+<td style="text-align:right;">
+144826
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BGN\_DATE
+</td>
+<td style="text-align:right;">
+3746
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EVTYPE
+</td>
+<td style="text-align:right;">
+97
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FATALITIES
+</td>
+<td style="text-align:right;">
+31
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INJURIES
+</td>
+<td style="text-align:right;">
+101
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PROPDMG
+</td>
+<td style="text-align:right;">
+1162
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PROPDMGEXP
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CROPDMG
+</td>
+<td style="text-align:right;">
+269
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CROPDMGEXP
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<sup></sup> The table with the target data subset contains 9 variables
+<br>and 144826 observations without any missing value (coded as NA).
+</td>
+</tr>
+</tfoot>
+</table>
 <br>
 
 <font size="1">[back to start of this
@@ -1394,6 +3981,52 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 6.4 Conduct In-Record Data Validation
 -------------------------------------
 
+<font size="3"><u><strong>Summary</strong></u></font>
+
+Through the in-record data validation stage the values of each variable
+from the table with the target data subset were examined independently
+of the corresponding values at other variables, in order to identify
+invalid entries which were then substituted by missing values (coded
+properly as NA) to create the table with the in-record validated data.
+
+Finally post validation was conducted and some facts about the table
+with the in-record validated data were highlighted.
+
+<font size="3"><u><strong>Steps</strong></u></font>
+
+-   [6.4.1 Introduce information from the Strom Data
+    Documentation](#ind-6-4-1--Introduce-information-from-the-Strom-Data-Documentation)
+    -   Creates constants with information about the permitted values of
+        some variables that will be used to form validity contains.
+        -   [6.4.1.1 Valid values for the EVTYPE
+            variable](#ind-6-4-1-1--Valid-values-for-the-EVTYPE-variable)
+            -   The valid values for EVTYPE variable were introduced.  
+        -   [6.4.1.2 Valid values for the PROPDMGEXP
+            variable](#ind-6-4-1-2--Valid-values-for-the-PROPDMGEX-variable)
+            -   The valid values for PROPDMGEXP variable were
+                introduced.  
+        -   [6.4.1.3 Valid values for the CROPDMGEXP
+            variable](#ind-6-4-1-3--Valid-values-for-the-CROPDMGEXP-variable)
+            -   The valid values for PROPDMGEXP variable were
+                introduced.  
+-   [6.4.2 Conduct in-record data validation for each
+    variable](#ind-6-4-2--Conduct-in-record-data-validation-for-each-variable)
+    -   Identifies the invalid values for each variable.  
+-   [6.4.3 Create the table with the in-record validated
+    data](#ind-6-4-3--Create-the-table-with-the-in-record-validated-data)
+    -   Creates the table with the in-record validated data by
+        substituting all invalid values that were identified as invalid,
+        with NAs.  
+-   [6.4.4 Conduct post validation for the table with the in-record
+    validated
+    data](#ind-6-4-4--Conduct-post-validation-for-the-table-with-the-in-record-validated-data)
+    -   Ensures that all values of each variable at the table with the
+        in-record validated data are valid.  
+-   [6.4.5 Overview of the table with the in-record validated
+    data](#ind-6-4-5--Overview-of-the-table-with-the-in-record-validated-data)
+    -   Presents some basic facts about the table with the in-record
+        validated data.
+
 <br>
 
 <font size="1">[back to start of this
@@ -1407,8 +4040,224 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 6.4.1 Introduce information from the Strom Data Documentation
 
+Some constants with the valid values for the variables *EVTYPE*,
+*PROPDMGEXP* and *CROPDMGEXP* (as stated at the [Storm Data
+Documentation](https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2Fpd01016005curr.pdf))
+were created and used in order to form their respective constrains.
+
+-   [6.4.1.1 Valid values for the EVTYPE
+    variable](#ind-6-4-1-1--Valid-values-for-the-EVTYPE-variable)
+    -   The 48 valid values for EVTYPE variable were introduced.  
+-   [6.4.1.2 Valid values for the PROPDMGEXP
+    variable](#ind-6-4-1-2--Valid-values-for-the-PROPDMGEXP-variable)
+    -   The 3 valid values for PROPDMGEXP variable were introduced.  
+-   [6.4.1.3 Valid values for the CROPDMGEXP
+    variable](#ind-6-4-1-3--Valid-values-for-the-CROPDMGEXP)-variable)
+    -   The 3 valid values for CROPDMGEXP variable were introduced.
+
 <br>
 
+<font size="1">[back to start of this
+subsection](#ind-6-4-1--Introduce-information-from-the-Strom-Data-Documentation)</font>  
+<font size="1">[back to start of this
+section](#ind-6-4--Conduct-In-Record-Data-Validation)</font>  
+<font size="1">[back to start of this
+chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF
+CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
+
+<br>
+
+#### 6.4.1.1 Valid values for the EVTYPE variable
+
+The entries of the variable *EVTYPE* according to the [NATIONAL WEATHER
+SERVICE INSTRUCTION 10-1605, AUGUST 17,
+2007](https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2Fpd01016005curr.pdf)
+(at chapter 7), must take one of the 48 character values that correspond
+to the defined weather event types:
+
+<div class = "row">
+
+<div class = "col-md-4">
+1.  ASTRONOMICAL LOW TIDE  
+2.  AVALANCHE  
+3.  BLIZZARD  
+4.  COASTAL FLOOD  
+5.  COLD/WIND CHILL  
+6.  DEBRIS FLOW  
+7.  DENSE FOG  
+8.  DENSE SMOKE  
+9.  DROUGHT  
+10. DUST DEVIL  
+11. DUST STORM  
+12. EXCESSIVE HEAT  
+13. EXTREME COLD/WIND CHILL  
+14. FLASH FLOOD  
+15. FLOOD  
+16. FROST/FREEZE  
+    </div>
+
+<div class = "col-md-4">
+1.  FUNNEL CLOUD  
+2.  FREEZING FOG  
+3.  HAIL  
+4.  HEAT  
+5.  HEAVY RAIN  
+6.  HEAVY SNOW  
+7.  HIGH SURF  
+8.  HIGH WIND  
+9.  HURRICANE/TYPHOON  
+10. ICE STORM  
+11. LAKE-EFFECT SNOW  
+12. LAKESHORE FLOOD  
+13. LIGHTNING  
+14. MARINE HAIL  
+15. MARINE HIGH WIND  
+16. MARINE STRONG WIND  
+    </div>
+
+1.  MARINE THUNDERSTORM WIND  
+2.  RIP CURRENT  
+3.  SEICHE  
+4.  SLEET  
+5.  STORM SURGE/TIDE  
+6.  STRONG WIND  
+7.  THUNDERSTORM WIND  
+8.  TORNADO  
+9.  TROPICAL DEPRESSION  
+10. TROPICAL STORM  
+11. TSUNAMI  
+12. VOLCANIC ASH  
+13. WATERSPOUT  
+14. WILDFIRE  
+15. WINTER STORM  
+16. WINTER WEATHER  
+    </div>
+
+    # Create a vector that includes the 48 values of the defined weather event types.
+    defined_event_types <- c(
+      "ASTRONOMICAL LOW TIDE", 
+      "AVALANCHE", 
+      "BLIZZARD", 
+      "COASTAL FLOOD", 
+      "COLD/WIND CHILL", 
+      "DEBRIS FLOW", 
+      "DENSE FOG", 
+      "DENSE SMOKE", 
+      "DROUGHT", 
+      "DUST DEVIL", 
+      "DUST STORM",
+      "EXCESSIVE HEAT",
+      "EXTREME COLD/WIND CHILL", 
+      "FLASH FLOOD", 
+      "FLOOD", 
+      "FROST/FREEZE", 
+      "FUNNEL CLOUD", 
+      "FREEZING FOG", 
+      "HAIL", 
+      "HEAT",
+      "HEAVY RAIN", 
+      "HEAVY SNOW", 
+      "HIGH SURF", 
+      "HIGH WIND", 
+      "HURRICANE/TYPHOON", 
+      "ICE STORM", 
+      "LAKE-EFFECT SNOW", 
+      "LAKESHORE FLOOD", 
+      "LIGHTNING",
+      "MARINE HAIL", 
+      "MARINE HIGH WIND",
+      "MARINE STRONG WIND", 
+      "MARINE THUNDERSTORM WIND", 
+      "RIP CURRENT", 
+      "SEICHE", 
+      "SLEET", 
+      "STORM SURGE/TIDE",
+      "STRONG WIND", 
+      "THUNDERSTORM WIND",
+      "TORNADO", 
+      "TROPICAL DEPRESSION", 
+      "TROPICAL STORM", 
+      "TSUNAMI", 
+      "VOLCANIC ASH", 
+      "WATERSPOUT", 
+      "WILDFIRE",
+      "WINTER STORM", 
+      "WINTER WEATHER"
+    )
+
+<br>
+
+<font size="1">[back to start of this
+subsubsection](#ind-6-4-1-1--Valid-values-for-the-EVTYPE-variable)</font>  
+<font size="1">[back to start of this
+subsection](#ind-6-4-1--Introduce-information-from-the-Strom-Data-Documentation)</font>  
+<font size="1">[back to start of this
+section](#ind-6-4--Conduct-In-Record-Data-Validation)</font>  
+<font size="1">[back to start of this
+chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF
+CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
+
+<br>
+
+#### 6.4.1.2 Valid values for the PROPDMGEXP variable
+
+The entries of the variable *PROPDMGEXP* that indicates whether the
+magnitude for the economic damage, (denoted by the *PROPDMG* variable),
+refers to thousands, millions or billions of dollars, according to the
+information provided by [NATIONAL WEATHER SERVICE INSTRUCTION 10-1605,
+AUGUST 17,
+2007](https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2Fpd01016005curr.pdf)
+(at chapter 2.7), must take one of the following 3 character values :
+
+1.  **K** which corresponds to thousands of dollars  
+2.  **M** which corresponds to millions of dollars  
+3.  **B** which corresponds to billions of dollars
+
+<!-- -->
+
+    # Create a vector that includes the defined values for the variable PROPDGMEXP.
+    defined_property_damage_exponents <- c("K", "M", "B")
+
+<br>
+
+<font size="1">[back to start of this
+subsubsection](#ind-6-4-1-2--Valid-values-for-the-EVTYPE-variable)</font>  
+<font size="1">[back to start of this
+subsection](#ind-6-4-1--Introduce-information-from-the-Strom-Data-Documentation)</font>  
+<font size="1">[back to start of this
+section](#ind-6-4--Conduct-In-Record-Data-Validation)</font>  
+<font size="1">[back to start of this
+chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF
+CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
+
+<br>
+
+#### 6.4.1.3 Valid values for the CROPDMGEXP variable
+
+The entries of the variable *CROPDMGEXP* that indicates whether the
+magnitude for the economic damage, (denoted by the *CROPDMG* variable),
+refers to thousands, millions or billions of dollars, according to the
+information provided by [NATIONAL WEATHER SERVICE INSTRUCTION 10-1605,
+AUGUST 17,
+2007](https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2Fpd01016005curr.pdf)
+(at chapter 2.7), must take one of the following 3 character values :
+
+1.  **K** which corresponds to thousands of dollars  
+2.  **M** which corresponds to millions of dollars  
+3.  **B** which corresponds to billions of dollars
+
+<!-- -->
+
+    # Create a vector that includes the defined values for the variable CROPDGMEXP.
+    defined_crop_damage_exponents <- c("K", "M", "B")
+
+<br>
+
+<font size="1">[back to start of this
+subsubsection](#ind-6-4-1-3--Valid-values-for-the-CROPDMGEXP-variable)</font>  
 <font size="1">[back to start of this
 subsection](#ind-6-4-1--Introduce-information-from-the-Strom-Data-Documentation)</font>  
 <font size="1">[back to start of this
@@ -1422,6 +4271,344 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ### 6.4.2 Conduct in-record data validation for each variable
+
+To create the constrains for the in-record validation for each variable
+from the table with the target data subset, some ‘common world
+knowledge’ combined with information provided by the *Storm Data
+Documentation* about the [valid values of the available
+variables](#ind-6-4-1--Introduce-information-from-the-Strom-Data-Documentation)
+were used.
+
+Specifically:
+
+1.  The *REFNUM* variable’s values must be unique for each
+    observations.  
+2.  the *BGN\_DATE* variable’s value must contain a year part that is
+    from 2001 up to 2011
+3.  The *EVTYPE* variable’s values must be one of the [48 defined events
+    types](#ind-6-4-1-1--Valid-values-for-the-EVTYPE-variable).  
+4.  The *FATALITIES* variable’s values must be non-negative.  
+5.  The *INJURIES* variable’s values must be non-negative.
+6.  The *PROPDMG* variable’s values must be non-negative.  
+7.  The *PROPDMGEXP* variable’s values must be *K*, *M* or *B*.  
+8.  The *CROPDMG* variable’s values must be non negative.  
+9.  The *CROPDMGEXP* variable’s values must be *K*, *M* or *B*.
+
+Although unnecessary to test the constrains for all variables, that were
+included in the table with the target data subset (the uniqueness of the
+values in key variable *REFNUM*, the fact the year indicated in the
+*BGN\_DATE* variable was from 2001 to 2011 as well as the fact that the
+values of the variables *FATALITIES*, *INJURIES*, *CROPDMG*, *PROPDMG*
+were non-negative), because some of them had been verified in previous
+stages of the data processing procedure, such tests were included in
+order to provided a detailed and complete overview of all the in-record
+constrains for the entries  
+of each variable at the validated data table.
+
+Actually only the variables *EVTYPE*, *PROPDMGEXP* and *CROPDMGEXP*
+needed to be validated in this stage, as these were the ones that
+haven’t been checked properly yet.
+
+    # Create a validator with constrains for the in-record validation 
+    # for the values of each variable.
+    V____constrains_for_the_in_record_data_validation <- validator(
+      "REFNUM" = ( REFNUM %in% names(table(REFNUM))[table(REFNUM) == 1] ),
+      "BGN_DATE" = ( 
+        as.integer(
+          str_extract(BGN_DATE, "(?<=^\\d{1,2}/\\d{1,2}/)\\d{4}(?= 0:00:00$)")
+        ) %in%
+          c(2001:2011)
+      ),
+      "EVTYPE" = ( EVTYPE %in% defined_event_types ),
+      "FATALITIES" = ( FATALITIES >= 0 ),
+      "INJURIES" = ( INJURIES >= 0 ),
+      "PROPDMG" = ( PROPDMG >= 0 ),
+      "PROPDMGEXP" = ( PROPDMGEXP %in% defined_property_damage_exponents ),
+      "CROPDMG" = ( CROPDMG >= 0 ),
+      "CROPDMGEXP" = ( CROPDMGEXP %in% defined_crop_damage_exponents )
+    )
+
+    # Confront the table with target data subset with the validator 
+    # which contains the constrains for the in-record data validation. 
+    CF____constrains_for_the_in_record_data_validation <- confront(
+      dat = target_data_subset,
+      V____constrains_for_the_in_record_data_validation
+    )
+
+According to the results of the in-record data validation, there is a
+significant proportion of invalid values found at the variables
+*EVTYPE*, *PROPDMGEXP* and *CROPDMGEXP*.
+
+    # Create a kable to present the results of the in-record data validation 
+    # with the table with target data subset.
+    kable(
+      x = summary(CF____constrains_for_the_in_record_data_validation)[
+        , c("name", "items", "passes", "fails", "nNA", "error", "warning")
+        ],
+      caption = paste0(
+        "Table 6.4.2-1: ",
+        "The results of the in-record data validation ",
+        "for the table with the target data subset."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 6.4.2-1: The results of the in-record data validation for the
+table with the target data subset.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+name
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+items
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+passes
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+fails
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+nNA
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+error
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+warning
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+REFNUM
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BGN\_DATE
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EVTYPE
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+112051
+</td>
+<td style="text-align:right;">
+32775
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FATALITIES
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INJURIES
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PROPDMG
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PROPDMGEXP
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+140668
+</td>
+<td style="text-align:right;">
+4158
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CROPDMG
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CROPDMGEXP
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+89785
+</td>
+<td style="text-align:right;">
+55041
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+</tbody>
+</table>
+The invalid values for each variable were identified by their key value
+(denoted by the variable *REFNUM*).
+
+    # Identify the values that were found invalid for each variable 
+    # by the key value. 
+    criterion_by_REFNUM_____invalid_values_of_each_variable <- 
+      lapply(
+        X = CF____constrains_for_the_in_record_data_validation[["._value"]],
+        FUN = function(x) {
+          target_data_subset[!x, REFNUM]
+        }
+      )
 
 <br>
 
@@ -1439,6 +4626,29 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 6.4.3 Create the table with the in-record validated data
 
+The table with the in-record validated data was obtained, by
+substituting with NAs all values that were identified as invalid at the
+table with the target data subset.
+
+The invalid values for each variable were identified and substituted by
+their key value (denoted by the variable *REFNUM*).
+
+    # Create a dummy table as a copy of the table with the target data subset. 
+    in_record_validated_data <- copy(target_data_subset)
+
+    # Create the table with the in-record validated data 
+    # by substituted with NAs the invalid values of each variable.
+    for ( var_name in names(criterion_by_REFNUM_____invalid_values_of_each_variable) ) {
+      set(x = in_record_validated_data,
+          i = which(
+            in_record_validated_data$REFNUM %in%
+              criterion_by_REFNUM_____invalid_values_of_each_variable[[var_name]]
+          ),
+          j = var_name,
+          value = NA
+      )
+    }
+
 <br>
 
 <font size="1">[back to start of this
@@ -1455,6 +4665,304 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 6.4.4 Conduct post validation for the table with the in-record validated data
 
+Post validation was conducted to verify that the values of variables at
+the table with the in-record validated data were valid according to the
+same constrains that were used to [identify the invalid values for each
+variable](#ind-6-4-2--Conduct-in-record-data-validation-for-each-variable)
+at the table with the target data subset.
+
+    # The table with the in-record validated data was post validated to verify 
+    # that all values for each of variable it contained were valid.
+    CF____post_validation_of_the_table_with_the_in_record_validated_data <- 
+      confront(
+        dat = in_record_validated_data,
+        V____constrains_for_the_in_record_data_validation
+    )
+
+All the values for each variable at the table with the in-record
+validated data were valid.
+
+    # Create a kable to present the results of the post validation 
+    # for the table with the in-record validated data.  
+    kable(
+      x = summary(CF____post_validation_of_the_table_with_the_in_record_validated_data)[
+        , c("name", "items", "passes", "fails", "nNA", "error", "warning")
+        ],
+      caption = paste0(
+        "Table 6.4.4-1: ",
+        "The results of post validation ", 
+        "for the table with the in-record validated data."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      ) %>% 
+      footnote(
+        general = paste0(
+          "The same constrains that were used to identify the invalid values ", 
+          "of each variable at the table with the target data subset, ", "\n",
+          "were used for the post validation of the observations ", 
+          "at the table with the in-record validated data."
+        )
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 6.4.4-1: The results of post validation for the table with the
+in-record validated data.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+name
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+items
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+passes
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+fails
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+nNA
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+error
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+warning
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+REFNUM
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BGN\_DATE
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EVTYPE
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+112051
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+32775
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FATALITIES
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INJURIES
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PROPDMG
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PROPDMGEXP
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+140668
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+4158
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CROPDMG
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CROPDMGEXP
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+89785
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+55041
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<sup></sup> The same constrains that were used to identify the invalid
+values of each variable at the table with the target data subset,
+<br>were used for the post validation of the observations at the table
+with the in-record validated data.
+</td>
+</tr>
+</tfoot>
+</table>
 <br>
 
 <font size="1">[back to start of this
@@ -1471,6 +4979,230 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 6.4.5 Overview of the table with the in-record validated data
 
+The table with the in-record validated data contained 9 variables and
+144826 observations.
+
+The variable *REFNUM* was set as the key of table.
+
+    # Print the structure of the table with the in-record validated data table .
+    str(in_record_validated_data)
+
+    ## Classes 'data.table' and 'data.frame':   144826 obs. of  9 variables:
+    ##  $ REFNUM    : int  413607 413608 413609 413610 413611 413612 413613 413614 413615 413616 ...
+    ##  $ BGN_DATE  : chr  "1/19/2001 0:00:00" "1/19/2001 0:00:00" "1/19/2001 0:00:00" "1/19/2001 0:00:00" ...
+    ##  $ EVTYPE    : chr  NA NA NA NA ...
+    ##  $ FATALITIES: int  0 0 0 0 0 0 0 0 0 0 ...
+    ##  $ INJURIES  : int  0 0 0 0 0 0 0 4 0 0 ...
+    ##  $ PROPDMG   : num  10 8 2 15 5 3 10 450 150 3 ...
+    ##  $ PROPDMGEXP: chr  "K" "K" "K" "K" ...
+    ##  $ CROPDMG   : num  0 0 0 0 0 0 0 0 0 0 ...
+    ##  $ CROPDMGEXP: chr  NA NA NA NA ...
+    ##  - attr(*, ".internal.selfref")=<externalptr> 
+    ##  - attr(*, "sorted")= chr "REFNUM"
+
+There were plenty of missing values, that were introduced as a result of
+the in-record validation procedure for the variables *EVTYPE*,
+*PROPDMGEXP* and *CROPDMGEXP*, but the number of distinct values didn’t
+indicate any more the presence of obvious abnormalities.
+
+    # Create a kable to highlight some facts 
+    # about the table with the in-record validated data.
+    kable(
+      x = data.table(
+        "Variable" = names(in_record_validated_data),
+        "Number of Distinct Values" = vapply(
+          X = in_record_validated_data, 
+          FUN = function(x) length(unique(x[!is.na(x)])), 
+          FUN.VALUE = integer(1)
+        ),
+        "Number of NAs" = vapply(
+          X = in_record_validated_data, 
+          FUN = function(x) sum(is.na(x)), 
+          FUN.VALUE = integer(1)),
+        "Percentage of NAs" = 
+          vapply(
+            X = in_record_validated_data, 
+            FUN = function(x) mean(is.na(x)), 
+            FUN.VALUE =double(1))
+      ),
+      caption = "Table 6.4.5-1: Facts about the table with in-record validated data."
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c(
+          "striped", "hover", "condensed", "responsive", "bordered"
+          ), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      ) %>% 
+      footnote(
+        general = paste0(
+          "The table with the in-record validated data contained 9 variables ", 
+          "and 144826 observations."
+        )
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 6.4.5-1: Facts about the table with in-record validated data.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Variable
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Number of Distinct Values
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Number of NAs
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Percentage of NAs
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+REFNUM
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BGN\_DATE
+</td>
+<td style="text-align:right;">
+3746
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EVTYPE
+</td>
+<td style="text-align:right;">
+46
+</td>
+<td style="text-align:right;">
+32775
+</td>
+<td style="text-align:right;">
+0.2263061
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FATALITIES
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INJURIES
+</td>
+<td style="text-align:right;">
+101
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PROPDMG
+</td>
+<td style="text-align:right;">
+1162
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PROPDMGEXP
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+4158
+</td>
+<td style="text-align:right;">
+0.0287103
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CROPDMG
+</td>
+<td style="text-align:right;">
+269
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CROPDMGEXP
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+55041
+</td>
+<td style="text-align:right;">
+0.3800492
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<sup></sup> The table with the in-record validated data contained 9
+variables and 144826 observations.
+</td>
+</tr>
+</tfoot>
+</table>
 <br>
 
 <font size="1">[back to start of this
@@ -1489,6 +5221,127 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 6.5 Impute Missing Values
 -------------------------
 
+<font size="3"><u><strong>Summary</strong></u></font>
+
+In this stage of data processing procedure, an attempt was made to
+maximize the amount of available information for the analysis, by
+imputing some of the missing values that exist at the table with the
+in-record validated data with plausible values.
+
+There were 3 variables (*EVTYPE*, *PROPDMGEXP* and *CROPDMGEXP*) that
+contained NAs, all of which were introduced through the [in-record data
+validation stage](#ind-6-4--Conduct-In-Record-Data-Validation).
+
+Via a conservative deterministic approach which aimed to retrieve the
+missing values only for the cases that there were almost no doubt about
+the values that were imputed, the majority of those entries got
+successfully restored.
+
+However it is highlighted that for the variable *EVTYPE*, there is no
+guarantee that the values imputed are error-free, due to the fact that
+the associations were made based on the invalid values found at the
+table with the target data subset, that were substituted by NAs and the
+information available in [NATIONAL WEATHER SERVICE INSTRUCTION 10-1605,
+AUGUST 17,
+2007](https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2Fpd01016005curr.pdf)
+(at chapter 7)\*  
+by the analyst who has **no expertise neither on weather nor in
+meteorology**.
+
+On the other hand, the missing values that were imputed for the
+variables *PROPDMGEXP* and *CROPDMGEXP* are almost certainly correct
+(and even if they are not, it didn’t affect in any significant way the
+results of the analysis as they all correspond to observations that
+resulted in 0 property and crop damage respectively while the analysis
+focused on the observations for the weather events that caused non-zero
+harm).
+
+    # Create a dummy table by coping the table with the in-record validated data 
+    # at which the missing values for the variable EVTYPE, PROPDMGEXP and CROPDMGEXP 
+    # will be imputed to get the table with the imputed data.
+    imputed_data <- copy(in_record_validated_data)
+
+<font size="3"><u><strong>Steps</strong></u></font>
+
+-   [6.5.1 Impute missing values at the variable
+    EVTYPE](#ind-6-5-1--Impute-missing-values-at-the-variable-EVTYPE)
+    -   Imputes the missing values at the variable EVTYPE with plausible
+        substitutions based on the invalid values they corresponded:
+        -   [6.5.1.1 Examine the invalid values from the variable
+            EVTYPE](#ind-6-5-1-1--Examine-the-invalid-values-from-the-variable-EVTYPE)
+            -   Examine the invalid values that have been substituted by
+                NAs.  
+        -   [6.5.1.2 Associate plausible substitutions to the invalid
+            values from the variable
+            EVTYPE](#ind-6-5-1-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-EVTYPE)
+            -   Associated the invalid values with plausible
+                substitutions.  
+        -   [6.5.1.3 Identify the imputable missing values at the
+            variable
+            EVTYPE](#ind-6-5-1-3--Identify-the-imputable-missing-values-at-the-variable-EVTYPE)
+            -   Identified the imputable missing values according to
+                associations by their key value.  
+        -   [6.5.1.4 Substitute the imputable missing values at the
+            variable
+            EVTYPE](#ind-6-5-1-4--Substitute-the-imputable-missing-values-at-the-variable-EVTYPE)
+            -   Substituted the imputable missing values with valid
+                ones.  
+-   [6.5.2 Impute missing values at the variable
+    PROPDMGEXP](#ind-6-5-2--Impute-missing-values-at-the-variable-PROPDMGEXP)
+    -   Imputes the missing values at the variable PROPDMGEXP with
+        plausible substitutions based on the invalid values they
+        corresponded:
+        -   [6.5.2.1 Examine the invalid values from the variable
+            PROPDMGEXP](#ind-6-5-2-1--Examine-the-invalid-values-from-the-variable-PROPDMGEXP)
+            -   Examine the invalid values that have been substituted by
+                NAs.  
+        -   [6.5.2.2 Associate plausible substitutions to the invalid
+            values from the variable
+            PROPDMGEXP](#ind-6-5-2-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-PROPDMGEXP)
+            -   Associated the invalid values with plausible
+                substitutions.  
+        -   [6.5.2.3 Identify the imputable missing values at the
+            variable
+            PROPDMGEXP](#ind-6-5-2-3--Identify-the-imputable-missing-values-at-the-variable-PROPDMGEXP)
+            -   Identified the imputable missing values according to
+                associations by their key value.  
+        -   [6.5.2.4 Substitute the imputable missing values at the
+            variable
+            PROPDMGEXP](#ind-6-5-2-4--Substitute-the-imputable-missing-values-at-the-variable-PROPDMGEXP)
+            -   Substituted the imputable missing values with valid
+                ones.  
+-   [6.5.3 Impute missing values at the variable
+    CROPDMGEXP](#ind-6-5-3--Impute-missing-values-at-the-variable-CROPDMGEXP)
+    -   Imputes the missing values at the variable CROPDMGEXP with
+        plausible substitutions based on the invalid values they
+        corresponded:
+        -   [6.5.3.1 Examine the invalid values from the variable
+            CROPDMGEXP](#ind-6-5-3-1--Examine-the-invalid-values-from-the-variable-CROPDMGEXP)
+            -   Examine the invalid values that have been substituted by
+                NAs.  
+        -   [6.5.3.2 Associate plausible substitutions to the invalid
+            values from the variable
+            CROPDMGEXP](#ind-6-5-3-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-CROPDMGEXP)
+            -   Associated the invalid values with plausible
+                substitutions.  
+        -   [6.5.3.3 Identify the imputable missing values at the
+            variable
+            CROPDMGEXP](#ind-6-5-3-3--Identify-the-imputable-missing-values-at-the-variable-CROPDMGEXP)
+            -   Identified the imputable missing values according to
+                associations by their key value.  
+        -   [6.5.3.4 Substitute the imputable missing values at the
+            variable
+            CROPDMGEXP](#ind-6-5-3-4--Substitute-the-imputable-missing-values-at-the-variable-CROPDMGEXP)
+            -   Substituted the imputable missing values with valid
+                ones.  
+-   [6.5.4 Conduct post validation for the table with the imputed
+    data](#ind-6-5-4--Conduct-post-validation-for-the-table-with-the-imputed-data)
+    -   Ensures that all values of each variable at the table with the
+        imputed data are valid.  
+-   [6.5.5 Overview of the table with the imputed
+    data](#ind-6-5-5--Overview-of-the-table-with-the-imputed-data)
+    -   Presents some basic facts about the table with the imputed data.
+
 <br>
 
 <font size="1">[back to start of this
@@ -1502,8 +5355,1415 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 6.5.1 Impute missing values at the variable EVTYPE
 
+The invalid values for the variable EVTYPE at the table with the target
+data subset (before they got substituted by NAs at the [in-record data
+validation stage](#ind-6-4--Conduct-In-Record-Data-Validation)) were
+examined and associations were made to plausible valid substitutions.
+Those observations with missing values that corresponded to successfully
+associated plausible substitutions, were identified by their key values
+and were imputed.
+
+-   [6.5.1.1 Examine the invalid values from the variable
+    EVTYPE](#ind-6-5-1-1--Examine-the-invalid-values-from-the-variable-EVTYPE)
+    -   Examine the invalid values that have been substituted by NAs.  
+-   [6.5.1.2 Associate plausible substitutions to the invalid values
+    from the variable
+    EVTYPE](#ind-6-5-1-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-EVTYPE)
+    -   Associated the invalid values with plausible substitutions.  
+-   [6.5.1.3 Identify the imputable missing values at the variable
+    EVTYPE](#ind-6-5-1-3--Identify-the-imputable-missing-values-at-the-variable-EVTYPE)
+    -   Identified the imputable missing values according to
+        associations by their key value.  
+-   [6.5.1.4 Substitute the imputable missing values at the variable
+    EVTYPE](#ind-6-5-1-4--Substitute-the-imputable-missing-values-at-the-variable-EVTYPE)
+    -   Substituted the imputable missing values with valid ones.
+
 <br>
 
+<font size="1">[back to start of this
+subsection](#ind-6-5-1--Impute-missing-values-at-the-variable-EVTYPE)</font>  
+<font size="1">[back to start of this
+section](#ind-6-5--Impute-Missing-Values)</font>  
+<font size="1">[back to start of this
+chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF
+CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
+
+<br>
+
+#### 6.5.1.1 Examine the invalid values from the variable EVTYPE
+
+For the variable *EVTYPE* at the table with the in-record validated
+data, out of the total 144826 observations 32775 (22.63%) were NAs.
+
+    # Create a kable to present information on the missing values 
+    # for the variable EVTYPE at the table with the imputed data.
+    kable(
+      x = data.table(
+        "Variable" = "EVTYPE",
+        "Total Number of Values" = length(in_record_validated_data$EVTYPE),
+        "Number of Missing Values" = sum(is.na(in_record_validated_data$EVTYPE)),
+        "Percentage of Missing Values" = mean(is.na(in_record_validated_data$EVTYPE))
+      ),
+      caption = paste0(
+        "Table 6.5.1.1-1: ",
+        "Information on the missing values ", 
+        "for the variable EVTYPE at the table with the target data subset."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 6.5.1.1-1: Information on the missing values for the variable
+EVTYPE at the table with the target data subset.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Variable
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Total Number of Values
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Number of Missing Values
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Percentage of Missing Values
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+EVTYPE
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+32775
+</td>
+<td style="text-align:right;">
+0.2263061
+</td>
+</tr>
+</tbody>
+</table>
+These 32775 missing values at the table with the in-record validated
+data, corresponded to 51 distinct invalid entries at the table with the
+target data subset before they got substituted by NAs at the [in-record
+data validation stage](#ind-6-4--Conduct-In-Record-Data-Validation).
+
+    # Create a kable to presents information on the distinct invalid values 
+    # for the variable EVTYPE at the table with the target data subset 
+    # that were substituted by NAs at the in-record validation stage.
+    kable(
+      x = target_data_subset[
+        is.na(in_record_validated_data$EVTYPE), .N, by = EVTYPE][
+          order(N,decreasing = TRUE)],
+      col.names = c("Invalid Values", "Number of Occurrences"),
+      caption = paste0(
+        "Table 6.5.1.1-2: ",
+        "Information on the distinct invalid values ", 
+        "for the variable EVTYPE at the table with the target data subset ",
+        "which got substituted by NAs at the in-record validation stage."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 6.5.1.1-2: Information on the distinct invalid values for the
+variable EVTYPE at the table with the target data subset which got
+substituted by NAs at the in-record validation stage.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Invalid Values
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Number of Occurrences
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+TSTM WIND
+</td>
+<td style="text-align:right;">
+31453
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LANDSLIDE
+</td>
+<td style="text-align:right;">
+189
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WINTER WEATHER/MIX
+</td>
+<td style="text-align:right;">
+139
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WILD/FOREST FIRE
+</td>
+<td style="text-align:right;">
+132
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RIP CURRENTS
+</td>
+<td style="text-align:right;">
+115
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+URBAN/SML STREAM FLD
+</td>
+<td style="text-align:right;">
+115
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MARINE TSTM WIND
+</td>
+<td style="text-align:right;">
+109
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TSTM WIND/HAIL
+</td>
+<td style="text-align:right;">
+108
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+STORM SURGE
+</td>
+<td style="text-align:right;">
+86
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HEAVY SURF/HIGH SURF
+</td>
+<td style="text-align:right;">
+50
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HURRICANE
+</td>
+<td style="text-align:right;">
+38
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LIGHT SNOW
+</td>
+<td style="text-align:right;">
+38
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FOG
+</td>
+<td style="text-align:right;">
+32
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WIND
+</td>
+<td style="text-align:right;">
+26
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EXTREME COLD
+</td>
+<td style="text-align:right;">
+24
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DRY MICROBURST
+</td>
+<td style="text-align:right;">
+17
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HEAVY SURF
+</td>
+<td style="text-align:right;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MIXED PRECIPITATION
+</td>
+<td style="text-align:right;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+COASTAL FLOODING
+</td>
+<td style="text-align:right;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ASTRONOMICAL HIGH TIDE
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+STRONG WINDS
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SNOW
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FREEZE
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SMALL HAIL
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GUSTY WINDS
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MUDSLIDE
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HIGH SEAS
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SNOW SQUALLS
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EXTREME WINDCHILL
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WINTER WEATHER MIX
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FALLING SNOW/ICE
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ROUGH SEAS
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LIGHT FREEZING RAIN
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LATE SEASON SNOW
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+THUNDERSTORM
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ROGUE WAVE
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NON-TSTM WIND
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NON TSTM WIND
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+OTHER
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LAKE EFFECT SNOW
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MUD SLIDE
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BRUSH FIRE
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BLOWING DUST
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GUSTY WIND
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HIGH WATER
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HIGH SURF ADVISORY
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HAZARDOUS SURF
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+COLD WEATHER
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WHIRLWIND
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ICE ON ROAD
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DROWNING
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+
+<font size="1">[back to start of this
+subsubsection](#ind-6-5-1-1--Examine-the-invalid-values-from-the-variable-EVTYPE)</font>  
+<font size="1">[back to start of this
+subsection](#ind-6-5-1--Impute-missing-values-at-the-variable-EVTYPE)</font>  
+<font size="1">[back to start of this
+section](#ind-6-5--Impute-Missing-Values)</font>  
+<font size="1">[back to start of this
+chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF
+CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
+
+<br>
+
+#### 6.5.1.2 Associate plausible substitutions to the invalid values from the variable EVTYPE
+
+To impute the corresponding NAs associations were made from the invalid
+entries to defined weather event types.
+
+-   Some of the associations were based solely on the invalid values,
+    which directly corresponded to defined event types as they seem to
+    be either typos (e.g. “RIP CURRENTS” instead of “RIP CURRENT”) or
+    acronyms of the expected values (e.g. “TSTM WIND” instead of
+    “THUNDERSTORM WIND”).  
+-   While for others the description for each one of the 48 event types
+    that was available in [NATIONAL WEATHER SERVICE INSTRUCTION 10-1605,
+    AUGUST 17,
+    2007](https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2Fpd01016005curr.pdf)
+    *(at chapter 7)* was taken into account for cases where a variation
+    of the defined value had been supplied (e.g. “URBAN/SML STREAM FLD”
+    instead of “HEAVY RAIN”).
+
+**Nevertheless it is stressed that the associations mainly depend on
+‘common sense’ judgment (instead of solid professional expertise) and in
+no way they are guaranteed to be error-free, despite the best efforts
+made to impute only the most obvious cases.**
+
+In total, 28 distinct invalid values were associated to some of the 48
+defined weather event types:
+
+<div class = "row">
+
+<div class = "col-md-6">
+1.  ‘COASTAL FLOODING’ –&gt; **COASTAL FLOOD**  
+2.  ‘COLD WEATHER’ –&gt; **COLD/WIND CHILL**  
+3.  ‘LANDSLIDE’ –&gt; **DEBRIS FLOW**  
+4.  ‘MUDSLIDE’ –&gt; **DEBRIS FLOW**  
+5.  ‘MUD SLIDE’ –&gt; **DEBRIS FLOW**  
+6.  ‘DROWNING’ –&gt; **DROUGHT**  
+7.  ‘EXTREME COLD’ –&gt; **EXTREME COLD/WIND CHILL**  
+8.  ‘EXTREME WINDCHILL’ –&gt; **EXTREME COLD/WIND CHILL**  
+9.  ‘FREEZE’ –&gt; **FROST/FREEZE**  
+10. ‘SMALL HAIL’ –&gt; **HAIL**  
+11. ‘URBAN/SML STREAM FLD’ –&gt; **HEAVY RAIN**  
+12. ‘HEAVY SURF/HIGH SURF’ –&gt; **HIGH SURF**  
+13. ‘HEAVY SURF’ –&gt; **HIGH SURF**  
+14. ‘HAZARDOUS SURF’ –&gt; **HIGH SURF**  
+    </div>
+
+1.  ’ HIGH SURF ADVISORY’ –&gt; **HIGH SURF**  
+2.  ‘HURRICANE’ –&gt; **HURRICANE/TYPHOON**  
+3.  ‘LAKE EFFECT SNOW’ –&gt; **LAKE-EFFECT SNOW**  
+4.  ‘MARINE TSTM WIND’ –&gt; **MARINE THUNDERSTORM WIND**  
+5.  ‘RIP CURRENTS’ –&gt; **RIP CURRENT**  
+6.  ‘STORM SURGE’ –&gt; **STORM SURGE/TIDE**  
+7.  ‘STRONG WINDS’ –&gt; **STRONG WIND**  
+8.  ‘TSTM WIND’ –&gt; **THUNDERSTORM WIND**  
+9.  ‘DRY MICROBURST’ –&gt; **THUNDERSTORM WIND**  
+10. ‘THUNDERSTORM’ –&gt; **THUNDERSTORM WIND**  
+11. ‘WILD/FOREST FIRE’ –&gt; **WILDFIRE**  
+12. ‘BRUSH FIRE’ –&gt; **WILDFIRE**  
+13. ‘WINTER WEATHER/MIX’ –&gt; **WINTER WEATHER**  
+14. ‘WINTER WEATHER MIX’ –&gt; **WINTER WEATHER**  
+    </div>
+
+*( The 15th invalid value contained **3 spaces** before the ‘HIGH SURF
+ADVISORY’, but for some unknown reason after rendering it seems to be
+only 1 space.)*
+
+    # Create a list the associations made from the invalid entries 
+    # for the variable EVTYPE at the table with the target data subset 
+    # to defined weather event types.
+    associations_on_defined_event_types <- list(
+      "COASTAL FLOOD" = c("COASTAL FLOODING"),
+      "COLD/WIND CHILL" = c("COLD WEATHER"),
+      "DEBRIS FLOW" = c("LANDSLIDE", "MUDSLIDE", "MUD SLIDE"),
+      "DROUGHT" = c("DROWNING"),
+      "EXTREME COLD/WIND CHILL" = c("EXTREME COLD", "EXTREME WINDCHILL"),
+      "FROST/FREEZE" = c("FREEZE"),
+      "HAIL" = c("SMALL HAIL"),
+      "HEAVY RAIN" = c("URBAN/SML STREAM FLD"),
+      "HIGH SURF" = c(
+        "HEAVY SURF/HIGH SURF", "HEAVY SURF", "HAZARDOUS SURF",
+        "   HIGH SURF ADVISORY"),
+      "HURRICANE/TYPHOON" = c("HURRICANE"),
+      "LAKE-EFFECT SNOW" = c("LAKE EFFECT SNOW"),
+      "MARINE THUNDERSTORM WIND" = c("MARINE TSTM WIND"),
+      "RIP CURRENT" = c("RIP CURRENTS"),
+      "STORM SURGE/TIDE" = c("STORM SURGE"),
+      "STRONG WIND" = c("STRONG WINDS"),
+      "THUNDERSTORM WIND" = c("TSTM WIND", "DRY MICROBURST", "THUNDERSTORM"),
+      "WILDFIRE" = c("WILD/FOREST FIRE", "BRUSH FIRE"),
+      "WINTER WEATHER" = c("WINTER WEATHER/MIX", "WINTER WEATHER MIX")
+    )
+
+On the other hand there were 23 distinct invalid values were not
+possible to get associated (with relatively high confidence) with any of
+the 48 defined event types:
+
+<div class = "row">
+
+<div class = "col-md-6">
+1.  ‘FOG’  
+2.  ‘LIGHT SNOW’  
+3.  ‘WIND’  
+4.  ‘LIGHT FREEZING RAIN’  
+5.  ‘MIXED PRECIPITATION’  
+6.  ‘ASTRONOMICAL HIGH TIDE’  
+7.  ‘GUSTY WINDS’  
+8.  ‘SNOW’  
+9.  ‘HIGH SEAS’  
+10. ‘ROUGH SEAS’  
+11. ‘SNOW SQUALLS’  
+12. ‘FALLING SNOW/ICE’  
+    </div>
+
+1.  ‘GUSTY WIND’  
+2.  ‘HIGH WATER’  
+3.  ‘OTHER’  
+4.  ‘BLOWING DUST’  
+5.  ‘ICE ON ROAD’  
+6.  ‘LATE SEASON SNOW’  
+7.  ‘NON TSTM WIND’  
+8.  ‘NON-TSTM WIND’  
+9.  ‘ROGUE WAVE’  
+10. ‘WHIRLWIND’  
+11. ‘TSTM WIND/HAIL’  
+    </div>
+
+    # Create a list with the distinct invalid values of the variable EVTYPE 
+    # at the table with target data subset that couldn't be safely associated 
+    # with any of defined weather event types.
+    ambiguous_entries_on_EVTYPE <- list(
+      "FOG", 
+      "LIGHT SNOW", 
+      "WIND", 
+      "LIGHT FREEZING RAIN",
+      "MIXED PRECIPITATION", 
+      "ASTRONOMICAL HIGH TIDE", 
+      "GUSTY WINDS", 
+      "SNOW",
+      "HIGH SEAS", 
+      "ROUGH SEAS", 
+      "SNOW SQUALLS",
+      "FALLING SNOW/ICE", 
+      "GUSTY WIND", 
+      "HIGH WATER", 
+      "OTHER", 
+      "BLOWING DUST",
+      "ICE ON ROAD", 
+      "LATE SEASON SNOW",
+      "NON TSTM WIND", 
+      "NON-TSTM WIND", 
+      "ROGUE WAVE",
+      "WHIRLWIND", 
+      "TSTM WIND/HAIL"
+    )
+
+<br>
+
+<font size="1">[back to start of this
+subsubsection](#ind-6-5-1-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-EVTYPE)</font>  
+<font size="1">[back to start of this
+subsection](#ind-6-5-1--Impute-missing-values-at-the-variable-EVTYPE)</font>  
+<font size="1">[back to start of this
+section](#ind-6-5--Impute-Missing-Values)</font>  
+<font size="1">[back to start of this
+chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF
+CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
+
+<br>
+
+#### 6.5.1.3 Identify the imputable missing values at the variable EVTYPE
+
+After having established the [associations for the invalid entries of
+the variable
+*EVTYPE*](#ind-6-5-1-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-EVTYPE)
+the observations that contained values that could be retrieved were
+identified.
+
+    # Create a validator to identify which observations for the variable EVTYPE 
+    # contain a missing value that correspond to one of the invalid values 
+    # at the table with target data subset that can be retrieved 
+    # according to the list with the association. 
+    V_________identification_test_of_imputable_missing_values_for_EVTYPE <- validator(
+      "COASTAL FLOOD" = EVTYPE %in% associations_on_defined_event_types[["COASTAL FLOOD"]],
+      "COLD WIND CHILL" = EVTYPE %in% associations_on_defined_event_types[["COLD/WIND CHILL"]],
+      "DEBRIS FLOW" = EVTYPE %in% associations_on_defined_event_types[["DEBRIS FLOW"]],
+      "DROUGHT" = EVTYPE %in% associations_on_defined_event_types[["DROUGHT"]],
+      "EXTREME COLD/WIND CHILL" = EVTYPE %in% associations_on_defined_event_types[["EXTREME COLD/WIND CHILL"]],
+      "FROST/FREEZE" = EVTYPE %in% associations_on_defined_event_types[["FROST/FREEZE"]],
+      "HAIL" = EVTYPE %in% associations_on_defined_event_types[["HAIL"]],
+      "HEAVY RAIN" = EVTYPE %in% associations_on_defined_event_types[["HEAVY RAIN"]],
+      "HIGH SURF" = EVTYPE %in% associations_on_defined_event_types[["HIGH SURF"]],
+      "HURRICANE/TYPHOON" = EVTYPE %in% associations_on_defined_event_types[["HURRICANE/TYPHOON"]],
+      "LAKE-EFFECT SNOW" = EVTYPE %in% associations_on_defined_event_types[["LAKE-EFFECT SNOW"]],
+      "MARINE THUNDERSTORM WIND" = EVTYPE %in% associations_on_defined_event_types[["MARINE THUNDERSTORM WIND"]],
+      "RIP CURRENT" = EVTYPE %in% associations_on_defined_event_types[["RIP CURRENT"]],
+      "STORM SURGE/TIDE" = EVTYPE %in% associations_on_defined_event_types[["STORM SURGE/TIDE"]],
+      "STRONG WIND" = EVTYPE %in% associations_on_defined_event_types[["STRONG WIND"]],
+      "THUNDERSTORM WIND" = EVTYPE %in% associations_on_defined_event_types[["THUNDERSTORM WIND"]],
+      "WILDFIRE" = EVTYPE %in% associations_on_defined_event_types[["WILDFIRE"]],
+      "WINTER WEATHER" = EVTYPE %in% associations_on_defined_event_types[["WINTER WEATHER"]]
+    )
+
+    # Confront the table with the target data subset with the validator with 
+    # the criteria for the association of invalid entries for the variable EVTYPE.
+    CF_________identification_test_of_imputable_missing_values_for_EVTYPE <- confront(
+      dat = target_data_subset[is.na(in_record_validated_data[["EVTYPE"]])],
+      V_________identification_test_of_imputable_missing_values_for_EVTYPE
+    )
+
+Out of the total 32775 missing values for the variable *EVTYPE* at the
+in-record validation data table, 32520 (99.22%) could be imputed while
+for only 255 (0.78%) values it wasn’t possible to safely associate them
+with some of the 48 defined event types.
+
+    # Create a kable to presents information 
+    # on the imputable and not imputable missing values at the variable EVTYPE.
+    kable(
+      x = data.table(
+        "variable" = "EVTYPE",
+        "n_missing" = sum(is.na(in_record_validated_data$EVTYPE)),
+        "n_imputable" = sum(
+          vapply(
+            X = CF_________identification_test_of_imputable_missing_values_for_EVTYPE[["._value"]],
+            FUN = sum,
+            FUN.VALUE = integer(1)
+          )
+        )
+      )[,"n_not_imputable" := n_missing - n_imputable][
+          , "perc_imputable" := n_imputable/n_missing][
+            ,"perc_not_imputable" := n_not_imputable/n_missing], 
+      col.names = c(
+        "Variable",
+        "Number of Missing Values",
+        "Number of Imputable Missing Values",
+        "Number of Not Imputable Missing Values",
+        "Percentage of Imputable Missing Values",
+        "Percentage of Not Imputable Missing Values"
+      ),
+      caption = paste0(
+        "Table 6.5.1.3-1: ",
+        "Information on the imputable and not imputable missing values ", 
+        "at the variable EVTYPE."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 6.5.1.3-1: Information on the imputable and not imputable missing
+values at the variable EVTYPE.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Variable
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Number of Missing Values
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Number of Imputable Missing Values
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Number of Not Imputable Missing Values
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Percentage of Imputable Missing Values
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Percentage of Not Imputable Missing Values
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+EVTYPE
+</td>
+<td style="text-align:right;">
+32775
+</td>
+<td style="text-align:right;">
+32520
+</td>
+<td style="text-align:right;">
+255
+</td>
+<td style="text-align:right;">
+0.9922197
+</td>
+<td style="text-align:right;">
+0.0077803
+</td>
+</tr>
+</tbody>
+</table>
+The imputed missing values were distributed according to the
+associations at 18 defined event types.
+
+    # Create a kable to presents the results from the identification 
+    # of the imputable missing values 
+    # by each of the associated defined weather event types. 
+    kable(
+      x = summary(CF_________identification_test_of_imputable_missing_values_for_EVTYPE)[
+        , c("name", "items", "passes", "fails", "nNA", "error", "warning")
+        ],
+      caption = paste0(
+        "Table 6.5.1.3-2: ",
+        "Information on the number of invalid values ",
+        "that can be imputed by one the 48 defined weather event types ",
+        "for the variable EVTYPE at the table with the imputed data."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      ) %>% 
+      footnote(
+        general = paste0(
+          "The subset of the 32775 observations with missing values ", "\n",
+          "was used for the identification of imputable invalid values."
+        )
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 6.5.1.3-2: Information on the number of invalid values that can be
+imputed by one the 48 defined weather event types for the variable
+EVTYPE at the table with the imputed data.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+name
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+items
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+passes
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+fails
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+nNA
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+error
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+warning
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+COASTAL.FLOOD
+</td>
+<td style="text-align:right;">
+32775
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+32764
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+COLD.WIND.CHILL
+</td>
+<td style="text-align:right;">
+32775
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+32774
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DEBRIS.FLOW
+</td>
+<td style="text-align:right;">
+32775
+</td>
+<td style="text-align:right;">
+193
+</td>
+<td style="text-align:right;">
+32582
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DROUGHT
+</td>
+<td style="text-align:right;">
+32775
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+32774
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EXTREME.COLD.WIND.CHILL
+</td>
+<td style="text-align:right;">
+32775
+</td>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:right;">
+32748
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FROST.FREEZE
+</td>
+<td style="text-align:right;">
+32775
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+32771
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HAIL
+</td>
+<td style="text-align:right;">
+32775
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+32771
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HEAVY.RAIN
+</td>
+<td style="text-align:right;">
+32775
+</td>
+<td style="text-align:right;">
+115
+</td>
+<td style="text-align:right;">
+32660
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HIGH.SURF
+</td>
+<td style="text-align:right;">
+32775
+</td>
+<td style="text-align:right;">
+64
+</td>
+<td style="text-align:right;">
+32711
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HURRICANE.TYPHOON
+</td>
+<td style="text-align:right;">
+32775
+</td>
+<td style="text-align:right;">
+38
+</td>
+<td style="text-align:right;">
+32737
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LAKE.EFFECT.SNOW
+</td>
+<td style="text-align:right;">
+32775
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+32774
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MARINE.THUNDERSTORM.WIND
+</td>
+<td style="text-align:right;">
+32775
+</td>
+<td style="text-align:right;">
+109
+</td>
+<td style="text-align:right;">
+32666
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RIP.CURRENT
+</td>
+<td style="text-align:right;">
+32775
+</td>
+<td style="text-align:right;">
+115
+</td>
+<td style="text-align:right;">
+32660
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+STORM.SURGE.TIDE
+</td>
+<td style="text-align:right;">
+32775
+</td>
+<td style="text-align:right;">
+86
+</td>
+<td style="text-align:right;">
+32689
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+STRONG.WIND
+</td>
+<td style="text-align:right;">
+32775
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+32769
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+THUNDERSTORM.WIND
+</td>
+<td style="text-align:right;">
+32775
+</td>
+<td style="text-align:right;">
+31471
+</td>
+<td style="text-align:right;">
+1304
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WILDFIRE
+</td>
+<td style="text-align:right;">
+32775
+</td>
+<td style="text-align:right;">
+133
+</td>
+<td style="text-align:right;">
+32642
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WINTER.WEATHER
+</td>
+<td style="text-align:right;">
+32775
+</td>
+<td style="text-align:right;">
+141
+</td>
+<td style="text-align:right;">
+32634
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<sup></sup> The subset of the 32775 observations with missing values
+<br>was used for the identification of imputable invalid values.
+</td>
+</tr>
+</tfoot>
+</table>
+The key value (denoted by the *REFNUM* variable) for the observations
+that successfully got associated with a defined weather event type was
+identified.
+
+    # Identify the missing values that can be imputed 
+    # with one of the defined event type values 
+    # by their key value (denoted by the variable REFNUM)
+    criterion_by_REFNUM_____imputable_entries_for_EVTYPE <- lapply(
+      X = CF_________identification_test_of_imputable_missing_values_for_EVTYPE[["._value"]],
+      FUN = function(x) in_record_validated_data[is.na(EVTYPE), REFNUM][x]
+    ) 
+
+<br>
+
+<font size="1">[back to start of this
+subsubsection](#ind-6-5-1-3--Identify-the-imputable-missing-values-at-the-variable-EVTYPE)</font>  
+<font size="1">[back to start of this
+subsection](#ind-6-5-1--Impute-missing-values-at-the-variable-EVTYPE)</font>  
+<font size="1">[back to start of this
+section](#ind-6-5--Impute-Missing-Values)</font>  
+<font size="1">[back to start of this
+chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF
+CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
+
+<br>
+
+#### 6.5.1.4 Substitute the imputable missing values at the variable EVTYPE
+
+The associated value for each of the 28 distinct invalid values at the
+variable *EVTYPE* was imputed at the corresponding observations which
+were identified by their key value.
+
+    # Impute the retrievable missing values at the EVTYPE variable 
+    # with the defined values
+    for (i in seq_along(criterion_by_REFNUM_____imputable_entries_for_EVTYPE)) {
+      set(
+        x = imputed_data,
+        i = which(
+          imputed_data$REFNUM %in%
+            criterion_by_REFNUM_____imputable_entries_for_EVTYPE[[i]],
+        ),
+        j = "EVTYPE",
+        value = names(associations_on_defined_event_types)[i]
+      )
+    }
+
+<br>
+
+<font size="1">[back to start of this
+subsubsection](#ind-6-5-1-4--Substitute-the-imputable-missing-values-at-the-variable-EVTYPE)</font>  
 <font size="1">[back to start of this
 subsection](#ind-6-5-1--Impute-missing-values-at-the-variable-EVTYPE)</font>  
 <font size="1">[back to start of this
@@ -1518,8 +6778,386 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 6.5.2 Impute missing values at the variable PROPDMGEXP
 
+The invalid values for the variable PROPDMGEXP at the table with the
+target data subset (before they got substituted by NAs at the [in-record
+data validation stage](#ind-6-4--Conduct-In-Record-Data-Validation))
+were examined and associations were made to plausible valid
+substitutions. Those observations with missing values that corresponded
+to successfully associated plausible substitutions, were identified by
+their key values and were imputed.
+
+-   [6.5.2.1 Examine the invalid values from the variable
+    PROPDMGEXP](#ind-6-5-2-1--Examine-the-invalid-values-from-the-variable-PROPDMGEXP)
+    -   Examine the invalid values that have been substituted by NAs.  
+-   [6.5.2.2 Associate plausible substitutions to the invalid values
+    from the variable
+    PROPDMGEXP](#ind-6-5-2-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-PROPDMGEXP)
+    -   Associated the invalid values with plausible substitutions.  
+-   [6.5.2.3 Identify the imputable missing values at the variable
+    PROPDMGEXP](#ind-6-5-2-3--Identify-the-imputable-missing-values-at-the-variable-PROPDMGEXP)
+    -   Identified the imputable missing values according to
+        associations by their key value.  
+-   [6.5.2.4 Substitute the imputable missing values at the variable
+    PROPDMGEXP](#ind-6-5-2-4--Substitute-the-imputable-missing-values-at-the-variable-PROPDMGEXP)
+    -   Substituted the imputable missing values with valid ones.
+
 <br>
 
+<font size="1">[back to start of this
+subsection](#ind-6-5-2--Impute-missing-values-at-the-variable-PROPDMGEXP)</font>  
+<font size="1">[back to start of this
+section](#ind-6-5--Impute-Missing-Values)</font>  
+<font size="1">[back to start of this
+chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF
+CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
+
+<br>
+
+#### 6.5.2.1 Examine the invalid values from the variable PROPDMGEXP
+
+For the variable *PROPDMGEXP*, at the table with the in-record validated
+data, out of the total 144826 observations, 4158 (2.87%) were NAs.
+
+    # Create a kable to present information on the missing values 
+    # for the variable PROPDMGEXP at the table with the in-record validated data.
+    kable(
+      x = data.table(
+        "Variable" = "PROPDMGEXP",
+        "Total Number of Values" = length(in_record_validated_data$PROPDMGEXP),
+        "Number of Missing Values" = sum(is.na(in_record_validated_data$PROPDMGEXP)),
+        "Percentage of Missing Values" = mean(is.na(in_record_validated_data$PROPDMGEXP))
+      ),
+      caption = paste0(
+        "Table 6.5.2.1-1: ",
+        "Information on missing values for the variable PROPDMGEXP ", 
+        "at the table with the in-record validated data."
+        )
+      
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 6.5.2.1-1: Information on missing values for the variable
+PROPDMGEXP at the table with the in-record validated data.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Variable
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Total Number of Values
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Number of Missing Values
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Percentage of Missing Values
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+PROPDMGEXP
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+4158
+</td>
+<td style="text-align:right;">
+0.0287103
+</td>
+</tr>
+</tbody>
+</table>
+Those 4158 missing values at the table with the in-record validated
+data, corresponded to empty values at the table with the target data
+subset before they got substituted by NAs at the [in-record data
+validation stage](#ind-6-4--Conduct-In-Record-Data-Validation).
+
+    # Create a kable to presents the distinct invalid values 
+    # of the variable PROPDMGEXP at the table with the target data subset 
+    # that were substituted by NAs at the in-record data validation stage.
+    kable(
+      x = target_data_subset[
+        REFNUM %in% in_record_validated_data[
+          is.na(PROPDMGEXP), REFNUM
+          ],
+        list(
+          "distinct_values" = PROPDMGEXP
+        )
+        ][
+          ,
+          .N,
+          distinct_values
+          ],
+      col.names = c(
+        "Distinct Values", 
+        "Number of Observations"
+      ),
+      caption = paste0(
+        "Table 6.5.2.1-2: ",
+        "The distinct invalid values for the variable 'PROPDMGEXP' ", 
+        "that were substituted by NAs at the in-record data validation stage."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 6.5.2.1-2: The distinct invalid values for the variable
+‘PROPDMGEXP’ that were substituted by NAs at the in-record data
+validation stage.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Distinct Values
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Number of Observations
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+4158
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+
+<font size="1">[back to start of this
+subsubsection](#ind-6-5-2-1--Examine-the-invalid-values-from-the-variable-PROPDMGEXP)</font>  
+<font size="1">[back to start of this
+subsection](#ind-6-5-2--Impute-missing-values-at-the-variable-PROPDMGEXP)</font>  
+<font size="1">[back to start of this
+section](#ind-6-5--Impute-Missing-Values)</font>  
+<font size="1">[back to start of this
+chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF
+CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
+
+<br>
+
+#### 6.5.2.2 Associate plausible substitutions to the invalid values from the variable PROPDMGEXP
+
+A single association (which works perfectly as shown in the [next
+subsubsection](#ind-6-5-2-3--Identify-the-imputable-missing-values-at-the-variable-PROPDMGEXP)
+was made for the missing values that corresponded to empty values:
+
+-   The entries that correspond to property damage with zero magnitude,
+    (denoted by the value 0 at the variable *PROPDMG*) could be
+    associated with any of the valid values (“K”, “M”, “B”).
+
+<br>
+
+<font size="1">[back to start of this
+subsubsection](#ind-6-5-2-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-PROPDMGEXP)</font>  
+<font size="1">[back to start of this
+subsection](#ind-6-5-2--Impute-missing-values-at-the-variable-PROPDMGEXP)</font>  
+<font size="1">[back to start of this
+section](#ind-6-5--Impute-Missing-Values)</font>  
+<font size="1">[back to start of this
+chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF
+CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
+
+<br>
+
+#### 6.5.2.3 Identify the imputable missing values at the variable PROPDMGEXP
+
+The observations that satisfied the criterion imposed by the
+[association made for the invalid values from the variable
+*PROPDMGEXP*](#ind-6-5-2-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-PROPDMGEXP)
+were identified.
+
+    # Create a validator with the criterion to identify 
+    # the imputable missing values for the variable PROPDMGEXP.
+    V_____imputable_missing_values_at_the_variable_PROPDMGEXP <- validator(
+      "imputable_missing_values_at_PROPDMGEXP" = ( 
+        (PROPDMG == 0) & is.na(PROPDMGEXP) 
+      )
+    )
+
+    # Confront the subset of observations with missing values 
+    # in the variable PROPDMGEXP at the in-record validated data 
+    # with the validator with the criterion to identify 
+    # the imputable missing values at the variable PROPDMGEXP. 
+    CF_____imputable_missing_values_at_the_variable_PROPDMGEXP <- 
+      confront(
+        dat = in_record_validated_data[is.na(PROPDMGEXP)],
+        V_____imputable_missing_values_at_the_variable_PROPDMGEXP
+      )
+
+All missing values at the variable *PROPDMGEXP* (4158 in total),
+corresponded to observations for which the magnitude of property damage
+(denoted by the variable *PROPDMG*) was zero.
+
+    # Create a kable to present the number of imputable missing values for the 
+    # variable PROPDMGEXP at the table with the in-record validated data subset.
+    kable(
+      x = summary(CF_____imputable_missing_values_at_the_variable_PROPDMGEXP)[
+        , c("name", "items", "passes", "fails", "nNA", "error", "warning")
+        ],
+      caption = paste0(
+        "Table 6.5.2.3-1: ",
+        "Results from identification of imputable missing values ", 
+        "at the variable PROPDMGEXP."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      ) %>% 
+      footnote(
+        general = paste0(
+          "The subset of the 4158 observations with missing values ", 
+          "was used for the identification of imputable invalid values"
+        )
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 6.5.2.3-1: Results from identification of imputable missing values
+at the variable PROPDMGEXP.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+name
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+items
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+passes
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+fails
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+nNA
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+error
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+warning
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+imputable\_missing\_values\_at\_PROPDMGEXP
+</td>
+<td style="text-align:right;">
+4158
+</td>
+<td style="text-align:right;">
+4158
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<sup></sup> The subset of the 4158 observations with missing values was
+used for the identification of imputable invalid values
+</td>
+</tr>
+</tfoot>
+</table>
+The key values (denoted by the variable *REFNUM*) of the observations
+for which the missing values at the variable *PROPDMGEXP* could be
+retrieved were identified.
+
+    # Identify the observations for which the missing value 
+    # at the variable PROPDMGEXP can be safely imputed, 
+    # by their key value denoted by the variable REFNUM.
+    criterion_by_REFNUM_____imputable_missing_values_at_the_variable_PROPDMGEXP <- 
+      with(
+        data = CF_____imputable_missing_values_at_the_variable_PROPDMGEXP[["._value"]],
+        expr = in_record_validated_data[is.na(PROPDMGEXP), REFNUM]
+      )
+
+<br>
+
+<font size="1">[back to start of this
+subsubsection](#ind-6-5-2-3--Identify-the-imputable-missing-values-at-the-variable-PROPDMGEXP)</font>  
+<font size="1">[back to start of this
+subsection](#ind-6-5-2--Impute-missing-values-at-the-variable-PROPDMGEXP)</font>  
+<font size="1">[back to start of this
+section](#ind-6-5--Impute-Missing-Values)</font>  
+<font size="1">[back to start of this
+chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF
+CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
+
+<br>
+
+#### 6.5.2.4 Substitute the imputable missing values at the variable PROPDMGEXP
+
+The value *“K”* was imputed to all observations with imputable missing
+values at the variable *PROPDMGEXP* (which were identified by their key
+value).
+
+    # Set the imputable missing values at the variable PROPDMGEXP 
+    # with the value "K".
+    set(
+      x = imputed_data,
+      i = which(
+        imputed_data$REFNUM %in% 
+          criterion_by_REFNUM_____imputable_missing_values_at_the_variable_PROPDMGEXP
+      ),
+      j = "PROPDMGEXP",
+      value = "K"
+    )
+
+*(They could have been substituted by any of the valid values (“K”, “M”
+or “B”) for the variable PROPDMGEXP without changing the fact that they
+refer to 0$ property damage.)*
+
+<br>
+
+<font size="1">[back to start of this
+subsubsection](#ind-6-5-2-4--Substitute-the-imputable-missing-values-at-the-variable-PROPDMGEXP)</font>  
 <font size="1">[back to start of this
 subsection](#ind-6-5-2--Impute-missing-values-at-the-variable-PROPDMGEXP)</font>  
 <font size="1">[back to start of this
@@ -1534,8 +7172,388 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 6.5.3 Impute missing values at the variable CROPDMGEXP
 
+The invalid values for the variable PROPDMGEXP at the table with the
+target data subset (before they got substituted by NAs at the [in-record
+data validation stage](#ind-6-4--Conduct-In-Record-Data-Validation))
+were examined and associations were made to plausible valid
+substitutions. Those observations with missing values that corresponded
+to successfully associated plausible substitutions, were identified by
+their key values and were imputed.
+
+-   [6.5.3.1 Examine the invalid values from the variable
+    CROPDMGEXP](#ind-6-5-3-1--Examine-the-invalid-values-from-the-variable-CROPDMGEXP)
+    -   Examine the invalid values that have been substituted by NAs.  
+-   [6.5.3.2 Associate plausible substitutions to the invalid values
+    from the variable
+    CROPDMGEXP](#ind-6-5-3-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-CROPDMGEXP)
+    -   Associated the invalid values with plausible substitutions.  
+-   [6.5.3.3 Identify the imputable missing values at the variable
+    CROPDMGEXP](#ind-6-5-3-3--Identify-the-imputable-missing-values-at-the-variable-CROPDMGEXP)
+    -   Identified the imputable missing values according to
+        associations by their key value.  
+-   [6.5.3.4 Substitute the imputable missing values at the variable
+    CROPDMGEXP](#ind-6-5-3-4--Substitute-the-imputable-missing-values-at-the-variable-CROPDMGEXP)
+    -   Substituted the imputable missing values with valid ones.
+
 <br>
 
+<font size="1">[back to start of this
+subsection](#ind-6-5-3--Impute-missing-values-at-the-variable-CROPDMGEXP)</font>  
+<font size="1">[back to start of this
+section](#ind-6-5--Impute-Missing-Values)</font>  
+<font size="1">[back to start of this
+chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF
+CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
+
+<br>
+
+#### 6.5.3.1 Examine the invalid values from the variable CROPDMGEXP
+
+For the variable *CROPDMGEXP* at the table with the in-record validated
+data, out of the total 144826 observations 55041 (38.00%) were NAs.
+
+    # Create a kable to present information on the missing values 
+    # for the variable CROPDMGEXP at the table with the in-record validated data.
+    kable(
+      x = data.table(
+        "Variable" = "CROPDMGEXP",
+        "Total Number of Values" = length(in_record_validated_data$CROPDMGEXP),
+        "Number of Missing Values" = sum(is.na(in_record_validated_data$CROPDMGEXP)),
+        "Percentage of Missing Values" = mean(is.na(in_record_validated_data$CROPDMGEXP))
+      ),
+      caption = paste0(
+        "Table 6.5.3.1-1: ",
+        "Information on missing values for the variable CROPDMGEXP ", 
+        "at the table with the in-record validated data."
+        )
+      
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 6.5.3.1-1: Information on missing values for the variable
+CROPDMGEXP at the table with the in-record validated data.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Variable
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Total Number of Values
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Number of Missing Values
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Percentage of Missing Values
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+CROPDMGEXP
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+55041
+</td>
+<td style="text-align:right;">
+0.3800492
+</td>
+</tr>
+</tbody>
+</table>
+Those 55041 missing values at the table with the in-record validated
+data, corresponded to empty values at the table with the target data
+subset before they got substituted by NAs at the [in-record data
+validation stage](#ind-6-4--Conduct-In-Record-Data-Validation).
+
+    # Create a kable to presents the distinct invalid values 
+    # of the variable CROPDMGEXP at the table with the target data subset 
+    # that were substituted by NAs at the in-record data validation stage.
+    kable(
+      x = target_data_subset[
+        REFNUM %in% in_record_validated_data[
+          is.na(CROPDMGEXP), REFNUM
+          ],
+        list(
+          "distinct_values" = CROPDMGEXP
+        )
+        ][
+          ,
+          .N,
+          distinct_values
+          ],
+      col.names = c(
+        "Distinct Values", 
+        "Number of Observations"
+      ),
+      caption = paste0(
+        "Table 6.5.3.1-2: ",
+        "The distinct invalid values for the variable 'CROPDMGEXP' ", 
+        "that were substituted by NAs at the in-record data validation stage."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 6.5.3.1-2: The distinct invalid values for the variable
+‘CROPDMGEXP’ that were substituted by NAs at the in-record data
+validation stage.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Distinct Values
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Number of Observations
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+55041
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+
+<font size="1">[back to start of this
+subsubsection](#ind-6-5-3-1--Examine-the-invalid-values-from-the-variable-CROPDMGEXP)</font>  
+<font size="1">[back to start of this
+subsection](#ind-6-5-3--Impute-missing-values-at-the-variable-CROPDMGEXP)</font>  
+<font size="1">[back to start of this
+section](#ind-6-5--Impute-Missing-Values)</font>  
+<font size="1">[back to start of this
+chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF
+CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
+
+<br>
+
+#### 6.5.3.2 Associate plausible substitutions to the invalid values from the variable CROPDMGEXP
+
+A single association (which works perfectly as shown in the [next
+subsubsection](#ind-6-5-3-3--Identify-the-imputable-missing-values-at-the-variable-CROPDMGEXP)
+was made for the missing values that corresponded to empty values:
+
+-   The entries that correspond to crop damage with zero magnitude,
+    (denoted by the value 0 at the variable *CROPDMG*) could be
+    associated with any of the valid values (“K”, “M”, “B”).
+
+<br>
+
+<font size="1">[back to start of this
+subsubsection](#ind-6-5-3-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-CROPDMGEXP)</font>  
+<font size="1">[back to start of this
+subsection](#ind-6-5-3--Impute-missing-values-at-the-variable-CROPDMGEXP)</font>  
+<font size="1">[back to start of this
+section](#ind-6-5--Impute-Missing-Values)</font>  
+<font size="1">[back to start of this
+chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF
+CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
+
+<br>
+
+#### 6.5.3.3 Identify the imputable missing values at the variable CROPDMGEXP
+
+The observations that satisfied the criterion imposed by the
+[association made for the invalid values from the variable
+*CROPDMGEXP*](#ind-6-5-3-2--Associate-plausible-substitutions-to-the-invalid-values-from-the-variable-CROPDMGEXP)
+were identified.
+
+    # Create a validator with the criterion to identify 
+    # the imputable missing values for the variable CROPDMGEXP.
+    V_____imputable_missing_values_at_the_variable_CROPDMGEXP <- validator(
+      "imputable_missing_values_at_CROPDMGEXP" = ( 
+        (CROPDMG == 0) & is.na(CROPDMGEXP) 
+      )
+    )
+
+    # Confront the subset of observations with missing values 
+    # in the variable PROPDMGEXP at the in-record validated data 
+    # with the validator with the criterion to identify 
+    # the imputable missing values at the variable CROPDMGEXP. 
+    CF_____imputable_missing_values_at_the_variable_CROPDMGEXP <- 
+      confront(
+        dat = in_record_validated_data[is.na(CROPDMGEXP)],
+        V_____imputable_missing_values_at_the_variable_CROPDMGEXP
+      )
+
+The key values (denoted by the variable *REFNUM*) of the observations
+for which the missing values at the variable *CROPDMGEXP* could be
+retrieved were identified.
+
+    # Create a kable to present the number of imputable missing values for the 
+    # variable CROPDMGEXP at the table with the in-record validated data subset.
+    kable(
+      x = summary(CF_____imputable_missing_values_at_the_variable_CROPDMGEXP)[
+        , c("name", "items", "passes", "fails", "nNA", "error", "warning")
+        ],
+      caption = paste0(
+        "Table 6.5.3.3-1: ",
+        "Results from identification of imputable missing values ", 
+        "at the variable CROPDMGEXP."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      ) %>% 
+      footnote(
+        general = paste0(
+          "The subset of the 55041 observations with missing values ",
+          "was used for the identification of imputable invalid values."
+        )
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 6.5.3.3-1: Results from identification of imputable missing values
+at the variable CROPDMGEXP.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+name
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+items
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+passes
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+fails
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+nNA
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+error
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+warning
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+imputable\_missing\_values\_at\_CROPDMGEXP
+</td>
+<td style="text-align:right;">
+55041
+</td>
+<td style="text-align:right;">
+55041
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<sup></sup> The subset of the 55041 observations with missing values was
+used for the identification of imputable invalid values.
+</td>
+</tr>
+</tfoot>
+</table>
+The key values (denoted by the variable *REFNUM*) of the observations
+for which the missing values at the variable *CROPDMGEXP* could be
+retrieved were identified.
+
+    # Identify the observations for which the missing value 
+    # at the variable CROPDMGEXP can be safely imputed, 
+    # by their key value denoted by the variable REFNUM.
+    criterion_by_REFNUM_____imputable_missing_values_at_the_variable_CROPDMGEXP <- 
+      with(
+        data = CF_____imputable_missing_values_at_the_variable_CROPDMGEXP[["._value"]],
+        expr = in_record_validated_data[is.na(CROPDMGEXP), REFNUM]
+      )
+
+<br>
+
+<font size="1">[back to start of this
+subsubsection](#ind-6-5-3-3--Identify-the-imputable-missing-values-at-the-variable-CROPDMGEXP)</font>  
+<font size="1">[back to start of this
+subsection](#ind-6-5-3--Impute-missing-values-at-the-variable-CROPDMGEXP)</font>  
+<font size="1">[back to start of this
+section](#ind-6-5--Impute-Missing-Values)</font>  
+<font size="1">[back to start of this
+chapter](#ind-6--DATA-PROCESSING)</font>  
+<font size="1">[back to *TABLE OF
+CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
+
+<br>
+
+#### 6.5.3.4 Substitute the imputable missing values at the variable CROPDMGEXP
+
+The value *“K”* was imputed to all observations with imputable missing
+values at the variable *CROPDMGEXP* (which were identified by their key
+value).
+
+    # Set the imputable missing values at the variable CROPDMGEXP 
+    # with the value "K".
+    set(
+      x = imputed_data,
+      i = which(
+        imputed_data$REFNUM %in% 
+          criterion_by_REFNUM_____imputable_missing_values_at_the_variable_CROPDMGEXP
+      ),
+      j = "CROPDMGEXP",
+      value = "K"
+    )
+
+*(They could have been substituted by any of the valid values (“K”, “M”
+or “B”) for the variable PROPDMGEXP without changing the fact that they
+refer to 0$ property damage.)*
+
+<br>
+
+<br>
+
+<font size="1">[back to start of this
+subsubsection](#ind-6-5-3-4--Substitute-the-imputable-missing-values-at-the-variable-CROPDMGEXP)</font>  
 <font size="1">[back to start of this
 subsection](#ind-6-5-3--Impute-missing-values-at-the-variable-CROPDMGEXP)</font>  
 <font size="1">[back to start of this
@@ -1550,6 +7568,301 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 6.5.4 Conduct post validation for the table with the imputed data
 
+Post validation was conducted to verify that the values of variables at
+the table with imputed data were valid according to the same constrains
+that were used to [identify the invalid values for each
+variable](#ind-6-4-2--Conduct-in-record-data-validation-for-each-variable)
+at the table with the target data subset.
+
+    # The table with the imputed data was post validated to verify 
+    # that all values for each of the variables it contained were valid.
+    CF____post_validation_of_the_table_with_the_imputed_data <- confront(
+      dat = imputed_data,
+      V____constrains_for_the_in_record_data_validation
+    )
+
+All values for each variable at the table with the imputed data were
+valid.
+
+    # Present the results of the post validation for the table with imputed data
+    kable(
+      x = summary(CF____post_validation_of_the_table_with_the_imputed_data)[
+        , c("name", "items", "passes", "fails", "nNA", "error", "warning")
+        ],
+      caption = paste0(
+        "Table 6.5.4-1: ", 
+        "The results of post validation for the table with the imputed data."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      ) %>% 
+      footnote(
+         general = paste0(
+          "The same constrains that were used to identify the invalid values ", 
+          "of each variable at the table with the target data subset, ", "\n",
+          "were used for the post validation of the observations ", 
+          "at the table with the imputed data."
+        )
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 6.5.4-1: The results of post validation for the table with the
+imputed data.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+name
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+items
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+passes
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+fails
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+nNA
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+error
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+warning
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+REFNUM
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BGN\_DATE
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EVTYPE
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+144571
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+255
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FATALITIES
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INJURIES
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PROPDMG
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PROPDMGEXP
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CROPDMG
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CROPDMGEXP
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<sup></sup> The same constrains that were used to identify the invalid
+values of each variable at the table with the target data subset,
+<br>were used for the post validation of the observations at the table
+with the imputed data.
+</td>
+</tr>
+</tfoot>
+</table>
 <br>
 
 <font size="1">[back to start of this
@@ -1566,6 +7879,224 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 6.5.5 Overview of the table with the imputed data
 
+The table with the imputed data contained 9 variables and 144826
+observations.
+
+The variable *REFNUM* was set as the key of the this table.
+
+    # Print the structure of the table with the imputed data.
+    str(imputed_data)
+
+    ## Classes 'data.table' and 'data.frame':   144826 obs. of  9 variables:
+    ##  $ REFNUM    : int  413607 413608 413609 413610 413611 413612 413613 413614 413615 413616 ...
+    ##  $ BGN_DATE  : chr  "1/19/2001 0:00:00" "1/19/2001 0:00:00" "1/19/2001 0:00:00" "1/19/2001 0:00:00" ...
+    ##  $ EVTYPE    : chr  "THUNDERSTORM WIND" "THUNDERSTORM WIND" "THUNDERSTORM WIND" "THUNDERSTORM WIND" ...
+    ##  $ FATALITIES: int  0 0 0 0 0 0 0 0 0 0 ...
+    ##  $ INJURIES  : int  0 0 0 0 0 0 0 4 0 0 ...
+    ##  $ PROPDMG   : num  10 8 2 15 5 3 10 450 150 3 ...
+    ##  $ PROPDMGEXP: chr  "K" "K" "K" "K" ...
+    ##  $ CROPDMG   : num  0 0 0 0 0 0 0 0 0 0 ...
+    ##  $ CROPDMGEXP: chr  "K" "K" "K" "K" ...
+    ##  - attr(*, ".internal.selfref")=<externalptr> 
+    ##  - attr(*, "sorted")= chr "REFNUM"
+
+There were 255 missing values left only at the variable *EVTYTE* (which
+were those that couldn’t be safely imputed). The number of distinct
+values at any of the variables didn’t indicate the presence of obvious
+abnormalities.
+
+    # Create a kable to highlight some facts about the table with the imputed data.
+    kable(
+      x = data.table(
+        "Variable" = names(imputed_data),
+        "Number of Distinct Values" = vapply(imputed_data, function(x) length(unique(x[!is.na(x)])), integer(1)),
+        "Number of Missing Values" = vapply(
+          X = imputed_data, 
+          FUN = function(x) sum(is.na(x)), 
+          FUN.VALUE = integer(1)),
+        "Percentage of Missing Values" = vapply(
+          X = imputed_data, 
+          FUN = function(x) mean(is.na(x)),
+          FUN.VALUE = double(1))
+      ),
+      caption = paste0(
+        "Table 6.5.5-1: Facts about the table with the imputed data."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      ) %>% 
+      footnote(
+        general = paste0(
+          "The table with the imputed data contained 9 variables ", 
+          "and 144826 observations."
+        )
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 6.5.5-1: Facts about the table with the imputed data.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Variable
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Number of Distinct Values
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Number of Missing Values
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Percentage of Missing Values
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+REFNUM
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BGN\_DATE
+</td>
+<td style="text-align:right;">
+3746
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EVTYPE
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+255
+</td>
+<td style="text-align:right;">
+0.0017607
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FATALITIES
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INJURIES
+</td>
+<td style="text-align:right;">
+101
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PROPDMG
+</td>
+<td style="text-align:right;">
+1162
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PROPDMGEXP
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CROPDMG
+</td>
+<td style="text-align:right;">
+269
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CROPDMGEXP
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<sup></sup> The table with the imputed data contained 9 variables and
+144826 observations.
+</td>
+</tr>
+</tfoot>
+</table>
 <br>
 
 <font size="1">[back to start of this
@@ -1584,6 +8115,33 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 6.6 Conduct Cross-Record Data Validation
 ----------------------------------------
 
+<font size="3"><u><strong>Summary</strong></u></font>
+
+Each observation at the table with imputed data was checked to verify if
+it contains entries which were valid across all variables simultaneous.
+Those observations that were valid were used to create the table with
+the cross-record validated data.
+
+<font size="3"><u><strong>Steps</strong></u></font>
+
+-   [6.6.1 Identify all valid
+    observations](#ind-6-6-1--Identify-all-valid-observations)
+    -   Identifies the valid observations according to a criterion that
+        spans across all variables.  
+-   [6.6.2 Create the table with the cross-record validated
+    data](#ind-6-6-2--Create-the-table-with-the-cross-record-validated-data)
+    -   Creates the table with the cross-record validated data
+        extracting only the valid observations.  
+-   [6.6.3 Conduct post validation for table with the cross-record
+    validated
+    data](#ind-6-6-3--Conduct-post-validation-for-table-with-the-cross-record-validated-data)
+    -   Ensures that all observations at the table with the cross-record
+        validated data are valid.  
+-   [6.6.4 Overview of the table with the cross-record validated
+    data](#ind-6-6-4--Overview-of-the-table-with-the-cross-record-validated-data)
+    -   Presents some basic facts about the table with the
+        cross-validated data.
+
 <br>
 
 <font size="1">[back to start of this
@@ -1595,12 +8153,149 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 <br>
 
-### 6.6.1 Conduct cross-record data validation for each observation
+### 6.6.1 Identify all valid observations
+
+A single constrain that spanned across all available variables at the
+table with the imputed data was created and used to identify the valid
+observations.
+
+Specifically, each observation must simultaneous satisfy the 4 criteria
+below in order to be considered valid:
+
+1.  The id must be unique (and non-missing).  
+2.  The weather event type value must be one of the defined weather
+    events (and non-missing).  
+3.  The year must be in the period from 2001 to 2011 (and
+    non-missing).  
+4.  There must be non-zero harm either to population health or to
+    economy, so:
+    -   either fatalities must be positive (and non-missing),
+    -   or injuries must be positive (and non-missing),
+    -   or property damage (in dollars) must be retrievable and positive
+        (and non-missing),
+    -   or crop damage (in dollars) must be retrievable and positive
+        (and non-missing).
+
+<!-- -->
+
+    # A validator was created that contains a constrain 
+    # for the validity of each observation 
+    # that spans across all variables .  
+    V_____cross_record_constrains <- validator(
+      "valid_observations" = (
+        ( REFNUM %in% names(table(REFNUM)[table(REFNUM) == 1]) ) &
+          ( !is.na(EVTYPE) ) & 
+          ( as.integer(str_extract(BGN_DATE, "(?<=^\\d{1,2}/\\d{1,2}/)\\d{4}(?= 0:00:00$)")) %in%
+              c(2001:2011) ) &
+          (
+            ( FATALITIES > 0 ) |
+              ( INJURIES > 0 ) |
+              ( PROPDMG > 0 & !is.na(PROPDMGEXP) ) |
+              ( CROPDMG > 0 & !is.na(CROPDMGEXP) )
+          )
+      )
+    )
+
+    # The imputed data table was confronted 
+    # with the validator that identifies 
+    # the observations that contain valid values across all variables. 
+    CF_____cross_record_constrains <- confront(
+      dat = imputed_data,
+      V_____cross_record_constrains
+    )
+
+Out of the total of 144826 observation at the table with the imputed
+data 144571 were valid across all variables while only 255 were found to
+be invalid.
+
+    # Present the result of cross-record validation 
+    # for the observations contained at the table with imputed data.  
+    kable(
+      x = summary(CF_____cross_record_constrains)[
+        , c("name", "items", "passes", "fails", "nNA", "error", "warning")
+        ],
+      caption = paste0(
+        "Table 6.6.1-1: ",
+        "The table contains the results of the cross-record data validation ",
+        "for the observation contained at the imputed data table."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 6.6.1-1: The table contains the results of the cross-record data
+validation for the observation contained at the imputed data table.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+name
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+items
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+passes
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+fails
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+nNA
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+error
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+warning
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+valid\_observations
+</td>
+<td style="text-align:right;">
+144826
+</td>
+<td style="text-align:right;">
+144571
+</td>
+<td style="text-align:right;">
+255
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+</tbody>
+</table>
+The value of the key (denoted by the variable *REFNUM*) was used to
+identify the observations that were valid.
+
+    # Identify the valid observations found through the cross-record validation 
+    # by the their key value.  
+    criterion_by_REFNUM_____cross_validated_observations <- imputed_data[
+      CF_____cross_record_constrains[["._value"]][["valid_observations"]],
+      REFNUM
+      ]
 
 <br>
 
 <font size="1">[back to start of this
-subsection](#ind-6-6-1--Conduct-cross-record-data-validation-for-each-observation)</font>  
+subsection](#ind-6-6-1--Identify-all-valid-observations)</font>  
 <font size="1">[back to start of this
 section](#ind-6-6--Conduct-Cross-Record-Data-Validation)</font>  
 <font size="1">[back to start of this
@@ -1612,6 +8307,16 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ### 6.6.2 Create the table with the cross-record validated data
+
+From the table with the imputed data, the table with the cross-record
+validated data was created, by including only the observations that
+contained valid (and non-missing) values across all variables.
+
+    # Create the table with cross-record data validation 
+    # by using only the valid observations.
+    cross_validated_data <- imputed_data[
+      REFNUM %in% criterion_by_REFNUM_____cross_validated_observations
+      ]
 
 <br>
 
@@ -1629,6 +8334,96 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 6.6.3 Conduct post validation for table with the cross-record validated data
 
+Post validation was conducted to verify that all observations at the
+table with the cross-validated data were valid according to the same
+constrains that were used to [identify the valid
+observation](#ind-6-6-1--Identify-all-valid-observations) at the table
+with the imputed data.
+
+    # The table with the cross-record validated data was post validated to verify 
+    # that all observations were valid.
+    CF_________post_validation_of_cross_validated_data <- confront(
+      dat = cross_validated_data,
+      V_____cross_record_constrains
+    )
+
+All the observations at the table with the cross-record validated data
+were valid.
+
+    # Create a kable to present the results of the post validation 
+    # for the table with the cross-record validated data.
+    kable(
+      x = summary(CF_________post_validation_of_cross_validated_data)[
+        , c("name", "items", "passes", "fails", "nNA", "error", "warning")
+        ],
+      caption = paste0(
+        "Table 6.6.3-1: ",
+        "Presents the result of the post validation ", 
+        "for the table with cross validated data."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 6.6.3-1: Presents the result of the post validation for the table
+with cross validated data.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+name
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+items
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+passes
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+fails
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+nNA
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+error
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+warning
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+valid\_observations
+</td>
+<td style="text-align:right;">
+144571
+</td>
+<td style="text-align:right;">
+144571
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+</tbody>
+</table>
 <br>
 
 <font size="1">[back to start of this
@@ -1644,6 +8439,32 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ### 6.6.4 Overview of the table with the cross-record validated data
+
+The table with the cross-validated data contained 9 variables and 144571
+observations.
+
+The variable *REFNUM* was set as the key of this table.
+
+    # Print the structure of the table with the cross-record validated data.
+    str(cross_validated_data)
+
+    ## Classes 'data.table' and 'data.frame':   144571 obs. of  9 variables:
+    ##  $ REFNUM    : int  413607 413608 413609 413610 413611 413612 413613 413614 413615 413616 ...
+    ##  $ BGN_DATE  : chr  "1/19/2001 0:00:00" "1/19/2001 0:00:00" "1/19/2001 0:00:00" "1/19/2001 0:00:00" ...
+    ##  $ EVTYPE    : chr  "THUNDERSTORM WIND" "THUNDERSTORM WIND" "THUNDERSTORM WIND" "THUNDERSTORM WIND" ...
+    ##  $ FATALITIES: int  0 0 0 0 0 0 0 0 0 0 ...
+    ##  $ INJURIES  : int  0 0 0 0 0 0 0 4 0 0 ...
+    ##  $ PROPDMG   : num  10 8 2 15 5 3 10 450 150 3 ...
+    ##  $ PROPDMGEXP: chr  "K" "K" "K" "K" ...
+    ##  $ CROPDMG   : num  0 0 0 0 0 0 0 0 0 0 ...
+    ##  $ CROPDMGEXP: chr  "K" "K" "K" "K" ...
+    ##  - attr(*, ".internal.selfref")=<externalptr> 
+    ##  - attr(*, "sorted")= chr "REFNUM"
+
+All the observation at the table with the cross-validated data are
+complete as indicated by the results of [post validation for the table
+with cross-validated
+data](#ind-6-6-3--Conduct-post-validation-for-table-with-the-cross-record-validated-data).
 
 <br>
 
@@ -1663,6 +8484,25 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 6.7 Produce The Processed Data
 ------------------------------
 
+<font size="3"><u><strong>Summary</strong></u></font>
+
+Having identified, validated and imputed the target data for the period
+of interest, by transforming the variables from the table with
+cross-record validated data, the processed data table was constructed
+that contained all information that was necessary in order to proceed
+with this analysis and address the two questions of interest.
+
+<font size="3"><u><strong>Steps</strong></u></font>
+
+-   [6.7.1 Create the table with the processed
+    data](#ind-6-7-1--Create-the-table-with-the-processed-data)
+    -   Transforms the variables from the table with cross-validated
+        data to created the table with the processed data.
+-   [6.7.2 Conduct post validation for the table with the processed
+    data](#ind-6-7-2--Conduct-post-validation-for-the-table-with-the-processed-data)
+    -   Ensures that all observations at the table with the processed
+        data are valid.
+
 <br>
 
 <font size="1">[back to start of this
@@ -1675,6 +8515,101 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ### 6.7.1 Create the table with the processed data
+
+The following transformations were applied at the variables from the
+table with the cross-record validated data, in order to construct the
+table with the processed data:
+
+1.  the variable **REFNUM** was transfered unchanged  
+2.  the variable *BGN\_DATE* was omitted  
+3.  the variable *EVTYPE* was transfered and renamed to
+    **EVENT\_TYPE**  
+4.  the variable **FATALITIES** was transfered unchanged  
+5.  the variable **INJURIES** was transfered unchanged  
+6.  the variables *FATALITIES* and *INJURIES* were added  
+    in order to create the variable **CASUALTIES**  
+7.  the variables *PROPDMG* (that denoted the magnitude of property
+    damage) and *PROPDMGEXP* (that indicated if the value of *PROPDMG*
+    referred to thousands, millions or billions) were combined
+    appropriately to retrieve the property damage in dollars in order to
+    create the variable **PROPERTY\_DAMAGE**  
+8.  the variables *CROPDMG* (that denoted the magnitude of crop damage)
+    and *CROPDMGEXP* (that indicated if the value of *CROPDMG* referred
+    to thousands, millions or billions) were combined appropriately to
+    retrieve the crop damage in dollars in order to create the variable
+    **CROP\_DAMAGE**  
+9.  the variables *PROPERTY\_DAMAGE* and *CROP\_DAMAGE* were added in
+    order to create the variable **ECONOMIC\_DAMAGE**
+
+<!-- -->
+
+    # Create the table with the processed data 
+    # from the information contained 
+    # at the table with cross-record validated data.
+    processed_data <- cross_validated_data[
+      ,
+      list(
+        # REFNUM variable doesn't need to change
+        "REFNUM" = REFNUM,
+        # EVTYPE variable should be renamed to EVENT_TYPE
+        "EVENT_TYPE" = EVTYPE,
+        # FATALITIES variable doesn't need to change
+        "FATALITIES" = FATALITIES,
+        # INJURIES variable doesn't need to change
+        "INJURIES" = INJURIES,
+        # PROPERTY_DAMAGE is created by combining the information
+        # from the PROPDMG variable which denotes the magnitude of property damage
+        # and the PROPDMGEXP variable that indicates if the magnitude
+        # refers to thousands (K), millions (M) or billions (B) of dollars
+        "PROPERTY_DAMAGE" = (function(magnitude, coded_exponent, code_dictionary) {
+          recoded_exponent <- str_replace_all(
+            string = coded_exponent,
+            code_dictionary
+          ) %>%
+            as.integer()
+          ## the magnitude is multiplied by a coefficient
+          ## with base 10 raised to the appropriate power
+          ## (3 for thousands, 6 for millions or 9 for billions)
+          ## to retrieve the value of property damage 
+          reconstructed_number <- magnitude * 10^recoded_exponent
+        })(PROPDMG, PROPDMGEXP, c("K" = "3", "M" = "6", "B" = "9")),
+        # CROP_DAMAGE is created by combining the information
+        # from the CROPDMG variable which denotes the magnitude of crop damage
+        # and the CROPDMGEXP variable that indicates if the magnitude
+        # refers to thousands (K), millions (M) or billions (B) of dollars
+        "CROP_DAMAGE" = (function(magnitude, coded_exponent, code_dictionary) {
+          recoded_exponent <- str_replace_all(
+            string = coded_exponent,
+            code_dictionary
+          ) %>%
+            as.integer()
+          ## the magnitude is multiplied by a coefficient
+          ## with base 10 raised to the appropriate power
+          ## (3 for thousands, 6 for millions or 9 for billions)
+          ## to retrieve the value of crop damage 
+          reconstructed_number <- magnitude * 10^recoded_exponent
+        })(CROPDMG, CROPDMGEXP, c("K" = "3", "M" = "6", "B" = "9"))
+      )
+      ][
+        ,
+        # Create a variable with the number of casualties
+        # caused by each weather event type 
+        # by adding the fatalities and injuries
+        CASUALTIES := FATALITIES + INJURIES][
+          ,
+          # Create a variable with the economic damage
+          # caused by each weather event type 
+          # by adding the property damage and crop damage
+          ECONOMIC_DAMAGE := PROPERTY_DAMAGE + CROP_DAMAGE
+          ][
+            ,
+            # Re-arrange the order of the variables 
+            list(
+              REFNUM, EVENT_TYPE, 
+              FATALITIES, INJURIES, CASUALTIES,
+              PROPERTY_DAMAGE, CROP_DAMAGE, ECONOMIC_DAMAGE
+            )
+            ]
 
 <br>
 
@@ -1692,6 +8627,139 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 6.7.2 Conduct post validation for the table with the processed data
 
+Post validation was conducted to verify that all observations contained
+at the table with the processed data were valid across all variables it
+contained.
+
+One constrain was created and used, which consists of three parts that
+must hold simultaneous for each observation:
+
+-   The key for each observation denoted by the variable *REFNUM* must
+    be unique.
+    -   The event type for each observation denoted by the variable
+        *EVENT\_TYPE* must be one of 48 defined weather event types
+        according to the *NATIONAL WEATHER SERVICE INSTRUCTION 10-1605,
+        AUGUST 17, 2007 (at chapter 7)*  
+    -   At least one of the six variables that indicate the harm (either
+        to population health or to economy), denoted by the variables
+        *FATALITIES*, *INJURIES*, *CASUALTIES*, *PROPERTY\_DAMAGE*,
+        *CROP\_DAMAGE* or *EC0NOMIC\_DAMAGE* must be positive.
+
+<!-- -->
+
+    # Create a validator that contains a constrain 
+    # that spans across all variables contained 
+    # at the table with the processed data 
+    # for each observation it includes.
+    V_____post_validation_of_table_with_the_processed_data <- validator(
+      "valid_observation" = (
+        ( REFNUM %in% table(REFNUM)[names(table(REFNUM)[table(REFNUM) == 1])] ) &
+          ( EVENT_TYPE %in% defined_event_types ) &
+          ( FATALITIES > 0 ) |
+          ( INJURIES > 0 ) |
+          ( CASUALTIES > 0) |
+          ( PROPERTY_DAMAGE > 0 ) |
+          ( CROP_DAMAGE > 0) |
+          ( ECONOMIC_DAMAGE > 0 )
+      )
+    )
+
+    # Confront the table with the processed data with 
+    # validator that verifies the validity of each observation it contains 
+    # across all variables.
+    CF_____post_validation_of_table_with_the_processed_data <- confront(
+      dat = processed_data,
+      V_____post_validation_of_table_with_the_processed_data
+    )
+
+All the 144571 observations included in the processed data table were
+found to satisfy the condition.
+
+    # Create a kable to resents the results of post validation 
+    # for the table with the processed data.
+    kable(
+      x = summary(CF_____post_validation_of_table_with_the_processed_data)[
+        , c("name", "items", "passes", "fails", "nNA", "error", "warning", "error", "warning")
+        ],
+      caption = paste0(
+        "Table 6.7.2-1: ",
+        "The results of post validation for the table with the processed data."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 6.7.2-1: The results of post validation for the table with the
+processed data.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+name
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+items
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+passes
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+fails
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+nNA
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+error
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+warning
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+error.1
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+warning.1
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+valid\_observation
+</td>
+<td style="text-align:right;">
+144571
+</td>
+<td style="text-align:right;">
+144571
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+</tr>
+</tbody>
+</table>
 <br>
 
 <font size="1">[back to start of this
