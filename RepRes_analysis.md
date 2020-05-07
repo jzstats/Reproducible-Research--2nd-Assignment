@@ -9219,12 +9219,12 @@ For every aspect the sample size, the skewness and the mean of the
 values that encapsulated the harm with respect to each perspective were
 summarized by each weather event type and reported.
 
-The results obtained for the harm on population health with respect to
-fatalities by each weather event type were presented at the section
-[10.1 Question 1: Across the United States, which types of events (as
-indicated in the EVTYPE variable) are most harmful with respect to
-population health?](#ind-10-1--results-harm-on-population-health) of the
-chapter [10 RESULTS](#ind-10--RESULTS)).
+The results obtained for the harm on population health by each weather
+event type were presented at the section [10.1 Question 1: Across the
+United States, which types of events (as indicated in the EVTYPE
+variable) are most harmful with respect to population
+health?](#ind-10-1--results-harm-on-population-health) of the chapter
+[10 RESULTS](#ind-10--RESULTS)).
 
 For each of the three perspectives that were examined for the harm on
 population health by each weather event type a multiplot was created to
@@ -9238,7 +9238,10 @@ of the chapter [10 RESULTS](#ind-10--RESULTS)).
 which at least 1 but no more than 3 figures should be included in the
 report, the Multiplot as well as the elementary plots that contain were
 NOT displayed separately and can ONLY be examined as PARTs of the Figure
-1.)*
+1at the subsection [10.1.1 Overview of results for the harm on
+population
+health](#ind-10-1-1--Overview-of-results-for-the-harm-on-population-health)
+of the chapter [10 RESULTS](#ind-10--RESULTS).)*
 
 <br>
 
