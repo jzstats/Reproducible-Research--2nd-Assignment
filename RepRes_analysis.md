@@ -9174,6 +9174,72 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ------------------------------------------------------------------------
 
+In this chapter an attempt was made to quantify the harm on population
+health based on the information from the [table with the processed
+data](#ind-7--PROCESSED-DATA).
+
+The harm on population health was examined over three perspectives:
+
+1.  [The harm on population health with respect to fatalities caused by
+    each weather event type based on the observations for weather events
+    that resulted in non-zero fatalities at United States in the period
+    from 2001
+    to 2011.](#ind-8-1--Harm-On-Population-Health-With-Respect-To-Fatalities-By-Each-Weather-Event-Type)  
+2.  [The harm on population health with respect to injuries caused by
+    each weather event type based on the observations for weather events
+    that resulted in non-zero injuries at United States in the period
+    from 2001
+    to 2011.](#ind-8-2--Harm-On-Population-Health-With-Respect-To-Injuries-By-Each-Weather-Event-Type)  
+3.  [The harm on population health with respect to casualties (sum of
+    fatalities and injuries) caused by each weather event type based on
+    the observations for weather events that resulted in non-zero
+    casualties at United States in the period from 2001
+    to 2011.](#ind-8-3--Harm-On-Population-Health-With-Respect-To-Casualties-By-Each-Weather-Event-Type)
+
+The weather event types for which less than 10 observations that
+resulted in non-zero harm were available with respect to a perspective
+of interest were ommitted (from the analysis of that particular
+perspective), to avoid highly misleading statistics. Consequently the
+subset of weather event types that were included for each of the three
+perspectives is different.
+
+Due to the fact that for all perspectives the values of interest for the
+observations of most weather event types were highly positively skewed,
+it was consider important in order to obtain an insightful picture of
+their consequences to examine them over three different aspects:
+
+1.  The **overall** harm on population health caused by each weather
+    event type.  
+2.  The harm on population health caused by **the 90% of cases with the
+    lowest impact** of each weather event type.  
+3.  The harm on population health caused by **the 10% of cases with the
+    highest impact** of each weather event type.
+
+For every aspect the sample size, the skewness and the mean of the
+values that encapsulated the harm with respect to each perspective were
+summarized by each weather event type and reported.
+
+The results obtained for the harm on population health with respect to
+fatalities by each weather event type were presented at the section
+[10.1 Question 1: Across the United States, which types of events (as
+indicated in the EVTYPE variable) are most harmful with respect to
+population health?](#ind-10-1--results-harm-on-population-health) of the
+chapter [10 RESULTS](#ind-10--RESULTS)).
+
+For each of the three perspectives that were examined for the harm on
+population health by each weather event type a multiplot was created to
+visualize the respective results. Those multiplots constitute the three
+parts of the *Figure 1*, which was composed and presented at the
+subsection [10.1.1 Overview of results for the harm on population
+health](#ind-10-1-1--Overview-of-results-for-the-harm-on-population-health)
+of the chapter [10 RESULTS](#ind-10--RESULTS)).
+
+(*In compliance with the restrictions of the assignment, according to
+which at least 1 but no more than 3 figures should be included in the
+report, the Multiplot as well as the elementary plots that contain were
+NOT displayed separately and can ONLY be examined as PARTs of the Figure
+1.)*
+
 <br>
 
 <font size="1">[back to start of this
@@ -9185,6 +9251,126 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 8.1 Harm On Population Health With Respect To Fatalities By Each Weather Event Type
 -----------------------------------------------------------------------------------
+
+<font size="3"><u><strong>Summary</strong></u></font>
+
+The required variables and the target data subset of observations for
+the harm on population health with respect to fatalities were extracted
+from the table with the processed data, and processed to create a new
+variable that divided the observations for each of the included weather
+event types to two supplementary groups:
+
+-   the 90% of observations with the lowest impact  
+-   the 10% of observations with the highest impact
+
+before the information for the harm on population health with respect to
+fatalities was summarized by each weather event type.
+
+Three aspects were examined:
+
+1.  The overall average number of fatalities by each weather event
+    type.  
+2.  The average number of fatalities by each weather event type for the
+    90% of cases with the lowest impact.  
+3.  The average number of fatalities by each weather event type for the
+    10% of cases with the highest impact.
+
+For each aspect, the average number of fatalities by each weather event
+type, the number of its available observations (based on which the
+average was computed) and their skewness were examined.
+
+The overall average number of fatalities was used as the main criterion
+to determine which weather events caused the most harm on population
+health with respect to fatalities but it is important to take into
+account the other two aspect that were presented in order to obtain a
+more insightful and complete ‘picture’ of their consequences,
+(especially given the fact that for most of the weather event types, the
+fatalities were highly positively skewed).
+
+The table with results for the harm on population health with respect to
+fatalities by each weather event type were presented at the subsection
+[10.1.2 Most harmful event types with respect to
+fatalities](#ind-10-1-2--Most-harmful-weather-event-types-with-respect-to-fatalities)
+of the chapter [10 RESULTS](#ind-10--RESULTS).
+
+Finally the *Multiplot 1.1* was created to visualize the results for the
+harm on population health with respect to fatalities by each weather
+event type.
+
+*(Note that neither the Multiplot 1.1 nor the elementary plots that it
+contains were presented in this section due to the restrictions imposed
+by the assignment to include in the report at least 1 but no more than 3
+figures. It can be examined at the subsection [10.1.1 Overview of
+results for the harm on population
+health](#ind-10-1-1--Overview-of-results-for-the-harm-on-population-health)
+at the chapter [10 RESULTS](#ind-10--RESULTS), where the Figure 1 was
+presented, of which the Multiplot 1.1 constitutes the PART 1.)*
+
+<font size="3"><u><strong>Steps</strong></u></font>
+
+-   [8.1.1 Extract the target data for harm on population health with
+    respect to
+    fatalities](#ind-8-1-1--Extract-the-target-data-for-harm-on-population-health-with-respect-to-fatalities)
+    -   The target data subset of observations needed to evaluate the
+        harm on population health with respect to fatalities by each
+        weather event type was extracted from the table with the
+        processed data.
+-   [8.1.2 Process the target data for harm on population health with
+    respect to
+    fatalities](#ind-8-1-2--Process-the-target-data-for-harm-on-population-health-with-respect-to-fatalities)
+    -   The table with target data subset for the harm on population
+        with respect to fatalities was processed to create the table
+        with processed data for the harm on population health with
+        respect to fatalities.  
+-   [8.1.3 Summarize the processed data for harm on population health
+    with respect to fatalities by each weather event
+    type](#ind-8-1-3--Summarize-the-processed-data-for-harm-on-population-health-with-respect-to-fatalities-by-each-weather-event-type)
+    -   The harm on population health with respect to fatalities by each
+        weather event type was evaluated over various aspects.  
+-   [8.1.4 Visualize the results of the summary for the harm on
+    population health with respect to fatalities by each weather event
+    type](#ind-8-1-4--Visualize-the-results-of-the-summary-for-the-harm-on-population-health-with-respect-to-fatalities-by-each-weather-event-type)
+    -   The Multiplot 1.1 that presents the results of the summary for
+        the harm on population health with respect to fatalities by each
+        weather event type was created.
+        -   [8.1.4.1 Create the components of Multiplot
+            1.1](#ind-8-1-4-1--Create-the-components-of-Multiplot-1-1)
+            -   Creates the four elementary plot that constitute the
+                Multiplot 1.1:
+                -   [8.1.4.1.1 Create The Plot
+                    1.1.1](#ind-8-1-4-1-1--Create-The-Plot-1-1-1)
+                    -   Displays the overall average number of
+                        fatalities caused by each weather event type
+                        based on all the cases of weather events that
+                        resulted in non-zero fatalities.  
+                -   [8.1.4.1.2 Create The Plot
+                    1.1.2](#ind-8-1-4-1-2--Create-The-Plot-1-1-2)
+                    -   Displays the average number of fatalities caused
+                        by each weather event type based on 90% of
+                        weather events with the lowest impact (for each
+                        weather event type) that resulted in non-zero
+                        fatalities.  
+                -   [8.1.4.1.3 Create The Plot
+                    1.1.3](#ind-8-1-4-1-3--Create-The-Plot-1-1-3)
+                    -   Displays the average number of fatalities caused
+                        by each weather event type based on 10% of
+                        weather events with the highest impact (for each
+                        weather event type) Displays the average number
+                        of fatalities that resulted in non-zero
+                        fatalities.  
+                -   [8.1.4.1.4 Create The Plot
+                    1.1.4](#ind-8-1-4-1-4--Create-The-Plot-1-1-4)
+                    -   Displays a comparison for each weather event
+                        type, of the average number of fatalities for
+                        the 90% of its observations with the lowest
+                        impact versus the average number of fatalities
+                        for the 10% of its observations with the highest
+                        impact based only on the weather events that
+                        resulted in non-zero fatalities.  
+        -   [8.1.4.2 Compose the Multiplot
+            1.1](#ind-8-1-4-2--Compose-the-Multiplot-1-1)
+            -   Combines the four elementary plots to create the
+                Multiplot 1.1.
 
 <br>
 
@@ -9198,6 +9384,423 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ### 8.1.1 Extract the target data for harm on population health with respect to fatalities
+
+In order to examine the harm on population health with respect to
+fatalities caused by each weather event type, the variables *REFNUM*,
+*EVENT\_TYPE* and *FATALITIES* were selected from the table with the
+processed data and **only the observations that refer to weather events
+that resulted in non-zero fatalities** were extracted.
+
+Furthermore, in an attempt to avoid highly misleading statistics due to
+the small number of observations for some of the weather event types, a
+lowest bound of 10 weather events that caused non zero fatalities (for
+each of the included weather event types) was selected (subjectively by
+the analyst) and applied.
+
+This lowest bound, although it may seem (and generally it is) not enough
+to get trustworthy statistics, it was considered to be *“good enough”*
+taking into account that :
+
+1.  the analysis focuses in describing historical data without trying to
+    make inferences that would demand substantially bigger samples,
+    although any statistic based on less than 10 observations could not
+    be taken seriously especially in cases (such as in this analysis)
+    where the distribution of fatalities for each weather event type was
+    skewed.
+2.  a period of 10 years (from 2001 to 2011) in which the observations
+    that were used in the analysis occurred, is relatively small time to
+    produce big samples of weather events that caused non zero
+    fatalities for some the weather event types. Thus, if a highest
+    bound was selected to get more robust statistics such as samples of
+    100 or 300, the majority of weather event types would have been
+    excluded, making the results of the analysis trivial.
+
+<!-- -->
+
+    # Extract the required variables and the target data subset of observations 
+    # for the harm on population health with respect to fatalities.
+    target_data_____harm_on_population_health_____fatalities <- processed_data[
+      ## Extract only the observations that have resulted in non-zero fatalities.
+      FATALITIES > 0,
+      ## Select only the relevant variables. 
+      list(REFNUM, EVENT_TYPE, FATALITIES)
+      ][
+        ### Keep only the observations that correspond to the weather event types 
+        ### for which there are at least 10 weather events available.
+        EVENT_TYPE %in% 
+          names(table(EVENT_TYPE)[table(EVENT_TYPE) >= 10])
+        ]
+
+The table with the target data for the harm on population health with
+respect to fatalities consist of 3175 observations.
+
+    # Print the structure of the table with the target data subset 
+    # for the harm on population health with respect to fatalities.
+    str(target_data_____harm_on_population_health_____fatalities)
+
+    ## Classes 'data.table' and 'data.frame':   3175 obs. of  3 variables:
+    ##  $ REFNUM    : int  413652 413757 413763 413862 414153 414183 414184 414187 414200 414267 ...
+    ##  $ EVENT_TYPE: chr  "THUNDERSTORM WIND" "TORNADO" "HIGH WIND" "THUNDERSTORM WIND" ...
+    ##  $ FATALITIES: int  1 2 1 1 1 1 1 1 1 2 ...
+    ##  - attr(*, ".internal.selfref")=<externalptr> 
+    ##  - attr(*, "sorted")= chr "REFNUM"
+
+The variable *EVENT\_TYPE* includes 26 distinct weather event types, for
+most of which the variable *FATALITIES* was highly positively skewed.
+
+    # Create a kable to present some facts about the table with the target data 
+    # for the harm on population health with respect to fatalities.
+    kable(
+      x = target_data_____harm_on_population_health_____fatalities[
+        order(EVENT_TYPE), 
+        list(
+          "N" = .N, 
+          "SKEWNESS" = round(skewness(FATALITIES), 4)
+        ), 
+        by = EVENT_TYPE
+        ],
+      caption = paste0(
+        "Table 8.1.1-1: ",
+        "Facts about the table with the target data subset of observations ", 
+        "for the harm on population health with respect to fatalities."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c(
+          "striped", "hover", "condensed", "responsive", "bordered"
+        ), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      ) %>% 
+      footnote(
+        general = "The skewness was rounded to 4 decimal places."
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 8.1.1-1: Facts about the table with the target data subset of
+observations for the harm on population health with respect to
+fatalities.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+EVENT\_TYPE
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+N
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+SKEWNESS
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+AVALANCHE
+</td>
+<td style="text-align:right;">
+129
+</td>
+<td style="text-align:right;">
+2.2979
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BLIZZARD
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+2.6185
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+COLD/WIND CHILL
+</td>
+<td style="text-align:right;">
+75
+</td>
+<td style="text-align:right;">
+2.9759
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DEBRIS FLOW
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+1.6608
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EXCESSIVE HEAT
+</td>
+<td style="text-align:right;">
+296
+</td>
+<td style="text-align:right;">
+5.4405
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EXTREME COLD/WIND CHILL
+</td>
+<td style="text-align:right;">
+103
+</td>
+<td style="text-align:right;">
+4.5318
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FLASH FLOOD
+</td>
+<td style="text-align:right;">
+392
+</td>
+<td style="text-align:right;">
+8.0755
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FLOOD
+</td>
+<td style="text-align:right;">
+187
+</td>
+<td style="text-align:right;">
+5.0049
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HEAT
+</td>
+<td style="text-align:right;">
+127
+</td>
+<td style="text-align:right;">
+4.1476
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HEAVY RAIN
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:right;">
+2.5950
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HEAVY SNOW
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+0.9923
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HIGH SURF
+</td>
+<td style="text-align:right;">
+86
+</td>
+<td style="text-align:right;">
+2.2931
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HIGH WIND
+</td>
+<td style="text-align:right;">
+92
+</td>
+<td style="text-align:right;">
+3.4457
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HURRICANE/TYPHOON
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:right;">
+2.1981
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ICE STORM
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+2.7519
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LIGHTNING
+</td>
+<td style="text-align:right;">
+387
+</td>
+<td style="text-align:right;">
+5.3156
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MARINE STRONG WIND
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+1.7889
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MARINE THUNDERSTORM WIND
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+2.3158
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RIP CURRENT
+</td>
+<td style="text-align:right;">
+384
+</td>
+<td style="text-align:right;">
+5.3801
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+STRONG WIND
+</td>
+<td style="text-align:right;">
+90
+</td>
+<td style="text-align:right;">
+2.6667
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+THUNDERSTORM WIND
+</td>
+<td style="text-align:right;">
+195
+</td>
+<td style="text-align:right;">
+6.4762
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TORNADO
+</td>
+<td style="text-align:right;">
+339
+</td>
+<td style="text-align:right;">
+13.5732
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TROPICAL STORM
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+3.8434
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WILDFIRE
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:right;">
+2.6290
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WINTER STORM
+</td>
+<td style="text-align:right;">
+51
+</td>
+<td style="text-align:right;">
+0.9436
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WINTER WEATHER
+</td>
+<td style="text-align:right;">
+46
+</td>
+<td style="text-align:right;">
+3.7781
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<sup></sup> The skewness was rounded to 4 decimal places.
+</td>
+</tr>
+</tfoot>
+</table>
+It was worth noting that for the weather event types with highest number
+of observations there was highest skewness for the values of fatalities,
+indicating that the corresponding distribution of fatalities has a heavy
+tail that wasn’t possible to be observed when few observation were
+available.
 
 <br>
 
@@ -9215,6 +9818,103 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 8.1.2 Process the target data for harm on population health with respect to fatalities
 
+To create the table with the processed data for the harm on population
+health with respect to fatalities from the corresponding target data
+subset for this perspective, a new variable was created that divides the
+observations for each of the included weather event types in two
+complementary levels:
+
+-   one that contains the 90% of cases with lowest impact  
+-   the other that contains the 10% of cases with highest impact
+
+This decision was made due to the high skewness that was observed for
+the values of the variable *FATALITIES* for most weather event types,
+which indicates that the underlining distributions of such phenomena has
+a heavy tail that causes this heterogeneity on the observations. As a
+result a small number of fatalities were observed for the majority of
+cases that resulted in non-zero fatalities while in the few cases with
+the highest impact they caused lots of fatalities.
+
+Having in mind that the average number of fatalities will be used to
+determine which weather event types were the most harmful to population
+health (with respect to fatalities) combined with the fact that the
+average doesn’t represent well the distribution of variables with high
+skewness, as it is highly affected by the most extreme values, it was
+considered necessary to examine the subsets created by those two levels
+in order to obtain an insightful picture.
+
+    # Create the table with the processed data 
+    # for the harm on population health with respect to fatalities.
+    processed_data_____harm_on_population_health_____fatalities <- 
+      target_data_____harm_on_population_health_____fatalities[
+        ,
+        ## Create a new variable divides the observations
+        ## for each weather event into two supplementary groups:  
+        ##   - the 90% of weather events that resulted in lowest fatalities
+        ##   - the 10% of weather events that resulted in highest fatalities
+        BIN_GROUP_PER_EVENT_TYPE := (function(x, p_bins) {
+          
+          # adds 0 and 1 in the vector supplied at the argument 'p_bins' 
+          # to the start and the end respectively  
+          # the supplied percentiles if they are missing 
+          # and sort them ascending
+          p_bins_increasing <- sort(c(0, p_bins, 1))
+          
+          # creates the character strings that labels of the bins by the values supplied at 
+          # the argument 'p_bins' that will be the values of the new variable
+          bin_labels <- paste0("(", p_bins_increasing[-length(p_bins_increasing)]*100,
+                               "% - ", p_bins_increasing[-1]*100, "%]")
+          
+          # identify the number of occurrences that correspond to each label
+          n_times <- vapply(2:length(p_bins_increasing),
+                            function(i) {
+                              as.integer(floor(length(x) * p_bins_increasing[i]) -
+                                           floor(length(x) * p_bins_increasing[i - 1]))
+                            }, integer(1))
+          
+          # multiply each label with the number of its occurrences
+          x_bins_expanded <- rep(x = bin_labels, times = n_times)
+          
+          # order the label to much the values of the corresponding vector
+          x_bins_expanded_reordered <- x_bins_expanded[order(seq_along(x)[order(x)])]
+          
+          ## Coerce the character vector with the labels of bins to a factor
+          x_bins_factor <- factor(x_bins_expanded_reordered, labels = bin_labels, ordered = TRUE)
+          
+        })(FATALITIES, 0.9)
+        , by = EVENT_TYPE
+      ][
+        ## Coerce the EVENT_VARIABLE to factor
+        , EVENT_TYPE := as.factor(EVENT_TYPE) 
+      ]
+
+The table with the processed data for the harm on population health with
+respect to fatalities contains 4 variables:
+
+1.  **REFNUM** (int) : an id that uniquely identifies each observation  
+2.  **EVENT\_TYPE** (Factor w/ 26 levels) : the type of each weather
+    event
+3.  **FATALITIES** (int) : the number of fatalities  
+4.  **BIN\_GROUP\_PER\_EVENT\_TYPE** (Ord.factor w/ 2 levels) : a factor
+    that divides the observations for each weather event type to two
+    complementary levels, one with the 90% of observations with the
+    lowest impact and another with the 10% of observations with the
+    highest impact.
+
+and 3175 observations.
+
+    # Print the structure of the table with the processed data 
+    # for the harm on population health with respect to fatalities.
+    str(processed_data_____harm_on_population_health_____fatalities)
+
+    ## Classes 'data.table' and 'data.frame':   3175 obs. of  4 variables:
+    ##  $ REFNUM                  : int  413652 413757 413763 413862 414153 414183 414184 414187 414200 414267 ...
+    ##  $ EVENT_TYPE              : Factor w/ 26 levels "AVALANCHE","BLIZZARD",..: 21 22 13 21 16 10 16 19 13 22 ...
+    ##  $ FATALITIES              : int  1 2 1 1 1 1 1 1 1 2 ...
+    ##  $ BIN_GROUP_PER_EVENT_TYPE: Ord.factor w/ 2 levels "(0% - 90%]"<"(90% - 100%]": 1 1 1 1 1 1 1 1 1 1 ...
+    ##  - attr(*, ".internal.selfref")=<externalptr> 
+    ##  - attr(*, "sorted")= chr "REFNUM"
+
 <br>
 
 <font size="1">[back to start of this
@@ -9230,6 +9930,115 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ### 8.1.3 Summarize the processed data for harm on population health with respect to fatalities by each weather event type
+
+To evaluate the harm on population health by each weather event type
+with respect to fatalities a simplistic approach was adopted :
+
+-   the weather event types were ranked from the most harmful to the
+    least based on the overall average number of fatalities of the
+    weather events that resulted in non-zero fatalities
+
+The overall average number of fatalities caused by each weather event
+type was initially examined along with the skewness of the number of
+fatalities for each weather event type. In most cases the skewness was
+high (or even extremely high), so it was possible that the overall mean
+misrepresented the consequences of each weather event type.
+
+That is the reason why the average number of fatalities for 90% of
+weather events with the lowest impact versus the average number of
+fatalities for the 10% of weather events with the highest impact were
+also computed and examined.
+
+**It is highlighted that for the average number of fatalities that
+refers to the 10% of the cases that had the highest impact, there were
+few observations available for a lot of weather event types and the
+corresponding mean values should be interpreted with caution.**
+
+    # Create the table with the summary for the harm on population health 
+    # with respect to fatalities for each weather event type.
+    summary_____harm_on_population_health______fatalities <- 
+      processed_data_____harm_on_population_health_____fatalities[
+      ,
+      list(
+        ## The total number of observation by each weather event type.
+        "N" = .N,
+        ## The average number of fatalities caused by each weather event type.
+        "AVRG" = round(mean(FATALITIES), 2),
+        ## The skewness of fatalities for the observations by each weather event type.
+        "SKEWNESS" = round(skewness(FATALITIES), 4),
+        ## The number of observations for the 90% of cases with the lowest impact 
+        ## by each weather event type.
+        "N_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , .N],
+        ## The average number of fatalities caused by each weather event type 
+        ## for the 90% of cases with the lowest impact.
+        "AVRG_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , round(mean(FATALITIES), 2)],
+        ## The skewness of fatalities for the 90% of cases with the lowest impact 
+        ## by each weather event type.
+        "SKEWNESS_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , round(skewness(FATALITIES), 4)],
+        ## The number of observations for the 10% of cases with the lowest impact 
+        ## by each weather event type.
+        "N_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , .N],
+        ## The average number of fatalities caused by each weather event type 
+        ## for the 10% of cases with the highest impact.
+        "AVRG_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , round(mean(FATALITIES), 2)],
+        ## The skewness of fatalities for the 10% of cases with the highest impact 
+        ## by each weather event type.
+        "SKEWNESS_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , round(skewness(FATALITIES), 4)]
+      ),
+      by = "EVENT_TYPE"
+      ][
+        ## The average number of fatalities is used to order the rows of the table
+        ## from the most harmful weather event type to the least.
+        order(-AVRG),
+        ## Create a variable with the rank of the harmness of each weather event type.
+        RANK := 1:length(EVENT_TYPE)
+        ][
+          ,
+          ## Reorder the variables at the table.
+          list(
+            RANK, EVENT_TYPE, N, AVRG, SKEWNESS, N_LOW, AVRG_LOW, SKEWNESS_LOW, N_HIGH, AVRG_HIGH, SKEWNESS_HIGH
+          )
+          ]
+
+The results of the table with the summary for the harm on population
+health with respect to fatalities by each weather event type that was
+created in this section were presented at the subsection [10.1.2 Most
+harmful event types with respect to
+fatalities](%7B#ind-10-1-2--Most-harmful-weather-event-types-with-respect-to-fatalities%7D)
+of the chapter [10 RESULTS](#ind-10--RESULTS).
+
+The table with the summary for the harm on population health with
+respect to fatalities by each weather event type was exported (as an R
+file), in the folder of the working directory:
+
+-   *outputs –&gt; harm\_on\_population\_health –&gt; results*
+
+with filename:
+
+-   *summary\_\_\_\_\_\_harm\_on\_population\_health\_\_\_\_\_\_fatalities.R*
+
+<!-- -->
+
+    # Supply the filepath at which the table with the summary
+    # for the harm on population health will be exported.
+    filepath_____summary_____harm_on_population_health______fatalities <-
+      file.path(
+        directory_tree_____outputs[[
+          "filepath_____outputs_____harm_on_population_health_____results"
+        ]],
+        "summary_____harm_on_population_health______fatalities.R"
+      )
+
+    # Export the table with the summary for the harm on population health
+    # with respect to fatalities.
+    saveRDS(
+      object = summary_____harm_on_population_health______fatalities,
+      file = filepath_____summary_____harm_on_population_health______fatalities
+    )
+
+*The main reason for exporting the file with the summary for the harm on
+population health with respect to fatalities by each weather event type
+was to supply a checkpoint for any attempts to reproduce the analysis.*
 
 <br>
 
@@ -9247,6 +10056,54 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 8.1.4 Visualize the results of the summary for the harm on population health with respect to fatalities by each weather event type
 
+From the table with the summary for the harm on population health by
+each weather event type with respect to fatalities the **Multiplot 1.1**
+was created to present an overview of the results for the three
+different aspects that were examined for this perspective.
+
+The elementary plots were
+[created](#ind-8-1-4-1--Create-the-components-of-Multiplot-1-1):
+
+-   [8.1.4.1.1 Create The Plot
+    1.1.1](#ind-8-1-4-1-1--Create-The-Plot-1-1-1)
+    -   Displays the overall average number of fatalities caused by each
+        weather event type based on all the cases of weather events that
+        resulted in non-zero fatalities.  
+-   [8.1.4.1.2 Create The Plot
+    1.1.2](#ind-8-1-4-1-2--Create-The-Plot-1-1-2)
+    -   Displays the average number of fatalities caused by each weather
+        event type based on 90% of weather events with the lowest impact
+        (for each weather event type) that resulted in non-zero
+        fatalities.  
+-   [8.1.4.1.3 Create The Plot
+    1.1.3](#ind-8-1-4-1-3--Create-The-Plot-1-1-3)
+    -   Displays the average number of fatalities caused by each weather
+        event type based on 10% of weather events with the highest
+        impact (for each weather event type) that resulted in non-zero
+        fatalities.  
+-   [8.1.4.1.4 Create The Plot
+    1.1.4](#ind-8-1-4-1-4--Create-The-Plot-1-1-4)
+    -   Displays a comparison for each weather event type, of the
+        average number of fatalities for the 90% of its observations
+        with the lowest impact versus the average number of fatalities
+        for the 10% of its observations with the highest impact based
+        only on the weather events that resulted in non-zero fatalities.
+
+which were then [combined](#Compose-the-Multiplot-1-1) in order to
+obtain the **Multiplot 1.1**.
+
+It constitutes the *PART 1* of the *Figure 1* that displays the overview
+of the harm on population health by each weather event type.
+
+*(Note that neither the Multiplot 1.1 nor the elementary plots that it
+contains were presented in this section due to the restrictions imposed
+by the assignment to include in the report at least 1 but no more than 3
+figures. It can be examined at the subsection [10.1.1 Overview of
+results for the harm on population
+health](#ind-10-1-1--Overview-of-results-for-the-harm-on-population-health)
+at the chapter [10 RESULTS](#ind-10--RESULTS), were the Figure 1 was
+presented, of which the Multiplot 1.1 constitutes the PART 1.)*
+
 <br>
 
 <font size="1">[back to start of this
@@ -9261,6 +10118,38 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 #### 8.1.4.1 Create the components of Multiplot 1.1
+
+Creates four elementary plots to visualize the results for the aspects
+that were examined for the harm on population health with respect to
+fatalities by each weather event type.
+
+-   [8.1.4.1.1 Create The Plot
+    1.1.1](#ind-8-1-4-1-1--Create-The-Plot-1-1-1)
+    -   Displays the overall average number of fatalities caused by each
+        weather event type based on all the cases of weather events that
+        resulted in non-zero fatalities.  
+-   [8.1.4.1.2 Create The Plot
+    1.1.2](#ind-8-1-4-1-2--Create-The-Plot-1-1-2)
+    -   Displays the average number of fatalities caused by each weather
+        event type based on 90% of weather events with the lowest impact
+        (for each weather event type) that resulted in non-zero
+        fatalities.  
+-   [8.1.4.1.3 Create The Plot
+    1.1.3](#ind-8-1-4-1-3--Create-The-Plot-1-1-3)
+    -   Displays the average number of fatalities caused by each weather
+        event type based on 10% of weather events with the highest
+        impact (for each weather event type) that resulted in non-zero
+        fatalities.  
+-   [8.1.4.1.4 Create The Plot
+    1.1.4](#ind-8-1-4-1-4--Create-The-Plot-1-1-4)
+    -   Displays a comparison for each weather event type, of the
+        average number of fatalities for the 90% of its observations
+        with the lowest impact versus the average number of fatalities
+        for the 10% of its observations with the highest impact based
+        only on the weather events that resulted in non-zero fatalities.
+
+The elementary plots were used to [compose the Multiplot
+1.1](#ind-8-1-4-2--Compose-the-Multiplot-1-1).
 
 <br>
 
@@ -9278,6 +10167,109 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ##### **8.1.4.1.1 Create The Plot 1.1.1**
+
+The *Plot 1.1.1* displays **the overall average number of fatalities**
+caused by each weather event type taking into account all and only the
+observation that resulted in non-zero fatalities.
+
+The weather event types were matched with a number that represents the
+rank which was assigned to each of them from the most harmful to the
+least with respect to population health, based on the **overall average
+number of fatalities** they caused.
+
+The skewness of the number of fatalities for the observations of each
+weather event type (based on which the overall number of fatalities was
+computed) had been encoded in the color of the bar associated with each
+of them.
+
+    # Create the Elementary Plot 1.1.1 that displays 
+    # the overall average number of fatalities 
+    # by each weather event type for all cases. 
+    elementary_plot_1_1_1 <-
+      ## Supply the constant arguments for the aesthetics of all included geoms.
+      ggplot(
+        data = summary_____harm_on_population_health______fatalities,
+        mapping = aes(
+          x = AVRG,
+          ### Reverse the order of the factors for the EVENT_TYPE variable 
+          ### to make them displayed alphabetically from top to bottom.
+          y = factor(
+            x = EVENT_TYPE, 
+            levels = rev(x = levels(x = EVENT_TYPE)
+            )
+          ) 
+        )
+      ) +
+      ## Draw a square shaped point to the position that corresponds to 
+      ## the average number of fatalities caused by each weather event type, 
+      ## of which the color indicates the skewness of observations 
+      ## based on which each average was computed.
+      geom_point(
+        mapping = aes(color = SKEWNESS),
+        shape = 15, 
+        size = 4.5
+      ) +
+      ## Draw a line that visually associates each weather event type 
+      ## with its respective average number of fatalities.
+      geom_linerange(
+        mapping = aes(
+          xmin = 0, 
+          xmax = AVRG, 
+          group = EVENT_TYPE, 
+          color = SKEWNESS
+        )
+        ) +
+      ## Draw a number that indicates the rank assigned to each weather event type 
+      ## (from the most harmful to the least) based on the overall average number
+      ## number of fatalities it caused inside the square point 
+      ## that displays the average.
+      geom_text(
+        mapping = aes(
+          label = RANK
+        ), 
+        size = 2.5
+      ) +
+      ## Adjust the scale for the color of each point.
+      scale_color_gradient2(
+        ### Choose such limits and midpoint for the colorbar of the legend
+        ### that they can be used unchanged to correctly display 
+        ### the skewness of the observations based on which 
+        ### the average number of fatalities for all three aspects: 
+        ###   1. overall
+        ###   2. 90% of cases with the lowest impact 
+        ###   3. 10% of cases with the highest impact
+        ### was computed. 
+        ### This will allow to include only one common legend when the 
+        ### Multiplot 1.1 will be composed from the four elementary plots. 
+        limits = c(-2, 14), 
+        midpoint = 7, 
+        low = "lightgreen", 
+        mid = "orange", 
+        high = "purple"
+      ) +
+      ## Supply descriptive labels.  
+      labs(
+        title = "Plot 1.1.1", 
+        subtitle = "Aspect: Overall",
+        x = "Weather Event Types \n",
+        y = "Average Number of Fatalities\n"
+      ) +
+      ## Select a theme.
+      theme_linedraw() + 
+      ## Customize the selected theme.
+      theme(
+        ### Remove the legend.
+        legend.position = "none",
+        ### Adjust the title.
+        plot.title = element_text(
+          size = 12,
+          face = "bold"
+        ),
+        ### Adjust the subtitle.
+        plot.subtitle = element_text(
+          size = 10
+        )
+      )
 
 <br>
 
@@ -9298,6 +10290,120 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ##### **8.1.4.1.2 Create The Plot 1.1.2**
 
+The *Elementary Plot 1.1.2* displays **the average number of fatalities
+for the 90% of cases with the lowest impact** caused by each weather
+event type from all the observation that resulted in non-zero
+fatalities.
+
+The weather event types were matched with a number that represents the
+rank which was assigned to each of them from the most harmful to the
+least with respect to population health, based on the **overall average
+number of fatalities** they caused.  
+(so it is NOT based on the average number of fatalities caused by the
+90% of cases with the lowest impact of each weather event type).
+
+The skewness of the number of fatalities for the observations of each
+weather event type (based on which the average number of fatalities for
+the 90% of cases with the lowest impact was computed) had been encoded
+in the color of the bar associated with each of them.
+
+    # Create the Elementary Plot 1.1.2 that displays 
+    # the average number of fatalities by each weather event type 
+    # for the 90% of its cases with the lowest impact.
+    elementary_plot_1_1_2 <-
+      ## Supply the constant arguments for the aesthetics of all included geoms.
+      ggplot(
+        data = summary_____harm_on_population_health______fatalities,
+        mapping = aes(
+          x = AVRG_LOW,
+          ### Reverse the order of the factors for the EVENT_TYPE variable 
+          ### to display them alphabetically from top to bottom.
+          y = factor(
+            x = EVENT_TYPE, 
+            levels = rev(x = levels(x = EVENT_TYPE)
+            )
+          ) 
+        )
+      ) +
+      ## Draw a circle shaped point to the position that corresponds to 
+      ## the average number of fatalities caused by each weather event type
+      ## for the 90% of its cases with the lowest impact, 
+      ## of which the color indicates the skewness of observations 
+      ## based on which each average was computed.
+      geom_point(
+        mapping = aes(
+          color = SKEWNESS_LOW
+        ), 
+        size = 3.5
+      ) +
+      ## Draw a line that visually associates each weather event type 
+      ## with its respective average number of fatalities 
+      ## for the 90% of its cases with the lowest impact.
+      geom_linerange(
+        mapping = aes(
+          xmin = 0, 
+          xmax = AVRG_LOW, 
+          group = EVENT_TYPE, 
+          color = SKEWNESS_LOW
+        )
+      ) +
+      ## Draw a number that indicates the rank assigned to each weather event type 
+      ## (from the most harmful to the least) based on the overall average number
+      ## number of fatalities it caused inside the square point 
+      ## that displays the average.
+      geom_text(
+        mapping = aes(
+          label = RANK
+        ), 
+        size = 2
+        ) +
+      ## Adjust the scale for the color of each point.
+      scale_color_gradient2(
+        ### Choose such limits and midpoint for the colorbar of the legend
+        ### that they can be used unchanged to correctly display 
+        ### the skewness of the observations based on which 
+        ### the average number of fatalities for all three aspects: 
+        ###   1. overall
+        ###   2. 90% of cases with the lowest impact 
+        ###   3. 10% of cases with the highest impact
+        ### was computed. 
+        ### This will allow to include only one common legend when the 
+        ### Multiplot 1.1 will be composed from the four elementary plots.
+        limits = c(-2, 14), 
+        midpoint = 7, 
+        low = "lightgreen",
+        mid = "orange",
+        high = "purple"
+        ) +
+      ## Supply descriptive labels. 
+      labs(
+        title = "Plot 1.1.2",
+        subtitle = "Aspect: 90% of cases with the lowest impact",
+        x = paste0(
+          "Average Number of Fatalities for the 90% ", "\n",
+          "of Observations with the Lowest Impact" 
+        )
+      ) +
+      ## Select a theme.
+      theme_linedraw() + 
+      ## Customize the selected theme.
+      theme(
+        ### Remove the legend.
+        legend.position = "none",
+        ### Adjust the title.
+        plot.title = element_text(
+          size = 12,
+          face = "bold"
+        ),
+        ### Adjust the subtitle.
+        plot.subtitle = element_text(
+          size = 10
+        ),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank()
+      )
+
 <br>
 
 <font size="1">[back to start of this
@@ -9316,6 +10422,121 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ##### **8.1.4.1.3 Create The Plot 1.1.3**
+
+The *Plot 1.1.3* displays **the average number of fatalities for the 10%
+of cases with the highest impact** caused by each weather event type
+from all the observation that resulted in non-zero fatalities.
+
+The weather event types were matched with a number that represents the
+rank which was assigned to each of them from the most harmful to the
+least with respect to population health, based on the **overall average
+number of fatalities** they caused.  
+(so it is NOT based on the average number of fatalities caused by the
+10% of cases with the highest impact of each weather event type).
+
+The skewness of the number of fatalities for the observations of each
+weather event type (based on which the average number of fatalities for
+the 10% of cases with the highest impact was computed) had been encoded
+in the color of the bar associated with each of them.
+
+    # Create the Elementary Plot 1.1.3 that displays 
+    # the average number of fatalities by each weather event type 
+    # for the 10% of its cases with the highest impact.
+    elementary_plot_1_1_3 <-
+      ## Supply the constant arguments for the aesthetics of all included geoms.
+      ggplot(
+        data = summary_____harm_on_population_health______fatalities,
+        mapping = aes(
+          x = AVRG_HIGH,
+          ### Reverse the order of the factors for the EVENT_TYPE variable 
+          ### to display them alphabetically from top to bottom.
+          y = factor(
+            x = EVENT_TYPE, 
+            levels = rev(x = levels(x = EVENT_TYPE)
+            )
+          ) 
+        )
+      ) +
+      ## Draw a diamond shaped point to the position that corresponds to 
+      ## the average number of fatalities caused by each weather event type
+      ## for the 10% of its cases with the highest impact, 
+      ## of which the color indicates the skewness of observations 
+      ## based on which each average was computed.
+      geom_point(
+        mapping = aes(
+          color = SKEWNESS_HIGH
+        ), 
+        shape = 18, 
+        size = 4.5
+      ) +
+      ## Draw a line that visually associates each weather event type 
+      ## with its respective average number of fatalities 
+      ## for the 10% of its cases with the highest impact.
+      geom_linerange(
+        mapping = aes(
+          xmin = 0, 
+          xmax = AVRG_HIGH, 
+          group = EVENT_TYPE, 
+          color = SKEWNESS_HIGH
+        )
+      ) +
+      ## Draw a number that indicates the rank assigned to each weather event type 
+      ## (from the most harmful to the least) based on the overall average number
+      ## number of fatalities it caused inside the square point 
+      ## that displays the average.
+      geom_text(
+        mapping = aes(
+          label = RANK
+        ),
+        size = 2
+      ) +
+      ## Adjust the scale for the color of each point.
+      scale_color_gradient2(
+        ### Choose such limits and midpoint for the colorbar of the legend
+        ### that they can be used unchanged to correctly display 
+        ### the skewness of the observations based on which 
+        ### the average number of fatalities for all three aspects: 
+        ###   1. overall
+        ###   2. 90% of cases with the lowest impact 
+        ###   3. 10% of cases with the highest impact
+        ### was computed. 
+        ### This will allow to include only one common legend when the 
+        ### Multiplot 1.1 will be composed from the four elementary plots.
+        limits = c(-2, 14), 
+        midpoint = 7, 
+        low = "lightgreen", 
+        mid = "orange", 
+        high = "purple"
+      ) +
+      ## Supply descriptive labels. 
+      labs(
+        title = "Plot 1.1.3",
+        subtitle ="Aspect: 10% of cases with the highest impact",
+        x = paste0(
+          "Average Number of Fatalities for the 10% ", "\n", 
+          "of Observations with the Highest Impact" 
+        )
+      ) +
+      ## Select a theme.
+      theme_linedraw() + 
+      ## Customize the selected theme.
+      theme(
+        ### Remove the legend.
+        legend.position = "none",
+        ### Adjust the title.
+        plot.title = element_text(
+          size = 12,
+          face = "bold"
+        ),
+        ### Adjust the subtitle.
+        plot.subtitle = element_text(
+          size = 10
+        ),
+        ### Remove the text, ticks and title of the y axis 
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank()
+      )
 
 <br>
 
@@ -9336,6 +10557,122 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ##### **8.1.4.1.4 Create The Plot 1.1.4**
 
+The *Plot 1.1.4* displays a compact overview of all three aspect that
+were examined for the harm on population health with respect to
+fatalities.
+
+For each weather event type, the comparison was visualized for **the
+average number of fatalities for the 90% of cases with the lowest
+impact** versus **the average number of fatalities for the 10% of cases
+with the highest impact**.
+
+The weather event types were matched with a number that represents the
+rank which was assigned to each of them from the most harmful to the
+least with respect to population health, based on the **overall average
+number of fatalities** they caused.
+
+The skewness of the number of fatalities for the observations of each
+weather event type (based on which the overall number of fatalities was
+computed) had been encoded in the color of the bar associated with each
+of them.
+
+    # Create the Elementary Plot 1.1.4 that displays 
+    # by each weather event type the comparison of 
+    # the average number of fatalities 
+    # for the 90% of cases with the lowest impact
+    # versus the average number of fatalities 
+    # for the 10% of cases with the highest impact.
+    elementary_plot_1_1_4 <-
+      ## Supply the constant arguments for the aesthetics of all included geoms.
+      ggplot(
+        data = summary_____harm_on_population_health______fatalities,
+        mapping = aes(
+          x = AVRG_HIGH, 
+          y = AVRG_LOW
+        )
+      ) +
+      geom_point(
+        mapping = aes(
+          fill = SKEWNESS
+        ), 
+        shape = 21
+      ) +
+      ## Draw a label with a number that indicates the rank assigned 
+      ## to each weather event type (from the most harmful to the least) 
+      ## based on the overall average number of fatalities it caused.
+      geom_label_repel(
+        mapping = aes(
+          label = RANK, 
+          fill = SKEWNESS
+        ),
+        size = 2.5
+      ) +
+      ## Adjust the scale for the fill of each label.
+      scale_fill_gradient2(
+        ### Choose such limits and midpoint for the colorbar of the legend
+        ### that they can be used unchanged to correctly display 
+        ### the skewness of the observations based on which 
+        ### the average number of fatalities for all three aspects: 
+        ###   1. overall
+        ###   2. 90% of cases with the lowest impact 
+        ###   3. 10% of cases with the highest impact
+        ### was computed. 
+        ### This will allow to include only one common legend when the 
+        ### Multiplot 1.1 will be composed from the four elementary plots.
+        limits = c(-2, 14),
+        midpoint = 7, 
+        low = "lightgreen",
+        mid = "orange", 
+        high = "purple"
+        ) +
+      ## Set proper limits to the plot.
+        xlim(c(1, 18)) +
+        ylim(c(0.75, 2)) +
+      ## Supply descriptive labels. 
+      labs(
+        title = "Plot 1.1.4",
+        subtitle = paste0(
+          "Comparison of the average number of fatalities ", 
+          "for the 90% of observations with the lowest impact ", 
+          "versus the average number of fatalities ", 
+          "for the 10% of observations with highest impact. "
+        ),
+        x = paste0(
+          "Average Number of Fatalities by each Weather Event Type ", 
+          "for the 10% of its Observations with the Highest Impact"
+        ),
+        y = paste0(
+          "Average Number of Fatalities by each Weather Event Type ", "\n", 
+          "for the 90% of its Observations with the Lowest Impact."
+        ),
+        ### Add a descriptive label for the legend.
+        fill = paste0(
+          "The color indicates the skewness ",
+          "of fatalities for the each weather event type. ",
+          "(the color scale is unique for all four plots of PART 1) ", "\n",
+          "When the color of a bar is gray, the skewness was indeterminable ",
+          "due to the fact that all observations for that weather event type ",
+          "took the same value."
+        )
+      ) +
+      ## Select a theme.
+      theme_linedraw() +
+      ## Customize the selected theme.
+      theme(
+        ### Adjust the legend.
+        legend.position = "bottom",
+        legend.direction = "horizontal",
+        ### Adjust the title.
+        plot.title = element_text(
+          size = 12,
+          face = "bold"
+        ),
+        ### Adjust the subtitle.
+        plot.subtitle = element_text(
+          size = 10
+        )
+      )
+
 <br>
 
 <font size="1">[back to start of this
@@ -9355,6 +10692,108 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 #### 8.1.4.2 Compose the Multiplot 1.1
+
+The four elementary plots that were created from the results of the
+summary for the harm on population health with respect to fatalities by
+each weather event type, were combined to construct a single multiplot
+that displays the complete picture for this perspective.
+
+    # Create a multiplot that displays the overview of the summary 
+    # for the harm on population health with respect to fatalities
+    # by each weather event type.
+    multiplot_1_1 <- arrangeGrob(
+      grobs = list(
+          
+        # Title
+        textGrob(
+          label = paste0(
+            "\n",
+            "PART 1: Harm on population health by each weather event type ", 
+            "with the respect to fatalities ", "\n", 
+            "based on the cases of weather events ", 
+            "that resulted in non-zero fatalities.", "\n", 
+            "\n"
+          ),
+           gp=gpar(
+             fontsize = 16, 
+             fontface = "bold"
+           )
+        ),
+        
+        # Subtitle
+        textGrob(
+          label = paste0(
+              "\n", 
+              "The results include only the weather event types, ", 
+              "for which at least 10 observations ", 
+              "that resulted in non-zero fatalities were available. ", "\n",
+              "The number associated with each weather event type ", 
+              "represents the rank (from the most harmful to the least) ", 
+              "which was assigned based on the overall average number of fatalities.", "\n",
+              "Because for most of the weather event types ", 
+              "high positive skewness was observed for the number of fatalities, ",
+              "the average of the 90% of cases with lowest impact ", "\n",
+              "and the 10% of cases with highest impact were reported ", 
+              "to provide a more representative picture of their consequences.","\n",
+              "\n"
+          ),
+           gp=gpar(
+             fontsize = 14, 
+             fontface = "bold"
+           )
+        ),
+        
+        # Plot 1.1.1
+        # Elementary plot for the average number of fatalities 
+        # by each weather event type for all cases.
+        elementary_plot_1_1_1,
+        
+        # ELEMENTARY PLOT 1.1.2
+        # Elementary plot for the average number of fatalities 
+        # by each weather event type for 90% of cases with the lowest impact.
+        elementary_plot_1_1_2,
+        
+        # ELEMENTARY PLOT 1.1.3
+        # Elementary plot for the average number of fatalities 
+        # by each weather event type for 10% of cases with the highest impact.
+        elementary_plot_1_1_3,
+        
+        # ELEMENTARY PLOT 1.1.4
+        # Elementary Plot 1.1.4 for the comparison of 
+        # the average number of fatalities 
+        # for the 90% of cases with the lowest impact versus 
+        # the 10% of cases with the highest impact.
+        elementary_plot_1_1_4
+      ),
+      # Set the layout for this elementary plots
+      layout_matrix = 
+        matrix(
+          c(1,1,1,1,1,1,1,1,1,
+            2,2,2,2,2,2,2,2,2,
+            3,3,3,3,3,4,4,5,5,
+            3,3,3,3,3,4,4,5,5,
+            3,3,3,3,3,4,4,5,5,
+            3,3,3,3,3,4,4,5,5,
+            3,3,3,3,3,4,4,5,5,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6
+          ),
+          byrow = TRUE, 
+          nrow = 13
+        )
+    )
+
+*(Note that the Multiplot 1.1 was NOT presented in this section due to
+the restrictions imposed by the assignment to include in the report at
+least 1 but no more than 3 figures. It can be examined at the subsection
+[10.1.1 Overview of results for the harm on population
+health](#ind-10-1-1--Overview-of-results-for-the-harm-on-population-health)
+of the chapter [10 RESULTS](#ind-10--RESULTS), were the Figure 1 was
+presented, of which the Multiplot 1.1 constitutes the PART 1.)*
 
 <br>
 
@@ -9377,6 +10816,124 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 8.2 Harm On Population Health With Respect To Injuries By Each Weather Event Type
 ---------------------------------------------------------------------------------
 
+<font size="3"><u><strong>Summary</strong></u></font>
+
+The required variables and the target data subset of observations for
+the harm on population health with respect to injuries were extracted
+from the table with the processed data, and processed to create a new
+variable that divided the observations for each of the included weather
+event types to two supplementary groups:
+
+-   the 90% of observations with the lowest impact  
+-   the 10% of observations with the highest impact
+
+before the information for the harm on population health with respect to
+injuries was summarized by each weather event type.
+
+Three aspects were examined:
+
+1.  The overall average number of injuries by each weather event type.  
+2.  The average number of injuries by each weather event type for the
+    90% of cases with the lowest impact.  
+3.  The average number of injuries by each weather event type for the
+    10% of cases with the highest impact.
+
+For each aspect, the average number of injuries by each weather event
+type, the number of its available observations (based on which the
+average was computed) and their skewness were examined.
+
+The overall average number of injuries was used as the main criterion to
+determine which weather events caused the most harm on population health
+with respect to injuries but it is important to take into account the
+other two aspect that were presented in order to obtain a more
+insightful and complete ‘picture’ of their consequences, (especially
+given the fact that for most of the weather event types, the injuries
+were highly positively skewed).
+
+The table with results for the harm on population health with respect to
+injuries by each weather event type were presented at the subsection
+[10.1.3 Most harmful event types with respect to
+injuries](#ind-10-1-3--Most-harmful-weather-event-types-with-respect-to-injuries)
+of the chapter [10 RESULTS](#ind-10--RESULTS).
+
+Finally the *Multiplot 1.2* was created to visualize the results of the
+harm on population health with respect to injuries by each weather event
+type.
+
+\*(Note that neither the Multiplot 1.1 nor the elementary plots that it
+contains were presented in this section due to the restrictions imposed
+by the assignment to include in the report at least 1 but no more than 3
+figures. It can be examined at the subsection [10.1.1 Overview of
+results for the harm on population
+health](#ind-10-1-1--Overview-of-results-for-the-harm-on-population-health)
+at the chapter [10 RESULTS](#ind-10--RESULTS), where the Figure 1 was
+presented, of which the Multiplot 1.2 constitutes the PART 2.)
+
+<font size="3"><u><strong>Steps</strong></u></font>
+
+-   [8.2.1 Extract the target data for harm on population health with
+    respect to
+    injuries](#ind-8-2-1--Extract-the-target-data-for-harm-on-population-health-with-respect-to-injuries)
+    -   The target data subset of observations needed to evaluate the
+        harm on population health with respect to injuries by each
+        weather event type was extracted from the table with the
+        processed data.  
+-   [8.2.2 Process the target data for harm on population health with
+    respect to
+    injuries](#ind-8-2-2--Process-the-target-data-for-harm-on-population-health-with-respect-to-injuries)
+    -   The table with target data subset for the harm on population
+        with respect to injuries was processed to create the table with
+        processed data for the harm on population health with respect to
+        injuries.  
+-   [8.2.3 Summarize the processed data for harm on population health
+    with respect to injuries by each weather event
+    type](#ind-8-2-3--Summarize-the-processed-data-for-harm-on-population-health-with-respect-to-injuries-by-each-weather-event-type)
+    -   The harm on population health with respect to injuries by each
+        weather event type was evaluated over various aspects.  
+-   [8.2.4 Visualize the results of the summary for the harm on
+    population health with respect to injuries by each weather event
+    type](#ind-8-2-4--Visualize-the-results-of-the-summary-for-the-harm-on-population-health-with-respect-to-injuries-by-each-weather-event-type)
+    -   The Multiplot 1.2 that presents the results of the summary for
+        the harm on population health with respect to injuries by each
+        weather event type was created.
+        -   [8.2.4.1 Create the components of Multiplot
+            1.2](#ind-8-2-4-1--Create-the-components-of-Multiplot-1-2)
+            -   Creates the four elementary plot that constitute the
+                Multiplot 1.2:
+                -   [8.2.4.1.1 Create The Plot
+                    1.2.1](#ind-8-2-4-1-1--Create-The-Plot-1-2-1)
+                    -   Displays the overall average number of injuries
+                        caused by each weather event type based on all
+                        the cases of weather events that resulted in
+                        non-zero injuries.  
+                -   [8.2.4.1.2 Create The Plot
+                    1.2.2](#ind-8-2-4-1-2--Create-The-Plot-1-2-2)
+                    -   Displays the average number of injuries caused
+                        by each weather event type based on 90% of
+                        weather events with the lowest impact (for each
+                        weather event type) that resulted in non-zero
+                        injuries.  
+                -   [8.2.4.1.3 Create The Plot
+                    1.2.3](#ind-8-2-4-1-3--Create-The-Plot-1-2-3)
+                    -   Displays the average number of injuries caused
+                        by each weather event type based on 10% of
+                        weather events with the highest impact (for each
+                        weather event type) that resulted in non-zero
+                        injuries.  
+                -   [8.2.4.1.4 Create The Plot
+                    1.2.4](#ind-8-2-4-1-4--Create-The-Plot-1-2-4)
+                    -   Displays a comparison for each weather event
+                        type, of the average number of fatalities for
+                        the 90% of its observations with the lowest
+                        impact versus the average number of injuries for
+                        the 10% of its observations with the highest
+                        impact based only on the weather events that
+                        resulted in non-zero injuries.  
+        -   [8.2.4.2 Compose the Multiplot
+            1.2](#ind-8-2-4-2--Compose-the-Multiplot-1-2)
+            -   Combines the four elementary plots to create the
+                Multiplot 1.1.
+
 <br>
 
 <font size="1">[back to start of this
@@ -9389,6 +10946,431 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ### 8.2.1 Extract the target data for harm on population health with respect to injuries
+
+In order to examine the harm on population health with respect to
+injuries caused by each weather event type, the variables *REFNUM*,
+*EVENT\_TYPE* and *INJURIES* were selected from the table with the
+processed data and **only the observations that refer to weather events
+that resulted in non-zero injuries** were extracted.
+
+Furthermore, in an attempt to avoid highly misleading statistics due to
+the small number of observations for some of the weather event types, a
+lowest bound of 10 weather events that caused non zero injuries (for
+each of the included weather event types) was selected (subjectively by
+the analyst) and applied.
+
+This lowest bound, although it may seem (and generally it is) not enough
+to get trustworthy statistics, it was considered to be *“good enough”*
+taking into account that :
+
+1.  the analysis focuses in describing historical data without trying to
+    make inferences that would demand substantially bigger samples,
+    although any statistic based on less than 10 observations could not
+    be taken seriously especially in cases (such as in this analysis)
+    where the distribution of injuries for each weather event type was
+    skewed.
+2.  a period of 10 years (from 2001 to 2011) in which the observations
+    that were used in the analysis occurred, is relatively small time to
+    produce big samples of weather events that caused non zero injuries
+    for some the weather event types. Thus, if a highest bound was
+    selected to get more robust statistics such as samples of 100 or
+    300, the majority of weather event types would have been excluded,
+    making the results of the analysis trivial.
+
+<!-- -->
+
+    # Extract the required variables and the target data subset of observations 
+    # for the harm on population health with respect to injuries.
+    target_data_____harm_on_population_health_____injuries <- processed_data[
+      ## Extract only the observations that have resulted in non-zero injuries.
+      INJURIES > 0,
+      ## Select only the relevant variables. 
+      list(REFNUM, EVENT_TYPE, INJURIES)
+      ][
+        ### Keep only the observations that correspond to the weather event types 
+        ### for which there are at least 10 weather events available.
+        EVENT_TYPE %in% 
+          names(table(EVENT_TYPE)[table(EVENT_TYPE) >= 10])
+        ]
+
+The table with the target data for the harm on population health with
+respect to injuries consist of 5581 observations.
+
+    # Print the structure of the table with the target data subset 
+    # for the harm on population health with respect to injuries.
+    str(target_data_____harm_on_population_health_____injuries)
+
+    ## Classes 'data.table' and 'data.frame':   5581 obs. of  3 variables:
+    ##  $ REFNUM    : int  413614 413649 413652 413663 413737 413743 413746 413757 413763 413795 ...
+    ##  $ EVENT_TYPE: chr  "TORNADO" "THUNDERSTORM WIND" "THUNDERSTORM WIND" "THUNDERSTORM WIND" ...
+    ##  $ INJURIES  : int  4 2 4 1 6 1 1 1 1 1 ...
+    ##  - attr(*, ".internal.selfref")=<externalptr> 
+    ##  - attr(*, "sorted")= chr "REFNUM"
+
+The variable *EVENT\_TYPE* includes 27 distinct weather event types, for
+most of which the variable *INJURIES* was highly positively skewed.
+
+    # Create a kable to present some facts about the table with the target data 
+    # for the harm on population health with respect to injuries.
+    kable(
+      x = target_data_____harm_on_population_health_____injuries[
+        order(EVENT_TYPE), 
+        list(
+          "N" = .N, 
+          "SKEWNESS" = round(skewness(INJURIES), 4)
+        ), 
+        by = EVENT_TYPE
+        ],
+      caption = paste0(
+        "Table 8.2.1-1: ",
+        "Facts about the table with the target data subset of observations ", 
+        "for the harm on population health with respect to injuries."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      ) %>% 
+      footnote(
+        general = "The skewness was rounded to 4 decimal places."
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 8.2.1-1: Facts about the table with the target data subset of
+observations for the harm on population health with respect to injuries.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+EVENT\_TYPE
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+N
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+SKEWNESS
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+AVALANCHE
+</td>
+<td style="text-align:right;">
+80
+</td>
+<td style="text-align:right;">
+3.2455
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BLIZZARD
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+2.0441
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DEBRIS FLOW
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+0.6818
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DENSE FOG
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+1.4182
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DUST DEVIL
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+1.8590
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DUST STORM
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+1.5095
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EXCESSIVE HEAT
+</td>
+<td style="text-align:right;">
+86
+</td>
+<td style="text-align:right;">
+4.1751
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FLASH FLOOD
+</td>
+<td style="text-align:right;">
+190
+</td>
+<td style="text-align:right;">
+9.4282
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FLOOD
+</td>
+<td style="text-align:right;">
+61
+</td>
+<td style="text-align:right;">
+4.6609
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HAIL
+</td>
+<td style="text-align:right;">
+109
+</td>
+<td style="text-align:right;">
+5.8015
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HEAT
+</td>
+<td style="text-align:right;">
+36
+</td>
+<td style="text-align:right;">
+2.1619
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HEAVY RAIN
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+4.0900
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HEAVY SNOW
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:right;">
+4.3682
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HIGH SURF
+</td>
+<td style="text-align:right;">
+54
+</td>
+<td style="text-align:right;">
+5.7692
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HIGH WIND
+</td>
+<td style="text-align:right;">
+220
+</td>
+<td style="text-align:right;">
+10.7119
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HURRICANE/TYPHOON
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+2.7730
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ICE STORM
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+3.4714
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LIGHTNING
+</td>
+<td style="text-align:right;">
+1411
+</td>
+<td style="text-align:right;">
+6.6360
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MARINE THUNDERSTORM WIND
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+2.2867
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RIP CURRENT
+</td>
+<td style="text-align:right;">
+149
+</td>
+<td style="text-align:right;">
+4.5935
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+STRONG WIND
+</td>
+<td style="text-align:right;">
+142
+</td>
+<td style="text-align:right;">
+2.9883
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+THUNDERSTORM WIND
+</td>
+<td style="text-align:right;">
+1236
+</td>
+<td style="text-align:right;">
+9.0224
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TORNADO
+</td>
+<td style="text-align:right;">
+1252
+</td>
+<td style="text-align:right;">
+16.3086
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TROPICAL STORM
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+3.8833
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WILDFIRE
+</td>
+<td style="text-align:right;">
+230
+</td>
+<td style="text-align:right;">
+5.8510
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WINTER STORM
+</td>
+<td style="text-align:right;">
+51
+</td>
+<td style="text-align:right;">
+3.1228
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WINTER WEATHER
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+4.1679
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<sup></sup> The skewness was rounded to 4 decimal places.
+</td>
+</tr>
+</tfoot>
+</table>
+It was worth noting that for the weather event types with highest number
+of observations there was highest skewness for the values of injuries,
+indicating that the corresponding distribution of injuries has a heavy
+tail that wasn’t possible to be observed when few observation were
+available.
 
 <br>
 
@@ -9406,6 +11388,103 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 8.2.2 Process the target data for harm on population health with respect to injuries
 
+To create the table with the processed data for the harm on population
+health with respect to injuries from the corresponding target data
+subset for this perspective, a new variable was created that divides the
+observations for each of the included weather event types in two
+complementary levels:
+
+-   one that contains the 90% of cases with lowest impact  
+-   the other that contains the 10% of cases with highest impact
+
+This decision was made due to the high skewness that was observed for
+the values of the variable *INJURIES* for most weather event types,
+which indicates that the underlining distributions of such phenomena has
+a heavy tail that causes this heterogeneity on the observations. As a
+result a small number of injuries were observed for the majority of
+cases that resulted in non-zero fatalities while in the few cases with
+the highest impact they caused lots of injuries.
+
+Having in mind that the average number of injuries will be used to
+determine which weather event types were the most harmful to population
+health (with respect to injuries) combined with the fact that the
+average doesn’t represent well the distribution of variables with high
+skewness, as it is highly affected by the most extreme values, it was
+considered necessary to examine the subsets created by those two levels
+in order to obtain an insightful picture.
+
+    # Create the table with the processed data 
+    # for the harm on population health with respect to injuries.
+    processed_data_____harm_on_population_health_____injuries <- 
+      target_data_____harm_on_population_health_____injuries[
+        ,
+        ## Create a new variable divides the observations
+        ## for each weather event into two supplementary groups:  
+        ##   - the 90% of weather events that resulted in lowest fatalities
+        ##   - the 10% of weather events that resulted in highest fatalities
+        BIN_GROUP_PER_EVENT_TYPE := (function(x, p_bins) {
+          
+          # adds 0 and 1 in the vector supplied at the argument 'p_bins' 
+          # to the start and the end respectively  
+          # the supplied percentiles if they are missing 
+          # and sort them ascending
+          p_bins_increasing <- sort(c(0, p_bins, 1))
+          
+          # creates the character strings that labels of the bins by the values supplied at 
+          # the argument 'p_bins' that will be the values of the new variable
+          bin_labels <- paste0("(", p_bins_increasing[-length(p_bins_increasing)]*100,
+                               "% - ", p_bins_increasing[-1]*100, "%]")
+          
+          # identify the number of occurrences that correspond to each label
+          n_times <- vapply(2:length(p_bins_increasing),
+                            function(i) {
+                              as.integer(floor(length(x) * p_bins_increasing[i]) -
+                                           floor(length(x) * p_bins_increasing[i - 1]))
+                            }, integer(1))
+          
+          # multiply each label with the number of its occurrences
+          x_bins_expanded <- rep(x = bin_labels, times = n_times)
+          
+          # order the label to much the values of the corresponding vector
+          x_bins_expanded_reordered <- x_bins_expanded[order(seq_along(x)[order(x)])]
+          
+          ## Coerce the character vector with the labels of bins to a factor
+          x_bins_factor <- factor(x_bins_expanded_reordered, labels = bin_labels, ordered = TRUE)
+          
+        })(INJURIES, 0.9)
+        , by = EVENT_TYPE
+      ][
+        ## Coerce the EVENT_VARIABLE to factor
+        , EVENT_TYPE := as.factor(EVENT_TYPE) 
+      ]
+
+The table with the processed data for the harm on population health with
+respect to injuries contains 4 variables:
+
+1.  **REFNUM** (int) : an id that uniquely identifies each observation  
+2.  **EVENT\_TYPE** (Factor w/ 27 levels) : the type of each weather
+    event
+3.  **INJURIES** (int) : the number of injuries  
+4.  **BIN\_GROUP\_PER\_EVENT\_TYPE** (Ord.factor w/ 2 levels) : a factor
+    that divides the observations for each weather event type to two
+    complementary levels, one with the 90% of observations with the
+    lowest impact and another with the 10% of observations with the
+    highest impact.
+
+and 5581 observations.
+
+    # Print the structure of the table with the processed data 
+    # for the harm on population health with respect to injuries.
+    str(processed_data_____harm_on_population_health_____injuries)
+
+    ## Classes 'data.table' and 'data.frame':   5581 obs. of  4 variables:
+    ##  $ REFNUM                  : int  413614 413649 413652 413663 413737 413743 413746 413757 413763 413795 ...
+    ##  $ EVENT_TYPE              : Factor w/ 27 levels "AVALANCHE","BLIZZARD",..: 23 22 22 22 22 22 22 23 15 18 ...
+    ##  $ INJURIES                : int  4 2 4 1 6 1 1 1 1 1 ...
+    ##  $ BIN_GROUP_PER_EVENT_TYPE: Ord.factor w/ 2 levels "(0% - 90%]"<"(90% - 100%]": 1 1 1 1 2 1 1 1 1 1 ...
+    ##  - attr(*, ".internal.selfref")=<externalptr> 
+    ##  - attr(*, "sorted")= chr "REFNUM"
+
 <br>
 
 <font size="1">[back to start of this
@@ -9421,6 +11500,115 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ### 8.2.3 Summarize the processed data for harm on population health with respect to injuries by each weather event type
+
+To evaluate the harm on population health by each weather event type
+with respect to injuries a simplistic approach was adopted :
+
+-   the weather event types were ranked from the most harmful to the
+    least based on the overall average number of injuries of the weather
+    events that resulted in non-zero injuries
+
+The overall average number of injuries caused by each weather event type
+was initially examined along with the skewness of the number of injuries
+for each weather event type. In most cases the skewness was high (or
+even extremely high), so it was possible that the overall mean
+misrepresented the consequences of each weather event type.
+
+That is the reason why the average number of injuries for 90% of weather
+events with the lowest impact versus the average number of injuries for
+the 10% of weather events with the highest impact were also computed and
+examined.
+
+**It is highlighted that for the average number of injuries that refers
+to the 10% of the cases that had the highest impact, there were few
+observations available for a lot of weather event types and the
+corresponding mean values should be interpreted with caution.**
+
+    # Create the table with the summary for the harm on population health 
+    # with respect to injuries for each weather event type.
+    summary_____harm_on_population_health______injuries <- 
+      processed_data_____harm_on_population_health_____injuries[
+      ,
+      list(
+        ## The total number of observation by each weather event type.
+        "N" = .N,
+        ## The average number of injuries caused by each weather event type.
+        "AVRG" = round(mean(INJURIES), 2),
+        ## The skewness of injuries for the observations by each weather event type.
+        "SKEWNESS" = round(skewness(INJURIES), 4),
+        ## The number of observations for the 90% of cases with the lowest impact 
+        ## by each weather event type.
+        "N_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , .N],
+        ## The average number of injuries caused by each weather event type 
+        ## for the 90% of cases with the lowest impact.
+        "AVRG_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , round(mean(INJURIES), 2)],
+        ## The skewness of injuries for the 90% of cases with the lowest impact 
+        ## by each weather event type.
+        "SKEWNESS_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , round(skewness(INJURIES), 4)],
+        ## The number of observations for the 10% of cases with the lowest impact 
+        ## by each weather event type.
+        "N_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , .N],
+        ## The average number of injuries caused by each weather event type 
+        ## for the 10% of cases with the highest impact.
+        "AVRG_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , round(mean(INJURIES), 2)],
+        ## The skewness of injuries for the 10% of cases with the highest impact 
+        ## by each weather event type.
+        "SKEWNESS_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , round(skewness(INJURIES), 4)]
+      ),
+      by = "EVENT_TYPE"
+      ][
+        ## The average number of injuries is used to order the rows of the table
+        ## from the most harmful weather event type to the least.
+        order(-AVRG),
+        ## Create a variable with the rank of the harmness of each weather event type.
+        RANK := 1:length(EVENT_TYPE)
+        ][
+          ,
+          ## Reorder the variables at the table.
+          list(
+            RANK, EVENT_TYPE, N, AVRG, SKEWNESS, N_LOW, AVRG_LOW, SKEWNESS_LOW, N_HIGH, AVRG_HIGH, SKEWNESS_HIGH
+          )
+          ]
+
+The results of the table with the summary for the harm on population
+health with respect to injuries by each weather event type that was
+created in this section were presented at the subsection [10.1.3 Most
+harmful event types with respect to
+injuries](#ind-10-1-3--Most-harmful-weather-event-types-with-respect-to-injuries)
+of the chapter [10 RESULTS](#ind-10--RESULTS).
+
+The table with the summary for the harm on population health with
+respect to injuries by each weather event type was exported (as an R
+file), in the folder of the working directory:
+
+-   *outputs –&gt; harm\_on\_population\_health –&gt; results*
+
+with filename:
+
+-   *summary\_\_\_\_\_\_harm\_on\_population\_health\_\_\_\_\_\_injuries.R*
+
+<!-- -->
+
+    # Supply the filepath at which the table with the summary
+    # for the harm on population health will be exported.
+    filepath_____summary_____harm_on_population_health______injuries <-
+      file.path(
+        directory_tree_____outputs[[
+          "filepath_____outputs_____harm_on_population_health_____results"
+        ]],
+        "summary_____harm_on_population_health______injuries.R"
+      )
+
+    # Export the table with the summary for the harm on population health
+    # with respect to injuries.
+    saveRDS(
+      object = summary_____harm_on_population_health______injuries,
+      file = filepath_____summary_____harm_on_population_health______injuries
+    )
+
+*The main reason for exporting the file with the summary for the harm on
+population health with respect to injuries by each weather event type
+was to supply a checkpoint for any attempts to reproduce the analysis.*
 
 <br>
 
@@ -9438,6 +11626,54 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 8.2.4 Visualize the results of the summary for the harm on population health with respect to injuries by each weather event type
 
+From the table with the summary for the harm on population health by
+each weather event type with respect to injuries the **Multiplot 1.2**
+was created to present an overview of the results for the three
+different aspects that were examined for this perspective.
+
+Four elementary plots were
+[created](#ind-8-2-4-1--Create-the-components-of-Multiplot-1-2):
+
+-   [8.2.4.1.1 Create The Plot
+    1.2.1](#ind-8-2-4-1-1--Create-The-Plot-1-2-1)
+    -   Displays the overall average number of injuries caused by each
+        weather event type based on all the cases of weather events that
+        resulted in non-zero injuries.  
+-   [8.2.4.1.2 Create The Plot
+    1.2.2](#ind-8-2-4-1-2--Create-The-Plot-1-2-2)
+    -   Displays the average number of injuries caused by each weather
+        event type based on 90% of weather events with the lowest impact
+        (for each weather event type) that resulted in non-zero
+        injuries.  
+-   [8.2.4.1.3 Create The Plot
+    1.2.3](#ind-8-2-4-1-3--Create-The-Plot-1-2-3)
+    -   Displays the average number of injuries caused by each weather
+        event type based on 10% of weather events with the highest
+        impact (for each weather event type) that resulted in non-zero
+        injuries.  
+-   [8.2.4.1.4 Create The Plot
+    1.2.4](#ind-8-2-4-1-4--Create-The-Plot-1-2-4)
+    -   Displays a comparison for each weather event type, of the
+        average number of fatalities for the 90% of its observations
+        with the lowest impact versus the average number of injuries for
+        the 10% of its observations with the highest impact based only
+        on the weather events that resulted in non-zero injuries.
+
+which were then [combined](#ind-8-2-4-2--Compose-the-Multiplot-1-2) in
+order to obtain the **Multiplot 1.2**.
+
+It constitutes the *PART 2* of the *Figure 1* that displays the overview
+of the harm on population health by each weather event type.
+
+*(Note that neither the Multiplot 1.1 nor the elementary plots that it
+contains were presented in this section due to the restrictions imposed
+by the assignment to include in the report at least 1 but no more than 3
+figures. It can be examined at the subsection [10.1.1 Overview of
+results for the harm on population
+health](#ind-10-1-1--Overview-of-results-for-the-harm-on-population-health)
+at the chapter [10 RESULTS](#ind-10--RESULTS), were the Figure 1 was
+presented, of which the Multiplot 1.2 constitutes the PART 2.)*
+
 <br>
 
 <font size="1">[back to start of this
@@ -9452,6 +11688,35 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 #### 8.2.4.1 Create the components of Multiplot 1.2
+
+Creates four elementary plots to visualize the results for the aspects
+that were examined for the harm on population health with respect to
+injuries by each weather event type.
+
+-   [8.2.4.1.1 Create The Plot
+    1.2.1](#ind-8-2-4-1-1--Create-The-Plot-1-2-1)
+    -   Displays the overall average number of injuries caused by each
+        weather event type based on all the cases of weather events that
+        resulted in non-zero injuries.  
+-   [8.2.4.1.2 Create The Plot
+    1.2.2](#ind-8-2-4-1-2--Create-The-Plot-1-2-2)
+    -   Displays the average number of injuries caused by each weather
+        event type based on 90% of weather events with the lowest impact
+        (for each weather event type) that resulted in non-zero
+        injuries.  
+-   [8.2.4.1.3 Create The Plot
+    1.2.3](#ind-8-2-4-1-3--Create-The-Plot-1-2-3)
+    -   Displays the average number of injuries caused by each weather
+        event type based on 10% of weather events with the highest
+        impact (for each weather event type) that resulted in non-zero
+        injuries.  
+-   [8.2.4.1.4 Create The Plot
+    1.2.4](#ind-8-2-4-1-4--Create-The-Plot-1-2-4)
+    -   Displays a comparison for each weather event type, of the
+        average number of fatalities for the 90% of its observations
+        with the lowest impact versus the average number of injuries for
+        the 10% of its observations with the highest impact based only
+        on the weather events that resulted in non-zero injuries.
 
 <br>
 
@@ -9469,6 +11734,109 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ##### **8.2.4.1.1 Create The Plot 1.2.1**
+
+The *Plot 1.2.1* displays **the overall average number of injuries**
+caused by each weather event type taking into account all and only the
+observation that resulted in non-zero injuries.
+
+The weather event types were matched with a number that represents the
+rank which was assigned to each of them from the most harmful to the
+least with respect to population health, based on the **overall average
+number of injuries** they caused.
+
+The skewness of the number of injuries for the observations of each
+weather event type (based on which the overall number of injuries was
+computed) had been encoded in the color of the bar associated with each
+of them.
+
+    # Create the Elementary Plot 1.2.1 that displays 
+    # the overall average number of injuries 
+    # by each weather event type for all cases. 
+    elementary_plot_1_2_1 <-
+      ## Supply the constant arguments for the aesthetics of all included geoms.
+      ggplot(
+        data = summary_____harm_on_population_health______injuries,
+        mapping = aes(
+          x = AVRG,
+          ### Reverse the order of the factors for the EVENT_TYPE variable 
+          ### to make them displayed alphabetically from top to bottom.
+          y = factor(
+            x = EVENT_TYPE, 
+            levels = rev(x = levels(x = EVENT_TYPE)
+            )
+          ) 
+        )
+      ) +
+      ## Draw a square shaped point to the position that corresponds to 
+      ## the average number of injuries caused by each weather event type, 
+      ## of which the color indicates the skewness of observations 
+      ## based on which each average was computed.
+      geom_point(
+        mapping = aes(color = SKEWNESS),
+        shape = 15, 
+        size = 4.5
+      ) +
+      ## Draw a line that visually associates each weather event type 
+      ## with its respective average number of injuries.
+      geom_linerange(
+        mapping = aes(
+          xmin = 0, 
+          xmax = AVRG, 
+          group = EVENT_TYPE, 
+          color = SKEWNESS
+        )
+        ) +
+      ## Draw a number that indicates the rank assigned to each weather event type 
+      ## (from the most harmful to the least) based on the overall average number
+      ## number of injuries it caused inside the square point 
+      ## that displays the average.
+      geom_text(
+        mapping = aes(
+          label = RANK
+        ), 
+        size = 2.5
+      ) +
+      ## Adjust the scale for the color of each point.
+      scale_color_gradient2(
+        ### Choose such limits and midpoint for the colorbar of the legend
+        ### that they can be used unchanged to correctly display 
+        ### the skewness of the observations based on which 
+        ### the average number of injuries for all three aspects: 
+        ###   1. overall
+        ###   2. 90% of cases with the lowest impact 
+        ###   3. 10% of cases with the highest impact
+        ### was computed. 
+        ### This will allow to include only one common legend when the 
+        ### Multiplot 1.2 will be composed from the four elementary plots. 
+        limits = c(-2, 17), 
+        midpoint = 7, 
+        low = "lightgreen", 
+        mid = "orange", 
+        high = "purple"
+      ) +
+      ## Supply descriptive labels.  
+      labs(
+        title = "Plot 1.2.1", 
+        subtitle = "Aspect: Overall",
+        x = "Weather Event Types \n",
+        y = "Average Number of Injuries\n"
+      ) +
+      ## Select a theme.
+      theme_linedraw() + 
+      ## Customize the selected theme.
+      theme(
+        ### Remove the legend.
+        legend.position = "none",
+        ### Adjust the title.
+        plot.title = element_text(
+          size = 12,
+          face = "bold"
+        ),
+        ### Adjust the subtitle.
+        plot.subtitle = element_text(
+          size = 10
+        )
+      )
 
 <br>
 
@@ -9489,6 +11857,119 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ##### **8.2.4.1.2 Create The Plot 1.2.2**
 
+The *Elementary Plot 1.2.2* displays **the average number of injuries
+for the 90% of cases with the lowest impact** caused by each weather
+event type from all the observation that resulted in non-zero injuries.
+
+The weather event types were matched with a number that represents the
+rank which was assigned to each of them from the most harmful to the
+least with respect to population health, based on the **overall average
+number of injuries** they caused.  
+(so it is NOT based on the average number of injuries caused by the 90%
+of cases with the lowest impact of each weather event type).
+
+The skewness of the number of injuries for the observations of each
+weather event type (based on which the average number of injuries for
+the 90% of cases with the lowest impact was computed) had been encoded
+in the color of the bar associated with each of them.
+
+    # Create the Elementary Plot 1.2.2 that displays 
+    # the average number of injuries by each weather event type 
+    # for the 90% of its cases with the lowest impact.
+    elementary_plot_1_2_2 <-
+      ## Supply the constant arguments for the aesthetics of all included geoms.
+      ggplot(
+        data = summary_____harm_on_population_health______injuries,
+        mapping = aes(
+          x = AVRG_LOW,
+          ### Reverse the order of the factors for the EVENT_TYPE variable 
+          ### to display them alphabetically from top to bottom.
+          y = factor(
+            x = EVENT_TYPE, 
+            levels = rev(x = levels(x = EVENT_TYPE)
+            )
+          ) 
+        )
+      ) +
+      ## Draw a circle shaped point to the position that corresponds to 
+      ## the average number of injuries caused by each weather event type
+      ## for the 90% of its cases with the lowest impact, 
+      ## of which the color indicates the skewness of observations 
+      ## based on which each average was computed.
+      geom_point(
+        mapping = aes(
+          color = SKEWNESS_LOW
+        ), 
+        size = 3.5
+      ) +
+      ## Draw a line that visually associates each weather event type 
+      ## with its respective average number of injuries 
+      ## for the 90% of its cases with the lowest impact.
+      geom_linerange(
+        mapping = aes(
+          xmin = 0, 
+          xmax = AVRG_LOW, 
+          group = EVENT_TYPE, 
+          color = SKEWNESS_LOW
+        )
+      ) +
+      ## Draw a number that indicates the rank assigned to each weather event type 
+      ## (from the most harmful to the least) based on the overall average number
+      ## number of injuries it caused inside the square point 
+      ## that displays the average.
+      geom_text(
+        mapping = aes(
+          label = RANK
+        ), 
+        size = 2
+        ) +
+      ## Adjust the scale for the color of each point.
+      scale_color_gradient2(
+        ### Choose such limits and midpoint for the colorbar of the legend
+        ### that they can be used unchanged to correctly display 
+        ### the skewness of the observations based on which 
+        ### the average number of injuries for all three aspects: 
+        ###   1. overall
+        ###   2. 90% of cases with the lowest impact 
+        ###   3. 10% of cases with the highest impact
+        ### was computed. 
+        ### This will allow to include only one common legend when the 
+        ### Multiplot 1.2 will be composed from the four elementary plots.
+        limits = c(-2, 17), 
+        midpoint = 7, 
+        low = "lightgreen",
+        mid = "orange",
+        high = "purple"
+        ) +
+      ## Supply descriptive labels. 
+      labs(
+        title = "Plot 1.2.2",
+        subtitle = "Aspect: 90% of cases with the lowest impact",
+        x = paste0(
+          "Average Number of Injuries for the 90% ", "\n",
+          "of Observations with the Lowest Impact" 
+        )
+      ) +
+      ## Select a theme.
+      theme_linedraw() + 
+      ## Customize the selected theme.
+      theme(
+        ### Remove the legend.
+        legend.position = "none",
+        ### Adjust the title.
+        plot.title = element_text(
+          size = 12,
+          face = "bold"
+        ),
+        ### Adjust the subtitle.
+        plot.subtitle = element_text(
+          size = 10
+        ),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank()
+      )
+
 <br>
 
 <font size="1">[back to start of this
@@ -9508,6 +11989,121 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ##### **8.2.4.1.3 Create The Plot 1.2.3**
 
+The *Plot 1.2.3* displays **the average number of injuries for the 10%
+of cases with the highest impact** caused by each weather event type
+from all the observation that resulted in non-zero injuries.
+
+The weather event types were matched with a number that represents the
+rank which was assigned to each of them from the most harmful to the
+least with respect to population health, based on the **overall average
+number of injuries** they caused.  
+(so it is NOT based on the average number of injuries caused by the 10%
+of cases with the highest impact of each weather event type).
+
+The skewness of the number of injuries for the observations of each
+weather event type (based on which the average number of injuries for
+the 10% of cases with the highest impact was computed) had been encoded
+in the color of the bar associated with each of them.
+
+    # Create the Elementary Plot 1.2.3 that displays 
+    # the average number of injuries by each weather event type 
+    # for the 10% of its cases with the highest impact.
+    elementary_plot_1_2_3 <-
+      ## Supply the constant arguments for the aesthetics of all included geoms.
+      ggplot(
+        data = summary_____harm_on_population_health______injuries,
+        mapping = aes(
+          x = AVRG_HIGH,
+          ### Reverse the order of the factors for the EVENT_TYPE variable 
+          ### to display them alphabetically from top to bottom.
+          y = factor(
+            x = EVENT_TYPE, 
+            levels = rev(x = levels(x = EVENT_TYPE)
+            )
+          ) 
+        )
+      ) +
+      ## Draw a diamond shaped point to the position that corresponds to 
+      ## the average number of injuries caused by each weather event type
+      ## for the 10% of its cases with the highest impact, 
+      ## of which the color indicates the skewness of observations 
+      ## based on which each average was computed.
+      geom_point(
+        mapping = aes(
+          color = SKEWNESS_HIGH
+        ), 
+        shape = 18, 
+        size = 4.5
+      ) +
+      ## Draw a line that visually associates each weather event type 
+      ## with its respective average number of injuries 
+      ## for the 10% of its cases with the highest impact.
+      geom_linerange(
+        mapping = aes(
+          xmin = 0, 
+          xmax = AVRG_HIGH, 
+          group = EVENT_TYPE, 
+          color = SKEWNESS_HIGH
+        )
+      ) +
+      ## Draw a number that indicates the rank assigned to each weather event type 
+      ## (from the most harmful to the least) based on the overall average number
+      ## number of injuries it caused inside the square point 
+      ## that displays the average.
+      geom_text(
+        mapping = aes(
+          label = RANK
+        ),
+        size = 2
+      ) +
+      ## Adjust the scale for the color of each point.
+      scale_color_gradient2(
+        ### Choose such limits and midpoint for the colorbar of the legend
+        ### that they can be used unchanged to correctly display 
+        ### the skewness of the observations based on which 
+        ### the average number of injuries for all three aspects: 
+        ###   1. overall
+        ###   2. 90% of cases with the lowest impact 
+        ###   3. 10% of cases with the highest impact
+        ### was computed. 
+        ### This will allow to include only one common legend when the 
+        ### Multiplot 1.2 will be composed from the four elementary plots.
+        limits = c(-2, 17), 
+        midpoint = 7, 
+        low = "lightgreen", 
+        mid = "orange", 
+        high = "purple"
+      ) +
+      ## Supply descriptive labels. 
+      labs(
+        title = "Plot 1.2.3",
+        subtitle ="Aspect: 10% of cases with the highest impact",
+        x = paste0(
+          "Average Number of Injuries for the 10% ", "\n", 
+          "of Observations with the Highest Impact" 
+        )
+      ) +
+      ## Select a theme.
+      theme_linedraw() + 
+      ## Customize the selected theme.
+      theme(
+        ### Remove the legend.
+        legend.position = "none",
+        ### Adjust the title.
+        plot.title = element_text(
+          size = 12,
+          face = "bold"
+        ),
+        ### Adjust the subtitle.
+        plot.subtitle = element_text(
+          size = 10
+        ),
+        ### Remove the text, ticks and title of the y axis 
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank()
+      )
+
 <br>
 
 <font size="1">[back to start of this
@@ -9526,6 +12122,122 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ##### **8.2.4.1.4 Create The Plot 1.2.4**
+
+The *Plot 1.2.4* displays a compact overview of all three aspect that
+were examined for the harm on population health with respect to
+injuries.
+
+For each weather event type, the comparison was visualized for **the
+average number of injuries for the 90% of cases with the lowest impact**
+versus **the average number of injuries for the 10% of cases with the
+highest impact**.
+
+The weather event types were matched with a number that represents the
+rank which was assigned to each of them from the most harmful to the
+least with respect to population health, based on the **overall average
+number of injuries** they caused.
+
+The skewness of the number of injuries for the observations of each
+weather event type (based on which the overall number of injuries was
+computed) had been encoded in the color of the bar associated with each
+of them.
+
+    # Create the Elementary Plot 1.2.4 that displays 
+    # by each weather event type the comparison of 
+    # the average number of injuries 
+    # for the 90% of cases with the lowest impact
+    # versus the average number of injuries 
+    # for the 10% of cases with the highest impact.
+    elementary_plot_1_2_4 <-
+      ## Supply the constant arguments for the aesthetics of all included geoms.
+      ggplot(
+        data = summary_____harm_on_population_health______injuries,
+        mapping = aes(
+          x = AVRG_HIGH, 
+          y = AVRG_LOW
+        )
+      ) +
+      geom_point(
+        mapping = aes(
+          fill = SKEWNESS
+        ), 
+        shape = 21
+      ) +
+      ## Draw a label with a number that indicates the rank assigned 
+      ## to each weather event type (from the most harmful to the least) 
+      ## based on the overall average number of injuries it caused.
+      geom_label_repel(
+        mapping = aes(
+          label = RANK, 
+          fill = SKEWNESS
+        ),
+        size = 2.5
+      ) +
+      ## Adjust the scale for the fill of each label.
+      scale_fill_gradient2(
+        ### Choose such limits and midpoint for the colorbar of the legend
+        ### that they can be used unchanged to correctly display 
+        ### the skewness of the observations based on which 
+        ### the average number of injuries for all three aspects: 
+        ###   1. overall
+        ###   2. 90% of cases with the lowest impact 
+        ###   3. 10% of cases with the highest impact
+        ### was computed. 
+        ### This will allow to include only one common legend when the 
+        ### Multiplot 1.2 will be composed from the four elementary plots.
+        limits = c(-2, 17),
+        midpoint = 7, 
+        low = "lightgreen",
+        mid = "orange", 
+        high = "purple"
+        ) +
+      ## Set proper limits to the plot.
+        xlim(c(-20, 550)) +
+        ylim(c(-1, 17)) +
+      ## Supply descriptive labels. 
+      labs(
+        title = "Plot 1.2.4",
+        subtitle = paste0(
+          "Comparison of the average number of injuries ", 
+          "for the 90% of observations with the lowest impact ", 
+          "versus the average number of injuries ", 
+          "for the 10% of observations with highest impact. "
+        ),
+        x = paste0(
+          "Average Number of Injuries by each Weather Event Type ", 
+          "for the 10% of its Observations with the Highest Impact"
+        ),
+        y = paste0(
+          "Average Number of Injuries by each Weather Event Type ", "\n", 
+          "for the 90% of its Observations with the Lowest Impact."
+        ),
+        ### Add a descriptive label for the legend.
+        fill = paste0(
+          "The color indicates the skewness ",
+          "of injuries for the each weather event type. ",
+          "(the color scale is unique for all four plots of PART 2) ", "\n",
+          "When the color of a bar is gray, the skewness was indeterminable ",
+          "due to the fact that all observations for that weather event type ",
+          "took the same value."
+        )
+      ) +
+      ## Select a theme.
+      theme_linedraw() +
+      ## Customize the selected theme.
+      theme(
+        ### Adjust the legend.
+        legend.position = "bottom",
+        legend.direction = "horizontal",
+        ### Adjust the title.
+        plot.title = element_text(
+          size = 12,
+          face = "bold"
+        ),
+        ### Adjust the subtitle.
+        plot.subtitle = element_text(
+          size = 10
+        )
+      )
 
 <br>
 
@@ -9547,6 +12259,108 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 #### 8.2.4.2 Compose the Multiplot 1.2
 
+The four elementary plots that were created from the results of the
+summary for the harm on population health with respect to injuries by
+each weather event type, were combined to construct a single multiplot
+that displays the complete picture for this perspective.
+
+    # Create a multiplot that displays the overview of the summary 
+    # for the harm on population health with respect to injuries
+    # by each weather event type.
+    multiplot_1_2 <- arrangeGrob(
+      grobs = list(
+          
+        # Title
+        textGrob(
+          label = paste0(
+            "\n",
+            "PART 2: Harm on population health by each weather event type ", 
+            "with the respect to injuries ", "\n", 
+            "based on the cases of weather events ", 
+            "that resulted in non-zero injuries.", "\n", 
+            "\n"
+          ),
+           gp=gpar(
+             fontsize = 16, 
+             fontface = "bold"
+           )
+        ),
+        
+        # Subtitle
+        textGrob(
+          label = paste0(
+              "\n", 
+              "The results include only the weather event types, ", 
+              "for which at least 10 observations ", 
+              "that resulted in non-zero injuries were available. ", "\n",
+              "The number associated with each weather event type ", 
+              "represents the rank (from the most harmful to the least) ", 
+              "which was assigned based on the overall average number of injuries.", "\n",
+              "Because for most of the weather event types ", 
+              "high positive skewness was observed for the number of injuries, ",
+              "the average of the 90% of cases with lowest impact ", "\n",
+              "and the 10% of cases with highest impact were reported ", 
+              "to provide a more representative picture of their consequences.","\n",
+              "\n"
+          ),
+           gp=gpar(
+             fontsize = 14, 
+             fontface = "bold"
+           )
+        ),
+        
+        # Plot 1.2.1
+        # Elementary plot for the average number of injuries 
+        # by each weather event type for all cases.
+        elementary_plot_1_2_1,
+        
+        # ELEMENTARY PLOT 1.2.2
+        # Elementary plot for the average number of injuries 
+        # by each weather event type for 90% of cases with the lowest impact.
+        elementary_plot_1_2_2,
+        
+        # ELEMENTARY PLOT 1.2.3
+        # Elementary plot for the average number of injuries 
+        # by each weather event type for 10% of cases with the highest impact.
+        elementary_plot_1_2_3,
+        
+        # ELEMENTARY PLOT 1.2.4
+        # Elementary Plot 1.2.4 for the comparison of 
+        # the average number of injuries 
+        # for the 90% of cases with the lowest impact versus 
+        # the 10% of cases with the highest impact.
+        elementary_plot_1_2_4
+      ),
+      # Set the layout for this elementary plots
+      layout_matrix = 
+        matrix(
+          c(1,1,1,1,1,1,1,1,1,
+            2,2,2,2,2,2,2,2,2,
+            3,3,3,3,3,4,4,5,5,
+            3,3,3,3,3,4,4,5,5,
+            3,3,3,3,3,4,4,5,5,
+            3,3,3,3,3,4,4,5,5,
+            3,3,3,3,3,4,4,5,5,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6
+          ),
+          byrow = TRUE, 
+          nrow = 13
+        )
+    )
+
+\*(Note that the Multiplot 1.2 was NOT presented in this section due to
+the restrictions imposed by the assignment to include in the report at
+least 1 but no more than 3 figures. It can be examined at the subsection
+[10.1.1 Overview of results for the harm on population
+health](#ind-10-1-1--Overview-of-results-for-the-harm-on-population-health)
+of the chapter [10 RESULTS](#ind-10--RESULTS), were the Figure 1 was
+presented, of which the Multiplot 1.2 constitutes the PART 2.)
+
 <br>
 
 <font size="1">[back to start of this
@@ -9567,6 +12381,125 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 8.3 Harm On Population Health With Respect To Casualties By Each Weather Event Type
 -----------------------------------------------------------------------------------
 
+<font size="3"><u><strong>Summary</strong></u></font>
+
+The required variables and the target data subset of observations for
+the harm on population health with respect to casualties were extracted
+from the table with the processed data, and processed to create a new
+variable that divided the observations for each of the included weather
+event types to two supplementary groups:
+
+-   the 90% of observations with the lowest impact  
+-   the 10% of observations with the highest impact
+
+before the information for the harm on population health with respect to
+casualties was summarized by each weather event type.
+
+Three aspects were examined:
+
+1.  The overall average number of casualties by each weather event
+    type.  
+2.  The average number of casualties by each weather event type for the
+    90% of cases with the lowest impact.  
+3.  The average number of casualties by each weather event type for the
+    10% of cases with the highest impact.
+
+For each aspect, the average number of casualties by each weather event
+type, the number of its available observations (based on which the
+average was computed) and their skewness were examined.
+
+The overall average number of casualties was used as the main criterion
+to determine which weather events caused the most harm on population
+health with respect to casualties but it is important to take into
+account the other two aspect that were presented in order to obtain a
+more insightful and complete ‘picture’ of their consequences,
+(especially given the fact that for most of the weather event types, the
+casualties were highly positively skewed).
+
+The table with results for the harm on population health with respect to
+casualties by each weather event type were presented at the subsection
+[10.1.4 Most harmful event types with respect to
+casualties](#ind-10-1-4--Most-harmful-weather-event-types-with-respect-to-casualties)
+of the chapter [10 RESULTS](#ind-10--RESULTS).
+
+Finally the *Multiplot 1.3* was created to visualize the results of the
+harm on population health with respect to casualties by each weather
+event type.
+
+\*(Note that neither the Multiplot 1.3 nor the elementary plots that it
+contains were presented in this section due to the restrictions imposed
+by the assignment to include in the report at least 1 but no more than 3
+figures. It can be examined at the subsection [10.1.1 Overview of
+results for the harm on population
+health](#ind-10-1-1--Overview-of-results-for-the-harm-on-population-health)
+at the chapter [10 RESULTS](#ind-10--RESULTS), where the Figure 1 was
+presented, of which the Multiplot 1.3 constitutes the PART 3.)
+
+<font size="3"><u><strong>Steps</strong></u></font>
+
+-   [8.3.1 Extract the target data for harm on population health with
+    respect to
+    casualties](#ind-8-3-1--Extract-the-target-data-for-harm-on-population-health-with-respect-to-casualties)
+    -   The target data subset of observations needed to evaluate the
+        harm on population health with respect to casualties by each
+        weather event type was extracted from the table with the
+        processed data.  
+-   [8.3.2 Process the target data for harm on population health with
+    respect to
+    casualties](#ind-8-3-2--Process-the-target-data-for-harm-on-population-health-with-respect-to-casualties)
+    -   The table with target data subset for the harm on population
+        with respect to casualties was processed to create the table
+        with processed data for the harm on population health with
+        respect to casualties.  
+-   [8.3.3 Summarize the processed data for harm on population health
+    with respect to casualties by each weather event
+    type](#ind-8-3-3--Summarize-the-processed-data-for-harm-on-population-health-with-respect-to-casualties-by-each-weather-event-type)
+    -   The harm on population health with respect to casualties by each
+        weather event type was evaluated over various aspects.  
+-   [8.3.4 Visualize the results of the summary for the harm on
+    population health with respect to casualties by each weather event
+    type](#ind-8-3-4--Visualize-the-results-of-the-summary-for-the-harm-on-population-health-with-respect-to-casualties-by-each-weather-event-type)
+    -   The Multiplot 1.3 that presents the results of the summary for
+        the harm on population health with respect to casualties by each
+        weather event type was created.
+        -   [8.3.4.1 Create the components of Multiplot
+            1.3](#ind-8-3-4-1--Create-the-components-of-Multiplot-1-3)
+            -   Creates the four elementary plot that constitute the
+                Multiplot 1.3:
+                -   [8.3.4.1.1 Create The Plot
+                    1.3.1](#ind-8-3-4-1-1--Create-The-Plot-1-3-1)
+                    -   Displays the overall average number of
+                        casualties caused by each weather event type
+                        based on all the cases of weather events that
+                        resulted in non-zero casualties.  
+                -   [8.3.4.1.2 Create The Plot
+                    1.3.2](#ind-8-3-4-1-2--Create-The-Plot-1-3-2)
+                    -   Displays the average number of casualties caused
+                        by each weather event type based on 90% of
+                        weather events with the lowest impact (for each
+                        weather event type) that resulted in non-zero
+                        casualties.  
+                -   [8.3.4.1.3 Create The Plot
+                    1.3.3](#ind-8-3-4-1-3--Create-The-Plot-1-3-3)
+                    -   Displays the average number of casualties caused
+                        by each weather event type based on 10% of
+                        weather events with the highest impact (for each
+                        weather event type) that resulted in non-zero
+                        casualties.  
+                -   [8.3.4.1.4 Create The Plot
+                    1.3.4](#ind-8-3-4-1-4--Create-The-Plot-1-3-4)
+                    -   Displays a comparison for each weather event
+                        type, of the average number of fatalities for
+                        the 90% of its observations with the lowest
+                        impact versus the average number of casualties
+                        for the 10% of its observations with the highest
+                        impact based only on the weather events that
+                        resulted in non-zero casualties.  
+        -   [8.3.4.2 Compose the Multiplot
+            1.3](#ind-8-3-4-2--Compose-the-Multiplot-1-3)
+            -   Combines the four elementary plots to create the
+                Multiplot 1.3.
+
 <br>
 
 <font size="1">[back to start of this
@@ -9580,6 +12513,465 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 8.3.1 Extract the target data for harm on population health with respect to casualties
 
+In order to examine the harm on population health with respect to
+casualties caused by each weather event type, the variables *REFNUM*,
+*EVENT\_TYPE* and *CASUALTIES* were selected from the table with the
+processed data and **only the observations that refer to weather events
+that resulted in non-zero casualties** were extracted.
+
+Furthermore, in an attempt to avoid highly misleading statistics due to
+the small number of observations for some of the weather event types, a
+lowest bound of 10 weather events that caused non zero casualties (for
+each of the included weather event types) was selected (subjectively by
+the analyst) and applied.
+
+This lowest bound, although it may seem (and generally it is) not enough
+to get trustworthy statistics, it was considered to be *“good enough”*
+taking into account that :
+
+1.  the analysis focuses in describing historical data without trying to
+    make inferences that would demand substantially bigger samples,
+    although any statistic based on less than 10 observations could not
+    be taken seriously especially in cases (such as in this analysis)
+    where the distribution of casualties for each weather event type was
+    skewed.
+2.  a period of 10 years (from 2001 to 2011) in which the observations
+    that were used in the analysis occurred, is relatively small time to
+    produce big samples of weather events that caused non zero
+    casualties for some the weather event types. Thus, if a highest
+    bound was selected to get more robust statistics such as samples of
+    100 or 300, the majority of weather event types would have been
+    excluded, making the results of the analysis trivial.
+
+<!-- -->
+
+    # Extract the required variables and the target data subset of observations 
+    # for the harm on population health with respect to casualties.
+    target_data_____harm_on_population_health_____casualties <- processed_data[
+      ## Extract only the observations that have resulted in non-zero casualties.
+      CASUALTIES > 0,
+      ## Select only the relevant variables. 
+      list(REFNUM, EVENT_TYPE, CASUALTIES)
+      ][
+        ### Keep only the observations that correspond to the weather event types 
+        ### for which there are at least 10 weather events available.
+        EVENT_TYPE %in% 
+          names(table(EVENT_TYPE)[table(EVENT_TYPE) >= 10])
+        ]
+
+The table with the target data for the harm on population health with
+respect to casualties consist of 7936 observations.
+
+    # Print the structure of the table with the target data subset 
+    # for the harm on population health with respect to casualties.
+    str(target_data_____harm_on_population_health_____casualties)
+
+    ## Classes 'data.table' and 'data.frame':   7936 obs. of  3 variables:
+    ##  $ REFNUM    : int  413614 413649 413652 413663 413737 413743 413746 413757 413763 413795 ...
+    ##  $ EVENT_TYPE: chr  "TORNADO" "THUNDERSTORM WIND" "THUNDERSTORM WIND" "THUNDERSTORM WIND" ...
+    ##  $ CASUALTIES: int  4 2 5 1 6 1 1 3 2 1 ...
+    ##  - attr(*, ".internal.selfref")=<externalptr> 
+    ##  - attr(*, "sorted")= chr "REFNUM"
+
+The variable *EVENT\_TYPE* includes 30 distinct weather event types, for
+most of which the variable *CASUALTIES* was highly positively skewed.
+
+It was worth noting that for the weather event types with highest number
+of observations there was highest skewness for the values of casualties,
+indicating that the corresponding distribution of casualties has a heavy
+tail that wasn’t possible to be observed when few observation were
+available.
+
+    # Create a kable to present some facts about the table with the target data 
+    # for the harm on population health with respect to casualties.
+    kable(
+      x = target_data_____harm_on_population_health_____casualties[
+        order(EVENT_TYPE), 
+        list(
+          "N" = .N, 
+          "SKEWNESS" = round(skewness(CASUALTIES), 4)
+        ), 
+        by = EVENT_TYPE
+        ],
+      caption = paste0(
+        "Table 8.3.1-1: ",
+        "Facts about the table with the target data subset of observations ", 
+        "for the harm on population health with respect to casualties."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      ) %>% 
+      footnote(
+        general = "The skewness was rounded to 4 decimal places."
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 8.3.1-1: Facts about the table with the target data subset of
+observations for the harm on population health with respect to
+casualties.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+EVENT\_TYPE
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+N
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+SKEWNESS
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+AVALANCHE
+</td>
+<td style="text-align:right;">
+180
+</td>
+<td style="text-align:right;">
+2.3975
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BLIZZARD
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+2.3705
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+COLD/WIND CHILL
+</td>
+<td style="text-align:right;">
+76
+</td>
+<td style="text-align:right;">
+5.0297
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DEBRIS FLOW
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+2.2183
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DENSE FOG
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+1.3831
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DUST DEVIL
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+2.1224
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DUST STORM
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:right;">
+1.5025
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EXCESSIVE HEAT
+</td>
+<td style="text-align:right;">
+350
+</td>
+<td style="text-align:right;">
+8.3298
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EXTREME COLD/WIND CHILL
+</td>
+<td style="text-align:right;">
+107
+</td>
+<td style="text-align:right;">
+4.3053
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FLASH FLOOD
+</td>
+<td style="text-align:right;">
+540
+</td>
+<td style="text-align:right;">
+14.4341
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FLOOD
+</td>
+<td style="text-align:right;">
+231
+</td>
+<td style="text-align:right;">
+9.3312
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HAIL
+</td>
+<td style="text-align:right;">
+110
+</td>
+<td style="text-align:right;">
+5.8303
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HEAT
+</td>
+<td style="text-align:right;">
+154
+</td>
+<td style="text-align:right;">
+5.2894
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HEAVY RAIN
+</td>
+<td style="text-align:right;">
+75
+</td>
+<td style="text-align:right;">
+5.0249
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HEAVY SNOW
+</td>
+<td style="text-align:right;">
+45
+</td>
+<td style="text-align:right;">
+5.2993
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HIGH SURF
+</td>
+<td style="text-align:right;">
+119
+</td>
+<td style="text-align:right;">
+8.3730
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HIGH WIND
+</td>
+<td style="text-align:right;">
+279
+</td>
+<td style="text-align:right;">
+11.3363
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HURRICANE/TYPHOON
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+4.4573
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ICE STORM
+</td>
+<td style="text-align:right;">
+38
+</td>
+<td style="text-align:right;">
+4.3115
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LIGHTNING
+</td>
+<td style="text-align:right;">
+1657
+</td>
+<td style="text-align:right;">
+6.9576
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MARINE STRONG WIND
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+1.9270
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MARINE THUNDERSTORM WIND
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:right;">
+2.3442
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RIP CURRENT
+</td>
+<td style="text-align:right;">
+475
+</td>
+<td style="text-align:right;">
+6.9329
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+STRONG WIND
+</td>
+<td style="text-align:right;">
+211
+</td>
+<td style="text-align:right;">
+3.0745
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+THUNDERSTORM WIND
+</td>
+<td style="text-align:right;">
+1364
+</td>
+<td style="text-align:right;">
+9.4260
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TORNADO
+</td>
+<td style="text-align:right;">
+1327
+</td>
+<td style="text-align:right;">
+17.6038
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TROPICAL STORM
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:right;">
+5.3288
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WILDFIRE
+</td>
+<td style="text-align:right;">
+244
+</td>
+<td style="text-align:right;">
+6.5566
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WINTER STORM
+</td>
+<td style="text-align:right;">
+84
+</td>
+<td style="text-align:right;">
+3.9675
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WINTER WEATHER
+</td>
+<td style="text-align:right;">
+74
+</td>
+<td style="text-align:right;">
+5.2237
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<sup></sup> The skewness was rounded to 4 decimal places.
+</td>
+</tr>
+</tfoot>
+</table>
 <br>
 
 <font size="1">[back to start of this
@@ -9595,6 +12987,103 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ### 8.3.2 Process the target data for harm on population health with respect to casualties
+
+To create the table with the processed data for the harm on population
+health with respect to casualties from the corresponding target data
+subset for this perspective, a new variable was created that divides the
+observations for each of the included weather event types in two
+complementary levels:
+
+-   one that contains the 90% of cases with lowest impact  
+-   the other that contains the 10% of cases with highest impact
+
+This decision was made due to the high skewness that was observed for
+the values of the variable *CASUALTIES* for most weather event types,
+which indicates that the underlining distributions of such phenomena has
+a heavy tail that causes this heterogeneity on the observations. As a
+result a small number of casualties were observed for the majority of
+cases that resulted in non-zero fatalities while in the few cases with
+the highest impact they caused lots of casualties.
+
+Having in mind that the average number of casualties will be used to
+determine which weather event types were the most harmful to population
+health (with respect to casualties) combined with the fact that the
+average doesn’t represent well the distribution of variables with high
+skewness, as it is highly affected by the most extreme values, it was
+considered necessary to examine the subsets created by those two levels
+in order to obtain an insightful picture.
+
+    # Create the table with the processed data 
+    # for the harm on population health with respect to casualties.
+    processed_data_____harm_on_population_health_____casualties <- 
+      target_data_____harm_on_population_health_____casualties[
+        ,
+        ## Create a new variable divides the observations
+        ## for each weather event into two supplementary groups:  
+        ##   - the 90% of weather events that resulted in lowest fatalities
+        ##   - the 10% of weather events that resulted in highest fatalities
+        BIN_GROUP_PER_EVENT_TYPE := (function(x, p_bins) {
+          
+          # adds 0 and 1 in the vector supplied at the argument 'p_bins' 
+          # to the start and the end respectively  
+          # the supplied percentiles if they are missing 
+          # and sort them ascending
+          p_bins_increasing <- sort(c(0, p_bins, 1))
+          
+          # creates the character strings that labels of the bins by the values supplied at 
+          # the argument 'p_bins' that will be the values of the new variable
+          bin_labels <- paste0("(", p_bins_increasing[-length(p_bins_increasing)]*100,
+                               "% - ", p_bins_increasing[-1]*100, "%]")
+          
+          # identify the number of occurrences that correspond to each label
+          n_times <- vapply(2:length(p_bins_increasing),
+                            function(i) {
+                              as.integer(floor(length(x) * p_bins_increasing[i]) -
+                                           floor(length(x) * p_bins_increasing[i - 1]))
+                            }, integer(1))
+          
+          # multiply each label with the number of its occurrences
+          x_bins_expanded <- rep(x = bin_labels, times = n_times)
+          
+          # order the label to much the values of the corresponding vector
+          x_bins_expanded_reordered <- x_bins_expanded[order(seq_along(x)[order(x)])]
+          
+          ## Coerce the character vector with the labels of bins to a factor
+          x_bins_factor <- factor(x_bins_expanded_reordered, labels = bin_labels, ordered = TRUE)
+          
+        })(CASUALTIES, 0.9), 
+        by = EVENT_TYPE
+      ][
+        ## Coerce the EVENT_VARIABLE to factor
+        , EVENT_TYPE := as.factor(EVENT_TYPE) 
+      ]
+
+The table with the processed data for the harm on population health with
+respect to casualties contains 4 variables:
+
+1.  **REFNUM** (int) : an id that uniquely identifies each observation  
+2.  **EVENT\_TYPE** (Factor w/ 30 levels) : the type of each weather
+    event
+3.  **CASUALTIES** (int ): the number of casualties  
+4.  **BIN\_GROUP\_PER\_EVENT\_TYPE** (Ord.factor w/ 2 levels) : a factor
+    that divides the observations for each weather event type to two
+    complementary levels, one with the 90% of observations with the
+    lowest impact and another with the 10% of observations with the
+    highest impact.
+
+and 7936 observations.
+
+    # Print the structure of the table with the processed data 
+    # for the harm on population health with respect to casualties.
+    str(processed_data_____harm_on_population_health_____casualties)
+
+    ## Classes 'data.table' and 'data.frame':   7936 obs. of  4 variables:
+    ##  $ REFNUM                  : int  413614 413649 413652 413663 413737 413743 413746 413757 413763 413795 ...
+    ##  $ EVENT_TYPE              : Factor w/ 30 levels "AVALANCHE","BLIZZARD",..: 26 25 25 25 25 25 25 26 17 20 ...
+    ##  $ CASUALTIES              : int  4 2 5 1 6 1 1 3 2 1 ...
+    ##  $ BIN_GROUP_PER_EVENT_TYPE: Ord.factor w/ 2 levels "(0% - 90%]"<"(90% - 100%]": 1 1 2 1 2 1 1 1 1 1 ...
+    ##  - attr(*, ".internal.selfref")=<externalptr> 
+    ##  - attr(*, "sorted")= chr "REFNUM"
 
 <br>
 
@@ -9612,6 +13101,115 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 8.3.3 Summarize the processed data for harm on population health with respect to casualties by each weather event type
 
+To evaluate the harm on population health by each weather event type
+with respect to casualties a simplistic approach was adopted :
+
+-   the weather event types were ranked from the most harmful to the
+    least based on the overall average number of casualties of the
+    weather events that resulted in non-zero casualties
+
+The overall average number of casualties caused by each weather event
+type was initially examined along with the skewness of the number of
+casualties for each weather event type. In most cases the skewness was
+high (or even extremely high), so it was possible that the overall mean
+misrepresented the consequences of each weather event type.
+
+That is the reason why the average number of casualties for 90% of
+weather events with the lowest impact versus the average number of
+casualties for the 10% of weather events with the highest impact were
+also computed and examined.
+
+**It is highlighted that for the average number of casualties that
+refers to the 10% of the cases that had the highest impact, there were
+few observations available for a lot of weather event types and the
+corresponding mean values should be interpreted with caution.**
+
+    # Create the table with the summary for the harm on population health 
+    # with respect to casualties for each weather event type.
+    summary_____harm_on_population_health______casualties <- 
+      processed_data_____harm_on_population_health_____casualties[
+      ,
+      list(
+        ## The total number of observation by each weather event type.
+        "N" = .N,
+        ## The average number of casualties caused by each weather event type.
+        "AVRG" = round(mean(CASUALTIES), 2),
+        ## The skewness of casualties for the observations by each weather event type.
+        "SKEWNESS" = round(skewness(CASUALTIES), 4),
+        ## The number of observations for the 90% of cases with the lowest impact 
+        ## by each weather event type.
+        "N_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , .N],
+        ## The average number of casualties caused by each weather event type 
+        ## for the 90% of cases with the lowest impact.
+        "AVRG_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , round(mean(CASUALTIES), 2)],
+        ## The skewness of casualties for the 90% of cases with the lowest impact 
+        ## by each weather event type.
+        "SKEWNESS_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , round(skewness(CASUALTIES), 4)],
+        ## The number of observations for the 10% of cases with the lowest impact 
+        ## by each weather event type.
+        "N_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , .N],
+        ## The average number of casualties caused by each weather event type 
+        ## for the 10% of cases with the highest impact.
+        "AVRG_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , round(mean(CASUALTIES), 2)],
+        ## The skewness of casualties for the 10% of cases with the highest impact 
+        ## by each weather event type.
+        "SKEWNESS_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , round(skewness(CASUALTIES), 4)]
+      ),
+      by = "EVENT_TYPE"
+      ][
+        ## The average number of casualties is used to order the rows of the table
+        ## from the most harmful weather event type to the least.
+        order(-AVRG),
+        ## Create a variable with the rank of the harmness of each weather event type.
+        RANK := 1:length(EVENT_TYPE)
+        ][
+          ,
+          ## Reorder the variables at the table.
+          list(
+            RANK, EVENT_TYPE, N, AVRG, SKEWNESS, N_LOW, AVRG_LOW, SKEWNESS_LOW, N_HIGH, AVRG_HIGH, SKEWNESS_HIGH
+          )
+          ]
+
+The results of the table with the summary for the harm on population
+health with respect to casualties by each weather event type that was
+created in this section were presented at the subsection [10.1.4 Most
+harmful event types with respect to
+casualties](#ind-10-1-4--Most-harmful-weather-event-types-with-respect-to-casualties)
+of the chapter [10 RESULTS](#ind-10--RESULTS).
+
+The table with the summary for the harm on population health with
+respect to casualties by each weather event type was exported (as an R
+file), in the folder of the working directory:
+
+-   *outputs –&gt; harm\_on\_population\_health –&gt; results*
+
+with filename:
+
+-   *summary\_\_\_\_\_\_harm\_on\_population\_health\_\_\_\_\_\_casualties.R*
+
+<!-- -->
+
+    # Supply the filepath at which the table with the summary
+    # for the harm on population health will be exported.
+    filepath_____summary_____harm_on_population_health______casualties <-
+      file.path(
+        directory_tree_____outputs[[
+          "filepath_____outputs_____harm_on_population_health_____results"
+          ]],
+        "summary_____harm_on_population_health______casualties.R"
+      )
+
+    # Export the table with the summary for the harm on population health
+    # with respect to casualties.
+    saveRDS(
+      object = summary_____harm_on_population_health______casualties,
+      file = filepath_____summary_____harm_on_population_health______casualties
+    )
+
+*The main reason for exporting the file with the summary for the harm on
+population health with respect to casualties by each weather event type
+was to supply a checkpoint for any attempts to reproduce the analysis.*
+
 <br>
 
 <font size="1">[back to start of this
@@ -9628,6 +13226,54 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 8.3.4 Visualize the results of the summary for the harm on population health with respect to casualties by each weather event type
 
+From the table with the summary for the harm on population health by
+each weather event type with respect to casualties the **Multiplot 1.3**
+was created to present an overview of the results for the three
+different aspects that were examined for this perspective.
+
+Four elementary plots were
+[created](#ind-8-3-4-1--Create-the-components-of-Multiplot-1-3):
+
+-   [8.3.4.1.1 Create The Plot
+    1.3.1](#ind-8-3-4-1-1--Create-The-Plot-1-3-1)
+    -   Displays the overall average number of casualties caused by each
+        weather event type based on all the cases of weather events that
+        resulted in non-zero casualties.  
+-   [8.3.4.1.2 Create The Plot
+    1.3.2](#ind-8-3-4-1-2--Create-The-Plot-1-3-2)
+    -   Displays the average number of casualties caused by each weather
+        event type based on 90% of weather events with the lowest impact
+        (for each weather event type) that resulted in non-zero
+        casualties.  
+-   [8.3.4.1.3 Create The Plot
+    1.3.3](#ind-8-3-4-1-3--Create-The-Plot-1-3-3)
+    -   Displays the average number of casualties caused by each weather
+        event type based on 10% of weather events with the highest
+        impact (for each weather event type) that resulted in non-zero
+        casualties.  
+-   [8.3.4.1.4 Create The Plot
+    1.3.4](#ind-8-3-4-1-4--Create-The-Plot-1-3-4)
+    -   Displays a comparison for each weather event type, of the
+        average number of fatalities for the 90% of its observations
+        with the lowest impact versus the average number of casualties
+        for the 10% of its observations with the highest impact based
+        only on the weather events that resulted in non-zero casualties.
+
+which were then [combined](#ind-8-3-4-2--Compose-the-Multiplot-1-3) in
+order to obtain the **Multiplot 1.3**.
+
+It constitutes the *PART 3* of the *Figure 1* that displays the overview
+of the harm on population health by each weather event type.
+
+*(Note that neither the Multiplot 1.3 nor the elementary plots that it
+contains were presented in this section due to the restrictions imposed
+by the assignment to include in the report at least 1 but no more than 3
+figures. It can be examined at the subsection [10.1.1 Overview of
+results for the harm on population
+health](#ind-10-1-1--Overview-of-results-for-the-harm-on-population-health)
+at the chapter [10 RESULTS](#ind-10--RESULTS), were the Figure 1 was
+presented, of which the Multiplot 1.2 constitutes the PART 2.)*
+
 <br>
 
 <font size="1">[back to start of this
@@ -9642,6 +13288,35 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 #### 8.3.4.1 Create the components of Multiplot 1.3
+
+Creates four elementary plots to visualize the results for the aspects
+that were examined for the harm on population health with respect to
+casualties by each weather event type.
+
+-   [8.3.4.1.1 Create The Plot
+    1.3.1](#ind-8-3-4-1-1--Create-The-Plot-1-3-1)
+    -   Displays the overall average number of casualties caused by each
+        weather event type based on all the cases of weather events that
+        resulted in non-zero casualties.  
+-   [8.3.4.1.2 Create The Plot
+    1.3.2](#ind-8-3-4-1-2--Create-The-Plot-1-3-2)
+    -   Displays the average number of casualties caused by each weather
+        event type based on 90% of weather events with the lowest impact
+        (for each weather event type) that resulted in non-zero
+        casualties.  
+-   [8.3.4.1.3 Create The Plot
+    1.3.3](#ind-8-3-4-1-3--Create-The-Plot-1-3-3)
+    -   Displays the average number of casualties caused by each weather
+        event type based on 10% of weather events with the highest
+        impact (for each weather event type) that resulted in non-zero
+        casualties.  
+-   [8.3.4.1.4 Create The Plot
+    1.3.4](#ind-8-3-4-1-4--Create-The-Plot-1-3-4)
+    -   Displays a comparison for each weather event type, of the
+        average number of fatalities for the 90% of its observations
+        with the lowest impact versus the average number of casualties
+        for the 10% of its observations with the highest impact based
+        only on the weather events that resulted in non-zero casualties.
 
 <br>
 
@@ -9659,6 +13334,109 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ##### **8.3.4.1.1 Create The Plot 1.3.1**
+
+The *Plot 1.3.1* displays **the overall average number of casualties**
+caused by each weather event type taking into account all and only the
+observation that resulted in non-zero casualties.
+
+The weather event types were matched with a number that represents the
+rank which was assigned to each of them from the most harmful to the
+least with respect to population health, based on the **overall average
+number of casualties** they caused.
+
+The skewness of the number of casualties for the observations of each
+weather event type (based on which the overall number of casualties was
+computed) had been encoded in the color of the bar associated with each
+of them.
+
+    # Create the Elementary Plot 1.3.1 that displays 
+    # the overall average number of casualties 
+    # by each weather event type for all cases. 
+    elementary_plot_1_3_1 <-
+      ## Supply the constant arguments for the aesthetics of all included geoms.
+      ggplot(
+        data = summary_____harm_on_population_health______casualties,
+        mapping = aes(
+          x = AVRG,
+          ### Reverse the order of the factors for the EVENT_TYPE variable 
+          ### to make them displayed alphabetically from top to bottom.
+          y = factor(
+            x = EVENT_TYPE, 
+            levels = rev(x = levels(x = EVENT_TYPE)
+            )
+          ) 
+        )
+      ) +
+      ## Draw a square shaped point to the position that corresponds to 
+      ## the average number of casualties caused by each weather event type, 
+      ## of which the color indicates the skewness of observations 
+      ## based on which each average was computed.
+      geom_point(
+        mapping = aes(color = SKEWNESS),
+        shape = 15, 
+        size = 4.5
+      ) +
+      ## Draw a line that visually associates each weather event type 
+      ## with its respective average number of casualties.
+      geom_linerange(
+        mapping = aes(
+          xmin = 0, 
+          xmax = AVRG, 
+          group = EVENT_TYPE, 
+          color = SKEWNESS
+        )
+        ) +
+      ## Draw a number that indicates the rank assigned to each weather event type 
+      ## (from the most harmful to the least) based on the overall average number
+      ## number of casualties it caused inside the square point 
+      ## that displays the average.
+      geom_text(
+        mapping = aes(
+          label = RANK
+        ), 
+        size = 2.5
+      ) +
+      ## Adjust the scale for the color of each point.
+      scale_color_gradient2(
+        ### Choose such limits and midpoint for the colorbar of the legend
+        ### that they can be used unchanged to correctly display 
+        ### the skewness of the observations based on which 
+        ### the average number of casualties for all three aspects: 
+        ###   1. overall
+        ###   2. 90% of cases with the lowest impact 
+        ###   3. 10% of cases with the highest impact
+        ### was computed. 
+        ### This will allow to include only one common legend when the 
+        ### Multiplot 1.3 will be composed from the four elementary plots. 
+        limits = c(-2, 18), 
+        midpoint = 8, 
+        low = "lightgreen", 
+        mid = "orange", 
+        high = "purple"
+      ) +
+      ## Supply descriptive labels.  
+      labs(
+        title = "Plot 1.3.1", 
+        subtitle = "Aspect: Overall",
+        x = "Weather Event Types \n",
+        y = "Average Number of Casualties\n"
+      ) +
+      ## Select a theme.
+      theme_linedraw() + 
+      ## Customize the selected theme.
+      theme(
+        ### Remove the legend.
+        legend.position = "none",
+        ### Adjust the title.
+        plot.title = element_text(
+          size = 12,
+          face = "bold"
+        ),
+        ### Adjust the subtitle.
+        plot.subtitle = element_text(
+          size = 10
+        )
+      )
 
 <br>
 
@@ -9679,6 +13457,120 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ##### **8.3.4.1.2 Create The Plot 1.3.2**
 
+The *Elementary Plot 1.3.2* displays **the average number of casualties
+for the 90% of cases with the lowest impact** caused by each weather
+event type from all the observation that resulted in non-zero
+casualties.
+
+The weather event types were matched with a number that represents the
+rank which was assigned to each of them from the most harmful to the
+least with respect to population health, based on the **overall average
+number of casualties** they caused.  
+(so it is NOT based on the average number of casualties caused by the
+90% of cases with the lowest impact of each weather event type).
+
+The skewness of the number of casualties for the observations of each
+weather event type (based on which the average number of casualties for
+the 90% of cases with the lowest impact was computed) had been encoded
+in the color of the bar associated with each of them.
+
+    # Create the Elementary Plot 1.3.2 that displays 
+    # the average number of casualties by each weather event type 
+    # for the 90% of its cases with the lowest impact.
+    elementary_plot_1_3_2 <-
+      ## Supply the constant arguments for the aesthetics of all included geoms.
+      ggplot(
+        data = summary_____harm_on_population_health______casualties,
+        mapping = aes(
+          x = AVRG_LOW,
+          ### Reverse the order of the factors for the EVENT_TYPE variable 
+          ### to display them alphabetically from top to bottom.
+          y = factor(
+            x = EVENT_TYPE, 
+            levels = rev(x = levels(x = EVENT_TYPE)
+            )
+          ) 
+        )
+      ) +
+      ## Draw a circle shaped point to the position that corresponds to 
+      ## the average number of casualties caused by each weather event type
+      ## for the 90% of its cases with the lowest impact, 
+      ## of which the color indicates the skewness of observations 
+      ## based on which each average was computed.
+      geom_point(
+        mapping = aes(
+          color = SKEWNESS_LOW
+        ), 
+        size = 3.5
+      ) +
+      ## Draw a line that visually associates each weather event type 
+      ## with its respective average number of casualties 
+      ## for the 90% of its cases with the lowest impact.
+      geom_linerange(
+        mapping = aes(
+          xmin = 0, 
+          xmax = AVRG_LOW, 
+          group = EVENT_TYPE, 
+          color = SKEWNESS_LOW
+        )
+      ) +
+      ## Draw a number that indicates the rank assigned to each weather event type 
+      ## (from the most harmful to the least) based on the overall average number
+      ## number of casualties it caused inside the square point 
+      ## that displays the average.
+      geom_text(
+        mapping = aes(
+          label = RANK
+        ), 
+        size = 2
+        ) +
+      ## Adjust the scale for the color of each point.
+      scale_color_gradient2(
+        ### Choose such limits and midpoint for the colorbar of the legend
+        ### that they can be used unchanged to correctly display 
+        ### the skewness of the observations based on which 
+        ### the average number of casualties for all three aspects: 
+        ###   1. overall
+        ###   2. 90% of cases with the lowest impact 
+        ###   3. 10% of cases with the highest impact
+        ### was computed. 
+        ### This will allow to include only one common legend when the 
+        ### Multiplot 1.3 will be composed from the four elementary plots.
+        limits = c(-2, 18), 
+        midpoint = 8, 
+        low = "lightgreen",
+        mid = "orange",
+        high = "purple"
+        ) +
+      ## Supply descriptive labels. 
+      labs(
+        title = "Plot 1.3.2",
+        subtitle = "Aspect: 90% of cases with the lowest impact",
+        x = paste0(
+          "Average Number of Casualties for the 90% ", "\n",
+          "of Observations with the Lowest Impact" 
+        )
+      ) +
+      ## Select a theme.
+      theme_linedraw() + 
+      ## Customize the selected theme.
+      theme(
+        ### Remove the legend.
+        legend.position = "none",
+        ### Adjust the title.
+        plot.title = element_text(
+          size = 12,
+          face = "bold"
+        ),
+        ### Adjust the subtitle.
+        plot.subtitle = element_text(
+          size = 10
+        ),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank()
+      )
+
 <br>
 
 <font size="1">[back to start of this
@@ -9697,6 +13589,121 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ##### **8.3.4.1.3 Create The Plot 1.3.3**
+
+The *Plot 1.3.3* displays **the average number of casualties for the 10%
+of cases with the highest impact** caused by each weather event type
+from all the observation that resulted in non-zero casualties.
+
+The weather event types were matched with a number that represents the
+rank which was assigned to each of them from the most harmful to the
+least with respect to population health, based on the **overall average
+number of casualties** they caused.  
+(so it is NOT based on the average number of casualties caused by the
+10% of cases with the highest impact of each weather event type).
+
+The skewness of the number of casualties for the observations of each
+weather event type (based on which the average number of casualties for
+the 10% of cases with the highest impact was computed) had been encoded
+in the color of the bar associated with each of them.
+
+    # Create the Elementary Plot 1.3.3 that displays 
+    # the average number of casualties by each weather event type 
+    # for the 10% of its cases with the highest impact.
+    elementary_plot_1_3_3 <-
+      ## Supply the constant arguments for the aesthetics of all included geoms.
+      ggplot(
+        data = summary_____harm_on_population_health______casualties,
+        mapping = aes(
+          x = AVRG_HIGH,
+          ### Reverse the order of the factors for the EVENT_TYPE variable 
+          ### to display them alphabetically from top to bottom.
+          y = factor(
+            x = EVENT_TYPE, 
+            levels = rev(x = levels(x = EVENT_TYPE)
+            )
+          ) 
+        )
+      ) +
+      ## Draw a diamond shaped point to the position that corresponds to 
+      ## the average number of casualties caused by each weather event type
+      ## for the 10% of its cases with the highest impact, 
+      ## of which the color indicates the skewness of observations 
+      ## based on which each average was computed.
+      geom_point(
+        mapping = aes(
+          color = SKEWNESS_HIGH
+        ), 
+        shape = 18, 
+        size = 4.5
+      ) +
+      ## Draw a line that visually associates each weather event type 
+      ## with its respective average number of casualties 
+      ## for the 10% of its cases with the highest impact.
+      geom_linerange(
+        mapping = aes(
+          xmin = 0, 
+          xmax = AVRG_HIGH, 
+          group = EVENT_TYPE, 
+          color = SKEWNESS_HIGH
+        )
+      ) +
+      ## Draw a number that indicates the rank assigned to each weather event type 
+      ## (from the most harmful to the least) based on the overall average number
+      ## number of casualties it caused inside the square point 
+      ## that displays the average.
+      geom_text(
+        mapping = aes(
+          label = RANK
+        ),
+        size = 2
+      ) +
+      ## Adjust the scale for the color of each point.
+      scale_color_gradient2(
+        ### Choose such limits and midpoint for the colorbar of the legend
+        ### that they can be used unchanged to correctly display 
+        ### the skewness of the observations based on which 
+        ### the average number of casualties for all three aspects: 
+        ###   1. overall
+        ###   2. 90% of cases with the lowest impact 
+        ###   3. 10% of cases with the highest impact
+        ### was computed. 
+        ### This will allow to include only one common legend when the 
+        ### Multiplot 1.3 will be composed from the four elementary plots.
+        limits = c(-2, 18), 
+        midpoint = 8, 
+        low = "lightgreen", 
+        mid = "orange", 
+        high = "purple"
+      ) +
+      ## Supply descriptive labels. 
+      labs(
+        title = "Plot 1.3.3",
+        subtitle ="Aspect: 10% of cases with the highest impact",
+        x = paste0(
+          "Average Number of Casualties for the 10% ", "\n", 
+          "of Observations with the Highest Impact" 
+        )
+      ) +
+      ## Select a theme.
+      theme_linedraw() + 
+      ## Customize the selected theme.
+      theme(
+        ### Remove the legend.
+        legend.position = "none",
+        ### Adjust the title.
+        plot.title = element_text(
+          size = 12,
+          face = "bold"
+        ),
+        ### Adjust the subtitle.
+        plot.subtitle = element_text(
+          size = 10
+        ),
+        ### Remove the text, ticks and title of the y axis 
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank()
+      )
 
 <br>
 
@@ -9717,6 +13724,119 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ##### **8.3.4.1.4 Create The Plot 1.3.4**
 
+The *Plot 1.3.4* displays a compact overview of all three aspect that
+were examined for the harm on population health with respect to
+casualties.
+
+For each weather event type, the comparison was visualized for **the
+average number of casualties for the 90% of cases with the lowest
+impact** versus **the average number of casualties for the 10% of cases
+with the highest impact**.
+
+The weather event types were matched with a number that represents the
+rank which was assigned to each of them from the most harmful to the
+least with respect to population health, based on the **overall average
+number of casualties** they caused.
+
+The skewness of the number of casualties for the observations of each
+weather event type (based on which the overall number of casualties was
+computed) had been encoded in the color of the bar associated with each
+of them.
+
+    # Create the Elementary Plot 1.3.4 that displays 
+    # by each weather event type the comparison of 
+    # the average number of casualties 
+    # for the 90% of cases with the lowest impact
+    # versus the average number of casualties 
+    # for the 10% of cases with the highest impact.
+    elementary_plot_1_3_4 <-
+      ## Supply the constant arguments for the aesthetics of all included geoms.
+      ggplot(
+        data = summary_____harm_on_population_health______casualties,
+        mapping = aes(
+          x = AVRG_HIGH, 
+          y = AVRG_LOW
+        )
+      ) +
+      geom_point(
+        mapping = aes(
+          fill = SKEWNESS
+        ), 
+        shape = 21
+      ) +
+      ## Draw a label with a number that indicates the rank assigned 
+      ## to each weather event type (from the most harmful to the least) 
+      ## based on the overall average number of casualties it caused.
+      geom_label_repel(
+        mapping = aes(
+          label = RANK, 
+          fill = SKEWNESS
+        ),
+        size = 2.5
+      ) +
+      ## Adjust the scale for the fill of each label.
+      scale_fill_gradient2(
+        ### Choose such limits and midpoint for the colorbar of the legend
+        ### that they can be used unchanged to correctly display 
+        ### the skewness of the observations based on which 
+        ### the average number of casualties for all three aspects: 
+        ###   1. overall
+        ###   2. 90% of cases with the lowest impact 
+        ###   3. 10% of cases with the highest impact
+        ### was computed. 
+        ### This will allow to include only one common legend when the 
+        ### Multiplot 1.3 will be composed from the four elementary plots.
+        limits = c(-2, 18),
+        midpoint = 8, 
+        low = "lightgreen",
+        mid = "orange", 
+        high = "purple"
+        ) +
+      ## Set proper limits to the plot.
+        xlim(c(0, 320)) +
+        ylim(c(0.5, 7)) +
+      ## Supply descriptive labels. 
+      labs(
+        title = "Plot 1.3.4",
+        subtitle = paste0(
+          "Comparison of the average number of casualties ", 
+          "for the 90% of observations with the lowest impact ", 
+          "versus the average number of casualties ", 
+          "for the 10% of observations with highest impact. "
+        ),
+        x = paste0(
+          "Average Number of Casualties by each Weather Event Type ", 
+          "for the 10% of its Observations with the Highest Impact"
+        ),
+        y = paste0(
+          "Average Number of Casualties by each Weather Event Type ", "\n", 
+          "for the 90% of its Observations with the Lowest Impact."
+        ),
+        ### Add a descriptive label for the legend.
+        fill = paste0(
+          "The color indicates the skewness ",
+          "of casualties for the each weather event type. ",
+          "(the color scale is unique for all four plots of PART 3) "
+        )
+      ) +
+      ## Select a theme.
+      theme_linedraw() +
+      ## Customize the selected theme.
+      theme(
+        ### Adjust the legend.
+        legend.position = "bottom",
+        legend.direction = "horizontal",
+        ### Adjust the title.
+        plot.title = element_text(
+          size = 12,
+          face = "bold"
+        ),
+        ### Adjust the subtitle.
+        plot.subtitle = element_text(
+          size = 10
+        )
+      )
+
 <br>
 
 <font size="1">[back to start of this
@@ -9736,6 +13856,108 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 #### 8.3.4.2 Compose the Multiplot 1.3
+
+The four elementary plots that were created from the results of the
+summary for the harm on population health with respect to casualties by
+each weather event type, were combined to construct a single multiplot
+that displays the complete picture for this perspective.
+
+    # Create a multiplot that displays the overview of the summary 
+    # for the harm on population health with respect to casualties
+    # by each weather event type.
+    multiplot_1_3 <- arrangeGrob(
+      grobs = list(
+          
+        # Title
+        textGrob(
+          label = paste0(
+            "\n",
+            "PART 3: Harm on population health by each weather event type ", 
+            "with the respect to casualties ", "\n", 
+            "based on the cases of weather events ", 
+            "that resulted in non-zero casualties.", "\n", 
+            "\n"
+          ),
+           gp=gpar(
+             fontsize = 16, 
+             fontface = "bold"
+           )
+        ),
+        
+        # Subtitle
+        textGrob(
+          label = paste0(
+              "\n", 
+              "The results include only the weather event types, ", 
+              "for which at least 10 observations ", 
+              "that resulted in non-zero casualties were available. ", "\n",
+              "The number associated with each weather event type ", 
+              "represents the rank (from the most harmfull to the least) ", 
+              "which was assigned based on the overall average number of casualties.", "\n",
+              "Because for most of the weather event types ", 
+              "high positive skewness was observed for the number of casualties, ",
+              "the average of the 90% of cases with lowest impact ", "\n",
+              "and the 10% of cases with highest impact were reported ", 
+              "to provide a more representative picture of their consequences.","\n",
+              "\n"
+          ),
+           gp=gpar(
+             fontsize = 14, 
+             fontface = "bold"
+           )
+        ),
+        
+        # Plot 1.3.1
+        # Elementary plot for the average number of casualties 
+        # by each weather event type for all cases.
+        elementary_plot_1_3_1,
+        
+        # ELEMENTARY PLOT 1.3.2
+        # Elementary plot for the average number of casualties 
+        # by each weather event type for 90% of cases with the lowest impact.
+        elementary_plot_1_3_2,
+        
+        # ELEMENTARY PLOT 1.3.3
+        # Elementary plot for the average number of casualties 
+        # by each weather event type for 10% of cases with the highest impact.
+        elementary_plot_1_3_3,
+        
+        # ELEMENTARY PLOT 1.3.4
+        # Elementary Plot 1.3.4 for the comparison of 
+        # the average number of casualties 
+        # for the 90% of cases with the lowest impact versus 
+        # the 10% of cases with the highest impact.
+        elementary_plot_1_3_4
+      ),
+      # Set the layout for this elementary plots
+      layout_matrix = 
+        matrix(
+          c(1,1,1,1,1,1,1,1,1,
+            2,2,2,2,2,2,2,2,2,
+            3,3,3,3,3,4,4,5,5,
+            3,3,3,3,3,4,4,5,5,
+            3,3,3,3,3,4,4,5,5,
+            3,3,3,3,3,4,4,5,5,
+            3,3,3,3,3,4,4,5,5,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6
+          ),
+          byrow = TRUE, 
+          nrow = 13
+        )
+    )
+
+*(Note that the Multiplot 1.3 was NOT presented in this section due to
+the restrictions imposed by the assignment to include in the report at
+least 1 but no more than 3 figures. It can be examined at the subsection
+[10.1.1 Overview of results for the harm on population
+health](#ind-10-1-1--Overview-of-results-for-the-harm-on-population-health)
+of the chapter [10 RESULTS](#ind-10--RESULTS), were the Figure 1 was
+presented, of which the Multiplot 1.3 constitutes the PART 3.)*
 
 <br>
 
