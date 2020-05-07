@@ -4832,7 +4832,7 @@ according to which at least 1 but no more than 3 figures
 should be included in the report, 
 the Multiplot as well as the elementary plots that contain 
 were NOT displayed separately and can ONLY be examined 
-as PARTs of the Figure 1at the subsection 
+as PARTs of the Figure 1 at the subsection 
 [10.1.1 Overview of results for the harm on population health
 ](#ind-10-1-1--Overview-of-results-for-the-harm-on-population-health) 
 of the chapter [10 RESULTS](#ind-10--RESULTS).)*
@@ -4913,7 +4913,7 @@ of which the Multiplot 1.1 constitutes the PART 1.)*
   from the table with the processed data.
 * [8.1.2 Process the target data for harm on population health with respect to fatalities
 ](#ind-8-1-2--Process-the-target-data-for-harm-on-population-health-with-respect-to-fatalities)  
-  * The table with target data subset for the harm on population 
+  * The table with target data subset for the harm on population health 
   with respect to fatalities was processed to create 
   the table with processed data for the harm on population health 
   with respect to fatalities.  
@@ -6148,7 +6148,7 @@ of which the Multiplot 1.2 constitutes the PART 2.)
   from the table with the processed data.  
 * [8.2.2 Process the target data for harm on population health with respect to injuries
 ](#ind-8-2-2--Process-the-target-data-for-harm-on-population-health-with-respect-to-injuries)  
-  * The table with target data subset for the harm on population 
+  * The table with target data subset for the harm on population health 
   with respect to injuries was processed to create 
   the table with processed data for the harm on population health 
   with respect to injuries.  
@@ -6181,7 +6181,7 @@ of which the Multiplot 1.2 constitutes the PART 2.)
           that resulted in non-zero injuries.  
         * [8.2.4.1.4 Create The Plot 1.2.4](#ind-8-2-4-1-4--Create-The-Plot-1-2-4)
           * Displays a comparison for each weather event type, 
-          of the average number of fatalities for the 90% of its observations 
+          of the average number of injuries for the 90% of its observations 
           with the lowest impact versus the average number of injuries 
           for the 10% of its observations with the highest impact 
           based only on the weather events that resulted in non-zero injuries.  
@@ -6326,7 +6326,7 @@ for the values of the variable *INJURIES* for most weather event types,
 which indicates that the underlining distributions of such phenomena 
 has a heavy tail that causes this heterogeneity on the observations. 
 As a result a small number of injuries were observed 
-for the majority of cases that resulted in non-zero fatalities 
+for the majority of cases that resulted in non-zero injuries 
 while in the few cases with the highest impact 
 they caused lots of injuries. 
 
@@ -6348,8 +6348,8 @@ processed_data_____harm_on_population_health_____injuries <-
     ,
     ## Create a new variable divides the observations
     ## for each weather event into two supplementary groups:  
-    ##   - the 90% of weather events that resulted in lowest fatalities
-    ##   - the 10% of weather events that resulted in highest fatalities
+    ##   - the 90% of weather events that resulted in lowest injuries
+    ##   - the 10% of weather events that resulted in highest injuries
     BIN_GROUP_PER_EVENT_TYPE := (function(x, p_bins) {
       
       # adds 0 and 1 in the vector supplied at the argument 'p_bins' 
@@ -6579,7 +6579,7 @@ Four elementary plots were
   that resulted in non-zero injuries.  
 * [8.2.4.1.4 Create The Plot 1.2.4](#ind-8-2-4-1-4--Create-The-Plot-1-2-4)
   * Displays a comparison for each weather event type, 
-  of the average number of fatalities for the 90% of its observations 
+  of the average number of injuries for the 90% of its observations 
   with the lowest impact versus the average number of injuries 
   for the 10% of its observations with the highest impact 
   based only on the weather events that resulted in non-zero injuries.  
@@ -6634,7 +6634,7 @@ with respect to injuries by each weather event type.
   that resulted in non-zero injuries.  
 * [8.2.4.1.4 Create The Plot 1.2.4](#ind-8-2-4-1-4--Create-The-Plot-1-2-4)
   * Displays a comparison for each weather event type, 
-  of the average number of fatalities for the 90% of its observations 
+  of the average number of injuries for the 90% of its observations 
   with the lowest impact versus the average number of injuries 
   for the 10% of its observations with the highest impact 
   based only on the weather events that resulted in non-zero injuries.  
@@ -7325,7 +7325,7 @@ available observations (based on which the average was computed)
 and their skewness were examined. 
 
 The overall average number of casualties was used as the main criterion 
-to determine which weather events caused the most harm on population health
+to determine which weather events caused the most harm on population health 
 with respect to casualties but it is important to take into account 
 the other two aspect that were presented in order to obtain a more insightful 
 and complete 'picture' of their consequences, 
@@ -7396,7 +7396,7 @@ of which the Multiplot 1.3 constitutes the PART 3.)
           that resulted in non-zero casualties.  
         * [8.3.4.1.4 Create The Plot 1.3.4](#ind-8-3-4-1-4--Create-The-Plot-1-3-4)
           * Displays a comparison for each weather event type, 
-          of the average number of fatalities for the 90% of its observations 
+          of the average number of casualties for the 90% of its observations 
           with the lowest impact versus the average number of casualties 
           for the 10% of its observations with the highest impact 
           based only on the weather events that resulted in non-zero casualties.  
@@ -7541,7 +7541,7 @@ for the values of the variable *CASUALTIES* for most weather event types,
 which indicates that the underlining distributions of such phenomena 
 has a heavy tail that causes this heterogeneity on the observations. 
 As a result a small number of casualties were observed 
-for the majority of cases that resulted in non-zero fatalities 
+for the majority of cases that resulted in non-zero casualties 
 while in the few cases with the highest impact 
 they caused lots of casualties. 
 
@@ -7564,8 +7564,8 @@ processed_data_____harm_on_population_health_____casualties <-
     ,
     ## Create a new variable divides the observations
     ## for each weather event into two supplementary groups:  
-    ##   - the 90% of weather events that resulted in lowest fatalities
-    ##   - the 10% of weather events that resulted in highest fatalities
+    ##   - the 90% of weather events that resulted in lowest casualties
+    ##   - the 10% of weather events that resulted in highest casualties
     BIN_GROUP_PER_EVENT_TYPE := (function(x, p_bins) {
       
       # adds 0 and 1 in the vector supplied at the argument 'p_bins' 
@@ -7794,7 +7794,7 @@ Four elementary plots were
   that resulted in non-zero casualties.  
 * [8.3.4.1.4 Create The Plot 1.3.4](#ind-8-3-4-1-4--Create-The-Plot-1-3-4)
   * Displays a comparison for each weather event type, 
-  of the average number of fatalities for the 90% of its observations 
+  of the average number of casualties for the 90% of its observations 
   with the lowest impact versus the average number of casualties 
   for the 10% of its observations with the highest impact 
   based only on the weather events that resulted in non-zero casualties.  
@@ -7849,7 +7849,7 @@ with respect to casualties by each weather event type.
   that resulted in non-zero casualties.  
 * [8.3.4.1.4 Create The Plot 1.3.4](#ind-8-3-4-1-4--Create-The-Plot-1-3-4)
   * Displays a comparison for each weather event type, 
-  of the average number of fatalities for the 90% of its observations 
+  of the average number of casualties for the 90% of its observations 
   with the lowest impact versus the average number of casualties 
   for the 10% of its observations with the highest impact 
   based only on the weather events that resulted in non-zero casualties.  
