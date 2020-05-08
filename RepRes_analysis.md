@@ -9238,7 +9238,7 @@ of the chapter [10 RESULTS](#ind-10--RESULTS)).
 which at least 1 but no more than 3 figures should be included in the
 report, the Multiplot as well as the elementary plots that contain were
 NOT displayed separately and can ONLY be examined as PARTs of the Figure
-1at the subsection [10.1.1 Overview of results for the harm on
+1 at the subsection [10.1.1 Overview of results for the harm on
 population
 health](#ind-10-1-1--Overview-of-results-for-the-harm-on-population-health)
 of the chapter [10 RESULTS](#ind-10--RESULTS).)*
@@ -9322,8 +9322,8 @@ presented, of which the Multiplot 1.1 constitutes the PART 1.)*
     respect to
     fatalities](#ind-8-1-2--Process-the-target-data-for-harm-on-population-health-with-respect-to-fatalities)
     -   The table with target data subset for the harm on population
-        with respect to fatalities was processed to create the table
-        with processed data for the harm on population health with
+        health with respect to fatalities was processed to create the
+        table with processed data for the harm on population health with
         respect to fatalities.  
 -   [8.1.3 Summarize the processed data for harm on population health
     with respect to fatalities by each weather event
@@ -10885,9 +10885,9 @@ presented, of which the Multiplot 1.2 constitutes the PART 2.)
     respect to
     injuries](#ind-8-2-2--Process-the-target-data-for-harm-on-population-health-with-respect-to-injuries)
     -   The table with target data subset for the harm on population
-        with respect to injuries was processed to create the table with
-        processed data for the harm on population health with respect to
-        injuries.  
+        health with respect to injuries was processed to create the
+        table with processed data for the harm on population health with
+        respect to injuries.  
 -   [8.2.3 Summarize the processed data for harm on population health
     with respect to injuries by each weather event
     type](#ind-8-2-3--Summarize-the-processed-data-for-harm-on-population-health-with-respect-to-injuries-by-each-weather-event-type)
@@ -10926,12 +10926,12 @@ presented, of which the Multiplot 1.2 constitutes the PART 2.)
                 -   [8.2.4.1.4 Create The Plot
                     1.2.4](#ind-8-2-4-1-4--Create-The-Plot-1-2-4)
                     -   Displays a comparison for each weather event
-                        type, of the average number of fatalities for
-                        the 90% of its observations with the lowest
-                        impact versus the average number of injuries for
-                        the 10% of its observations with the highest
-                        impact based only on the weather events that
-                        resulted in non-zero injuries.  
+                        type, of the average number of injuries for the
+                        90% of its observations with the lowest impact
+                        versus the average number of injuries for the
+                        10% of its observations with the highest impact
+                        based only on the weather events that resulted
+                        in non-zero injuries.  
         -   [8.2.4.2 Compose the Multiplot
             1.2](#ind-8-2-4-2--Compose-the-Multiplot-1-2)
             -   Combines the four elementary plots to create the
@@ -11405,8 +11405,8 @@ the values of the variable *INJURIES* for most weather event types,
 which indicates that the underlining distributions of such phenomena has
 a heavy tail that causes this heterogeneity on the observations. As a
 result a small number of injuries were observed for the majority of
-cases that resulted in non-zero fatalities while in the few cases with
-the highest impact they caused lots of injuries.
+cases that resulted in non-zero injuries while in the few cases with the
+highest impact they caused lots of injuries.
 
 Having in mind that the average number of injuries will be used to
 determine which weather event types were the most harmful to population
@@ -11423,8 +11423,8 @@ in order to obtain an insightful picture.
         ,
         ## Create a new variable divides the observations
         ## for each weather event into two supplementary groups:  
-        ##   - the 90% of weather events that resulted in lowest fatalities
-        ##   - the 10% of weather events that resulted in highest fatalities
+        ##   - the 90% of weather events that resulted in lowest injuries
+        ##   - the 10% of weather events that resulted in highest injuries
         BIN_GROUP_PER_EVENT_TYPE := (function(x, p_bins) {
           
           # adds 0 and 1 in the vector supplied at the argument 'p_bins' 
@@ -11657,10 +11657,10 @@ Four elementary plots were
 -   [8.2.4.1.4 Create The Plot
     1.2.4](#ind-8-2-4-1-4--Create-The-Plot-1-2-4)
     -   Displays a comparison for each weather event type, of the
-        average number of fatalities for the 90% of its observations
-        with the lowest impact versus the average number of injuries for
-        the 10% of its observations with the highest impact based only
-        on the weather events that resulted in non-zero injuries.
+        average number of injuries for the 90% of its observations with
+        the lowest impact versus the average number of injuries for the
+        10% of its observations with the highest impact based only on
+        the weather events that resulted in non-zero injuries.
 
 which were then [combined](#ind-8-2-4-2--Compose-the-Multiplot-1-2) in
 order to obtain the **Multiplot 1.2**.
@@ -11716,10 +11716,10 @@ injuries by each weather event type.
 -   [8.2.4.1.4 Create The Plot
     1.2.4](#ind-8-2-4-1-4--Create-The-Plot-1-2-4)
     -   Displays a comparison for each weather event type, of the
-        average number of fatalities for the 90% of its observations
-        with the lowest impact versus the average number of injuries for
-        the 10% of its observations with the highest impact based only
-        on the weather events that resulted in non-zero injuries.
+        average number of injuries for the 90% of its observations with
+        the lowest impact versus the average number of injuries for the
+        10% of its observations with the highest impact based only on
+        the weather events that resulted in non-zero injuries.
 
 <br>
 
@@ -12492,7 +12492,7 @@ presented, of which the Multiplot 1.3 constitutes the PART 3.)
                 -   [8.3.4.1.4 Create The Plot
                     1.3.4](#ind-8-3-4-1-4--Create-The-Plot-1-3-4)
                     -   Displays a comparison for each weather event
-                        type, of the average number of fatalities for
+                        type, of the average number of casualties for
                         the 90% of its observations with the lowest
                         impact versus the average number of casualties
                         for the 10% of its observations with the highest
@@ -13005,7 +13005,7 @@ the values of the variable *CASUALTIES* for most weather event types,
 which indicates that the underlining distributions of such phenomena has
 a heavy tail that causes this heterogeneity on the observations. As a
 result a small number of casualties were observed for the majority of
-cases that resulted in non-zero fatalities while in the few cases with
+cases that resulted in non-zero casualties while in the few cases with
 the highest impact they caused lots of casualties.
 
 Having in mind that the average number of casualties will be used to
@@ -13023,8 +13023,8 @@ in order to obtain an insightful picture.
         ,
         ## Create a new variable divides the observations
         ## for each weather event into two supplementary groups:  
-        ##   - the 90% of weather events that resulted in lowest fatalities
-        ##   - the 10% of weather events that resulted in highest fatalities
+        ##   - the 90% of weather events that resulted in lowest casualties
+        ##   - the 10% of weather events that resulted in highest casualties
         BIN_GROUP_PER_EVENT_TYPE := (function(x, p_bins) {
           
           # adds 0 and 1 in the vector supplied at the argument 'p_bins' 
@@ -13257,7 +13257,7 @@ Four elementary plots were
 -   [8.3.4.1.4 Create The Plot
     1.3.4](#ind-8-3-4-1-4--Create-The-Plot-1-3-4)
     -   Displays a comparison for each weather event type, of the
-        average number of fatalities for the 90% of its observations
+        average number of casualties for the 90% of its observations
         with the lowest impact versus the average number of casualties
         for the 10% of its observations with the highest impact based
         only on the weather events that resulted in non-zero casualties.
@@ -13316,7 +13316,7 @@ casualties by each weather event type.
 -   [8.3.4.1.4 Create The Plot
     1.3.4](#ind-8-3-4-1-4--Create-The-Plot-1-3-4)
     -   Displays a comparison for each weather event type, of the
-        average number of fatalities for the 90% of its observations
+        average number of casualties for the 90% of its observations
         with the lowest impact versus the average number of casualties
         for the 10% of its observations with the highest impact based
         only on the weather events that resulted in non-zero casualties.
@@ -13895,7 +13895,7 @@ that displays the complete picture for this perspective.
               "for which at least 10 observations ", 
               "that resulted in non-zero casualties were available. ", "\n",
               "The number associated with each weather event type ", 
-              "represents the rank (from the most harmfull to the least) ", 
+              "represents the rank (from the most harmful to the least) ", 
               "which was assigned based on the overall average number of casualties.", "\n",
               "Because for most of the weather event types ", 
               "high positive skewness was observed for the number of casualties, ",
@@ -13989,6 +13989,65 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ------------------------------------------------------------------------
 
+In this chapter an attempt was made to quantify the harm on economy
+based on the information from the [table with the processed
+data](#ind-7--PROCESSED-DATA).
+
+The harm on economy was examined over three perspectives:
+
+1.  [The harm on economy with respect to property damage caused by each
+    weather event type based on the observations for weather events that
+    resulted in non-zero property damage at United States in the period
+    from 2001
+    to 2011.](#ind-9-1--Harm-On-Economy-With-Respect-To-Property-Damage-By-Each-Weather-Event-Type)  
+2.  [The harm on economy with respect to crop damage caused by each
+    weather event type based on the observations for weather events that
+    resulted in non-zero crop damage at United States in the period from
+    2001
+    to 2011.](#ind-9-2--Harm-On-Economy-With-Respect-To-Crop-Damage-By-Each-Weather-Event-Type)  
+3.  [The harm on economy with respect to economic damage  
+    (sum of property damage and crop damage) caused by each weather
+    event type based on the observations for weather events that
+    resulted in non-zero economic damage at United States in the period
+    from 2001
+    to 2011.](#ind-9-3--Harm-On-Economy-With-Respect-To-Economic-Damage-By-Each-Weather-Event-Type)
+
+The weather event types for which less than 10 observations that
+resulted in non-zero harm were available with respect to a perspective
+of interest were ommited (from the analysis of that particular
+perspective), to avoid highly misleading statistics. Consequently the
+subset of weather event types that were included for each of the three
+perspectives is different.
+
+Due to the fact that for all perspectives the values of interest for the
+observations of most weather event types were highly positively skewed,
+it was consider important in order to obtain an insightful picture of
+their consequences to examine them over three different apsects:
+
+1.  The **overall** harm on economy caused by each weather event type.  
+2.  The harm on economy cauced by **the 90% of cases with the lowest
+    impact** of each weather event type.  
+3.  The harm on economy cauced by **the 10% of cases with the highest
+    impact** of each weather event type.
+
+For every apsect the sample size, the skewness and the mean of the
+values that encapsulated the harm with respect to each perspective were
+summarized by each weather event type and reported.
+
+The results obtained for the harm on economy by each weather event type
+were presented at the section [10.2 Question 2 : Across the United
+States, which types of events have the greatest economic
+consequences?](#ind-10-2--results-harm-on-economy) of the chapter [10
+RESULTS](#ind-10--RESULTS).
+
+(In compliance with the restrictions of the assignment, according to
+which at least 1 but no more than 3 figures should be included in the
+report, the multiplots as well as the elementary plots that they contain
+were NOT displayed separately and can ONLY be examined as PARTs of the
+Figure 2 at the subsection [10.2.1 Overview of results for the harm on
+economy](#ind-10-2-1--Overview-of-results-for-the-harm-on-economy) of
+the chapter [10 RESULTS](#ind-10--RESULTS).)
+
 <br>
 
 <font size="1">[back to start of this
@@ -14000,6 +14059,126 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 9.1 Harm On Economy With Respect To Property Damage By Each Weather Event Type
 ------------------------------------------------------------------------------
+
+<font size="3"><u><strong>Summary</strong></u></font>
+
+The required variables and the target data subset of observations for
+the harm on economy with respect to property damage were extracted from
+the table with the processed data, and processed to create a new
+variable that divided the observations for each of the included weather
+event types to two supplementary groups:
+
+-   the 90% of observations with the lowest impact  
+-   the 10% of observations with the highest impact
+
+before the information for the harm on economy with respect to property
+damage was summarized by each weather event type.
+
+Three aspects were examined:
+
+1.  The overall average property damage by each weather event type.  
+2.  The average property damage by each weather event type for the 90%
+    of cases with the lowest impact.  
+3.  The average property damage by each weather event type for the 10%
+    of cases with the highest impact.
+
+For each aspect, the average property damage by each weather event type,
+the number of its available observations (based on which the average was
+computed) and their skewness were examined.
+
+The overall average property damage was used as the main criterion to
+determine which weather events caused the most harm on economy with
+respect to property damage but it is important to take into account the
+other two aspect that were presented in order to obtain a more
+insightful and complete ‘picture’ of their consequences, (especially
+given the fact that for most of the weather event types, the property
+damage were highly positively skewed).
+
+The table with results for the harm on economy with respect to property
+damage by each weather event type were presented at the subsection
+[10.2.2 Most harmful event types with respect to property
+damage](#ind-10-2-2--Most-harmful-weather-event-types-with-respect-to-property-damage)
+of the chapter [10 RESULTS](#ind-10--RESULTS).
+
+Finally the *Multiplot 2.1* was created to visualize the results of the
+harm on economy with respect to property damage by each weather event
+type.
+
+\*(Note that neither the Multiplot 2.1 nor the elementary plots that it
+contains were presented in this section due to the restrictions imposed
+by the assignment to include in the report at least 1 but no more than 3
+figures. It can be examined at the subsection [10.2.1 Overview of
+results for the harm on
+economy](#ind-10-2-1--Overview-of-results-for-the-harm-on-economy) of
+the chapter [10 RESULTS](#ind-10--RESULTS), where the Figure 2 was
+presented, of which the Multiplot 2.1 constitutes the PART 1.)
+
+of the chapter .
+
+<font size="3"><u><strong>Steps</strong></u></font>
+
+-   [9.1.1 Extract the target data for harm on economy with respect to
+    property
+    damage](#ind-9-1-1--Extract-the-target-data-for-harm-on-economy-with-respect-to-property-damage)
+    -   The target data subset of observations needed to evaluate the
+        harm on economy with respect to property damage by each weather
+        event type was extracted from the table with the processed
+        data.  
+-   [9.1.2 Process the target data for harm on economy with respect to
+    property
+    damage](#ind-9-1-2--Process-the-target-data-for-harm-on-economy-with-respect-to-property-damage)
+    -   The table with target data subset for the harm on economy with
+        respect to property damage was processed to create the table
+        with processed data for the harm on economy with respect to
+        property damage.  
+-   [9.1.3 Summarize the processed data for harm on economy with respect
+    to property damage by each weather event
+    type](#ind-9-1-3--Summarize-the-processed-data-for-harm-on-economy-with-respect-to-property-damage-by-each-weather-event-type)
+    -   The harm on economy with respect to property damage by each
+        weather event type was evaluated over various aspects.  
+-   [9.1.4 Visualize the results of the summary for the harm on economy
+    with respect to property damage by each weather event
+    type](#ind-9-1-4--Visualize-the-results-of-the-summary-for-the-harm-on-economy-with-respect-to-property-damage-by-each-weather-event-type)
+    -   The Multiplot 2.1 that presents the results of the summary for
+        the harm on economy with respect to property damage by each
+        weather event type was created.
+        -   [9.1.4.1 Create the components of Multiplot
+            2.1](#ind-9-1-4-1--Create-the-components-of-Multiplot-2-1)
+            -   Creates the four elementary plot that constitute the
+                Multiplot 2.1:
+                -   [9.1.4.1.1 Create The Plot
+                    2.1.1](#ind-9-1-4-1-1--Create-The-Plot-2-1-1)
+                    -   Displays the overall average property damage
+                        caused by each weather event type based on all
+                        the cases of weather events that resulted in
+                        non-zero property damage.  
+                -   [9.1.4.1.2 Create The Plot
+                    2.1.2](#ind-9-1-4-1-2--Create-The-Plot-2-1-2)
+                    -   Displays the average property damage caused by
+                        each weather event type based on 90% of weather
+                        events with the lowest impact (for each weather
+                        event type) that resulted in non-zero property
+                        damage.  
+                -   [9.1.4.1.3 Create The Plot
+                    2.1.3](#ind-9-1-4-1-3--Create-The-Plot-2-1-3)
+                    -   Displays the average property damage caused by
+                        each weather event type based on 10% of weather
+                        events with the highest impact (for each weather
+                        event type) that resulted in non-zero property
+                        damage.  
+                -   [9.1.4.1.4 Create The Plot
+                    2.1.4](#ind-9-1-4-1-4--Create-The-Plot-2-1-4)
+                    -   Displays a comparison for each weather event
+                        type, of the average property damage for the 90%
+                        of its observations with the lowest impact
+                        versus the average property damage for the 10%
+                        of its observations with the highest impact
+                        based only on the weather events that resulted
+                        in non-zero property damage.  
+        -   [9.1.4.2 Compose the Multiplot
+            2.1](#ind-9-1-4-2--Compose-the-Multiplot-2-1)
+            -   Combines the four elementary plots to create the
+                Multiplot 2.1.
 
 <br>
 
@@ -14013,6 +14192,542 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ### 9.1.1 Extract the target data for harm on economy with respect to property damage
+
+In order to examine the harm on economy with respect to property damage
+caused by each weather event type, the variables *REFNUM*, *EVENT\_TYPE*
+and *PROPERTY\_DAMAGE* were selected from the table with the processed
+data and **only the observations that refer to weather events that
+resulted in non-zero property damage** were extracted.
+
+Furthermore, in an attempt to avoid highly misleading statistics due to
+the small number of observations for some of the weather event types, a
+lowest bound of 10 weather events that caused non zero property damage
+(for each of the included weather event types) was selected
+(subjectively by the analyst) and applied.
+
+This lowest bound, although it may seem (and generally it is) not enough
+to get trustworthy statistics, it was considered to be *“good enough”*
+taking into account that :
+
+1.  the analysis focuses in describing historical data without trying to
+    make inferences that would demand substantially bigger samples,
+    although any statistic based on less than 10 observations could not
+    be taken seriously especially in cases (such as in this analysis)
+    where the distribution of property damage for each weather event
+    type was skewed.
+2.  a period of 11 years (from 2001 to 2011) in which the observations
+    that were used in the analysis occurred, is relatively small time to
+    produce big samples of weather events that caused non zero property
+    damage for some the weather event types. Thus, if a highest bound
+    was selected to get more robust statistics such as samples of 100 or
+    300, the majority of weather event types would have been excluded,
+    making the results of the analysis trivial.
+
+<!-- -->
+
+    # Extract the required variables and the target data subset of observations 
+    # for the harm on economy with respect to property damage.
+    target_data_____harm_on_economy_____property_damage <- processed_data[
+      ## Extract only the observations that have resulted in non-zero property damage.
+      PROPERTY_DAMAGE > 0,
+      ## Select only the relevant variables. 
+      list(REFNUM, EVENT_TYPE, PROPERTY_DAMAGE)
+      ][
+        ### Keep only the observations that correspond to the weather event types 
+        ### for which there are at least 10 weather events available.
+        EVENT_TYPE %in% 
+          names(table(EVENT_TYPE)[table(EVENT_TYPE) >= 10])
+        ]
+
+The table with the target data for the harm on economy with respect to
+property damage consist of 136928 observations.
+
+    # Print the structure of the table with the target data subset 
+    # for the harm on economy with respect to property damage.
+    str(target_data_____harm_on_economy_____property_damage)
+
+    ## Classes 'data.table' and 'data.frame':   136928 obs. of  3 variables:
+    ##  $ REFNUM         : int  413607 413608 413609 413610 413611 413612 413613 413614 413615 413616 ...
+    ##  $ EVENT_TYPE     : chr  "THUNDERSTORM WIND" "THUNDERSTORM WIND" "THUNDERSTORM WIND" "THUNDERSTORM WIND" ...
+    ##  $ PROPERTY_DAMAGE: num  10000 8000 2000 15000 5000 3000 10000 450000 150000 3000 ...
+    ##  - attr(*, ".internal.selfref")=<externalptr> 
+    ##  - attr(*, "sorted")= chr "REFNUM"
+
+The variable *EVENT\_TYPE* includes 37 distinct weather event types, for
+most of which the variable *PROPERTY\_DAMAGE* was highly positively
+skewed.
+
+    # Create a kable to present some facts about the table with the target data 
+    # for the harm on economy with respect to property damage.
+    kable(
+      x = target_data_____harm_on_economy_____property_damage[
+        order(EVENT_TYPE), 
+        list(
+          "N" = .N, 
+          "SKEWNESS" = round(skewness(PROPERTY_DAMAGE), 4)
+        ), 
+        by = EVENT_TYPE
+        ],
+      caption = paste0(
+        "Table 9.1.1-1: ",
+        "Facts about the table with the target data subset of observations ", 
+        "for the harm on economy with respect to property damage."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      ) %>% 
+      footnote(
+        general = "The skewness was rounded to 4 decimal places."
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 9.1.1-1: Facts about the table with the target data subset of
+observations for the harm on economy with respect to property damage.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+EVENT\_TYPE
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+N
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+SKEWNESS
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+AVALANCHE
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+3.4882
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BLIZZARD
+</td>
+<td style="text-align:right;">
+129
+</td>
+<td style="text-align:right;">
+10.5403
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+COASTAL FLOOD
+</td>
+<td style="text-align:right;">
+152
+</td>
+<td style="text-align:right;">
+4.5996
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+COLD/WIND CHILL
+</td>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:right;">
+1.5907
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DEBRIS FLOW
+</td>
+<td style="text-align:right;">
+189
+</td>
+<td style="text-align:right;">
+6.0565
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DENSE FOG
+</td>
+<td style="text-align:right;">
+56
+</td>
+<td style="text-align:right;">
+3.7347
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DROUGHT
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+4.9802
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DUST DEVIL
+</td>
+<td style="text-align:right;">
+60
+</td>
+<td style="text-align:right;">
+2.4345
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DUST STORM
+</td>
+<td style="text-align:right;">
+60
+</td>
+<td style="text-align:right;">
+3.7794
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EXCESSIVE HEAT
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+4.0309
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EXTREME COLD/WIND CHILL
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+4.0178
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FLASH FLOOD
+</td>
+<td style="text-align:right;">
+13902
+</td>
+<td style="text-align:right;">
+61.0935
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FLOOD
+</td>
+<td style="text-align:right;">
+7072
+</td>
+<td style="text-align:right;">
+83.9862
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FROST/FREEZE
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+1.7679
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HAIL
+</td>
+<td style="text-align:right;">
+14584
+</td>
+<td style="text-align:right;">
+69.4449
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HEAVY RAIN
+</td>
+<td style="text-align:right;">
+836
+</td>
+<td style="text-align:right;">
+11.4264
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HEAVY SNOW
+</td>
+<td style="text-align:right;">
+573
+</td>
+<td style="text-align:right;">
+7.0114
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HIGH SURF
+</td>
+<td style="text-align:right;">
+76
+</td>
+<td style="text-align:right;">
+5.0462
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HIGH WIND
+</td>
+<td style="text-align:right;">
+3851
+</td>
+<td style="text-align:right;">
+37.6952
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HURRICANE/TYPHOON
+</td>
+<td style="text-align:right;">
+107
+</td>
+<td style="text-align:right;">
+4.9333
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ICE STORM
+</td>
+<td style="text-align:right;">
+410
+</td>
+<td style="text-align:right;">
+8.6732
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LAKE-EFFECT SNOW
+</td>
+<td style="text-align:right;">
+195
+</td>
+<td style="text-align:right;">
+13.1024
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LIGHTNING
+</td>
+<td style="text-align:right;">
+6162
+</td>
+<td style="text-align:right;">
+22.3701
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MARINE HIGH WIND
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+3.8120
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MARINE STRONG WIND
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:right;">
+5.3773
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MARINE THUNDERSTORM WIND
+</td>
+<td style="text-align:right;">
+127
+</td>
+<td style="text-align:right;">
+10.0994
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+STORM SURGE/TIDE
+</td>
+<td style="text-align:right;">
+131
+</td>
+<td style="text-align:right;">
+9.6344
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+STRONG WIND
+</td>
+<td style="text-align:right;">
+3179
+</td>
+<td style="text-align:right;">
+51.6282
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+THUNDERSTORM WIND
+</td>
+<td style="text-align:right;">
+73657
+</td>
+<td style="text-align:right;">
+167.8966
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TORNADO
+</td>
+<td style="text-align:right;">
+8552
+</td>
+<td style="text-align:right;">
+55.2385
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TROPICAL DEPRESSION
+</td>
+<td style="text-align:right;">
+35
+</td>
+<td style="text-align:right;">
+5.4232
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TROPICAL STORM
+</td>
+<td style="text-align:right;">
+363
+</td>
+<td style="text-align:right;">
+18.5864
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TSUNAMI
+</td>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:right;">
+2.7176
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WATERSPOUT
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+3.0130
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WILDFIRE
+</td>
+<td style="text-align:right;">
+832
+</td>
+<td style="text-align:right;">
+15.4642
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WINTER STORM
+</td>
+<td style="text-align:right;">
+930
+</td>
+<td style="text-align:right;">
+29.7861
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WINTER WEATHER
+</td>
+<td style="text-align:right;">
+493
+</td>
+<td style="text-align:right;">
+9.2933
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<sup></sup> The skewness was rounded to 4 decimal places.
+</td>
+</tr>
+</tfoot>
+</table>
+It was worth noting that for the weather event types with highest number
+of observations there was highest skewness for the values of property
+damage, indicating that the corresponding distribution of property
+damage has a heavy tail that wasn’t possible to be observed when few
+observation were available.
 
 <br>
 
@@ -14030,6 +14745,103 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 9.1.2 Process the target data for harm on economy with respect to property damage
 
+To create the table with the processed data for the harm on economy with
+respect to property damage from the corresponding target data subset for
+this perspective, a new variable was created that divides the
+observations for each of the included weather event types in two
+complementary levels:
+
+-   one that contains the 90% of cases with lowest impact  
+-   the other that contains the 10% of cases with highest impact
+
+This decision was made due to the high skewness that was observed for
+the values of the variable *PROPERTY\_DAMAGE* for most weather event
+types, which indicates that the underlining distributions of such
+phenomena has a heavy tail that causes this heterogeneity on the
+observations. As a result a small property damage were observed for the
+majority of cases that resulted in non-zero fatalities while in the few
+cases with the highest impact they caused lots of property damage.
+
+Having in mind that the average property damage will be used to
+determine which weather event types were the most harmful to economy
+(with respect to property damage) combined with the fact that the
+average doesn’t represent well the distribution of variables with high
+skewness, as it is highly affected by the most extreme values, it was
+considered necessary to examine the subsets created by those two levels
+in order to obtain an insightful picture.
+
+    # Create the table with the processed data 
+    # for the harm on economy with respect to property damage.
+    processed_data_____harm_on_economy_____property_damage <- 
+      target_data_____harm_on_economy_____property_damage[
+        ,
+        ## Create a new variable divides the observations
+        ## for each weather event into two supplementary groups:  
+        ##   - the 90% of weather events that resulted in lowest fatalities
+        ##   - the 10% of weather events that resulted in highest fatalities
+        BIN_GROUP_PER_EVENT_TYPE := (function(x, p_bins) {
+          
+          # adds 0 and 1 in the vector supplied at the argument 'p_bins' 
+          # to the start and the end respectively  
+          # the supplied percentiles if they are missing 
+          # and sort them ascending
+          p_bins_increasing <- sort(c(0, p_bins, 1))
+          
+          # creates the character strings that labels of the bins by the values supplied at 
+          # the argument 'p_bins' that will be the values of the new variable
+          bin_labels <- paste0("(", p_bins_increasing[-length(p_bins_increasing)]*100,
+                               "% - ", p_bins_increasing[-1]*100, "%]")
+          
+          # identify the number of occurrences that correspond to each label
+          n_times <- vapply(2:length(p_bins_increasing),
+                            function(i) {
+                              as.integer(floor(length(x) * p_bins_increasing[i]) -
+                                           floor(length(x) * p_bins_increasing[i - 1]))
+                            }, integer(1))
+          
+          # multiply each label with the number of its occurrences
+          x_bins_expanded <- rep(x = bin_labels, times = n_times)
+          
+          # order the label to much the values of the corresponding vector
+          x_bins_expanded_reordered <- x_bins_expanded[order(seq_along(x)[order(x)])]
+          
+          ## Coerce the character vector with the labels of bins to a factor
+          x_bins_factor <- factor(x_bins_expanded_reordered, labels = bin_labels, ordered = TRUE)
+          
+        })(PROPERTY_DAMAGE, 0.9), 
+        by = EVENT_TYPE
+      ][
+        ## Coerce the EVENT_VARIABLE to factor
+        , EVENT_TYPE := as.factor(EVENT_TYPE) 
+      ]
+
+The table with the processed data for the harm on economy with respect
+to property damage contains 4 variables:
+
+1.  **REFNUM** (int) : an id that uniquely identifies each observation  
+2.  **EVENT\_TYPE** (Factor w/ 37 levels) : the type of each weather
+    event
+3.  **PROPERTY\_DAMAGE** (int) : the property damage in dollars  
+4.  **BIN\_GROUP\_PER\_EVENT\_TYPE** (Ord.factor w/ 2 levels) : a factor
+    that divides the observations for each weather event type to two
+    complementary levels, one with the 90% of observations with the
+    lowest impact and another with the 10% of observations with the
+    highest impact.
+
+and 136928 observations.
+
+    # Print the structure of the table with the processed data 
+    # for the harm on economy with respect to property damage.
+    str(processed_data_____harm_on_economy_____property_damage)
+
+    ## Classes 'data.table' and 'data.frame':   136928 obs. of  4 variables:
+    ##  $ REFNUM                  : int  413607 413608 413609 413610 413611 413612 413613 413614 413615 413616 ...
+    ##  $ EVENT_TYPE              : Factor w/ 37 levels "AVALANCHE","BLIZZARD",..: 29 29 29 29 29 29 29 30 29 29 ...
+    ##  $ PROPERTY_DAMAGE         : num  10000 8000 2000 15000 5000 3000 10000 450000 150000 3000 ...
+    ##  $ BIN_GROUP_PER_EVENT_TYPE: Ord.factor w/ 2 levels "(0% - 90%]"<"(90% - 100%]": 1 1 1 1 1 1 1 1 2 1 ...
+    ##  - attr(*, ".internal.selfref")=<externalptr> 
+    ##  - attr(*, "sorted")= chr "REFNUM"
+
 <br>
 
 <font size="1">[back to start of this
@@ -14045,6 +14857,121 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ### 9.1.3 Summarize the processed data for harm on economy with respect to property damage by each weather event type
+
+To evaluate the harm on economy by each weather event type with respect
+to property damage a simplistic approach was adopted :
+
+-   the weather event types were ranked from the most harmful to the
+    least based on the overall average property damage of the weather
+    events that resulted in non-zero property damage
+
+The overall average property damage caused by each weather event type
+was initially examined along with the skewness of the property damage
+for each weather event type. In most cases the skewness was high (or
+even extremely high), so it was possible that the overall mean
+misrepresented the consequences of each weather event type.
+
+That is the reason why the average property damage for 90% of weather
+events with the lowest impact versus the average property damage for the
+10% of weather events with the highest impact were also computed and
+examined.
+
+**It is highlighted that for the average property damage that refers to
+the 10% of the cases that had the highest impact, there were few
+observations available for a lot of weather event types and the
+corresponding mean values should be interpreted with caution.**
+
+    # Create the table with the summary for the harm on economy 
+    # with respect to property damage for each weather event type.
+    summary_____harm_on_economy______property_damage <- 
+      processed_data_____harm_on_economy_____property_damage[
+      ,
+      list(
+        ## The total number of observation by each weather event type.
+        "N" = .N,
+        ## The average property damage caused by each weather event type.
+        "AVRG" = round(mean(PROPERTY_DAMAGE), 2),
+        ## The skewness of property damage for the observations by each weather event type.
+        "SKEWNESS" = round(skewness(PROPERTY_DAMAGE), 4),
+        ## The number of observations for the 90% of cases with the lowest impact 
+        ## by each weather event type.
+        "N_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , .N],
+        ## The average property damage caused by each weather event type 
+        ## for the 90% of cases with the lowest impact.
+        "AVRG_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , round(mean(PROPERTY_DAMAGE), 2)],
+        ## The skewness of property damage for the 90% of cases with the lowest impact 
+        ## by each weather event type.
+        "SKEWNESS_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , round(skewness(PROPERTY_DAMAGE), 4)],
+        ## The number of observations for the 10% of cases with the lowest impact 
+        ## by each weather event type.
+        "N_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , .N],
+        ## The average property damage caused by each weather event type 
+        ## for the 10% of cases with the highest impact.
+        "AVRG_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , round(mean(PROPERTY_DAMAGE), 2)],
+        ## The skewness of property damage for the 10% of cases with the highest impact 
+        ## by each weather event type.
+        "SKEWNESS_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , round(skewness(PROPERTY_DAMAGE), 4)]
+      ),
+      by = "EVENT_TYPE"
+      ][
+        ## The average property damage is used to order the rows of the table
+        ## from the most harmful weather event type to the least.
+        order(-AVRG),
+        ## Create a variable with the rank of the harmness of each weather event type.
+        RANK := 1:length(EVENT_TYPE)
+        ][
+          ,
+          ## Reorder the variables at the table.
+          list(
+            RANK, EVENT_TYPE, N, AVRG, SKEWNESS, N_LOW, AVRG_LOW, SKEWNESS_LOW, N_HIGH, AVRG_HIGH, SKEWNESS_HIGH
+          )
+          ]
+
+The results of the table with the summary for the harm on economy with
+respect to property damage by each weather event type that was created
+in this section were presented at the subsection [10.2.2 Most harmful
+event types with respect to property
+damage](#ind-10-2-2--Most-harmful-weather-event-types-with-respect-to-property-damage)
+of the chapter [10 RESULTS](#ind-10--RESULTS).
+
+The table with the summary for the harm on economy with respect to
+property damage by each weather event type was exported (as an R file),
+in the folder of the working directory:
+
+-   *outputs –&gt; harm\_on\_economy –&gt; results*
+
+with filename:
+
+-   *summary\_\_\_\_\_\_harm\_on\_economy\_\_\_\_\_\_property\_damage.R*
+
+In addition a txt file that contains the MD5 hash of the file was
+created and saved at the same directory with filename:
+
+-   *summary\_\_\_\_\_harm\_on\_economy\_\_\_\_\_\_property\_damage.R—–(MD5
+    HASH).txt*
+
+<!-- -->
+
+    # Supply the filepath at which the table with the summary
+    # for the harm on economy will be exported.
+    filepath_____summary_____harm_on_economy______property_damage <-
+      file.path(
+        directory_tree_____outputs[[
+          "filepath_____outputs_____harm_on_economy_____results"
+        ]],
+        "summary_____harm_on_economy______property_damage.R"
+      )
+
+    # Export the table with the summary for the harm on economy
+    # with respect to property damage.
+    saveRDS(
+      object = summary_____harm_on_economy______property_damage,
+      file = filepath_____summary_____harm_on_economy______property_damage
+    )
+
+The main reason for exporting the file with the summary for the harm on
+economy with respect to property damage by each weather event type was
+to supply a checkpoint for any attempts to reproduce the analysis.
 
 <br>
 
@@ -14062,6 +14989,53 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 9.1.4 Visualize the results of the summary for the harm on economy with respect to property damage by each weather event type
 
+From the table with the summary for the harm on economy by each weather
+event type with respect to property damage the **Multiplot 2.1** was
+created to present an overview of the results for the three different
+aspects that were examined for this perspective.
+
+Four elementary plots were
+[created](#ind-9-1-4-2--Compose-the-Multiplot-2-1):
+
+-   [9.1.4.1.1 Create The Plot
+    2.1.1](#ind-9-1-4-1-1--Create-The-Plot-2-1-1)
+    -   Displays the overall average property damage caused by each
+        weather event type based on all the cases of weather events that
+        resulted in non-zero property damage.  
+-   [9.1.4.1.2 Create The Plot
+    2.1.2](#ind-9-1-4-1-2--Create-The-Plot-2-1-2)
+    -   Displays the average property damage caused by each weather
+        event type based on 90% of weather events with the lowest impact
+        (for each weather event type) that resulted in non-zero property
+        damage.  
+-   [9.1.4.1.3 Create The Plot
+    2.1.3](#ind-9-1-4-1-3--Create-The-Plot-2-1-3)
+    -   Displays the average property damage caused by each weather
+        event type based on 10% of weather events with the highest
+        impact (for each weather event type) that resulted in non-zero
+        property damage.  
+-   [9.1.4.1.4 Create The Plot
+    2.1.4](#ind-9-1-4-1-4--Create-The-Plot-2-1-4)
+    -   Displays a comparison for each weather event type, of the
+        average property damage for the 90% of its observations with the
+        lowest impact versus the average property damage for the 10% of
+        its observations with the highest impact based only on the
+        weather events that resulted in non-zero property damage.
+
+which were then [combined](#Compose-the-Multiplot-2-1) in order to
+obtain the **Multiplot 2.1**.
+
+It constitutes the *PART 1* of the *Figure 2* that displays the overview
+of the harm on economy by each weather event type.
+
+*(Note that neither the Multiplot 2.1 nor the elementary plots that it
+contains were presented in this section due to the restrictions imposed
+by the assignment to include in the report at least 1 but no more than 3
+figures. It can be examined at the subsection [10.2.1 Overview of
+results for the harm on
+economy](#ind-10-2-1--Overview-of-results-for-the-harm-on-economy) of
+the chapter [10 RESULTS](#ind-10--RESULTS).)*
+
 <br>
 
 <font size="1">[back to start of this
@@ -14076,6 +15050,35 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 #### 9.1.4.1 Create the components of Multiplot 2.1
+
+Creates four elementary plots to visualize the results for the aspects
+that were examined for the harm on economy with respect to property
+damage by each weather event type.
+
+-   [9.1.4.1.1 Create The Plot
+    2.1.1](#ind-9-1-4-1-1--Create-The-Plot-2-1-1)
+    -   Displays the overall average property damage caused by each
+        weather event type based on all the cases of weather events that
+        resulted in non-zero property damage.  
+-   [9.1.4.1.2 Create The Plot
+    2.1.2](#ind-9-1-4-1-2--Create-The-Plot-2-1-2)
+    -   Displays the average property damage caused by each weather
+        event type based on 90% of weather events with the lowest impact
+        (for each weather event type) that resulted in non-zero property
+        damage.  
+-   [9.1.4.1.3 Create The Plot
+    2.1.3](#ind-9-1-4-1-3--Create-The-Plot-2-1-3)
+    -   Displays the average property damage caused by each weather
+        event type based on 10% of weather events with the highest
+        impact (for each weather event type) that resulted in non-zero
+        property damage.  
+-   [9.1.4.1.4 Create The Plot
+    2.1.4](#ind-9-1-4-1-4--Create-The-Plot-2-1-4)
+    -   Displays a comparison for each weather event type, of the
+        average property damage for the 90% of its observations with the
+        lowest impact versus the average property damage for the 10% of
+        its observations with the highest impact based only on the
+        weather events that resulted in non-zero property damage.
 
 <br>
 
@@ -14093,6 +15096,108 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ##### **9.1.4.1.1 Create The Plot 2.1.1**
+
+The *Plot 2.1.1* displays **the overall average property damage** caused
+by each weather event type taking into account all and only the
+observation that resulted in non-zero property damage.
+
+The weather event types were matched with a number that represents the
+rank which was assigned to each of them from the most harmful to the
+least with respect to economy, based on the **overall average property
+damage** they caused.
+
+The skewness of the property damage for the observations of each weather
+event type (based on which the overall property damage was computed) had
+been encoded in the color of the bar associated with each of them.
+
+    # Create the Elementary Plot 2.1.1 that displays 
+    # the overall average property damage 
+    # by each weather event type for all cases. 
+    elementary_plot_2_1_1 <-
+      ## Supply the constant arguments for the aesthetics of all included geoms.
+      ggplot(
+        data = summary_____harm_on_economy______property_damage,
+        mapping = aes(
+          x = AVRG,
+          ### Reverse the order of the factors for the EVENT_TYPE variable 
+          ### to make them displayed alphabetically from top to bottom.
+          y = factor(
+            x = EVENT_TYPE, 
+            levels = rev(x = levels(x = EVENT_TYPE)
+            )
+          ) 
+        )
+      ) +
+      ## Draw a square shaped point to the position that corresponds to 
+      ## the average property damage caused by each weather event type, 
+      ## of which the color indicates the skewness of observations 
+      ## based on which each average was computed.
+      geom_point(
+        mapping = aes(color = SKEWNESS),
+        shape = 15, 
+        size = 4.5
+      ) +
+      ## Draw a line that visually associates each weather event type 
+      ## with its respective average property damage.
+      geom_linerange(
+        mapping = aes(
+          xmin = 0, 
+          xmax = AVRG, 
+          group = EVENT_TYPE, 
+          color = SKEWNESS
+        )
+        ) +
+      ## Draw a number that indicates the rank assigned to each weather event type 
+      ## (from the most harmful to the least) based on the overall average number
+      ## property damage it caused inside the square point 
+      ## that displays the average.
+      geom_text(
+        mapping = aes(
+          label = RANK
+        ), 
+        size = 2.5
+      ) +
+      ## Adjust the scale for the color of each point.
+      scale_color_gradient2(
+        ### Choose such limits and midpoint for the colorbar of the legend
+        ### that they can be used unchanged to correctly display 
+        ### the skewness of the observations based on which 
+        ### the average property damage for all three aspects: 
+        ###   1. overall
+        ###   2. 90% of cases with the lowest impact 
+        ###   3. 10% of cases with the highest impact
+        ### was computed. 
+        ### This will allow to include only one common legend when the 
+        ### Multiplot 2.1 will be composed from the four elementary plots. 
+        limits = c(-5, 170), 
+        midpoint = 70, 
+        low = "lightgreen", 
+        mid = "orange", 
+        high = "purple"
+      ) +
+      ## Supply descriptive labels.  
+      labs(
+        title = "Plot 2.1.1", 
+        subtitle = "Aspect: Overall",
+        x = "Weather Event Types \n",
+        y = "Average Number of Property Damage\n"
+      ) +
+      ## Select a theme.
+      theme_linedraw() + 
+      ## Customize the selected theme.
+      theme(
+        ### Remove the legend.
+        legend.position = "none",
+        ### Adjust the title.
+        plot.title = element_text(
+          size = 12,
+          face = "bold"
+        ),
+        ### Adjust the subtitle.
+        plot.subtitle = element_text(
+          size = 10
+        )
+      )
 
 <br>
 
@@ -14113,6 +15218,119 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ##### **9.1.4.1.2 Create The Plot 2.1.2**
 
+The *Elementary Plot 2.1.2* displays **the average property damage for
+the 90% of cases with the lowest impact** caused by each weather event
+type from all the observation that resulted in non-zero property damage.
+
+The weather event types were matched with a number that represents the
+rank which was assigned to each of them from the most harmful to the
+least with respect to economy, based on the **overall average property
+damage** they caused.  
+(so it is NOT based on the average property damage caused by the 90% of
+cases with the lowest impact of each weather event type).
+
+The skewness of the property damage for the observations of each weather
+event type (based on which the average property damage for the 90% of
+cases with the lowest impact was computed) had been encoded in the color
+of the bar associated with each of them.
+
+    # Create the Elementary Plot 2.1.2 that displays 
+    # the average property damage by each weather event type 
+    # for the 90% of its cases with the lowest impact.
+    elementary_plot_2_1_2 <-
+      ## Supply the constant arguments for the aesthetics of all included geoms.
+      ggplot(
+        data = summary_____harm_on_economy______property_damage,
+        mapping = aes(
+          x = AVRG_LOW,
+          ### Reverse the order of the factors for the EVENT_TYPE variable 
+          ### to display them alphabetically from top to bottom.
+          y = factor(
+            x = EVENT_TYPE, 
+            levels = rev(x = levels(x = EVENT_TYPE)
+            )
+          ) 
+        )
+      ) +
+      ## Draw a circle shaped point to the position that corresponds to 
+      ## the average property damage caused by each weather event type
+      ## for the 90% of its cases with the lowest impact, 
+      ## of which the color indicates the skewness of observations 
+      ## based on which each average was computed.
+      geom_point(
+        mapping = aes(
+          color = SKEWNESS_LOW
+        ), 
+        size = 3.5
+      ) +
+      ## Draw a line that visually associates each weather event type 
+      ## with its respective average property damage 
+      ## for the 90% of its cases with the lowest impact.
+      geom_linerange(
+        mapping = aes(
+          xmin = 0, 
+          xmax = AVRG_LOW, 
+          group = EVENT_TYPE, 
+          color = SKEWNESS_LOW
+        )
+      ) +
+      ## Draw a number that indicates the rank assigned to each weather event type 
+      ## (from the most harmful to the least) based on the overall average number
+      ## property damage it caused inside the square point 
+      ## that displays the average.
+      geom_text(
+        mapping = aes(
+          label = RANK
+        ), 
+        size = 2
+        ) +
+      ## Adjust the scale for the color of each point.
+      scale_color_gradient2(
+        ### Choose such limits and midpoint for the colorbar of the legend
+        ### that they can be used unchanged to correctly display 
+        ### the skewness of the observations based on which 
+        ### the average property damage for all three aspects: 
+        ###   1. overall
+        ###   2. 90% of cases with the lowest impact 
+        ###   3. 10% of cases with the highest impact
+        ### was computed. 
+        ### This will allow to include only one common legend when the 
+        ### Multiplot 2.1 will be composed from the four elementary plots.
+        limits = c(-5, 170), 
+        midpoint = 70, 
+        low = "lightgreen", 
+        mid = "orange", 
+        high = "purple"
+        ) +
+      ## Supply descriptive labels. 
+      labs(
+        title = "Plot 2.1.2",
+        subtitle = "Aspect: 90% of cases with the lowest impact",
+        x = paste0(
+          "Average Number of Property Damage for the 90% ", "\n",
+          "of Observations with the Lowest Impact" 
+        )
+      ) +
+      ## Select a theme.
+      theme_linedraw() + 
+      ## Customize the selected theme.
+      theme(
+        ### Remove the legend.
+        legend.position = "none",
+        ### Adjust the title.
+        plot.title = element_text(
+          size = 12,
+          face = "bold"
+        ),
+        ### Adjust the subtitle.
+        plot.subtitle = element_text(
+          size = 10
+        ),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank()
+      )
+
 <br>
 
 <font size="1">[back to start of this
@@ -14132,6 +15350,121 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ##### **9.1.4.1.3 Create The Plot 2.1.3**
 
+The *Plot 2.1.3* displays **the average property damage for the 10% of
+cases with the highest impact** caused by each weather event type from
+all the observation that resulted in non-zero property damage.
+
+The weather event types were matched with a number that represents the
+rank which was assigned to each of them from the most harmful to the
+least with respect to economy, based on the **overall average property
+damage** they caused.  
+(so it is NOT based on the average property damage caused by the 10% of
+cases with the highest impact of each weather event type).
+
+The skewness of the property damage for the observations of each weather
+event type (based on which the average property damage for the 10% of
+cases with the highest impact was computed) had been encoded in the
+color of the bar associated with each of them.
+
+    # Create the Elementary Plot 2.1.3 that displays 
+    # the average property damage by each weather event type 
+    # for the 10% of its cases with the highest impact.
+    elementary_plot_2_1_3 <-
+      ## Supply the constant arguments for the aesthetics of all included geoms.
+      ggplot(
+        data = summary_____harm_on_economy______property_damage,
+        mapping = aes(
+          x = AVRG_HIGH,
+          ### Reverse the order of the factors for the EVENT_TYPE variable 
+          ### to display them alphabetically from top to bottom.
+          y = factor(
+            x = EVENT_TYPE, 
+            levels = rev(x = levels(x = EVENT_TYPE)
+            )
+          ) 
+        )
+      ) +
+      ## Draw a diamond shaped point to the position that corresponds to 
+      ## the average property damage caused by each weather event type
+      ## for the 10% of its cases with the highest impact, 
+      ## of which the color indicates the skewness of observations 
+      ## based on which each average was computed.
+      geom_point(
+        mapping = aes(
+          color = SKEWNESS_HIGH
+        ), 
+        shape = 18, 
+        size = 4.5
+      ) +
+      ## Draw a line that visually associates each weather event type 
+      ## with its respective average property damage 
+      ## for the 10% of its cases with the highest impact.
+      geom_linerange(
+        mapping = aes(
+          xmin = 0, 
+          xmax = AVRG_HIGH, 
+          group = EVENT_TYPE, 
+          color = SKEWNESS_HIGH
+        )
+      ) +
+      ## Draw a number that indicates the rank assigned to each weather event type 
+      ## (from the most harmful to the least) based on the overall average number
+      ## property damage it caused inside the square point 
+      ## that displays the average.
+      geom_text(
+        mapping = aes(
+          label = RANK
+        ),
+        size = 2
+      ) +
+      ## Adjust the scale for the color of each point.
+      scale_color_gradient2(
+        ### Choose such limits and midpoint for the colorbar of the legend
+        ### that they can be used unchanged to correctly display 
+        ### the skewness of the observations based on which 
+        ### the average property damage for all three aspects: 
+        ###   1. overall
+        ###   2. 90% of cases with the lowest impact 
+        ###   3. 10% of cases with the highest impact
+        ### was computed. 
+        ### This will allow to include only one common legend when the 
+        ### Multiplot 2.1 will be composed from the four elementary plots.
+        limits = c(-5, 170), 
+        midpoint = 70, 
+        low = "lightgreen", 
+        mid = "orange", 
+        high = "purple"
+      ) +
+      ## Supply descriptive labels. 
+      labs(
+        title = "Plot 2.1.3",
+        subtitle ="Aspect: 10% of cases with the highest impact",
+        x = paste0(
+          "Average Number of Property Damage for the 10% ", "\n", 
+          "of Observations with the Highest Impact" 
+        )
+      ) +
+      ## Select a theme.
+      theme_linedraw() + 
+      ## Customize the selected theme.
+      theme(
+        ### Remove the legend.
+        legend.position = "none",
+        ### Adjust the title.
+        plot.title = element_text(
+          size = 12,
+          face = "bold"
+        ),
+        ### Adjust the subtitle.
+        plot.subtitle = element_text(
+          size = 10
+        ),
+        ### Remove the text, ticks and title of the y axis 
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank()
+      )
+
 <br>
 
 <font size="1">[back to start of this
@@ -14150,6 +15483,117 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ##### **9.1.4.1.4 Create The Plot 2.1.4**
+
+The *Plot 2.1.4* displays a compact overview of all three aspect that
+were examined for the harm on economy with respect to property damage.
+
+For each weather event type, the comparison was visualized for **the
+average property damage for the 90% of cases with the lowest impact**
+versus **the average property damage for the 10% of cases with the
+highest impact**.
+
+The weather event types were matched with a number that represents the
+rank which was assigned to each of them from the most harmful to the
+least with respect to economy, based on the **overall average property
+damage** they caused.
+
+The skewness of the property damage for the observations of each weather
+event type (based on which the overall property damage was computed) had
+been encoded in the color of the bar associated with each of them.
+
+    # Create the Elementary Plot 2.1.4 that displays 
+    # by each weather event type the comparison of 
+    # the average property damage 
+    # for the 90% of cases with the lowest impact
+    # versus the average property damage 
+    # for the 10% of cases with the highest impact.
+    elementary_plot_2_1_4 <-
+      ## Supply the constant arguments for the aesthetics of all included geoms.
+      ggplot(
+        data = summary_____harm_on_economy______property_damage,
+        mapping = aes(
+          x = AVRG_HIGH, 
+          y = AVRG_LOW
+        )
+      ) +
+      geom_point(
+        mapping = aes(
+          fill = SKEWNESS
+        ), 
+        shape = 21
+      ) +
+      ## Draw a label with a number that indicates the rank assigned 
+      ## to each weather event type (from the most harmful to the least) 
+      ## based on the overall average property damage it caused.
+      geom_label_repel(
+        mapping = aes(
+          label = RANK, 
+          fill = SKEWNESS
+        ),
+        size = 2.5
+      ) +
+      ## Adjust the scale for the fill of each label.
+      scale_fill_gradient2(
+        ### Choose such limits and midpoint for the colorbar of the legend
+        ### that they can be used unchanged to correctly display 
+        ### the skewness of the observations based on which 
+        ### the average property damage for all three aspects: 
+        ###   1. overall
+        ###   2. 90% of cases with the lowest impact 
+        ###   3. 10% of cases with the highest impact
+        ### was computed. 
+        ### This will allow to include only one common legend when the 
+        ### Multiplot 2.1 will be composed from the four elementary plots.
+        limits = c(-5, 170), 
+        midpoint = 70, 
+        low = "lightgreen", 
+        mid = "orange", 
+        high = "purple"
+        ) +
+      ## Set proper limits to the plot.
+        xlim(c(-0.5e9, 6e9)) +
+        ylim(c(-1e7, 8.5e7)) +
+      ## Supply descriptive labels. 
+      labs(
+        title = "Plot 2.1.4",
+        subtitle = paste0(
+          "Comparison of the average property damage ", 
+          "for the 90% of observations with the lowest impact ", 
+          "versus the average property damage ", 
+          "for the 10% of observations with highest impact. "
+        ),
+        x = paste0(
+          "Average Number of Property Damage by each Weather Event Type ", 
+          "for the 10% of its Observations with the Highest Impact"
+        ),
+        y = paste0(
+          "Average Number of Property Damage by each Weather Event Type ", "\n", 
+          "for the 90% of its Observations with the Lowest Impact."
+        ),
+        ### Add a descriptive label for the legend.
+        fill = paste0(
+          "The color indicates the skewness ",
+          "of property damage for the each weather event type. ",
+          "(the color scale is unique for all four plots of PART 1) "
+        )
+      ) +
+      ## Select a theme.
+      theme_linedraw() +
+      ## Customize the selected theme.
+      theme(
+        ### Adjust the legend.
+        legend.position = "bottom",
+        legend.direction = "horizontal",
+        ### Adjust the title.
+        plot.title = element_text(
+          size = 12,
+          face = "bold"
+        ),
+        ### Adjust the subtitle.
+        plot.subtitle = element_text(
+          size = 10
+        )
+      )
 
 <br>
 
@@ -14171,6 +15615,108 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 #### 9.1.4.2 Compose the Multiplot 2.1
 
+The four elementary plots that were created from the results of the
+summary for the harm on economy with respect to property damage by each
+weather event type, were combined to construct a single multiplot that
+displays the complete picture for this perspective.
+
+    # Create a multiplot that displays the overview of the summary 
+    # for the harm on economy with respect to property damage
+    # by each weather event type.
+    multiplot_2_1 <- arrangeGrob(
+      grobs = list(
+          
+        # Title
+        textGrob(
+          label = paste0(
+            "\n",
+            "PART 1: Harm on economy by each weather event type ", 
+            "with the respect to property damage ", "\n", 
+            "based on the cases of weather events ", 
+            "that resulted in non-zero property damage.", "\n", 
+            "\n"
+          ),
+           gp=gpar(
+             fontsize = 16, 
+             fontface = "bold"
+           )
+        ),
+        
+        # Subtitle
+        textGrob(
+          label = paste0(
+              "\n", 
+              "The results include only the weather event types, ", 
+              "for which at least 10 observations ", 
+              "that resulted in non-zero property damage were available. ", "\n",
+              "The number associated with each weather event type ", 
+              "represents the rank (from the most harmful to the least) ", 
+              "which was assigned based on the overall average property damage.", "\n",
+              "Because for most of the weather event types ", 
+              "high positive skewness was observed for the property damage, ",
+              "the average of the 90% of cases with lowest impact ", "\n",
+              "and the 10% of cases with highest impact were reported ", 
+              "to provide a more representative picture of their consequences.","\n",
+              "\n"
+          ),
+           gp=gpar(
+             fontsize = 14, 
+             fontface = "bold"
+           )
+        ),
+        
+        # Plot 2.1.1
+        # Elementary plot for the average property damage 
+        # by each weather event type for all cases.
+        elementary_plot_2_1_1,
+        
+        # ELEMENTARY PLOT 1.1.2
+        # Elementary plot for the average property damage 
+        # by each weather event type for 90% of cases with the lowest impact.
+        elementary_plot_2_1_2,
+        
+        # ELEMENTARY PLOT 1.1.3
+        # Elementary plot for the average property damage 
+        # by each weather event type for 10% of cases with the highest impact.
+        elementary_plot_2_1_3,
+        
+        # ELEMENTARY PLOT 1.1.4
+        # Elementary Plot 2.1.4 for the comparison of 
+        # the average property damage 
+        # for the 90% of cases with the lowest impact versus 
+        # the 10% of cases with the highest impact.
+        elementary_plot_2_1_4
+      ),
+      # Set the layout for this elementary plots
+      layout_matrix = 
+        matrix(
+          c(1,1,1,1,1,1,1,1,1,
+            2,2,2,2,2,2,2,2,2,
+            3,3,3,3,3,4,4,5,5,
+            3,3,3,3,3,4,4,5,5,
+            3,3,3,3,3,4,4,5,5,
+            3,3,3,3,3,4,4,5,5,
+            3,3,3,3,3,4,4,5,5,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6
+          ),
+          byrow = TRUE, 
+          nrow = 13
+        )
+    )
+
+*(Note that the Multiplot 2.1 was NOT presented in this section due to
+the restrictions imposed by the assignment to include in the report at
+least 1 but no more than 3 figures. It can be examined at the subsection
+[10.2.1 Overview of results for the harm on
+economy](#ind-10-2-1--Overview-of-results-for-the-harm-on-economy) of
+the chapter [10 RESULTS](#ind-10--RESULTS).)*, were the Figure 2 was
+presented, of which the Multiplot 2.1 constitutes the PART 1.)\*
+
 <br>
 
 <font size="1">[back to start of this
@@ -14191,6 +15737,123 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 9.2 Harm On Economy With Respect To Crop Damage By Each Weather Event Type
 --------------------------------------------------------------------------
 
+<font size="3"><u><strong>Summary</strong></u></font>
+
+The required variables and the target data subset of observations for
+the harm on economy with respect to crop damage were extracted from the
+table with the processed data, and processed to create a new variable
+that divided the observations for each of the included weather event
+types to two supplementary groups:
+
+-   the 90% of observations with the lowest impact  
+-   the 10% of observations with the highest impact
+
+before the information for the harm on economy with respect to crop
+damage was summarized by each weather event type.
+
+Three aspects were examined:
+
+1.  The overall average crop damage by each weather event type.  
+2.  The average crop damage by each weather event type for the 90% of
+    cases with the lowest impact.  
+3.  The average crop damage by each weather event type for the 10% of
+    cases with the highest impact.
+
+For each aspect, the average crop damage by each weather event type, the
+number of its available observations (based on which the average was
+computed) and their skewness were examined.
+
+The overall average crop damage was used as the main criterion to
+determine which weather events caused the most harm on economy with
+respect to crop damage but it is important to take into account the
+other two aspect that were presented in order to obtain a more
+insightful and complete ‘picture’ of their consequences, (especially
+given the fact that for most of the weather event types, the crop damage
+were highly positively skewed).
+
+The table with results for the harm on economy with respect to crop
+damage by each weather event type were presented at the subsection
+[10.2.3 Most harmful event types with respect to crop
+damage](#ind-10-2-3--Most-harmful-weather-event-types-with-respect-to-crop-damage)
+of the chapter [10 RESULTS](#ind-10--RESULTS).
+
+Finally the *Multiplot 2.2* was created to visualize the results of the
+harm on economy with respect to crop damage by each weather event type.
+
+\*(Note that neither the Multiplot 2.2 nor the elementary plots that it
+contains were presented in this section due to the restrictions imposed
+by the assignment to include in the report at least 1 but no more than 3
+figures. It can be examined at the subsection [10.2.1 Overview of
+results for the harm on
+economy](#ind-10-2-1--Overview-of-results-for-the-harm-on-economy) of
+the chapter [10 RESULTS](#ind-10--RESULTS), where the Figure 2 was
+presented, of which the Multiplot 2.2 constitutes the PART 2.)
+
+<font size="3"><u><strong>Steps</strong></u></font>
+
+-   [9.2.1 Extract the target data for harm on economy with respect to
+    crop
+    damage](#ind-9-2-1--Extract-the-target-data-for-harm-on-economy-with-respect-to-crop-damage)
+    -   The target data subset of observations needed to evaluate the
+        harm on economy with respect to crop damage by each weather
+        event type was extracted from the table with the processed
+        data.  
+-   [9.2.2 Process the target data for harm on economy with respect to
+    crop
+    damage](#ind-9-2-2--Process-the-target-data-for-harm-on-economy-with-respect-to-crop-damage)
+    -   The table with target data subset for the harm on economy with
+        respect to crop damage was processed to create the table with
+        processed data for the harm on economy with respect to crop
+        damage.  
+-   [9.2.3 Summarize the processed data for harm on economy with respect
+    to crop damage by each weather event
+    type](#ind-9-2-3--Summarize-the-processed-data-for-harm-on-economy-with-respect-to-crop-damage-by-each-weather-event-type)
+    -   The harm on economy with respect to crop damage by each weather
+        event type was evaluated over various aspects.  
+-   [9.2.4 Visualize the results of the summary for the harm on economy
+    with respect to crop damage by each weather event
+    type](#ind-9-2-4--Visualize-the-results-of-the-summary-for-the-harm-on-economy-with-respect-to-crop-damage-by-each-weather-event-type)
+    -   The Multiplot 2.2 that presents the results of the summary for
+        the harm on economy with respect to crop damage by each weather
+        event type was created.
+        -   [9.2.4.1 Create the components of Multiplot
+            2.2](#ind-9-2-4-1--Create-the-components-of-Multiplot-2-2)
+            -   Creates the four elementary plot that constitute the
+                Multiplot 2.2:
+                -   [9.2.4.1.1 Create The Plot
+                    2.2.1](#ind-9-2-4-1-1--Create-The-Plot-2-2-1)
+                    -   Displays the overall average crop damage caused
+                        by each weather event type based on all the
+                        cases of weather events that resulted in
+                        non-zero crop damage.  
+                -   [9.2.4.1.2 Create The Plot
+                    2.2.2](#ind-9-2-4-1-2--Create-The-Plot-2-2-2)
+                    -   Displays the average crop damage caused by each
+                        weather event type based on 90% of weather
+                        events with the lowest impact (for each weather
+                        event type) that resulted in non-zero crop
+                        damage.  
+                -   [9.2.4.1.3 Create The Plot
+                    2.2.3](#ind-9-2-4-1-3--Create-The-Plot-2-2-3)
+                    -   Displays the average crop damage caused by each
+                        weather event type based on 10% of weather
+                        events with the highest impact (for each weather
+                        event type) that resulted in non-zero crop
+                        damage.  
+                -   [9.2.4.1.4 Create The Plot
+                    2.2.4](#ind-9-2-4-1-4--Create-The-Plot-2-2-4)
+                    -   Displays a comparison for each weather event
+                        type, of the average crop damage for the 90% of
+                        its observations with the lowest impact versus
+                        the average crop damage for the 10% of its
+                        observations with the highest impact based only
+                        on the weather events that resulted in non-zero
+                        crop damage.  
+        -   [9.2.4.2 Compose the Multiplot
+            2.2](#ind-9-2-4-2--Compose-the-Multiplot-2-2)
+            -   Combines the four elementary plots to create the
+                Multiplot 2.2.
+
 <br>
 
 <font size="1">[back to start of this
@@ -14204,6 +15867,309 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 9.2.1 Extract the target data for harm on economy with respect to crop damage
 
+In order to examine the harm on economy with respect to crop damage
+caused by each weather event type, the variables *REFNUM*, *EVENT\_TYPE*
+and *CROP\_DAMAGE* were selected from the table with the processed data
+and **only the observations that refer to weather events that resulted
+in non-zero crop damage** were extracted.
+
+Furthermore, in an attempt to avoid highly misleading statistics due to
+the small number of observations for some of the weather event types, a
+lowest bound of 10 weather events that caused non zero crop damage (for
+each of the included weather event types) was selected (subjectively by
+the analyst) and applied.
+
+This lowest bound, although it may seem (and generally it is) not enough
+to get trustworthy statistics, it was considered to be *“good enough”*
+taking into account that :
+
+1.  the analysis focuses in describing historical data without trying to
+    make inferences that would demand substantially bigger samples,
+    although any statistic based on less than 10 observations could not
+    be taken seriously especially in cases (such as in this analysis)
+    where the distribution of crop damage for each weather event type
+    was skewed.
+2.  a period of 10 years (from 2001 to 2011) in which the observations
+    that were used in the analysis occurred, is relatively small time to
+    produce big samples of weather events that caused non zero crop
+    damage for some the weather event types. Thus, if a highest bound
+    was selected to get more robust statistics such as samples of 100 or
+    300, the majority of weather event types would have been excluded,
+    making the results of the analysis trivial.
+
+<!-- -->
+
+    # Extract the required variables and the target data subset of observations 
+    # for the harm on economy with respect to crop damage.
+    target_data_____harm_on_economy_____crop_damage <- processed_data[
+      ## Extract only the observations that have resulted in non-zero crop damage.
+      CROP_DAMAGE > 0,
+      ## Select only the relevant variables. 
+      list(REFNUM, EVENT_TYPE, CROP_DAMAGE)
+      ][
+        ### Keep only the observations that correspond to the weather event types 
+        ### for which there are at least 10 weather events available.
+        EVENT_TYPE %in% 
+          names(table(EVENT_TYPE)[table(EVENT_TYPE) >= 10])
+        ]
+
+The table with the target data for the harm on economy with respect to
+crop damage consist of 12177 observations.
+
+    # Print the structure of the table with the target data subset 
+    # for the harm on economy with respect to crop damage.
+    str(target_data_____harm_on_economy_____crop_damage)
+
+    ## Classes 'data.table' and 'data.frame':   12177 obs. of  3 variables:
+    ##  $ REFNUM     : int  413886 413890 413893 415001 415205 415230 415477 415533 415652 416062 ...
+    ##  $ EVENT_TYPE : chr  "HAIL" "HAIL" "HAIL" "HAIL" ...
+    ##  $ CROP_DAMAGE: num  3000 3000 3000 5000 2500 3000 5000 2500 100000 30000 ...
+    ##  - attr(*, ".internal.selfref")=<externalptr> 
+    ##  - attr(*, "sorted")= chr "REFNUM"
+
+The variable *EVENT\_TYPE* includes 16 distinct weather event types, for
+most of which the variable *CROP\_DAMAGE* was highly positively skewed.
+
+It was worth noting that for the weather event types with highest number
+of observations there was highest skewness for the values of crop
+damage, indicating that the corresponding distribution of crop damage
+has a heavy tail that wasn’t possible to be observed when few
+observation were available.
+
+    # Create a kable to present some facts about the table with the target data 
+    # for the harm on economy with respect to crop damage.
+    kable(
+      x = target_data_____harm_on_economy_____crop_damage[
+        order(EVENT_TYPE), 
+        list(
+          "N" = .N, 
+          "SKEWNESS" = round(skewness(CROP_DAMAGE), 4)
+        ), 
+        by = EVENT_TYPE
+        ],
+      caption = paste0(
+        "Table 9.2.1-1: ",
+        "Facts about the table with the target data subset of observations ", 
+        "for the harm on economy with respect to crop damage."
+      )
+    ) %>% kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      ) %>% 
+      footnote(
+        general = "The skewness was rounded to 4 decimal places."
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 9.2.1-1: Facts about the table with the target data subset of
+observations for the harm on economy with respect to crop damage.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+EVENT\_TYPE
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+N
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+SKEWNESS
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+DROUGHT
+</td>
+<td style="text-align:right;">
+158
+</td>
+<td style="text-align:right;">
+4.9333
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EXTREME COLD/WIND CHILL
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+1.6402
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FLASH FLOOD
+</td>
+<td style="text-align:right;">
+1296
+</td>
+<td style="text-align:right;">
+13.5455
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FLOOD
+</td>
+<td style="text-align:right;">
+1263
+</td>
+<td style="text-align:right;">
+19.0535
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FROST/FREEZE
+</td>
+<td style="text-align:right;">
+106
+</td>
+<td style="text-align:right;">
+5.8134
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HAIL
+</td>
+<td style="text-align:right;">
+5590
+</td>
+<td style="text-align:right;">
+18.5382
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HEAVY RAIN
+</td>
+<td style="text-align:right;">
+75
+</td>
+<td style="text-align:right;">
+7.8538
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HIGH WIND
+</td>
+<td style="text-align:right;">
+123
+</td>
+<td style="text-align:right;">
+7.5985
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HURRICANE/TYPHOON
+</td>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:right;">
+5.6962
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LIGHTNING
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+6.2946
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+STRONG WIND
+</td>
+<td style="text-align:right;">
+94
+</td>
+<td style="text-align:right;">
+8.5291
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+THUNDERSTORM WIND
+</td>
+<td style="text-align:right;">
+2321
+</td>
+<td style="text-align:right;">
+13.4840
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TORNADO
+</td>
+<td style="text-align:right;">
+889
+</td>
+<td style="text-align:right;">
+27.0249
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TROPICAL STORM
+</td>
+<td style="text-align:right;">
+52
+</td>
+<td style="text-align:right;">
+3.4070
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WILDFIRE
+</td>
+<td style="text-align:right;">
+91
+</td>
+<td style="text-align:right;">
+5.3055
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WINTER STORM
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+2.6305
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<sup></sup> The skewness was rounded to 4 decimal places.
+</td>
+</tr>
+</tfoot>
+</table>
 <br>
 
 <font size="1">[back to start of this
@@ -14219,6 +16185,103 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ### 9.2.2 Process the target data for harm on economy with respect to crop damage
+
+To create the table with the processed data for the harm on economy with
+respect to crop damage from the corresponding target data subset for
+this perspective, a new variable was created that divides the
+observations for each of the included weather event types in two
+complementary levels:
+
+-   one that contains the 90% of cases with lowest impact  
+-   the other that contains the 10% of cases with highest impact
+
+This decision was made due to the high skewness that was observed for
+the values of the variable *CROP\_DAMAGE* for most weather event types,
+which indicates that the underlining distributions of such phenomena has
+a heavy tail that causes this heterogeneity on the observations. As a
+result a small crop damage were observed for the majority of cases that
+resulted in non-zero fatalities while in the few cases with the highest
+impact they caused lots of crop damage.
+
+Having in mind that the average crop damage will be used to determine
+which weather event types were the most harmful to economy (with respect
+to crop damage) combined with the fact that the average doesn’t
+represent well the distribution of variables with high skewness, as it
+is highly affected by the most extreme values, it was considered
+necessary to examine the subsets created by those two levels in order to
+obtain an insightful picture.
+
+    # Create the table with the processed data 
+    # for the harm on economy with respect to crop damage.
+    processed_data_____harm_on_economy_____crop_damage <- 
+      target_data_____harm_on_economy_____crop_damage[
+        ,
+        ## Create a new variable divides the observations
+        ## for each weather event into two supplementary groups:  
+        ##   - the 90% of weather events that resulted in lowest fatalities
+        ##   - the 10% of weather events that resulted in highest fatalities
+        BIN_GROUP_PER_EVENT_TYPE := (function(x, p_bins) {
+          
+          # adds 0 and 1 in the vector supplied at the argument 'p_bins' 
+          # to the start and the end respectively  
+          # the supplied percentiles if they are missing 
+          # and sort them ascending
+          p_bins_increasing <- sort(c(0, p_bins, 1))
+          
+          # creates the character strings that labels of the bins by the values supplied at 
+          # the argument 'p_bins' that will be the values of the new variable
+          bin_labels <- paste0("(", p_bins_increasing[-length(p_bins_increasing)]*100,
+                               "% - ", p_bins_increasing[-1]*100, "%]")
+          
+          # identify the number of occurrences that correspond to each label
+          n_times <- vapply(2:length(p_bins_increasing),
+                            function(i) {
+                              as.integer(floor(length(x) * p_bins_increasing[i]) -
+                                           floor(length(x) * p_bins_increasing[i - 1]))
+                            }, integer(1))
+          
+          # multiply each label with the number of its occurrences
+          x_bins_expanded <- rep(x = bin_labels, times = n_times)
+          
+          # order the label to much the values of the corresponding vector
+          x_bins_expanded_reordered <- x_bins_expanded[order(seq_along(x)[order(x)])]
+          
+          ## Coerce the character vector with the labels of bins to a factor
+          x_bins_factor <- factor(x_bins_expanded_reordered, labels = bin_labels, ordered = TRUE)
+          
+        })(CROP_DAMAGE, 0.9), 
+        by = EVENT_TYPE
+      ][
+        ## Coerce the EVENT_VARIABLE to factor
+        , EVENT_TYPE := as.factor(EVENT_TYPE) 
+      ]
+
+The table with the processed data for the harm on economy with respect
+to crop damage contains 4 variables:
+
+1.  **REFNUM** (int) : an id that uniquely identifies each observation  
+2.  **EVENT\_TYPE** (Factor w/ 16 levels) : the type of each weather
+    event
+3.  **CROP\_DAMAGE** (int) : the crop damage in dollars  
+4.  **BIN\_GROUP\_PER\_EVENT\_TYPE** (Ord.factor w/ 2 levels) : a factor
+    that divides the observations for each weather event type to two
+    complementary levels, one with the 90% of observations with the
+    lowest impact and another with the 10% of observations with the
+    highest impact.
+
+and 12177 observations.
+
+    # Print the structure of the table with the processed data 
+    # for the harm on economy with respect to crop damage.
+    str(processed_data_____harm_on_economy_____crop_damage)
+
+    ## Classes 'data.table' and 'data.frame':   12177 obs. of  4 variables:
+    ##  $ REFNUM                  : int  413886 413890 413893 415001 415205 415230 415477 415533 415652 416062 ...
+    ##  $ EVENT_TYPE              : Factor w/ 16 levels "DROUGHT","EXTREME COLD/WIND CHILL",..: 6 6 6 6 6 6 6 6 3 8 ...
+    ##  $ CROP_DAMAGE             : num  3000 3000 3000 5000 2500 3000 5000 2500 100000 30000 ...
+    ##  $ BIN_GROUP_PER_EVENT_TYPE: Ord.factor w/ 2 levels "(0% - 90%]"<"(90% - 100%]": 1 1 1 1 1 1 1 1 1 1 ...
+    ##  - attr(*, ".internal.selfref")=<externalptr> 
+    ##  - attr(*, "sorted")= chr "REFNUM"
 
 <br>
 
@@ -14236,6 +16299,114 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 9.2.3 Summarize the processed data for harm on economy with respect to crop damage by each weather event type
 
+To evaluate the harm on economy by each weather event type with respect
+to crop damage a simplistic approach was adopted :
+
+-   the weather event types were ranked from the most harmful to the
+    least based on the overall average crop damage of the weather events
+    that resulted in non-zero crop damage
+
+The overall average crop damage caused by each weather event type was
+initially examined along with the skewness of the crop damage for each
+weather event type. In most cases the skewness was high (or even
+extremely high), so it was possible that the overall mean misrepresented
+the consequences of each weather event type.
+
+That is the reason why the average crop damage for 90% of weather events
+with the lowest impact versus the average crop damage for the 10% of
+weather events with the highest impact were also computed and examined.
+
+**It is highlighted that for the average crop damage that refers to the
+10% of the cases that had the highest impact, there were few
+observations available for a lot of weather event types and the
+corresponding mean values should be interpreted with caution.**
+
+    # Create the table with the summary for the harm on economy 
+    # with respect to crop damage for each weather event type.
+    summary_____harm_on_economy______crop_damage <- 
+      processed_data_____harm_on_economy_____crop_damage[
+      ,
+      list(
+        ## The total number of observation by each weather event type.
+        "N" = .N,
+        ## The average crop damage caused by each weather event type.
+        "AVRG" = round(mean(CROP_DAMAGE), 2),
+        ## The skewness of crop damage for the observations by each weather event type.
+        "SKEWNESS" = round(skewness(CROP_DAMAGE), 4),
+        ## The number of observations for the 90% of cases with the lowest impact 
+        ## by each weather event type.
+        "N_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , .N],
+        ## The average crop damage caused by each weather event type 
+        ## for the 90% of cases with the lowest impact.
+        "AVRG_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , round(mean(CROP_DAMAGE), 2)],
+        ## The skewness of crop damage for the 90% of cases with the lowest impact 
+        ## by each weather event type.
+        "SKEWNESS_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , round(skewness(CROP_DAMAGE), 4)],
+        ## The number of observations for the 10% of cases with the lowest impact 
+        ## by each weather event type.
+        "N_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , .N],
+        ## The average crop damage caused by each weather event type 
+        ## for the 10% of cases with the highest impact.
+        "AVRG_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , round(mean(CROP_DAMAGE), 2)],
+        ## The skewness of crop damage for the 10% of cases with the highest impact 
+        ## by each weather event type.
+        "SKEWNESS_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , round(skewness(CROP_DAMAGE), 4)]
+      ),
+      by = "EVENT_TYPE"
+      ][
+        ## The average crop damage is used to order the rows of the table
+        ## from the most harmful weather event type to the least.
+        order(-AVRG),
+        ## Create a variable with the rank of the harmness of each weather event type.
+        RANK := 1:length(EVENT_TYPE)
+        ][
+          ,
+          ## Reorder the variables at the table.
+          list(
+            RANK, EVENT_TYPE, N, AVRG, SKEWNESS, N_LOW, AVRG_LOW, SKEWNESS_LOW, N_HIGH, AVRG_HIGH, SKEWNESS_HIGH
+          )
+          ]
+
+The results of the table with the summary for the harm on economy with
+respect to crop damage by each weather event type that was created in
+this section were presented at the subsection [10.2.3 Most harmful event
+types with respect to crop
+damage](#ind-10-2-3--Most-harmful-weather-event-types-with-respect-to-crop-damage)
+of the chapter [10 RESULTS](#ind-10--RESULTS).
+
+The table with the summary for the harm on economy with respect to crop
+damage by each weather event type was exported (as an R file), in the
+folder of the working directory:
+
+-   *outputs –&gt; harm\_on\_economy –&gt; results*
+
+with filename:
+
+-   *summary\_\_\_\_\_\_harm\_on\_economy\_\_\_\_\_\_crop\_damage.R*
+
+<!-- -->
+
+    # Supply the filepath at which the table with the summary
+    # for the harm on economy will be exported.
+    filepath_____summary_____harm_on_economy______crop_damage <-
+      file.path(
+        directory_tree_____outputs[[
+          "filepath_____outputs_____harm_on_economy_____results"
+        ]],
+        "summary_____harm_on_economy______crop_damage.R"
+      )
+
+    # Export the table with the summary for the harm on economy
+    # with respect to crop damage.
+    saveRDS(
+      object = summary_____harm_on_economy______crop_damage,
+      file = filepath_____summary_____harm_on_economy______crop_damage
+    )
+
+The main reason for exporting the file with the summary for the harm on
+economy with respect to crop damage by each weather event type was to
+supply a checkpoint for any attempts to reproduce the analysis.
+
 <br>
 
 <font size="1">[back to start of this
@@ -14252,6 +16423,53 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 9.2.4 Visualize the results of the summary for the harm on economy with respect to crop damage by each weather event type
 
+From the table with the summary for the harm on economy by each weather
+event type with respect to crop damage the **Multiplot 2.2** was created
+to present an overview of the results for the three different aspects
+that were examined for this perspective.
+
+Four elementary plots were
+[created](#ind-9-2-4-1--Create-the-components-of-Multiplot-2-2):
+
+-   [9.2.4.1.1 Create The Plot
+    2.2.1](#ind-9-2-4-1-1--Create-The-Plot-2-2-1)
+    -   Displays the overall average crop damage caused by each weather
+        event type based on all the cases of weather events that
+        resulted in non-zero crop damage.  
+-   [9.2.4.1.2 Create The Plot
+    2.2.2](#ind-9-2-4-1-2--Create-The-Plot-2-2-2)
+    -   Displays the average crop damage caused by each weather event
+        type based on 90% of weather events with the lowest impact (for
+        each weather event type) that resulted in non-zero crop
+        damage.  
+-   [9.2.4.1.3 Create The Plot
+    2.2.3](#ind-9-2-4-1-3--Create-The-Plot-2-2-3)
+    -   Displays the average crop damage caused by each weather event
+        type based on 10% of weather events with the highest impact (for
+        each weather event type) that resulted in non-zero crop
+        damage.  
+-   [9.2.4.1.4 Create The Plot
+    2.2.4](#ind-9-2-4-1-4--Create-The-Plot-2-2-4)
+    -   Displays a comparison for each weather event type, of the
+        average crop damage for the 90% of its observations with the
+        lowest impact versus the average crop damage for the 10% of its
+        observations with the highest impact based only on the weather
+        events that resulted in non-zero crop damage.
+
+which were then [combined](#ind-9-2-4-2--Compose-the-Multiplot-2-2) in
+order to obtain the **Multiplot 2.2**.
+
+It constitutes the *PART 2* of the *Figure 2* that displays the overview
+of the harm on economy by each weather event type.
+
+*(Note that neither the Multiplot 2.2 nor the elementary plots that it
+contains were presented in this section due to the restrictions imposed
+by the assignment to include in the report at least 1 but no more than 3
+figures. It can be examined at the subsection [10.2.1 Overview of
+results for the harm on
+economy](#ind-10-2-1--Overview-of-results-for-the-harm-on-economy) of
+the chapter [10 RESULTS](#ind-10--RESULTS).)*
+
 <br>
 
 <font size="1">[back to start of this
@@ -14266,6 +16484,35 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 #### 9.2.4.1 Create the components of Multiplot 2.2
+
+Creates four elementary plots to visualize the results for the aspects
+that were examined for the harm on economy with respect to crop damage
+by each weather event type.
+
+-   [9.2.4.1.1 Create The Plot
+    2.2.1](#ind-9-2-4-1-1--Create-The-Plot-2-2-1)
+    -   Displays the overall average crop damage caused by each weather
+        event type based on all the cases of weather events that
+        resulted in non-zero crop damage.  
+-   [9.2.4.1.2 Create The Plot
+    2.2.2](#ind-9-2-4-1-2--Create-The-Plot-2-2-2)
+    -   Displays the average crop damage caused by each weather event
+        type based on 90% of weather events with the lowest impact (for
+        each weather event type) that resulted in non-zero crop
+        damage.  
+-   [9.2.4.1.3 Create The Plot
+    2.2.3](#ind-9-2-4-1-3--Create-The-Plot-2-2-3)
+    -   Displays the average crop damage caused by each weather event
+        type based on 10% of weather events with the highest impact (for
+        each weather event type) that resulted in non-zero crop
+        damage.  
+-   [9.2.4.1.4 Create The Plot
+    2.2.4](#ind-9-2-4-1-4--Create-The-Plot-2-2-4)
+    -   Displays a comparison for each weather event type, of the
+        average crop damage for the 90% of its observations with the
+        lowest impact versus the average crop damage for the 10% of its
+        observations with the highest impact based only on the weather
+        events that resulted in non-zero crop damage.
 
 <br>
 
@@ -14283,6 +16530,108 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ##### **9.2.4.1.1 Create The Plot 2.2.1**
+
+The *Plot 2.2.1* displays **the overall average crop damage** caused by
+each weather event type taking into account all and only the observation
+that resulted in non-zero crop damage.
+
+The weather event types were matched with a number that represents the
+rank which was assigned to each of them from the most harmful to the
+least with respect to economy, based on the **overall average crop
+damage** they caused.
+
+The skewness of the crop damage for the observations of each weather
+event type (based on which the overall crop damage was computed) had
+been encoded in the color of the bar associated with each of them.
+
+    # Create the Elementary Plot 2.2.1 that displays 
+    # the overall average crop damage 
+    # by each weather event type for all cases. 
+    elementary_plot_2_2_1 <-
+      ## Supply the constant arguments for the aesthetics of all included geoms.
+      ggplot(
+        data = summary_____harm_on_economy______crop_damage,
+        mapping = aes(
+          x = AVRG,
+          ### Reverse the order of the factors for the EVENT_TYPE variable 
+          ### to make them displayed alphabetically from top to bottom.
+          y = factor(
+            x = EVENT_TYPE, 
+            levels = rev(x = levels(x = EVENT_TYPE)
+            )
+          ) 
+        )
+      ) +
+      ## Draw a square shaped point to the position that corresponds to 
+      ## the average crop damage caused by each weather event type, 
+      ## of which the color indicates the skewness of observations 
+      ## based on which each average was computed.
+      geom_point(
+        mapping = aes(color = SKEWNESS),
+        shape = 15, 
+        size = 4.5
+      ) +
+      ## Draw a line that visually associates each weather event type 
+      ## with its respective average crop damage.
+      geom_linerange(
+        mapping = aes(
+          xmin = 0, 
+          xmax = AVRG, 
+          group = EVENT_TYPE, 
+          color = SKEWNESS
+        )
+        ) +
+      ## Draw a number that indicates the rank assigned to each weather event type 
+      ## (from the most harmful to the least) based on the overall average number
+      ## crop damage it caused inside the square point 
+      ## that displays the average.
+      geom_text(
+        mapping = aes(
+          label = RANK
+        ), 
+        size = 2.5
+      ) +
+      ## Adjust the scale for the color of each point.
+      scale_color_gradient2(
+        ### Choose such limits and midpoint for the colorbar of the legend
+        ### that they can be used unchanged to correctly display 
+        ### the skewness of the observations based on which 
+        ### the average crop damage for all three aspects: 
+        ###   1. overall
+        ###   2. 90% of cases with the lowest impact 
+        ###   3. 10% of cases with the highest impact
+        ### was computed. 
+        ### This will allow to include only one common legend when the 
+        ### Multiplot 2.2 will be composed from the four elementary plots. 
+        limits = c(0, 28), 
+        midpoint = 14, 
+        low = "lightgreen", 
+        mid = "orange", 
+        high = "purple"
+      ) +
+      ## Supply descriptive labels.  
+      labs(
+        title = "Plot 2.2.1", 
+        subtitle = "Aspect: Overall",
+        x = "Weather Event Types \n",
+        y = "Average Number of Crop Damage\n"
+      ) +
+      ## Select a theme.
+      theme_linedraw() + 
+      ## Customize the selected theme.
+      theme(
+        ### Remove the legend.
+        legend.position = "none",
+        ### Adjust the title.
+        plot.title = element_text(
+          size = 12,
+          face = "bold"
+        ),
+        ### Adjust the subtitle.
+        plot.subtitle = element_text(
+          size = 10
+        )
+      )
 
 <br>
 
@@ -14303,6 +16652,119 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ##### **9.2.4.1.2 Create The Plot 2.2.2**
 
+The *Elementary Plot 2.2.2* displays **the average crop damage for the
+90% of cases with the lowest impact** caused by each weather event type
+from all the observation that resulted in non-zero crop damage.
+
+The weather event types were matched with a number that represents the
+rank which was assigned to each of them from the most harmful to the
+least with respect to economy, based on the **overall average crop
+damage** they caused.  
+(so it is NOT based on the average crop damage caused by the 90% of
+cases with the lowest impact of each weather event type).
+
+The skewness of the crop damage for the observations of each weather
+event type (based on which the average crop damage for the 90% of cases
+with the lowest impact was computed) had been encoded in the color of
+the bar associated with each of them.
+
+    # Create the Elementary Plot 2.2.2 that displays 
+    # the average crop damage by each weather event type 
+    # for the 90% of its cases with the lowest impact.
+    elementary_plot_2_2_2 <-
+      ## Supply the constant arguments for the aesthetics of all included geoms.
+      ggplot(
+        data = summary_____harm_on_economy______crop_damage,
+        mapping = aes(
+          x = AVRG_LOW,
+          ### Reverse the order of the factors for the EVENT_TYPE variable 
+          ### to display them alphabetically from top to bottom.
+          y = factor(
+            x = EVENT_TYPE, 
+            levels = rev(x = levels(x = EVENT_TYPE)
+            )
+          ) 
+        )
+      ) +
+      ## Draw a circle shaped point to the position that corresponds to 
+      ## the average crop damage caused by each weather event type
+      ## for the 90% of its cases with the lowest impact, 
+      ## of which the color indicates the skewness of observations 
+      ## based on which each average was computed.
+      geom_point(
+        mapping = aes(
+          color = SKEWNESS_LOW
+        ), 
+        size = 3.5
+      ) +
+      ## Draw a line that visually associates each weather event type 
+      ## with its respective average crop damage 
+      ## for the 90% of its cases with the lowest impact.
+      geom_linerange(
+        mapping = aes(
+          xmin = 0, 
+          xmax = AVRG_LOW, 
+          group = EVENT_TYPE, 
+          color = SKEWNESS_LOW
+        )
+      ) +
+      ## Draw a number that indicates the rank assigned to each weather event type 
+      ## (from the most harmful to the least) based on the overall average number
+      ## crop damage it caused inside the square point 
+      ## that displays the average.
+      geom_text(
+        mapping = aes(
+          label = RANK
+        ), 
+        size = 2
+        ) +
+      ## Adjust the scale for the color of each point.
+      scale_color_gradient2(
+        ### Choose such limits and midpoint for the colorbar of the legend
+        ### that they can be used unchanged to correctly display 
+        ### the skewness of the observations based on which 
+        ### the average crop damage for all three aspects: 
+        ###   1. overall
+        ###   2. 90% of cases with the lowest impact 
+        ###   3. 10% of cases with the highest impact
+        ### was computed. 
+        ### This will allow to include only one common legend when the 
+        ### Multiplot 2.2 will be composed from the four elementary plots.
+        limits = c(0, 28), 
+        midpoint = 14, 
+        low = "lightgreen", 
+        mid = "orange", 
+        high = "purple"
+        ) +
+      ## Supply descriptive labels. 
+      labs(
+        title = "Plot 2.2.2",
+        subtitle = "Aspect: 90% of cases with the lowest impact",
+        x = paste0(
+          "Average Number of Crop Damage for the 90% ", "\n",
+          "of Observations with the Lowest Impact" 
+        )
+      ) +
+      ## Select a theme.
+      theme_linedraw() + 
+      ## Customize the selected theme.
+      theme(
+        ### Remove the legend.
+        legend.position = "none",
+        ### Adjust the title.
+        plot.title = element_text(
+          size = 12,
+          face = "bold"
+        ),
+        ### Adjust the subtitle.
+        plot.subtitle = element_text(
+          size = 10
+        ),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank()
+      )
+
 <br>
 
 <font size="1">[back to start of this
@@ -14322,6 +16784,121 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ##### **9.2.4.1.3 Create The Plot 2.2.3**
 
+The *Plot 2.2.3* displays **the average crop damage for the 10% of cases
+with the highest impact** caused by each weather event type from all the
+observation that resulted in non-zero crop damage.
+
+The weather event types were matched with a number that represents the
+rank which was assigned to each of them from the most harmful to the
+least with respect to economy, based on the **overall average crop
+damage** they caused.  
+(so it is NOT based on the average crop damage caused by the 10% of
+cases with the highest impact of each weather event type).
+
+The skewness of the crop damage for the observations of each weather
+event type (based on which the average crop damage for the 10% of cases
+with the highest impact was computed) had been encoded in the color of
+the bar associated with each of them.
+
+    # Create the Elementary Plot 2.2.3 that displays 
+    # the average crop damage by each weather event type 
+    # for the 10% of its cases with the highest impact.
+    elementary_plot_2_2_3 <-
+      ## Supply the constant arguments for the aesthetics of all included geoms.
+      ggplot(
+        data = summary_____harm_on_economy______crop_damage,
+        mapping = aes(
+          x = AVRG_HIGH,
+          ### Reverse the order of the factors for the EVENT_TYPE variable 
+          ### to display them alphabetically from top to bottom.
+          y = factor(
+            x = EVENT_TYPE, 
+            levels = rev(x = levels(x = EVENT_TYPE)
+            )
+          ) 
+        )
+      ) +
+      ## Draw a diamond shaped point to the position that corresponds to 
+      ## the average crop damage caused by each weather event type
+      ## for the 10% of its cases with the highest impact, 
+      ## of which the color indicates the skewness of observations 
+      ## based on which each average was computed.
+      geom_point(
+        mapping = aes(
+          color = SKEWNESS_HIGH
+        ), 
+        shape = 18, 
+        size = 4.5
+      ) +
+      ## Draw a line that visually associates each weather event type 
+      ## with its respective average crop damage 
+      ## for the 10% of its cases with the highest impact.
+      geom_linerange(
+        mapping = aes(
+          xmin = 0, 
+          xmax = AVRG_HIGH, 
+          group = EVENT_TYPE, 
+          color = SKEWNESS_HIGH
+        )
+      ) +
+      ## Draw a number that indicates the rank assigned to each weather event type 
+      ## (from the most harmful to the least) based on the overall average number
+      ## crop damage it caused inside the square point 
+      ## that displays the average.
+      geom_text(
+        mapping = aes(
+          label = RANK
+        ),
+        size = 2
+      ) +
+      ## Adjust the scale for the color of each point.
+      scale_color_gradient2(
+        ### Choose such limits and midpoint for the colorbar of the legend
+        ### that they can be used unchanged to correctly display 
+        ### the skewness of the observations based on which 
+        ### the average crop damage for all three aspects: 
+        ###   1. overall
+        ###   2. 90% of cases with the lowest impact 
+        ###   3. 10% of cases with the highest impact
+        ### was computed. 
+        ### This will allow to include only one common legend when the 
+        ### Multiplot 2.2 will be composed from the four elementary plots.
+        limits = c(0, 28), 
+        midpoint = 14, 
+        low = "lightgreen", 
+        mid = "orange", 
+        high = "purple"
+      ) +
+      ## Supply descriptive labels. 
+      labs(
+        title = "Plot 2.2.3",
+        subtitle ="Aspect: 10% of cases with the highest impact",
+        x = paste0(
+          "Average Number of Crop Damage for the 10% ", "\n", 
+          "of Observations with the Highest Impact" 
+        )
+      ) +
+      ## Select a theme.
+      theme_linedraw() + 
+      ## Customize the selected theme.
+      theme(
+        ### Remove the legend.
+        legend.position = "none",
+        ### Adjust the title.
+        plot.title = element_text(
+          size = 12,
+          face = "bold"
+        ),
+        ### Adjust the subtitle.
+        plot.subtitle = element_text(
+          size = 10
+        ),
+        ### Remove the text, ticks and title of the y axis 
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank()
+      )
+
 <br>
 
 <font size="1">[back to start of this
@@ -14340,6 +16917,120 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ##### **9.2.4.1.4 Create The Plot 2.2.4**
+
+The *Plot 2.2.4* displays a compact overview of all three aspect that
+were examined for the harm on economy with respect to crop damage.
+
+For each weather event type, the comparison was visualized for **the
+average crop damage for the 90% of cases with the lowest impact** versus
+**the average crop damage for the 10% of cases with the highest
+impact**.
+
+The weather event types were matched with a number that represents the
+rank which was assigned to each of them from the most harmful to the
+least with respect to economy, based on the **overall average crop
+damage** they caused.
+
+The skewness of the crop damage for the observations of each weather
+event type (based on which the overall crop damage was computed) had
+been encoded in the color of the bar associated with each of them.
+
+    # Create the Elementary Plot 2.2.4 that displays 
+    # by each weather event type the comparison of 
+    # the average crop damage 
+    # for the 90% of cases with the lowest impact
+    # versus the average crop damage 
+    # for the 10% of cases with the highest impact.
+    elementary_plot_2_2_4 <-
+      ## Supply the constant arguments for the aesthetics of all included geoms.
+      ggplot(
+        data = summary_____harm_on_economy______crop_damage,
+        mapping = aes(
+          x = AVRG_HIGH, 
+          y = AVRG_LOW
+        )
+      ) +
+      geom_point(
+        mapping = aes(
+          fill = SKEWNESS
+        ), 
+        shape = 21
+      ) +
+      ## Draw a label with a number that indicates the rank assigned 
+      ## to each weather event type (from the most harmful to the least) 
+      ## based on the overall average crop damage it caused.
+      geom_label_repel(
+        mapping = aes(
+          label = RANK, 
+          fill = SKEWNESS
+        ),
+        size = 2.5
+      ) +
+      ## Adjust the scale for the fill of each label.
+      scale_fill_gradient2(
+        ### Choose such limits and midpoint for the colorbar of the legend
+        ### that they can be used unchanged to correctly display 
+        ### the skewness of the observations based on which 
+        ### the average crop damage for all three aspects: 
+        ###   1. overall
+        ###   2. 90% of cases with the lowest impact 
+        ###   3. 10% of cases with the highest impact
+        ### was computed. 
+        ### This will allow to include only one common legend when the 
+        ### Multiplot 2.2 will be composed from the four elementary plots.
+        limits = c(0, 28), 
+        midpoint = 14, 
+        low = "lightgreen", 
+        mid = "orange", 
+        high = "purple"
+        ) +
+      ## Set proper limits to the plot.
+        xlim(c(-0.25e8, 5.2e8)) +
+        ylim(c(-0.2e7, 1.5e7)) +
+      ## Supply descriptive labels. 
+      labs(
+        title = "Plot 2.2.4",
+        subtitle = paste0(
+          "Comparison of the average crop damage ", 
+          "for the 90% of observations with the lowest impact ", 
+          "versus the average crop damage ", 
+          "for the 10% of observations with highest impact. "
+        ),
+        x = paste0(
+          "Average Number of Crop Damage by each Weather Event Type ", 
+          "for the 10% of its Observations with the Highest Impact"
+        ),
+        y = paste0(
+          "Average Number of Crop Damage by each Weather Event Type ", "\n", 
+          "for the 90% of its Observations with the Lowest Impact."
+        ),
+        ### Add a descriptive label for the legend.
+        fill = paste0(
+          "The color indicates the skewness ",
+          "of crop damage for the each weather event type. ",
+          "(the color scale is unique for all four plots of PART 2) ", "\n",
+          "When the color of a bar is gray, the skewness was indeterminable ",
+          "due to the fact that all observations for that weather event type ",
+          "took the same value."
+        )
+      ) +
+      ## Select a theme.
+      theme_linedraw() +
+      ## Customize the selected theme.
+      theme(
+        ### Adjust the legend.
+        legend.position = "bottom",
+        legend.direction = "horizontal",
+        ### Adjust the title.
+        plot.title = element_text(
+          size = 12,
+          face = "bold"
+        ),
+        ### Adjust the subtitle.
+        plot.subtitle = element_text(
+          size = 10
+        )
+      )
 
 <br>
 
@@ -14361,6 +17052,107 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 #### 9.2.4.2 Compose the Multiplot 2.2
 
+The four elementary plots that were created from the results of the
+summary for the harm on economy with respect to crop damage by each
+weather event type, were combined to construct a single multiplot that
+displays the complete picture for this perspective.
+
+    # Create a multiplot that displays the overview of the summary 
+    # for the harm on economy with respect to crop damage
+    # by each weather event type.
+    multiplot_2_2 <- arrangeGrob(
+      grobs = list(
+          
+        # Title
+        textGrob(
+          label = paste0(
+            "\n",
+            "PART 2: Harm on economy by each weather event type ", 
+            "with the respect to crop damage ", "\n", 
+            "based on the cases of weather events ", 
+            "that resulted in non-zero crop damage.", "\n", 
+            "\n"
+          ),
+           gp=gpar(
+             fontsize = 16, 
+             fontface = "bold"
+           )
+        ),
+        
+        # Subtitle
+        textGrob(
+          label = paste0(
+              "\n", 
+              "The results include only the weather event types, ", 
+              "for which at least 10 observations ", 
+              "that resulted in non-zero crop damage were available. ", "\n",
+              "The number associated with each weather event type ", 
+              "represents the rank (from the most harmful to the least) ", 
+              "which was assigned based on the overall average crop damage.", "\n",
+              "Because for most of the weather event types ", 
+              "high positive skewness was observed for the crop damage, ",
+              "the average of the 90% of cases with lowest impact ", "\n",
+              "and the 10% of cases with highest impact were reported ", 
+              "to provide a more representative picture of their consequences.","\n",
+              "\n"
+          ),
+           gp=gpar(
+             fontsize = 14, 
+             fontface = "bold"
+           )
+        ),
+        
+        # Plot 2.2.1
+        # Elementary plot for the average crop damage 
+        # by each weather event type for all cases.
+        elementary_plot_2_2_1,
+        
+        # ELEMENTARY PLOT 1.2.2
+        # Elementary plot for the average crop damage 
+        # by each weather event type for 90% of cases with the lowest impact.
+        elementary_plot_2_2_2,
+        
+        # ELEMENTARY PLOT 1.2.3
+        # Elementary plot for the average crop damage 
+        # by each weather event type for 10% of cases with the highest impact.
+        elementary_plot_2_2_3,
+        
+        # ELEMENTARY PLOT 1.2.4
+        # Elementary Plot 2.2.4 for the comparison of 
+        # the average crop damage 
+        # for the 90% of cases with the lowest impact versus 
+        # the 10% of cases with the highest impact.
+        elementary_plot_2_2_4
+      ),
+      # Set the layout for this elementary plots
+      layout_matrix = 
+        matrix(
+          c(1,1,1,1,1,1,1,1,1,
+            2,2,2,2,2,2,2,2,2,
+            3,3,3,3,3,4,4,5,5,
+            3,3,3,3,3,4,4,5,5,
+            3,3,3,3,3,4,4,5,5,
+            3,3,3,3,3,4,4,5,5,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6
+          ),
+          byrow = TRUE, 
+          nrow = 12
+        )
+    )
+
+*(Note that the Multiplot 2.2 was NOT presented in this section due to
+the restrictions imposed by the assignment to include in the report at
+least 1 but no more than 3 figures. It can be examined at the subsection
+[10.2.1 Overview of results for the harm on
+economy](#ind-10-2-1--Overview-of-results-for-the-harm-on-economy) of
+the chapter [10 RESULTS](#ind-10--RESULTS).)*, were the Figure 2 was
+presented, of which the Multiplot 2.2 constitutes the PART 2.)\*
+
 <br>
 
 <font size="1">[back to start of this
@@ -14381,6 +17173,124 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 9.3 Harm On Economy With Respect To Economic Damage By Each Weather Event Type
 ------------------------------------------------------------------------------
 
+<font size="3"><u><strong>Summary</strong></u></font>
+
+The required variables and the target data subset of observations for
+the harm on economy with respect to economic damage were extracted from
+the table with the processed data, and processed to create a new
+variable that divided the observations for each of the included weather
+event types to two supplementary groups:
+
+-   the 90% of observations with the lowest impact  
+-   the 10% of observations with the highest impact
+
+before the information for the harm on economy with respect to economic
+damage was summarized by each weather event type.
+
+Three aspects were examined:
+
+1.  The overall average economic damage by each weather event type.  
+2.  The average economic damage by each weather event type for the 90%
+    of cases with the lowest impact.  
+3.  The average economic damage by each weather event type for the 10%
+    of cases with the highest impact.
+
+For each aspect, the average economic damage by each weather event type,
+the number of its available observations (based on which the average was
+computed) and their skewness were examined.
+
+The overall average economic damage was used as the main criterion to
+determine which weather events caused the most harm on economy with
+respect to economic damage but it is important to take into account the
+other two aspect that were presented in order to obtain a more
+insightful and complete ‘picture’ of their consequences, (especially
+given the fact that for most of the weather event types, the economic
+damage were highly positively skewed).
+
+The table with results for the harm on economy with respect to economic
+damage by each weather event type were presented at the subsection
+[10.2.4 Most harmful event types with respect to economic
+damage](#ind-10-2-4--Most-harmful-weather-event-types-with-respect-to-economic-damage)
+of the chapter [10 RESULTS](#ind-10--RESULTS).
+
+Finally the *Multiplot 2.3* was created to visualize  
+the results of the harm on economy with respect to economic damage by
+each weather event type.
+
+\*(Note that neither the Multiplot 2.3 nor the elementary plots that it
+contains were presented in this section due to the restrictions imposed
+by the assignment to include in the report at least 1 but no more than 3
+figures. It can be examined at the subsection [10.2.1 Overview of
+results for the harm on
+economy](#ind-10-2-1--Overview-of-results-for-the-harm-on-economy) of
+the chapter [10 RESULTS](#ind-10--RESULTS), where the Figure 2 was
+presented, of which the Multiplot 2.3 constitutes the PART 3.)
+
+<font size="3"><u><strong>Steps</strong></u></font>
+
+-   [9.3.1 Extract the target data for harm on economy with respect to
+    economic
+    damage](#ind-9-3-1--Extract-the-target-data-for-harm-on-economy-with-respect-to-economic-damage)
+    -   The target data subset of observations needed to evaluate the
+        harm on economy with respect to economic damage by each weather
+        event type was extracted from the table with the processed
+        data.  
+-   [9.3.2 Process the target data for harm on economy with respect to
+    economic
+    damage](#ind-9-3-2--Process-the-target-data-for-harm-on-economy-with-respect-to-economic-damage)
+    -   The table with target data subset for the harm on economy with
+        respect to economic damage was processed to create the table
+        with processed data for the harm on economy with respect to
+        economic damage.  
+-   [9.3.3 Summarize the processed data for harm on economy with respect
+    to economic damage by each weather event
+    type](#ind-9-3-3--Summarize-the-processed-data-for-harm-on-economy-with-respect-to-economic-damage-by-each-weather-event-type)
+    -   The harm on economy with respect to economic damage by each
+        weather event type was evaluated over various aspects.  
+-   [9.3.4 Visualize the results of the summary for the harm on economy
+    with respect to economic damage by each weather event
+    type](#ind-9-3-4--Visualize-the-results-of-the-summary-for-the-harm-on-economy-with-respect-to-economic-damage-by-each-weather-event-type)
+    -   The Multiplot 2.3 that presents the results of the summary for
+        the harm on economy with respect to economic damage by each
+        weather event type was created.
+        -   [9.3.4.1 Create the components of Multiplot
+            2.3](#ind-9-3-4-1--Create-the-components-of-Multiplot-2-3)
+            -   Creates the four elementary plot that constitute the
+                Multiplot 2.3:
+                -   [9.3.4.1.1 Create The Plot
+                    2.3.1](#ind-9-3-4-1-1--Create-The-Plot-2-3-1)
+                    -   Displays the overall average economic damage
+                        caused by each weather event type based on all
+                        the cases of weather events that resulted in
+                        non-zero economic damage.  
+                -   [9.3.4.1.2 Create The Plot
+                    2.3.2](#ind-9-3-4-1-2--Create-The-Plot-2-3-2)
+                    -   Displays the average economic damage caused by
+                        each weather event type based on 90% of weather
+                        events with the lowest impact (for each weather
+                        event type) that resulted in non-zero economic
+                        damage.  
+                -   [9.3.4.1.3 Create The Plot
+                    2.3.3](#ind-9-3-4-1-3--Create-The-Plot-2-3-3)
+                    -   Displays the average economic damage caused by
+                        each weather event type based on 10% of weather
+                        events with the highest impact (for each weather
+                        event type) that resulted in non-zero economic
+                        damage.  
+                -   [9.3.4.1.4 Create The Plot
+                    2.3.4](#ind-9-3-4-1-4--Create-The-Plot-2-3-4)
+                    -   Displays a comparison for each weather event
+                        type, of the average economic damage for the 90%
+                        of its observations with the lowest impact
+                        versus the average economic damage for the 10%
+                        of its observations with the highest impact
+                        based only on the weather events that resulted
+                        in non-zero economic damage.  
+        -   [9.3.4.2 Compose the Multiplot
+            2.3](#ind-9-3-4-2--Compose-the-Multiplot-2-3)
+            -   Combines the four elementary plots to create the
+                Multiplot 2.3.
+
 <br>
 
 <font size="1">[back to start of this
@@ -14394,6 +17304,542 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 9.3.1 Extract the target data for harm on economy with respect to economic damage
 
+In order to examine the harm on economy with respect to economic damage
+caused by each weather event type, the variables *REFNUM*, *EVENT\_TYPE*
+and *ECONOMIC\_DAMAGE* were selected from the table with the processed
+data and **only the observations that refer to weather events that
+resulted in non-zero economic damage** were extracted.
+
+Furthermore, in an attempt to avoid highly misleading statistics due to
+the small number of observations for some of the weather event types, a
+lowest bound of 10 weather events that caused non zero economic damage
+(for each of the included weather event types) was selected
+(subjectively by the analyst) and applied.
+
+This lowest bound, although it may seem (and generally it is) not enough
+to get trustworthy statistics, it was considered to be *“good enough”*
+taking into account that :
+
+1.  the analysis focuses in describing historical data without trying to
+    make inferences that would demand substantially bigger samples,
+    although any statistic based on less than 10 observations could not
+    be taken seriously especially in cases (such as in this analysis)
+    where the distribution of economic damage for each weather event
+    type was skewed.
+2.  a period of 10 years (from 2001 to 2011) in which the observations
+    that were used in the analysis occurred, is relatively small time to
+    produce big samples of weather events that caused non zero economic
+    damage for some the weather event types. Thus, if a highest bound
+    was selected to get more robust statistics such as samples of 100 or
+    300, the majority of weather event types would have been excluded,
+    making the results of the analysis trivial.
+
+<!-- -->
+
+    # Extract the required variables and the target data subset of observations 
+    # for the harm on economy with respect to economic damage.
+    target_data_____harm_on_economy_____economic_damage <- processed_data[
+      ## Extract only the observations that have resulted in non-zero economic damage.
+      ECONOMIC_DAMAGE > 0,
+      ## Select only the relevant variables. 
+      list(REFNUM, EVENT_TYPE, ECONOMIC_DAMAGE)
+      ][
+        ### Keep only the observations that correspond to the weather event types 
+        ### for which there are at least 10 weather events available.
+        EVENT_TYPE %in% 
+          names(table(EVENT_TYPE)[table(EVENT_TYPE) >= 10])
+        ]
+
+The table with the target data for the harm on economy with respect to
+economic damage consist of 140236 observations.
+
+    # Print the structure of the table with the target data subset 
+    # for the harm on economy with respect to economic damage.
+    str(target_data_____harm_on_economy_____economic_damage)
+
+    ## Classes 'data.table' and 'data.frame':   140236 obs. of  3 variables:
+    ##  $ REFNUM         : int  413607 413608 413609 413610 413611 413612 413613 413614 413615 413616 ...
+    ##  $ EVENT_TYPE     : chr  "THUNDERSTORM WIND" "THUNDERSTORM WIND" "THUNDERSTORM WIND" "THUNDERSTORM WIND" ...
+    ##  $ ECONOMIC_DAMAGE: num  10000 8000 2000 15000 5000 3000 10000 450000 150000 3000 ...
+    ##  - attr(*, ".internal.selfref")=<externalptr> 
+    ##  - attr(*, "sorted")= chr "REFNUM"
+
+The variable *EVENT\_TYPE* includes 37 distinct weather event types, for
+most of which the variable *ECONOMIC\_DAMAGE* was highly positively
+skewed.
+
+It was worth noting that for the weather event types with highest number
+of observations there was highest skewness for the values of economic
+damage, indicating that the corresponding distribution of economic
+damage has a heavy tail that wasn’t possible to be observed when few
+observation were available.
+
+    # Create a kable to present some facts about the table with the target data 
+    # for the harm on economy with respect to economic damage.
+    kable(
+      x = target_data_____harm_on_economy_____economic_damage[
+        order(EVENT_TYPE), 
+        list(
+          "N" = .N, 
+          "SKEWNESS" = round(skewness(ECONOMIC_DAMAGE), 4)
+        ), 
+        by = EVENT_TYPE
+        ],
+      caption = paste0(
+        "Table 9.3.1-1: ", 
+        "Facts about the table with the target data subset of observations ", 
+        "for the harm on economy with respect to economic damage."
+      )
+    ) %>% 
+      kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive", "bordered"), 
+        full_width = FALSE,
+        fixed_thead = TRUE
+      ) %>% 
+      footnote(
+        general = "The skewness was rounded to 4 decimal places."
+      )
+
+<table class="table table-striped table-hover table-condensed table-responsive table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Table 9.3.1-1: Facts about the table with the target data subset of
+observations for the harm on economy with respect to economic damage.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+EVENT\_TYPE
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+N
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+SKEWNESS
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+AVALANCHE
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+3.4882
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BLIZZARD
+</td>
+<td style="text-align:right;">
+129
+</td>
+<td style="text-align:right;">
+10.5403
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+COASTAL FLOOD
+</td>
+<td style="text-align:right;">
+152
+</td>
+<td style="text-align:right;">
+4.5996
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+COLD/WIND CHILL
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+1.2895
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DEBRIS FLOW
+</td>
+<td style="text-align:right;">
+189
+</td>
+<td style="text-align:right;">
+5.6453
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DENSE FOG
+</td>
+<td style="text-align:right;">
+56
+</td>
+<td style="text-align:right;">
+3.7347
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DROUGHT
+</td>
+<td style="text-align:right;">
+171
+</td>
+<td style="text-align:right;">
+4.6871
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DUST DEVIL
+</td>
+<td style="text-align:right;">
+60
+</td>
+<td style="text-align:right;">
+2.4345
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DUST STORM
+</td>
+<td style="text-align:right;">
+62
+</td>
+<td style="text-align:right;">
+5.4939
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EXCESSIVE HEAT
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:right;">
+4.2483
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EXTREME COLD/WIND CHILL
+</td>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:right;">
+3.5596
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FLASH FLOOD
+</td>
+<td style="text-align:right;">
+13954
+</td>
+<td style="text-align:right;">
+58.0040
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FLOOD
+</td>
+<td style="text-align:right;">
+7368
+</td>
+<td style="text-align:right;">
+85.7213
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FROST/FREEZE
+</td>
+<td style="text-align:right;">
+120
+</td>
+<td style="text-align:right;">
+6.1949
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HAIL
+</td>
+<td style="text-align:right;">
+16305
+</td>
+<td style="text-align:right;">
+72.6945
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HEAVY RAIN
+</td>
+<td style="text-align:right;">
+883
+</td>
+<td style="text-align:right;">
+19.2418
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HEAVY SNOW
+</td>
+<td style="text-align:right;">
+573
+</td>
+<td style="text-align:right;">
+7.0098
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HIGH SURF
+</td>
+<td style="text-align:right;">
+76
+</td>
+<td style="text-align:right;">
+5.0462
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HIGH WIND
+</td>
+<td style="text-align:right;">
+3863
+</td>
+<td style="text-align:right;">
+37.0482
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HURRICANE/TYPHOON
+</td>
+<td style="text-align:right;">
+108
+</td>
+<td style="text-align:right;">
+4.7929
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ICE STORM
+</td>
+<td style="text-align:right;">
+410
+</td>
+<td style="text-align:right;">
+8.6435
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LAKE-EFFECT SNOW
+</td>
+<td style="text-align:right;">
+195
+</td>
+<td style="text-align:right;">
+13.1024
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LIGHTNING
+</td>
+<td style="text-align:right;">
+6199
+</td>
+<td style="text-align:right;">
+22.3186
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MARINE HIGH WIND
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+3.8120
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MARINE STRONG WIND
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:right;">
+5.3773
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MARINE THUNDERSTORM WIND
+</td>
+<td style="text-align:right;">
+128
+</td>
+<td style="text-align:right;">
+10.1387
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+STORM SURGE/TIDE
+</td>
+<td style="text-align:right;">
+131
+</td>
+<td style="text-align:right;">
+9.6344
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+STRONG WIND
+</td>
+<td style="text-align:right;">
+3251
+</td>
+<td style="text-align:right;">
+53.9812
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+THUNDERSTORM WIND
+</td>
+<td style="text-align:right;">
+74183
+</td>
+<td style="text-align:right;">
+166.2756
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TORNADO
+</td>
+<td style="text-align:right;">
+8782
+</td>
+<td style="text-align:right;">
+55.9160
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TROPICAL DEPRESSION
+</td>
+<td style="text-align:right;">
+35
+</td>
+<td style="text-align:right;">
+5.4232
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TROPICAL STORM
+</td>
+<td style="text-align:right;">
+370
+</td>
+<td style="text-align:right;">
+18.7288
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TSUNAMI
+</td>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:right;">
+2.7178
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WATERSPOUT
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+3.0130
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WILDFIRE
+</td>
+<td style="text-align:right;">
+878
+</td>
+<td style="text-align:right;">
+15.6629
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WINTER STORM
+</td>
+<td style="text-align:right;">
+931
+</td>
+<td style="text-align:right;">
+29.8022
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WINTER WEATHER
+</td>
+<td style="text-align:right;">
+494
+</td>
+<td style="text-align:right;">
+19.5434
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<sup></sup> The skewness was rounded to 4 decimal places.
+</td>
+</tr>
+</tfoot>
+</table>
 <br>
 
 <font size="1">[back to start of this
@@ -14409,6 +17855,103 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ### 9.3.2 Process the target data for harm on economy with respect to economic damage
+
+To create the table with the processed data for the harm on economy with
+respect to economic damage from the corresponding target data subset for
+this perspective, a new variable was created that divides the
+observations for each of the included weather event types in two
+complementary levels:
+
+-   one that contains the 90% of cases with lowest impact  
+-   the other that contains the 10% of cases with highest impact
+
+This decision was made due to the high skewness that was observed for
+the values of the variable *ECONOMIC\_DAMAGE* for most weather event
+types, which indicates that the underlining distributions of such
+phenomena has a heavy tail that causes this heterogeneity on the
+observations. As a result a small economic damage were observed for the
+majority of cases that resulted in non-zero fatalities while in the few
+cases with the highest impact they caused lots of economic damage.
+
+Having in mind that the average economic damage will be used to
+determine which weather event types were the most harmful to economy
+(with respect to economic damage) combined with the fact that the
+average doesn’t represent well the distribution of variables with high
+skewness, as it is highly affected by the most extreme values, it was
+considered necessary to examine the subsets created by those two levels
+in order to obtain an insightful picture.
+
+    # Create the table with the processed data 
+    # for the harm on economy with respect to economic damage.
+    processed_data_____harm_on_economy_____economic_damage <- 
+      target_data_____harm_on_economy_____economic_damage[
+        ,
+        ## Create a new variable divides the observations
+        ## for each weather event into two supplementary groups:  
+        ##   - the 90% of weather events that resulted in lowest fatalities
+        ##   - the 10% of weather events that resulted in highest fatalities
+        BIN_GROUP_PER_EVENT_TYPE := (function(x, p_bins) {
+          
+          # adds 0 and 1 in the vector supplied at the argument 'p_bins' 
+          # to the start and the end respectively  
+          # the supplied percentiles if they are missing 
+          # and sort them ascending
+          p_bins_increasing <- sort(c(0, p_bins, 1))
+          
+          # creates the character strings that labels of the bins by the values supplied at 
+          # the argument 'p_bins' that will be the values of the new variable
+          bin_labels <- paste0("(", p_bins_increasing[-length(p_bins_increasing)]*100,
+                               "% - ", p_bins_increasing[-1]*100, "%]")
+          
+          # identify the number of occurrences that correspond to each label
+          n_times <- vapply(2:length(p_bins_increasing),
+                            function(i) {
+                              as.integer(floor(length(x) * p_bins_increasing[i]) -
+                                           floor(length(x) * p_bins_increasing[i - 1]))
+                            }, integer(1))
+          
+          # multiply each label with the number of its occurrences
+          x_bins_expanded <- rep(x = bin_labels, times = n_times)
+          
+          # order the label to much the values of the corresponding vector
+          x_bins_expanded_reordered <- x_bins_expanded[order(seq_along(x)[order(x)])]
+          
+          ## Coerce the character vector with the labels of bins to a factor
+          x_bins_factor <- factor(x_bins_expanded_reordered, labels = bin_labels, ordered = TRUE)
+          
+        })(ECONOMIC_DAMAGE, 0.9), 
+        by = EVENT_TYPE
+      ][
+        ## Coerce the EVENT_VARIABLE to factor
+        , EVENT_TYPE := as.factor(EVENT_TYPE) 
+      ]
+
+The table with the processed data for the harm on economy with respect
+to economic damage contains 4 variables:
+
+1.  **REFNUM** (int) : an id that uniquely identifies each observation  
+2.  **EVENT\_TYPE** (Factor w/ 37 levels) : the type of each weather
+    event
+3.  **ECONOMIC\_DAMAGE** (int) : the economic damage  
+4.  **BIN\_GROUP\_PER\_EVENT\_TYPE** (Ord.factor w/ 2 levels) : a factor
+    that divides the observations for each weather event type to two
+    complementary levels, one with the 90% of observations with the
+    lowest impact and another with the 10% of observations with the
+    highest impact.
+
+and 140236 observations.
+
+    # Print the structure of the table with the processed data 
+    # for the harm on economy with respect to economic damage.
+    str(processed_data_____harm_on_economy_____economic_damage)
+
+    ## Classes 'data.table' and 'data.frame':   140236 obs. of  4 variables:
+    ##  $ REFNUM                  : int  413607 413608 413609 413610 413611 413612 413613 413614 413615 413616 ...
+    ##  $ EVENT_TYPE              : Factor w/ 37 levels "AVALANCHE","BLIZZARD",..: 29 29 29 29 29 29 29 30 29 29 ...
+    ##  $ ECONOMIC_DAMAGE         : num  10000 8000 2000 15000 5000 3000 10000 450000 150000 3000 ...
+    ##  $ BIN_GROUP_PER_EVENT_TYPE: Ord.factor w/ 2 levels "(0% - 90%]"<"(90% - 100%]": 1 1 1 1 1 1 1 1 2 1 ...
+    ##  - attr(*, ".internal.selfref")=<externalptr> 
+    ##  - attr(*, "sorted")= chr "REFNUM"
 
 <br>
 
@@ -14426,6 +17969,115 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 9.3.3 Summarize the processed data for harm on economy with respect to economic damage by each weather event type
 
+To evaluate the harm on economy by each weather event type with respect
+to economic damage a simplistic approach was adopted :
+
+-   the weather event types were ranked from the most harmful to the
+    least based on the overall average economic damage of the weather
+    events that resulted in non-zero economic damage
+
+The overall average economic damage caused by each weather event type
+was initially examined along with the skewness of the economic damage
+for each weather event type. In most cases the skewness was high (or
+even extremely high), so it was possible that the overall mean
+misrepresented the consequences of each weather event type.
+
+That is the reason why the average economic damage for 90% of weather
+events with the lowest impact versus the average economic damage for the
+10% of weather events with the highest impact were also computed and
+examined.
+
+**It is highlighted that for the average economic damage that refers to
+the 10% of the cases that had the highest impact, there were few
+observations available for a lot of weather event types and the
+corresponding mean values should be interpreted with caution.**
+
+    # Create the table with the summary for the harm on economy 
+    # with respect to economic damage for each weather event type.
+    summary_____harm_on_economy______economic_damage <- 
+      processed_data_____harm_on_economy_____economic_damage[
+      ,
+      list(
+        ## The total number of observation by each weather event type.
+        "N" = .N,
+        ## The average economic damage caused by each weather event type.
+        "AVRG" = round(mean(ECONOMIC_DAMAGE), 2),
+        ## The skewness of economic damage for the observations by each weather event type.
+        "SKEWNESS" = round(skewness(ECONOMIC_DAMAGE), 4),
+        ## The number of observations for the 90% of cases with the lowest impact 
+        ## by each weather event type.
+        "N_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , .N],
+        ## The average economic damage caused by each weather event type 
+        ## for the 90% of cases with the lowest impact.
+        "AVRG_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , round(mean(ECONOMIC_DAMAGE), 2)],
+        ## The skewness of economic damage for the 90% of cases with the lowest impact 
+        ## by each weather event type.
+        "SKEWNESS_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , round(skewness(ECONOMIC_DAMAGE), 4)],
+        ## The number of observations for the 10% of cases with the lowest impact 
+        ## by each weather event type.
+        "N_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , .N],
+        ## The average economic damage caused by each weather event type 
+        ## for the 10% of cases with the highest impact.
+        "AVRG_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , round(mean(ECONOMIC_DAMAGE), 2)],
+        ## The skewness of economic damage for the 10% of cases with the highest impact 
+        ## by each weather event type.
+        "SKEWNESS_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , round(skewness(ECONOMIC_DAMAGE), 4)]
+      ),
+      by = "EVENT_TYPE"
+      ][
+        ## The average economic damage is used to order the rows of the table
+        ## from the most harmful weather event type to the least.
+        order(-AVRG),
+        ## Create a variable with the rank of the harmness of each weather event type.
+        RANK := 1:length(EVENT_TYPE)
+        ][
+          ,
+          ## Reorder the variables at the table.
+          list(
+            RANK, EVENT_TYPE, N, AVRG, SKEWNESS, N_LOW, AVRG_LOW, SKEWNESS_LOW, N_HIGH, AVRG_HIGH, SKEWNESS_HIGH
+          )
+          ]
+
+The results of the table with the summary for the harm on economy with
+respect to economic damage by each weather event type that was created
+in this section were presented at the subsection [10.2.4 Most harmful
+event types with respect to economic
+damage](#ind-10-2-4--Most-harmful-weather-event-types-with-respect-to-economic-damage)
+of the chapter [10 RESULTS](#ind-10--RESULTS).
+
+The table with the summary for the harm on economy with respect to
+economic damage by each weather event type was exported (as an R file),
+in the folder of the working directory:
+
+-   *outputs –&gt; harm\_on\_economy –&gt; results*
+
+with filename:
+
+-   *summary\_\_\_\_\_\_harm\_on\_economy\_\_\_\_\_\_economic\_damage.R*
+
+<!-- -->
+
+    # Supply the filepath at which the table with the summary
+    # for the harm on economy will be exported.
+    filepath_____summary_____harm_on_economy______economic_damage <-
+      file.path(
+        directory_tree_____outputs[[
+          "filepath_____outputs_____harm_on_economy_____results"
+        ]],
+        "summary_____harm_on_economy______economic_damage.R"
+      )
+
+    # Export the table with the summary for the harm on economy
+    # with respect to economic damage.
+    saveRDS(
+      object = summary_____harm_on_economy______economic_damage,
+      file = filepath_____summary_____harm_on_economy______economic_damage
+    )
+
+The main reason for exporting the file with the summary for the harm on
+economy with respect to crop damage by each weather event type was to
+supply a checkpoint for any attempts to reproduce the analysis.
+
 <br>
 
 <font size="1">[back to start of this
@@ -14442,6 +18094,54 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 9.3.4 Visualize the results of the summary for the harm on economy with respect to economic damage by each weather event type
 
+From the table with the summary for the harm on economy by each weather
+event type with respect to economic damage the **Multiplot 2.3** was
+created to present an overview of the results for the three different
+aspects that were examined for this perspective.
+
+Four elementary plots were
+[created](#ind-9-3-4-1--Create-the-components-of-Multiplot-2-3):
+
+-   [9.3.4.1.1 Create The Plot
+    2.3.1](#ind-9-3-4-1-1--Create-The-Plot-2-3-1)
+    -   Displays the overall average economic damage caused by each
+        weather event type based on all the cases of weather events that
+        resulted in non-zero economic damage.  
+-   [9.3.4.1.2 Create The Plot
+    2.3.2](#ind-9-3-4-1-2--Create-The-Plot-2-3-2)
+    -   Displays the average economic damage caused by each weather
+        event type based on 90% of weather events with the lowest impact
+        (for each weather event type) that resulted in non-zero economic
+        damage.  
+-   [9.3.4.1.3 Create The Plot
+    2.3.3](#ind-9-3-4-1-3--Create-The-Plot-2-3-3)
+    -   Displays the average economic damage caused by each weather
+        event type based on 10% of weather events with the highest
+        impact (for each weather event type) that resulted in non-zero
+        economic damage.  
+-   [9.3.4.1.4 Create The Plot
+    2.3.4](#ind-9-3-4-1-4--Create-The-Plot-2-3-4)
+    -   Displays a comparison for each weather event type, of the
+        average economic damage for the 90% of its observations with the
+        lowest impact versus the average economic damage for the 10% of
+        its observations with the highest impact based only on the
+        weather events that resulted in non-zero economic damage.
+
+which were then [combined](#ind-9-3-4-2--Compose-the-Multiplot-2-3) in
+order to obtain the **Multiplot 2.3**.
+
+It constitutes the *PART 2* of the *Figure 2* that displays the overview
+of the harm on economy by each weather event type.
+
+\*(Note that neither the Multiplot 2.3 nor the elementary plots that it
+contains were presented in this section due to the restrictions imposed
+by the assignment to include in the report at least 1 but no more than 3
+figures. It can be examined at the subsection [10.2.1 Overview of
+results for the harm on
+economy](#ind-10-2-1--Overview-of-results-for-the-harm-on-economy) of
+the chapter [10 RESULTS](#ind-10--RESULTS), where the Figure 2 was
+presented, of which the Multiplot 2.3 constitutes the PART 3.)
+
 <br>
 
 <font size="1">[back to start of this
@@ -14456,6 +18156,35 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 #### 9.3.4.1 Create the components of Multiplot 2.3
+
+Creates four elementary plots to visualize the results for the aspects
+that were examined for the harm on economy with respect to economic
+damage by each weather event type.
+
+-   [9.3.4.1.1 Create The Plot
+    2.3.1](#ind-9-3-4-1-1--Create-The-Plot-2-3-1)
+    -   Displays the overall average economic damage caused by each
+        weather event type based on all the cases of weather events that
+        resulted in non-zero economic damage.  
+-   [9.3.4.1.2 Create The Plot
+    2.3.2](#ind-9-3-4-1-2--Create-The-Plot-2-3-2)
+    -   Displays the average economic damage caused by each weather
+        event type based on 90% of weather events with the lowest impact
+        (for each weather event type) that resulted in non-zero economic
+        damage.  
+-   [9.3.4.1.3 Create The Plot
+    2.3.3](#ind-9-3-4-1-3--Create-The-Plot-2-3-3)
+    -   Displays the average economic damage caused by each weather
+        event type based on 10% of weather events with the highest
+        impact (for each weather event type) that resulted in non-zero
+        economic damage.  
+-   [9.3.4.1.4 Create The Plot
+    2.3.4](#ind-9-3-4-1-4--Create-The-Plot-2-3-4)
+    -   Displays a comparison for each weather event type, of the
+        average economic damage for the 90% of its observations with the
+        lowest impact versus the average economic damage for the 10% of
+        its observations with the highest impact based only on the
+        weather events that resulted in non-zero economic damage.
 
 <br>
 
@@ -14473,6 +18202,108 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ##### **9.3.4.1.1 Create The Plot 2.3.1**
+
+The *Plot 2.3.1* displays **the overall average economic damage** caused
+by each weather event type taking into account all and only the
+observation that resulted in non-zero economic damage.
+
+The weather event types were matched with a number that represents the
+rank which was assigned to each of them from the most harmful to the
+least with respect to economy, based on the **overall average economic
+damage** they caused.
+
+The skewness of the economic damage for the observations of each weather
+event type (based on which the overall economic damage was computed) had
+been encoded in the color of the bar associated with each of them.
+
+    # Create the Elementary Plot 2.3.1 that displays 
+    # the overall average economic damage 
+    # by each weather event type for all cases. 
+    elementary_plot_2_3_1 <-
+      ## Supply the constant arguments for the aesthetics of all included geoms.
+      ggplot(
+        data = summary_____harm_on_economy______economic_damage,
+        mapping = aes(
+          x = AVRG,
+          ### Reverse the order of the factors for the EVENT_TYPE variable 
+          ### to make them displayed alphabetically from top to bottom.
+          y = factor(
+            x = EVENT_TYPE, 
+            levels = rev(x = levels(x = EVENT_TYPE)
+            )
+          ) 
+        )
+      ) +
+      ## Draw a square shaped point to the position that corresponds to 
+      ## the average economic damage caused by each weather event type, 
+      ## of which the color indicates the skewness of observations 
+      ## based on which each average was computed.
+      geom_point(
+        mapping = aes(color = SKEWNESS),
+        shape = 15, 
+        size = 4.5
+      ) +
+      ## Draw a line that visually associates each weather event type 
+      ## with its respective average economic damage.
+      geom_linerange(
+        mapping = aes(
+          xmin = 0, 
+          xmax = AVRG, 
+          group = EVENT_TYPE, 
+          color = SKEWNESS
+        )
+        ) +
+      ## Draw a number that indicates the rank assigned to each weather event type 
+      ## (from the most harmful to the least) based on the overall average number
+      ## economic damage it caused inside the square point 
+      ## that displays the average.
+      geom_text(
+        mapping = aes(
+          label = RANK
+        ), 
+        size = 2.5
+      ) +
+      ## Adjust the scale for the color of each point.
+      scale_color_gradient2(
+        ### Choose such limits and midpoint for the colorbar of the legend
+        ### that they can be used unchanged to correctly display 
+        ### the skewness of the observations based on which 
+        ### the average economic damage for all three aspects: 
+        ###   1. overall
+        ###   2. 90% of cases with the lowest impact 
+        ###   3. 10% of cases with the highest impact
+        ### was computed. 
+        ### This will allow to include only one common legend when the 
+        ### Multiplot 2.3 will be composed from the four elementary plots. 
+        limits = c(-5, 170), 
+        midpoint = 70, 
+        low = "lightgreen", 
+        mid = "orange", 
+        high = "purple"
+      ) +
+      ## Supply descriptive labels.  
+      labs(
+        title = "Plot 2.3.1", 
+        subtitle = "Aspect: Overall",
+        x = "Weather Event Types \n",
+        y = "Average Number of Economic Damage\n"
+      ) +
+      ## Select a theme.
+      theme_linedraw() + 
+      ## Customize the selected theme.
+      theme(
+        ### Remove the legend.
+        legend.position = "none",
+        ### Adjust the title.
+        plot.title = element_text(
+          size = 12,
+          face = "bold"
+        ),
+        ### Adjust the subtitle.
+        plot.subtitle = element_text(
+          size = 10
+        )
+      )
 
 <br>
 
@@ -14493,6 +18324,119 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ##### **9.3.4.1.2 Create The Plot 2.3.2**
 
+The *Elementary Plot 2.3.2* displays **the average economic damage for
+the 90% of cases with the lowest impact** caused by each weather event
+type from all the observation that resulted in non-zero economic damage.
+
+The weather event types were matched with a number that represents the
+rank which was assigned to each of them from the most harmful to the
+least with respect to economy, based on the **overall average economic
+damage** they caused.  
+(so it is NOT based on the average economic damage caused by the 90% of
+cases with the lowest impact of each weather event type).
+
+The skewness of the economic damage for the observations of each weather
+event type (based on which the average economic damage for the 90% of
+cases with the lowest impact was computed) had been encoded in the color
+of the bar associated with each of them.
+
+    # Create the Elementary Plot 2.3.2 that displays 
+    # the average economic damage by each weather event type 
+    # for the 90% of its cases with the lowest impact.
+    elementary_plot_2_3_2 <-
+      ## Supply the constant arguments for the aesthetics of all included geoms.
+      ggplot(
+        data = summary_____harm_on_economy______economic_damage,
+        mapping = aes(
+          x = AVRG_LOW,
+          ### Reverse the order of the factors for the EVENT_TYPE variable 
+          ### to display them alphabetically from top to bottom.
+          y = factor(
+            x = EVENT_TYPE, 
+            levels = rev(x = levels(x = EVENT_TYPE)
+            )
+          ) 
+        )
+      ) +
+      ## Draw a circle shaped point to the position that corresponds to 
+      ## the average economic damage caused by each weather event type
+      ## for the 90% of its cases with the lowest impact, 
+      ## of which the color indicates the skewness of observations 
+      ## based on which each average was computed.
+      geom_point(
+        mapping = aes(
+          color = SKEWNESS_LOW
+        ), 
+        size = 3.5
+      ) +
+      ## Draw a line that visually associates each weather event type 
+      ## with its respective average economic damage 
+      ## for the 90% of its cases with the lowest impact.
+      geom_linerange(
+        mapping = aes(
+          xmin = 0, 
+          xmax = AVRG_LOW, 
+          group = EVENT_TYPE, 
+          color = SKEWNESS_LOW
+        )
+      ) +
+      ## Draw a number that indicates the rank assigned to each weather event type 
+      ## (from the most harmful to the least) based on the overall average number
+      ## economic damage it caused inside the square point 
+      ## that displays the average.
+      geom_text(
+        mapping = aes(
+          label = RANK
+        ), 
+        size = 2
+        ) +
+      ## Adjust the scale for the color of each point.
+      scale_color_gradient2(
+        ### Choose such limits and midpoint for the colorbar of the legend
+        ### that they can be used unchanged to correctly display 
+        ### the skewness of the observations based on which 
+        ### the average economic damage for all three aspects: 
+        ###   1. overall
+        ###   2. 90% of cases with the lowest impact 
+        ###   3. 10% of cases with the highest impact
+        ### was computed. 
+        ### This will allow to include only one common legend when the 
+        ### Multiplot 2.3 will be composed from the four elementary plots.
+        limits = c(-5, 170), 
+        midpoint = 70, 
+        low = "lightgreen", 
+        mid = "orange", 
+        high = "purple"
+        ) +
+      ## Supply descriptive labels. 
+      labs(
+        title = "Plot 2.3.2",
+        subtitle = "Aspect: 90% of cases with the lowest impact",
+        x = paste0(
+          "Average Number of Economic Damage for the 90% ", "\n",
+          "of Observations with the Lowest Impact" 
+        )
+      ) +
+      ## Select a theme.
+      theme_linedraw() + 
+      ## Customize the selected theme.
+      theme(
+        ### Remove the legend.
+        legend.position = "none",
+        ### Adjust the title.
+        plot.title = element_text(
+          size = 12,
+          face = "bold"
+        ),
+        ### Adjust the subtitle.
+        plot.subtitle = element_text(
+          size = 10
+        ),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank()
+      )
+
 <br>
 
 <font size="1">[back to start of this
@@ -14511,6 +18455,121 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ##### **9.3.4.1.3 Create The Plot 2.3.3**
+
+The *Plot 2.3.3* displays **the average economic damage for the 10% of
+cases with the highest impact** caused by each weather event type from
+all the observation that resulted in non-zero economic damage.
+
+The weather event types were matched with a number that represents the
+rank which was assigned to each of them from the most harmful to the
+least with respect to economy, based on the **overall average economic
+damage** they caused.  
+(so it is NOT based on the average economic damage caused by the 10% of
+cases with the highest impact of each weather event type).
+
+The skewness of the economic damage for the observations of each weather
+event type (based on which the average economic damage for the 10% of
+cases with the highest impact was computed) had been encoded in the
+color of the bar associated with each of them.
+
+    # Create the Elementary Plot 2.3.3 that displays 
+    # the average economic damage by each weather event type 
+    # for the 10% of its cases with the highest impact.
+    elementary_plot_2_3_3 <-
+      ## Supply the constant arguments for the aesthetics of all included geoms.
+      ggplot(
+        data = summary_____harm_on_economy______economic_damage,
+        mapping = aes(
+          x = AVRG_HIGH,
+          ### Reverse the order of the factors for the EVENT_TYPE variable 
+          ### to display them alphabetically from top to bottom.
+          y = factor(
+            x = EVENT_TYPE, 
+            levels = rev(x = levels(x = EVENT_TYPE)
+            )
+          ) 
+        )
+      ) +
+      ## Draw a diamond shaped point to the position that corresponds to 
+      ## the average economic damage caused by each weather event type
+      ## for the 10% of its cases with the highest impact, 
+      ## of which the color indicates the skewness of observations 
+      ## based on which each average was computed.
+      geom_point(
+        mapping = aes(
+          color = SKEWNESS_HIGH
+        ), 
+        shape = 18, 
+        size = 4.5
+      ) +
+      ## Draw a line that visually associates each weather event type 
+      ## with its respective average economic damage 
+      ## for the 10% of its cases with the highest impact.
+      geom_linerange(
+        mapping = aes(
+          xmin = 0, 
+          xmax = AVRG_HIGH, 
+          group = EVENT_TYPE, 
+          color = SKEWNESS_HIGH
+        )
+      ) +
+      ## Draw a number that indicates the rank assigned to each weather event type 
+      ## (from the most harmful to the least) based on the overall average number
+      ## economic damage it caused inside the square point 
+      ## that displays the average.
+      geom_text(
+        mapping = aes(
+          label = RANK
+        ),
+        size = 2
+      ) +
+      ## Adjust the scale for the color of each point.
+      scale_color_gradient2(
+        ### Choose such limits and midpoint for the colorbar of the legend
+        ### that they can be used unchanged to correctly display 
+        ### the skewness of the observations based on which 
+        ### the average economic damage for all three aspects: 
+        ###   1. overall
+        ###   2. 90% of cases with the lowest impact 
+        ###   3. 10% of cases with the highest impact
+        ### was computed. 
+        ### This will allow to include only one common legend when the 
+        ### Multiplot 2.3 will be composed from the four elementary plots.
+        limits = c(-5, 170), 
+        midpoint = 70, 
+        low = "lightgreen", 
+        mid = "orange", 
+        high = "purple"
+      ) +
+      ## Supply descriptive labels. 
+      labs(
+        title = "Plot 2.3.3",
+        subtitle ="Aspect: 10% of cases with the highest impact",
+        x = paste0(
+          "Average Number of Economic Damage for the 10% ", "\n", 
+          "of Observations with the Highest Impact" 
+        )
+      ) +
+      ## Select a theme.
+      theme_linedraw() + 
+      ## Customize the selected theme.
+      theme(
+        ### Remove the legend.
+        legend.position = "none",
+        ### Adjust the title.
+        plot.title = element_text(
+          size = 12,
+          face = "bold"
+        ),
+        ### Adjust the subtitle.
+        plot.subtitle = element_text(
+          size = 10
+        ),
+        ### Remove the text, ticks and title of the y axis 
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank()
+      )
 
 <br>
 
@@ -14531,6 +18590,117 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ##### **9.3.4.1.4 Create The Plot 2.3.4**
 
+The *Plot 2.3.4* displays a compact overview of all three aspect that
+were examined for the harm on economy with respect to economic damage.
+
+For each weather event type, the comparison was visualized for **the
+average economic damage for the 90% of cases with the lowest impact**
+versus **the average economic damage for the 10% of cases with the
+highest impact**.
+
+The weather event types were matched with a number that represents the
+rank which was assigned to each of them from the most harmful to the
+least with respect to economy, based on the **overall average economic
+damage** they caused.
+
+The skewness of the economic damage for the observations of each weather
+event type (based on which the overall economic damage was computed) had
+been encoded in the color of the bar associated with each of them.
+
+    # Create the Elementary Plot 2.3.4 that displays 
+    # by each weather event type the comparison of 
+    # the average economic damage 
+    # for the 90% of cases with the lowest impact
+    # versus the average economic damage 
+    # for the 10% of cases with the highest impact.
+    elementary_plot_2_3_4 <-
+      ## Supply the constant arguments for the aesthetics of all included geoms.
+      ggplot(
+        data = summary_____harm_on_economy______economic_damage,
+        mapping = aes(
+          x = AVRG_HIGH, 
+          y = AVRG_LOW
+        )
+      ) +
+      geom_point(
+        mapping = aes(
+          fill = SKEWNESS
+        ), 
+        shape = 21
+      ) +
+      ## Draw a label with a number that indicates the rank assigned 
+      ## to each weather event type (from the most harmful to the least) 
+      ## based on the overall average economic damage it caused.
+      geom_label_repel(
+        mapping = aes(
+          label = RANK, 
+          fill = SKEWNESS
+        ),
+        size = 2.5
+      ) +
+      ## Adjust the scale for the fill of each label.
+      scale_fill_gradient2(
+        ### Choose such limits and midpoint for the colorbar of the legend
+        ### that they can be used unchanged to correctly display 
+        ### the skewness of the observations based on which 
+        ### the average economic damage for all three aspects: 
+        ###   1. overall
+        ###   2. 90% of cases with the lowest impact 
+        ###   3. 10% of cases with the highest impact
+        ### was computed. 
+        ### This will allow to include only one common legend when the 
+        ### Multiplot 2.3 will be composed from the four elementary plots.
+        limits = c(-5, 170), 
+        midpoint = 70, 
+        low = "lightgreen", 
+        mid = "orange", 
+        high = "purple"
+        ) +
+      ## Set proper limits to the plot.
+        xlim(c(-0.5e9, 8.5e9)) +
+        ylim(c(-1e7, 8.5e7)) +
+      ## Supply descriptive labels. 
+      labs(
+        title = "Plot 2.3.4",
+        subtitle = paste0(
+          "Comparison of the average economic damage ", 
+          "for the 90% of observations with the lowest impact ", 
+          "versus the average economic damage ", 
+          "for the 10% of observations with highest impact. "
+        ),
+        x = paste0(
+          "Average Number of Economic Damage by each Weather Event Type ", 
+          "for the 10% of its Observations with the Highest Impact"
+        ),
+        y = paste0(
+          "Average Number of Economic Damage by each Weather Event Type ", "\n", 
+          "for the 90% of its Observations with the Lowest Impact."
+        ),
+        ### Add a descriptive label for the legend.
+        fill = paste0(
+          "The color indicates the skewness ",
+          "of economic damage for the each weather event type. ",
+          "(the color scale is unique for all four plots of PART 3) "
+        )
+      ) +
+      ## Select a theme.
+      theme_linedraw() +
+      ## Customize the selected theme.
+      theme(
+        ### Adjust the legend.
+        legend.position = "bottom",
+        legend.direction = "horizontal",
+        ### Adjust the title.
+        plot.title = element_text(
+          size = 12,
+          face = "bold"
+        ),
+        ### Adjust the subtitle.
+        plot.subtitle = element_text(
+          size = 10
+        )
+      )
+
 <br>
 
 <font size="1">[back to start of this
@@ -14550,6 +18720,112 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 #### 9.3.4.2 Compose the Multiplot 2.3
+
+The four elementary plots that were created from the results of the
+summary for the harm on economy with respect to economic damage by each
+weather event type, were combined to construct a single multiplot that
+displays the complete picture for this perspective.
+
+    # Create a multiplot that displays the overview of the summary 
+    # for the harm on economy with respect to economic damage
+    # by each weather event type.
+    multiplot_2_3 <- arrangeGrob(
+      grobs = list(
+          
+        # Title
+        textGrob(
+          label = paste0(
+            "\n",
+            "PART 3: Harm on economy by each weather event type ", 
+            "with the respect to economic damage ", "\n", 
+            "based on the cases of weather events ", 
+            "that resulted in non-zero economic damage.", "\n", 
+            "\n"
+          ),
+           gp=gpar(
+             fontsize = 16, 
+             fontface = "bold"
+           )
+        ),
+        
+        # Subtitle
+        textGrob(
+          label = paste0(
+              "\n", 
+              "The results include only the weather event types, ", 
+              "for which at least 10 observations ", 
+              "that resulted in non-zero economic damage were available. ", "\n",
+              "The number associated with each weather event type ", 
+              "represents the rank (from the most harmful to the least) ", 
+              "which was assigned based on the overall average economic damage.", "\n",
+              "Because for most of the weather event types ", 
+              "high positive skewness was observed for the economic damage, ",
+              "the average of the 90% of cases with lowest impact ", "\n",
+              "and the 10% of cases with highest impact were reported ", 
+              "to provide a more representative picture of their consequences.","\n",
+              "\n"
+          ),
+           gp=gpar(
+             fontsize = 14, 
+             fontface = "bold"
+           )
+        ),
+        
+        # Plot 2.3.1
+        # Elementary plot for the average economic damage 
+        # by each weather event type for all cases.
+        elementary_plot_2_3_1,
+        
+        # ELEMENTARY PLOT 1.3.2
+        # Elementary plot for the average economic damage 
+        # by each weather event type for 90% of cases with the lowest impact.
+        elementary_plot_2_3_2,
+        
+        # ELEMENTARY PLOT 1.3.3
+        # Elementary plot for the average economic damage 
+        # by each weather event type for 10% of cases with the highest impact.
+        elementary_plot_2_3_3,
+        
+        # ELEMENTARY PLOT 1.3.4
+        # Elementary Plot 2.3.4 for the comparison of 
+        # the average economic damage 
+        # for the 90% of cases with the lowest impact versus 
+        # the 10% of cases with the highest impact.
+        elementary_plot_2_3_4
+      ),
+      # Set the layout for this elementary plots
+      layout_matrix = 
+        matrix(
+          c(1,1,1,1,1,1,1,1,1,
+            2,2,2,2,2,2,2,2,2,
+            3,3,3,3,3,4,4,5,5,
+            3,3,3,3,3,4,4,5,5,
+            3,3,3,3,3,4,4,5,5,
+            3,3,3,3,3,4,4,5,5,
+            3,3,3,3,3,4,4,5,5,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6,
+            NA,6,6,6,6,6,6,6,6
+          ),
+          byrow = TRUE, 
+          nrow = 13
+        )
+    )
+
+    ## Warning: Removed 1 rows containing missing values (geom_point).
+
+    ## Warning: Removed 1 rows containing missing values (geom_label_repel).
+
+*(Note that the Multiplot 2.3 was NOT presented in this section due to
+the restrictions imposed by the assignment to include in the report at
+least 1 but no more than 3 figures. It can be examined at the subsection
+[10.2.1 Overview of results for the harm on
+economy](#ind-10-2-1--Overview-of-results-for-the-harm-on-economy) of
+the chapter [10 RESULTS](#ind-10--RESULTS).)*, were the Figure 2 was
+presented, of which the Multiplot 2.3 constitutes the PART 3.)\*
 
 <br>
 
