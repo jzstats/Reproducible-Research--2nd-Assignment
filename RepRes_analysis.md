@@ -18854,6 +18854,33 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ------------------------------------------------------------------------
 
+The unprocessed raw data from the file
+[repdata\_data\_StormData.csv.bz2](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2)
+that contains observations from [Storm Events
+Dataset](#ind-4--STORM-EVENTS-DATASET) that was created and made
+publicly available by the U.S. National Oceanic and Atmospheric
+Administration (NOAA), was processed to obtain [the table with processed
+data](#ind-7--PROCESSED-DATA) (through a processing pipeline which was
+described in detail at the chapter [6 DATA
+PROCESSING](#ind-6--DATA-PROCESSING)).
+
+Based on the table with the processed data which contains valid
+observations for weather events that happened at United States in the
+period from 2001 to 2011 and caused harm either to population health
+(resulted in fatalities or injuries) or to economy (resulted in property
+or crop damage) the results of this analysis were produced for the two
+questions of interest set by the assignment (for which the guidelines
+can be found at the section [2.1 About The
+Assignment](#ind-2-1--About-The-Assignment), that were presented in the
+following sections of this chapter:
+
+-   [10.1 Question 1: Across the United States, which types of events
+    (as indicated in the EVTYPE variable) are most harmful with respect
+    to population health?](#results-harm-on-population-health)  
+-   [10.2 Question 2 : Across the United States, which types of events
+    have the greatest economic
+    consequences?](#ind-10-2--results-harm-on-economy)
+
 <br>
 
 <font size="1">[back to start of this
@@ -18865,6 +18892,61 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 10.1 Question 1: Across the United States, which types of events (as indicated in the EVTYPE variable) are most harmful with respect to population health?
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+In an attempt to identify the most harmful weather event types with
+respect to population health three different perspectives were examined
+(for which the analysis can be examined at the chapter [8 HARM ON
+POPULATION HEALTH](#ind-8--HARM-ON-POPULATION-HEALTH)).
+
+A short overview of the results was presented at the subsection:
+
+-   [10.1.1 Overview of results for the harm on population
+    health](#ind-10-1-1--Overview-of-results-for-the-harm-on-population-health)
+
+Further details, at each of the three perspectives, are available at the
+following subsections:
+
+-   [10.1.2 Most harmful event types with respect to
+    fatalities](#ind-10-1-2--Most-harmful-weather-event-types-with-respect-to-fatalities)
+-   [10.1.3 Most harmful event types with respect to
+    injuries](#ind-10-1-3--Most-harmful-weather-event-types-with-respect-to-injuries)
+-   [10.1.4 Most harmful event types with respect to
+    casualties](#ind-10-1-4--Most-harmful-weather-event-types-with-respect-to-casualties)
+
+It is highlighted that the results must be evaluated under the following
+context in order to be meaningful:
+
+-   **The results for any perspective (fatalities, injuries or
+    casualties) refer specifically to the harm that was caused when harm
+    with respect to that particular perspective was observed.**
+
+(*In other words the results do not refer to the harm caused for a
+perspective of interest when a weather phenomenon of an included weather
+event type occurred independently of whether or not it caused harm with
+respect to the perspective that was examined.*)
+
+In addition, due to the fact that it was decided to include only the
+weather event types for which there were available at least 10
+observations that corresponded to weather events that resulted in
+non-zero harm with respect to each perspective examined, the composition
+of weather event types for the three perspectives is different.
+
+For each perspective, it was consider appropriate to present three
+aspects in order to supply an insightful picture of the consequences
+caused by each weather event type:
+
+-   the overall average harm  
+-   the average harm of 90% of cases with lower impact  
+-   the average harm of 10% of cases with higher impact
+
+The number of observations as well as their skewness were summarized by
+each weather event types for every aspect and presented along with the
+corresponding average.
+
+Although the overall average harm was used as the primary criterion to
+determine the most harmful events, it should be examined along with the
+average harm for the two other subgroups, especially when the overall
+skewness for a weather event type of interest is high.
 
 <br>
 
@@ -18878,6 +18960,200 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ### 10.1.1 Overview of results for the harm on population health
+
+In order to display an overview of the results for the harm on
+population health by each weather event type the Figure 1 was created.
+
+    # Compose the Figure 1, by combining
+    #   - Multiplot 1.1
+    #   - Multiplot 1.2
+    #   - Multiplot 1.3
+    figure_1 <- arrangeGrob(
+      grobs = list(
+          ## TITLE
+          textGrob(
+              label = paste0(
+                  "FIGURE 1: SUMMARY OF HARM ON POPULATION HEALTH BY EACH WEATHER EVENT TYPE."
+              ),
+              gp=gpar(
+                  fontsize = 20, 
+                  fontface = "bold"
+              )
+          ),
+          ## PART 1.
+          multiplot_1_1,
+          ## PART 2
+          multiplot_1_2,
+          ## PART 3
+          multiplot_1_3,
+          ## CAPTION
+          textGrob(
+              label = paste0(
+                  "\n",
+                  "All details on the source data, the data processing procedure and other ",
+                  "aspects of the analysis from which these results were obtained ", "\n",
+                  "are available at the associated github repository: ",
+                  "https://github.com/jzstats/Reproducible-Research--2nd-Assignment",
+                "\n"
+            ),
+            gp=gpar(
+                fontsize = 14
+            )
+        )
+      ),
+      layout_matrix = matrix(
+          data = c(1,
+                   2,
+                   2,
+                   2,
+                   2,
+                   2,
+                   2,
+                   NA,
+                   3,
+                   3,
+                   3,
+                   3,
+                   3,
+                   3,
+                   NA,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   5
+          ),
+          byrow = TRUE,
+          ncol = 1
+      )
+    )
+
+The *Figure 2* consists of three parts, one for each of the three
+perspective examined:
+
+-   **PART 1**
+    -   Contains the *Multiplot 1.1* which was constructed at the
+        subsection [8.1.4 Visualize the results of the summary for the
+        harm on population health with respect to fatalities by each
+        weather event
+        type](#ind-8-1-4--Visualize-the-results-of-the-summary-for-the-harm-on-population-health-with-respect-to-fatalities-by-each-weather-event-type)
+        and displays the results for the harm on population health with
+        respect to fatalities by each weather event type for all the
+        aspects that were examined. It consists of four plots:
+        -   Plot 1.1.1
+            -   Displays the overall average number of fatalities caused
+                by each weather event type based on all the cases of
+                weather events that resulted in non-zero fatalities.  
+        -   Plot 1.1.2
+            -   Displays the average number of fatalities caused by each
+                weather event type based on 90% of weather events with
+                the lowest impact (for each weather event type) that
+                resulted in non-zero fatalities.  
+        -   Plot 1.1.3
+            -   Displays the average number of fatalities caused by each
+                weather event type based on 10% of weather events with
+                the highest impact (for each weather event type) that
+                resulted in non-zero fatalities.  
+        -   Plot 1.1.4
+            -   Displays a comparison for each weather event type, of
+                the average number of fatalities for the 90% of its
+                observations with the lowest impact versus the average
+                number of fatalities for the 10% of its observations
+                with the highest impact based only on the weather events
+                that resulted in non-zero fatalities.  
+-   **PART 2**
+    -   Contains the *Multiplot 1.2* which was constructed at the
+        subsection [8.2.4 Visualize the results of the summary for the
+        harm on population health with respect to injuries by each
+        weather event
+        type](#ind-8-2-4--Visualize-the-results-of-the-summary-for-the-harm-on-population-health-with-respect-to-injuries-by-each-weather-event-type)
+        and displays the results for the harm on population health with
+        respect to injuries by each weather event type for all the
+        aspects that were examined. It consists of four plots:
+        -   Plot 1.2.1
+            -   Displays the overall average number of injuries caused
+                by each weather event type based on all the cases of
+                weather events that resulted in non-zero injuries.  
+        -   Plot 1.2.2
+            -   Displays the average number of injuries caused by each
+                weather event type based on 90% of weather events with
+                the lowest impact (for each weather event type) that
+                resulted in non-zero injuries.  
+        -   Plot 1.2.3
+            -   Displays the average number of injuries caused by each
+                weather event type based on 10% of weather events with
+                the highest impact (for each weather event type) that
+                resulted in non-zero injuries.  
+        -   Create The Plot 1.2.4
+            -   Displays a comparison for each weather event type, of
+                the average number of injuries for the 90% of its
+                observations with the lowest impact versus the average
+                number of injuries for the 10% of its observations with
+                the highest impact based only on the weather events that
+                resulted in non-zero injuries.  
+-   **PART 3**
+    -   Contains the *Multiplot 1.3* which was constructed at the
+        subsection [8.3.4 Visualize the results of the summary for the
+        harm on population health with respect to casualties by each
+        weather event
+        type](#ind-8-3-4--Visualize-the-results-of-the-summary-for-the-harm-on-population-health-with-respect-to-casualties-by-each-weather-event-type)
+        and displays the results for the harm on population health with
+        respect to casualties by each weather event type for all the
+        aspects that were examined. It consists of four plots:
+        -   Plot 1.3.1
+            -   Displays the overall average number of casualties caused
+                by each weather event type based on all the cases of
+                weather events that resulted in non-zero casualties.  
+        -   Plot 1.3.2
+            -   Displays the average number of casualties caused by each
+                weather event type based on 90% of weather events with
+                the lowest impact (for each weather event type) that
+                resulted in non-zero casualties.  
+        -   Plot 1.3.3
+            -   Displays the average number of casualties caused by each
+                weather event type based on 10% of weather events with
+                the highest impact (for each weather event type) that
+                resulted in non-zero casualties.  
+        -   Plot 1.3.4
+            -   Displays a comparison for each weather event type, of
+                the average number of casualties for the 90% of its
+                observations with the lowest impact versus the average
+                number of casualties for the 10% of its observations
+                with the highest impact based only on the weather events
+                that resulted in non-zero casualties.
+
+<!-- -->
+
+    # Display the Figure 1 
+    grid.draw(figure_1)
+
+![](RepRes_analysis_files/figure-markdown_strict/display_figure_1-1.png)
+
+The *Figure 1* was exported (as a png file), in the folder of the
+working directory:
+
+-   *outputs –&gt; harm\_on\_population\_health –&gt; figures*
+
+with filename:
+
+-   *figure\_1.png*
+
+<!-- -->
+
+    # Export Figure 1
+    ggsave(
+      filename = "figure_1.png",
+      plot = figure_1,
+      device = "png",
+      path = directory_tree_____outputs[[
+        "filepath_____outputs_____harm_on_population_health_____figures"
+        ]],
+      width = 15, 
+      height = 50, 
+      limitsize = FALSE
+    )
 
 <br>
 
@@ -18895,6 +19171,132 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 10.1.2 Most harmful event types with respect to fatalities
 
+According to the summary for the harm on population health with respect
+to fatalities by each weather event type (that were obtained at the
+section [8.1 Harm On Population Health With Respect To Fatalities By
+Each Weather Event
+Type](#ind-8-1--Harm-On-Population-Health-With-Respect-To-Fatalities-By-Each-Weather-Event-Type))
+out of the 26 included weather event types (for each of which at least
+10 observations that resulted in non-zero fatalities at United States in
+the period from 2001 to 2011 were available) there were 7 of them that
+stand out:
+
+1.  When a weather event of type **TORNADO** resulted in fatalities, it
+    caused about 3.4 fatalities on average (based on 339 observations
+    that had extreme positive skewness equal to 13.5732). For 9 out of
+    10 times of such cases, an average of 1.88 fatalities was observed
+    (based on the 90% of cases with the lower impact for which 305
+    observations were available, that had moderate positive skewness
+    equal to 1.812), while for the remaining 1 out of 10 times it caused
+    around 17 fatalities on average (based on the 10% of cases with the
+    higher impact for which 34 observations were available, that had
+    high positive skewness equal to 4.9099).  
+2.  When a weather event of type **DEBRIS FLOW** resulted in fatalities,
+    it caused about 3.36 fatalities on average (based on 11 observations
+    that had moderate positive skewness equal to 1.6608). For 9 out of
+    10 times of such cases, an average of 1.44 fatalities was observed
+    (based on the 90% of cases with the lower impact for which only 9
+    observations were available, that had moderate positive skewness
+    equal to 2.0673), while for the remaining 1 out of 10 times it
+    caused around 12 fatalities on average (based on the 10% of cases
+    with the higher impact for which only 2 observations were available,
+    that had low positive skewness equal to 0).  
+3.  When a weather event of type **HURRICANE/TYPHOON** resulted in
+    fatalities, it caused about 2.96 fatalities on average (based on 23
+    observations that had moderate positive skewness equal to 2.1981).
+    For 9 out of 10 times of such cases, an average of 1.95 fatalities
+    was observed (based on the 90% of cases with the lower impact for
+    which 20 observations were available, that had moderate positive
+    skewness equal to 1.6605), while for the remaining 1 out of 10 times
+    it caused around 9.67 fatalities on average (based on the 10% of
+    cases with the higher impact for which only 3 observations were
+    available, that had low positive skewness equal to 0.7071).  
+4.  When a weather event of type **EXCESSIVE HEAT** resulted in
+    fatalities, it caused about 2.89 fatalities on average (based on 296
+    observations that had high positive skewness equal to 5.4405). For 9
+    out of 10 times of such cases, an average of 1.51 fatalities was
+    observed (based on the 90% of cases with the lower impact for which
+    266 observations were available, that had moderate positive skewness
+    equal to 1.9625), while for the remaining 1 out of 10 times it
+    caused around 15.17 fatalities on average (based on the 10% of cases
+    with the higher impact for which 30 observations were available,
+    that had moderate positive skewness equal to 1.6149).  
+5.  When a weather event of type **WILDFIRE** resulted in fatalities, it
+    caused about 2.61 fatalities on average (based on 31 observations
+    that had moderate positive skewness equal to 2.629). For 9 out of 10
+    times of such cases, an average of 1.59 fatalities was observed
+    (based on the 90% of cases with the lower impact for which 27
+    observations were available, that had moderate positive skewness
+    equal to 1.2688), while for the remaining 1 out of 10 times it
+    caused around 9.5 fatalities on average (based on the 10% of cases
+    with the higher impact for which only 4 observations were available,
+    that had low negative skewness equal to -0.278).  
+6.  When a weather event of type **TROPICAL STORM** resulted in
+    fatalities, it caused about 2.5 fatalities on average (based on 20
+    observations that had high positive skewness equal to 3.8434). For 9
+    out of 10 times of such cases, an average of 1.33 fatalities was
+    observed (based on the 90% of cases with the lower impact for which
+    18 observations were available, that had moderate positive skewness
+    equal to 2.3814), while for the remaining 1 out of 10 times it
+    caused around 13 fatalities on average (based on the 10% of cases
+    with the higher impact for which only 2 observations were available,
+    that had low positive skewness equal to 0).  
+7.  When a weather event of type **HEAT** resulted in fatalities, it
+    caused about 1.81 fatalities on average (based on 127 observations
+    that had high positive skewness equal to 4.1476). For 9 out of 10
+    times of such cases, an average of 1.26 fatalities was observed
+    (based on the 90% of cases with the lower impact for which 114
+    observations were available, that had moderate positive skewness
+    equal to 1.912), while for the remaining 1 out of 10 times it caused
+    around 6.62 fatalities on average (based on the 10% of cases with
+    the higher impact for which 13 observations were available, that had
+    moderate positive skewness equal to 1.4602).
+
+<!-- -->
+
+    # Create an interactive table to present present the results 
+    # for the harm on population health with respect to fatalities.  
+    datatable(
+      data = summary_____harm_on_population_health______fatalities[order(RANK)],
+      caption = paste0(
+        "Table 10.1.2-1: ",
+        "Harm on Population Health with respect to Fatalities ", 
+        "by Each Weather Event Type"
+      ),
+      colnames = c(
+        "RANK", 
+        "WEATHER EVENT TYPE", 
+        "NUMBER OF ALL AVAILABLE OBSERVATIONS", 
+        "AVERAGE NUMBER OF FATALITIES FOR ALL AVAILABLE CASES", 
+        "SKEWNESS IN FATALITIES FOR ALL AVAILABLE CASES", 
+        "NUMBER OF OBSERVATIONS FOR THE 90% OF CASES WITH LOWEST IMPACT", 
+        "AVERAGE NUMBER OF FATALITIES FOR THE 90% OF CASES WITH LOWEST IMPACT",
+        "SKEWNESS IN FATALITIES FOR THE 90% OF CASES WITH LOWEST IMPACT", 
+        "NUMBER OF OBSERVATIONS FOR THE 10% OF CASES WITH HIGHEST IMPACT", 
+        "AVERAGE NUMBER OF FATALITIES FOR THE 10% OF CASES WITH HIGHEST IMPACT",
+        "SKEWNESS IN FATALITIES FOR THE 10% OF CASES WITH HIGHEST IMPACT"
+      ),
+      rownames = FALSE,
+      escape = TRUE,
+      options=list(
+        pageLength = nrow(summary_____harm_on_population_health______fatalities),
+        dom = "t",
+        initComplete = JS(
+          "function(settings, json) {",
+          "$(this.api().table().header()).css({'font-size': '50%'});",
+          "}"
+        )
+      )
+    ) %>% 
+      formatStyle(columns = c(1, 3:11), fontSize = '70%')%>% 
+      formatStyle(columns = 2, fontSize = '35%')
+
+    ## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+
+<!--html_preserve-->
+
+<script type="application/json" data-for="htmlwidget-b1bfb71f672840596f8c">{"x":{"filter":"none","caption":"<caption>Table 10.1.2-1: Harm on Population Health with respect to Fatalities by Each Weather Event Type<\/caption>","data":[[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],["TORNADO","DEBRIS FLOW","HURRICANE/TYPHOON","EXCESSIVE HEAT","WILDFIRE","TROPICAL STORM","HEAT","MARINE THUNDERSTORM WIND","WINTER STORM","FLASH FLOOD","HIGH SURF","ICE STORM","FLOOD","EXTREME COLD/WIND CHILL","WINTER WEATHER","COLD/WIND CHILL","HEAVY SNOW","AVALANCHE","HIGH WIND","BLIZZARD","HEAVY RAIN","MARINE STRONG WIND","THUNDERSTORM WIND","RIP CURRENT","STRONG WIND","LIGHTNING"],[339,11,23,296,31,20,127,12,51,392,86,20,187,103,46,75,18,129,92,15,34,12,195,384,90,387],[3.4,3.36,2.96,2.89,2.61,2.5,1.81,1.58,1.49,1.46,1.42,1.4,1.39,1.39,1.33,1.29,1.28,1.26,1.2,1.2,1.18,1.17,1.15,1.13,1.1,1.07],[13.5732,1.6608,2.1981,5.4405,2.629,3.8434,4.1476,2.3158,0.9436,8.0755,2.2931,2.7519,5.0049,4.5318,3.7781,2.9759,0.9923,2.2979,3.4457,2.6185,2.595,1.7889,6.4762,5.3801,2.6667,5.3156],[305,9,20,266,27,18,114,10,45,352,77,18,168,92,41,67,16,116,82,13,30,10,175,345,81,348],[1.88,1.44,1.95,1.51,1.59,1.33,1.26,1.2,1.33,1.16,1.21,1.11,1.17,1.04,1.07,1.1,1.19,1.12,1.04,1,1.03,1,1.01,1,1,1],[1.812,2.0673,1.6605,1.9625,1.2688,2.3814,1.912,1.5,0.7071,1.8354,1.4404,2.4749,1.7889,4.4772,3.2781,2.5861,1.6013,2.3287,4.9367,null,5.1995,null,13.1151,18.4933,null,null],[34,2,3,30,4,2,13,2,6,40,9,2,19,11,5,8,2,13,10,2,4,2,20,39,9,39],[17,12,9.67,15.17,9.5,13,6.62,3.5,2.67,4.1,3.22,4,3.37,4.27,3.4,2.88,2,2.54,2.5,2.5,2.25,2,2.45,2.23,2,1.69],[4.9099,0,0.7071,1.6149,-0.278,0,1.4602,0,-0.7071,4.2361,0.4137,0,2.5195,1.4083,0.5071,1.1915,null,0.7597,1.1449,0,1.1547,null,3.355,4.2045,null,0.9473]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>RANK<\/th>\n      <th>WEATHER EVENT TYPE<\/th>\n      <th>NUMBER OF ALL AVAILABLE OBSERVATIONS<\/th>\n      <th>AVERAGE NUMBER OF FATALITIES FOR ALL AVAILABLE CASES<\/th>\n      <th>SKEWNESS IN FATALITIES FOR ALL AVAILABLE CASES<\/th>\n      <th>NUMBER OF OBSERVATIONS FOR THE 90% OF CASES WITH LOWEST IMPACT<\/th>\n      <th>AVERAGE NUMBER OF FATALITIES FOR THE 90% OF CASES WITH LOWEST IMPACT<\/th>\n      <th>SKEWNESS IN FATALITIES FOR THE 90% OF CASES WITH LOWEST IMPACT<\/th>\n      <th>NUMBER OF OBSERVATIONS FOR THE 10% OF CASES WITH HIGHEST IMPACT<\/th>\n      <th>AVERAGE NUMBER OF FATALITIES FOR THE 10% OF CASES WITH HIGHEST IMPACT<\/th>\n      <th>SKEWNESS IN FATALITIES FOR THE 10% OF CASES WITH HIGHEST IMPACT<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":26,"dom":"t","initComplete":"function(settings, json) {\n$(this.api().table().header()).css({'font-size': '50%'});\n}","columnDefs":[{"className":"dt-right","targets":[0,2,3,4,5,6,7,8,9,10]}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,25,26,50,100],"rowCallback":"function(row, data) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-size':'70%'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'font-size':'70%'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'font-size':'70%'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'font-size':'70%'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'font-size':'70%'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'font-size':'70%'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'font-size':'70%'});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'font-size':'70%'});\nvar value=data[9]; $(this.api().cell(row, 9).node()).css({'font-size':'70%'});\nvar value=data[10]; $(this.api().cell(row, 10).node()).css({'font-size':'70%'});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'font-size':'35%'});\n}"}},"evals":["options.initComplete","options.rowCallback"],"jsHooks":[]}</script>
+<!--/html_preserve-->
 <br>
 
 <font size="1">[back to start of this
@@ -18911,6 +19313,92 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 10.1.3 Most harmful event types with respect to injuries
 
+According to the summary for the harm on population health with respect
+to injuries by each weather event type (that were obtained at the
+section [8.2 Harm On Population Health With Respect To Injuries By Each
+Weather Event
+Type](#ind-8-2--Harm-On-Population-Health-With-Respect-To-Injuries-By-Each-Weather-Event-Type))
+out of the 27 included weather event types (for each of which at least
+10 observations that resulted in non-zero injuries at United States in
+the period from 2001 to 2011 were available) there were 3 of them that
+stand out:
+
+Specifically :
+
+1.  When a weather event of type **HURRICANE/TYPHOON** resulted in
+    injuries, it caused about 86.07 injuries on average (based on 15
+    observations that had moderate positive skewness equal to 2.773).
+    For 9 out of 10 times of such cases, an average of 15 injuries was
+    observed (based on the 90% of cases with the lower impact for which
+    13 observations were available, that had moderate positive skewness
+    equal to 2.8806), while for the remaining 1 out of 10 times it
+    caused around 548 injuries on average (based on the 10% of cases
+    with the higher impact for which only 2 observations were available,
+    that had low positive skewness equal to 0).  
+2.  When a weather event of type **EXCESSIVE HEAT** resulted in
+    injuries, it caused about 37.7 injuries on average (based on 86
+    observations that had high positive skewness equal to 4.1751). For 9
+    out of 10 times of such cases, an average of 16.48 injuries was
+    observed (based on the 90% of cases with the lower impact for which
+    77 observations were available, that had moderate positive skewness
+    equal to 1.2674), while for the remaining 1 out of 10 times it
+    caused around 219.22 injuries on average (based on the 10% of cases
+    with the higher impact for which only 9 observations were available,
+    that had low positive skewness equal to 0.7763).  
+3.  When a weather event of type **HEAT** resulted in injuries, it
+    caused about 33.94 injuries on average (based on 36 observations
+    that had moderate positive skewness equal to 2.1619). For 9 out of
+    10 times of such cases, an average of 13.56 injuries was observed
+    (based on the 90% of cases with the lower impact for which 32
+    observations were available, that had moderate positive skewness
+    equal to 2.4589), while for the remaining 1 out of 10 times it
+    caused around 197 injuries on average (based on the 10% of cases
+    with the higher impact for which only 4 observations were available,
+    that had moderate negative skewness equal to -1.0869).
+
+<!-- -->
+
+    # Create an interactive table to present present the results 
+    # for the harm on population health with respect to injuries.  
+    datatable(
+      data = summary_____harm_on_population_health______injuries[order(RANK)],
+      caption = paste0(
+        "Table 10.1.3-1: ",
+        "Harm on Population Health with respect to Injuries ", 
+        "by Each Weather Event Type"
+      ),
+      colnames = c(
+        "RANK", 
+        "WEATHER EVENT TYPE", 
+        "NUMBER OF ALL AVAILABLE OBSERVATIONS", 
+        "AVERAGE NUMBER OF INJURIES FOR ALL AVAILABLE CASES", 
+        "SKEWNESS IN INJURIES FOR ALL AVAILABLE CASES", 
+        "NUMBER OF OBSERVATIONS FOR THE 90% OF CASES WITH LOWEST IMPACT", 
+        "AVERAGE NUMBER OF INJURIES FOR THE 90% OF CASES WITH LOWEST IMPACT",
+        "SKEWNESS IN INJURIES FOR THE 90% OF CASES WITH LOWEST IMPACT", 
+        "NUMBER OF OBSERVATIONS FOR THE 10% OF CASES WITH HIGHEST IMPACT", 
+        "AVERAGE NUMBER OF INJURIES FOR THE 10% OF CASES WITH HIGHEST IMPACT",
+        "SKEWNESS IN INJURIES FOR THE 10% OF CASES WITH HIGHEST IMPACT"
+      ),
+      rownames = FALSE,
+      escape = TRUE,
+      options=list(
+        pageLength = nrow(summary_____harm_on_population_health______injuries),
+        dom = "t",
+        initComplete = JS(
+          "function(settings, json) {",
+          "$(this.api().table().header()).css({'font-size': '50%'});",
+          "}"
+        )
+      )
+    ) %>% 
+      formatStyle(columns = c(1, 3:11), fontSize = '70%')%>% 
+      formatStyle(columns = 2, fontSize = '35%')
+
+<!--html_preserve-->
+
+<script type="application/json" data-for="htmlwidget-c404eb9280894fdf8525">{"x":{"filter":"none","caption":"<caption>Table 10.1.3-1: Harm on Population Health with respect to Injuries by Each Weather Event Type<\/caption>","data":[[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27],["HURRICANE/TYPHOON","EXCESSIVE HEAT","HEAT","TROPICAL STORM","TORNADO","WINTER WEATHER","DUST STORM","HEAVY SNOW","DENSE FOG","WINTER STORM","FLOOD","WILDFIRE","HAIL","ICE STORM","DEBRIS FLOW","FLASH FLOOD","HIGH SURF","DUST DEVIL","MARINE THUNDERSTORM WIND","HEAVY RAIN","HIGH WIND","RIP CURRENT","THUNDERSTORM WIND","BLIZZARD","LIGHTNING","STRONG WIND","AVALANCHE"],[15,86,36,19,1252,47,22,31,20,51,61,230,109,25,12,190,54,10,11,50,220,149,1236,12,1411,142,80],[86.07,37.7,33.94,14.05,11.45,10.28,9.73,8.26,7.15,6.29,5.07,4.78,4.48,4.36,4.33,4.11,3.74,3.6,3.09,2.96,2.53,2.46,2.33,1.92,1.86,1.73,1.36],[2.773,4.1751,2.1619,3.8833,16.3086,4.1679,1.5095,4.3682,1.4182,3.1228,4.6609,5.851,5.8015,3.4714,0.6818,9.4282,5.7692,1.859,2.2867,4.09,10.7119,4.5935,9.0224,2.0441,6.636,2.9883,3.2455],[13,77,32,17,1126,42,19,27,18,45,54,207,98,22,10,171,48,9,9,45,198,134,1112,10,1269,127,72],[15,16.48,13.56,2.24,4.25,3.98,6.26,3.56,5.39,3.53,1.48,2.64,1.84,1.91,3.3,1.99,2,2.44,1.78,1.51,1.62,1.71,1.47,1.4,1.27,1.4,1.12],[2.8806,1.2674,2.4589,1.7452,1.9101,1.6058,1.3333,1.3865,0.7286,1.108,1.6245,1.4733,2.7409,1.3926,0.4135,1.5806,1.3632,0.9921,0.413,1.3782,1.374,1.4466,1.7168,0.4082,1.8902,1.3154,2.2678],[2,9,4,2,126,5,3,4,2,6,7,23,11,3,2,19,6,1,2,5,22,15,124,2,142,15,8],[548,219.22,197,114.5,75.76,63.2,31.67,40,23,27,32.71,24,28,22.33,9.5,23.16,17.67,14,9,16,10.77,9.13,10.04,4.5,7.08,4.47,3.5],[0,0.7763,-1.0869,0,5.7628,0.859,0.3818,1.0093,0,0.4624,0.7995,2.3106,1.5969,0.035,0,3.31,1.6969,null,0,0.3092,3.8991,1.9082,3.5117,0,3.1259,1.9717,0.6479]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>RANK<\/th>\n      <th>WEATHER EVENT TYPE<\/th>\n      <th>NUMBER OF ALL AVAILABLE OBSERVATIONS<\/th>\n      <th>AVERAGE NUMBER OF INJURIES FOR ALL AVAILABLE CASES<\/th>\n      <th>SKEWNESS IN INJURIES FOR ALL AVAILABLE CASES<\/th>\n      <th>NUMBER OF OBSERVATIONS FOR THE 90% OF CASES WITH LOWEST IMPACT<\/th>\n      <th>AVERAGE NUMBER OF INJURIES FOR THE 90% OF CASES WITH LOWEST IMPACT<\/th>\n      <th>SKEWNESS IN INJURIES FOR THE 90% OF CASES WITH LOWEST IMPACT<\/th>\n      <th>NUMBER OF OBSERVATIONS FOR THE 10% OF CASES WITH HIGHEST IMPACT<\/th>\n      <th>AVERAGE NUMBER OF INJURIES FOR THE 10% OF CASES WITH HIGHEST IMPACT<\/th>\n      <th>SKEWNESS IN INJURIES FOR THE 10% OF CASES WITH HIGHEST IMPACT<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":27,"dom":"t","initComplete":"function(settings, json) {\n$(this.api().table().header()).css({'font-size': '50%'});\n}","columnDefs":[{"className":"dt-right","targets":[0,2,3,4,5,6,7,8,9,10]}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,25,27,50,100],"rowCallback":"function(row, data) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-size':'70%'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'font-size':'70%'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'font-size':'70%'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'font-size':'70%'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'font-size':'70%'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'font-size':'70%'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'font-size':'70%'});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'font-size':'70%'});\nvar value=data[9]; $(this.api().cell(row, 9).node()).css({'font-size':'70%'});\nvar value=data[10]; $(this.api().cell(row, 10).node()).css({'font-size':'70%'});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'font-size':'35%'});\n}"}},"evals":["options.initComplete","options.rowCallback"],"jsHooks":[]}</script>
+<!--/html_preserve-->
 <br>
 
 <font size="1">[back to start of this
@@ -18927,6 +19415,132 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 10.1.4 Most harmful event types with respect to casualties
 
+According to the summary for the harm on population health with respect
+to casualties by each weather event type (that were obtained at the
+section [8.3 Harm On Population Health With Respect To Casualties By
+Each Weather Event
+Type](#ind-8-3--Harm-On-Population-Health-With-Respect-To-Casualties-By-Each-Weather-Event-Type))
+out of the 30 included weather event types (for each of which at least
+10 observations that resulted in non-zero casualties at United States in
+the period from 2001 to 2011 were available) there were 7 of them that
+stand out:
+
+Specifically :
+
+1.  When a weather event of type **HURRICANE/TYPHOON** resulted in
+    casualties, it caused about 41.18 casualties on average (based on 33
+    observations that had high positive skewness equal to 4.4573). For 9
+    out of 10 times of such cases, an average of 3.93 casualties was
+    observed (based on the 90% of cases with the lower impact for which
+    29 observations were available, that had moderate positive skewness
+    equal to 2.1573), while for the remaining 1 out of 10 times it
+    caused around 311.25 casualties on average (based on the 10% of
+    cases with the higher impact for which only 4 observations were
+    available, that had low positive skewness equal to 0.7473).  
+2.  When a weather event of type **EXCESSIVE HEAT** resulted in
+    casualties, it caused about 11.71 casualties on average (based on
+    350 observations that had extreme positive skewness equal to
+    8.3298). For 9 out of 10 times of such cases, an average of 2.85
+    casualties was observed (based on the 90% of cases with the lower
+    impact for which 315 observations were available, that had moderate
+    positive skewness equal to 2.7042), while for the remaining 1 out of
+    10 times it caused around 91.43 casualties on average (based on the
+    10% of cases with the higher impact for which 35 observations were
+    available, that had moderate positive skewness equal to 2.7186).  
+3.  When a weather event of type **TORNADO** resulted in casualties, it
+    caused about 11.67 casualties on average (based on 1327 observations
+    that had extreme positive skewness equal to 17.6038). For 9 out of
+    10 times of such cases, an average of 4.29 casualties was observed
+    (based on the 90% of cases with the lower impact for which 1194
+    observations were available, that had moderate positive skewness
+    equal to 1.936), while for the remaining 1 out of 10 times it caused
+    around 77.9 casualties on average (based on the 10% of cases with
+    the higher impact for which 133 observations were available, that
+    had high positive skewness equal to 6.2215).  
+4.  When a weather event of type **DUST STORM** resulted in casualties,
+    it caused about 9.7 casualties on average (based on 23 observations
+    that had moderate positive skewness equal to 1.5025). For 9 out of
+    10 times of such cases, an average of 6.35 casualties was observed
+    (based on the 90% of cases with the lower impact for which 20
+    observations were available, that had moderate positive skewness
+    equal to 1.2737), while for the remaining 1 out of 10 times it
+    caused around 32 casualties on average (based on the 10% of cases
+    with the higher impact for which only 3 observations were available,
+    that had low positive skewness equal to 0.4703).  
+5.  When a weather event of type **HEAT** resulted in casualties, it
+    caused about 9.43 casualties on average (based on 154 observations
+    that had high positive skewness equal to 5.2894). For 9 out of 10
+    times of such cases, an average of 1.7 casualties was observed
+    (based on the 90% of cases with the lower impact for which 138
+    observations were available, that had moderate positive skewness
+    equal to 2.459), while for the remaining 1 out of 10 times it caused
+    around 76.12 casualties on average (based on the 10% of cases with
+    the higher impact for which 16 observations were available, that had
+    low positive skewness equal to 0.9965).  
+6.  When a weather event of type **TROPICAL STORM** resulted in
+    casualties, it caused about 9.32 casualties on average (based on 34
+    observations that had high positive skewness equal to 5.3288). For 9
+    out of 10 times of such cases, an average of 1.9 casualties was
+    observed (based on the 90% of cases with the lower impact for which
+    30 observations were available, that had moderate positive skewness
+    equal to 1.4887), while for the remaining 1 out of 10 times it
+    caused around 65 casualties on average (based on the 10% of cases
+    with the higher impact for which only 4 observations were available,
+    that had moderate positive skewness equal to 1.1226).  
+7.  When a weather event of type **DENSE FOG** resulted in casualties,
+    it caused about 7.6 casualties on average (based on 20 observations
+    that had moderate positive skewness equal to 1.3831). For 9 out of
+    10 times of such cases, an average of 5.83 casualties was observed
+    (based on the 90% of cases with the lower impact for which 18
+    observations were available, that had low positive skewness equal to
+    0.5675), while for the remaining 1 out of 10 times it caused around
+    23.5 casualties on average (based on the 10% of cases with the
+    higher impact for which only 2 observations were available, that had
+    low positive skewness equal to 0).
+
+<!-- -->
+
+    # Create an interactive table to present present the results 
+    # for the harm on population health with respect to casualties.  
+    datatable(
+      data = summary_____harm_on_population_health______casualties[order(RANK)],
+      caption = paste0(
+        "Table 10.1.4-1: ",
+        "Harm on Population Health with respect to Casualties ", 
+        "by Each Weather Event Type"
+      ),
+      colnames = c(
+        "RANK", 
+        "WEATHER EVENT TYPE", 
+        "NUMBER OF ALL AVAILABLE OBSERVATIONS", 
+        "AVERAGE NUMBER OF CASUALTIES FOR ALL AVAILABLE CASES", 
+        "SKEWNESS IN CASUALTIES FOR ALL AVAILABLE CASES", 
+        "NUMBER OF OBSERVATIONS FOR THE 90% OF CASES WITH LOWEST IMPACT", 
+        "AVERAGE NUMBER OF CASUALTIES FOR THE 90% OF CASES WITH LOWEST IMPACT",
+        "SKEWNESS IN CASUALTIES FOR THE 90% OF CASES WITH LOWEST IMPACT", 
+        "NUMBER OF OBSERVATIONS FOR THE 10% OF CASES WITH HIGHEST IMPACT", 
+        "AVERAGE NUMBER OF CASUALTIES FOR THE 10% OF CASES WITH HIGHEST IMPACT",
+        "SKEWNESS IN CASUALTIES FOR THE 10% OF CASES WITH HIGHEST IMPACT"
+      ),
+      rownames = FALSE,
+      escape = TRUE,
+      options=list(
+        pageLength = nrow(summary_____harm_on_population_health______casualties),
+        dom = "t",
+        initComplete = JS(
+          "function(settings, json) {",
+          "$(this.api().table().header()).css({'font-size': '50%'});",
+          "}"
+        )
+      )
+    ) %>% 
+      formatStyle(columns = c(1, 3:11), fontSize = '70%')%>% 
+      formatStyle(columns = 2, fontSize = '35%')
+
+<!--html_preserve-->
+
+<script type="application/json" data-for="htmlwidget-519ed16ac2abd08d709f">{"x":{"filter":"none","caption":"<caption>Table 10.1.4-1: Harm on Population Health with respect to Casualties by Each Weather Event Type<\/caption>","data":[[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],["HURRICANE/TYPHOON","EXCESSIVE HEAT","TORNADO","DUST STORM","HEAT","TROPICAL STORM","DENSE FOG","WINTER WEATHER","HEAVY SNOW","WILDFIRE","WINTER STORM","DEBRIS FLOW","HAIL","ICE STORM","DUST DEVIL","MARINE THUNDERSTORM WIND","HIGH SURF","FLASH FLOOD","HEAVY RAIN","FLOOD","HIGH WIND","THUNDERSTORM WIND","MARINE STRONG WIND","BLIZZARD","LIGHTNING","RIP CURRENT","STRONG WIND","EXTREME COLD/WIND CHILL","AVALANCHE","COLD/WIND CHILL"],[33,350,1327,23,154,34,20,74,45,244,84,19,110,38,12,17,119,540,75,231,279,1364,16,22,1657,475,211,107,180,76],[41.18,11.71,11.67,9.7,9.43,9.32,7.6,7.35,6.2,4.84,4.73,4.68,4.46,3.61,3.17,3.12,2.72,2.51,2.51,2.46,2.39,2.28,2.25,1.86,1.83,1.68,1.63,1.56,1.51,1.43],[4.4573,8.3298,17.6038,1.5025,5.2894,5.3288,1.3831,5.2237,5.2993,6.5566,3.9675,2.2183,5.8303,4.3115,2.1224,2.3442,8.373,14.4341,5.0249,9.3312,11.3363,9.426,1.927,2.3705,6.9576,6.9329,3.0745,4.3053,2.3975,5.0297],[29,315,1194,20,138,30,18,66,40,219,75,17,99,34,10,15,107,486,67,207,251,1227,14,19,1491,427,189,96,162,68],[3.93,2.85,4.29,6.35,1.7,1.9,5.83,2.62,2.67,2.6,2.61,3.06,1.85,1.91,1.8,2.33,1.72,1.42,1.42,1.29,1.55,1.45,1.64,1.42,1.28,1.24,1.33,1.11,1.26,1.13],[2.1573,2.7042,1.936,1.2737,2.459,1.4887,0.5675,1.3941,2.1501,1.5251,1.6766,1.2404,2.7172,1.1368,1.6136,0.518,1.0235,1.727,1.6112,1.58,1.4965,1.74,0.7371,1.0733,1.7952,1.7774,1.479,3.1228,1.594,2.1698],[4,35,133,3,16,4,2,8,5,25,9,2,11,4,2,2,12,54,8,24,28,137,2,3,166,48,22,11,18,8],[311.25,91.43,77.9,32,76.12,65,23.5,46.38,34.4,24.44,22.33,18.5,28,18,10,9,11.67,12.3,11.62,12.54,9.89,9.67,6.5,4.67,6.75,5.65,4.18,5.45,3.78,4],[0.7473,2.7186,6.2215,0.4703,0.9965,1.1226,0,1.4182,1.3347,2.6702,1.0608,0,1.5969,0.5209,0,0,2.7446,5.1019,1.0248,2.7125,4.3125,3.6844,0,0.528,3.3749,3.2666,2.3017,1.1647,1.0633,1.8494]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>RANK<\/th>\n      <th>WEATHER EVENT TYPE<\/th>\n      <th>NUMBER OF ALL AVAILABLE OBSERVATIONS<\/th>\n      <th>AVERAGE NUMBER OF CASUALTIES FOR ALL AVAILABLE CASES<\/th>\n      <th>SKEWNESS IN CASUALTIES FOR ALL AVAILABLE CASES<\/th>\n      <th>NUMBER OF OBSERVATIONS FOR THE 90% OF CASES WITH LOWEST IMPACT<\/th>\n      <th>AVERAGE NUMBER OF CASUALTIES FOR THE 90% OF CASES WITH LOWEST IMPACT<\/th>\n      <th>SKEWNESS IN CASUALTIES FOR THE 90% OF CASES WITH LOWEST IMPACT<\/th>\n      <th>NUMBER OF OBSERVATIONS FOR THE 10% OF CASES WITH HIGHEST IMPACT<\/th>\n      <th>AVERAGE NUMBER OF CASUALTIES FOR THE 10% OF CASES WITH HIGHEST IMPACT<\/th>\n      <th>SKEWNESS IN CASUALTIES FOR THE 10% OF CASES WITH HIGHEST IMPACT<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":30,"dom":"t","initComplete":"function(settings, json) {\n$(this.api().table().header()).css({'font-size': '50%'});\n}","columnDefs":[{"className":"dt-right","targets":[0,2,3,4,5,6,7,8,9,10]}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,25,30,50,100],"rowCallback":"function(row, data) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-size':'70%'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'font-size':'70%'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'font-size':'70%'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'font-size':'70%'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'font-size':'70%'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'font-size':'70%'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'font-size':'70%'});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'font-size':'70%'});\nvar value=data[9]; $(this.api().cell(row, 9).node()).css({'font-size':'70%'});\nvar value=data[10]; $(this.api().cell(row, 10).node()).css({'font-size':'70%'});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'font-size':'35%'});\n}"}},"evals":["options.initComplete","options.rowCallback"],"jsHooks":[]}</script>
+<!--/html_preserve-->
 <br>
 
 <font size="1">[back to start of this
@@ -18945,6 +19559,61 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 10.2 Question 2 : Across the United States, which types of events have the greatest economic consequences?
 ----------------------------------------------------------------------------------------------------------
 
+In an attempt to identify the most harmful weather event types with
+respect to economy three different perspectives were examined (for which
+the analysis can be examined at the chapter [9 HARM ON
+ECONOMY](#ind-9--HARM-ON-ECONOMY).
+
+A short overview of the results was presented at the subsection:
+
+-   [10.2.1 Overview of results for the harm on
+    economy](#ind-10-2-1--Overview-of-results-for-the-harm-on-economy)
+
+Further details, at each of the three perspectives, are available at the
+following subsections:
+
+-   [10.2.2 Most harmful event types with respect to property
+    damage](#ind-10-2-2--Most-harmful-weather-event-types-with-respect-to-property-damage)  
+-   [10.2.3 Most harmful event types with respect to crop
+    damage](#ind-10-2-3--Most-harmful-weather-event-types-with-respect-to-crop-damage)  
+-   [10.2.4 Most harmful event types with respect to economic
+    damage](#ind-10-2-4--Most-harmful-weather-event-types-with-respect-to-economic-damage)
+
+It is highlighted that the results must be evaluated under the following
+context in order to be meaningful:
+
+-   **The results for a perspective (property damage, crop damage or
+    economic damage) refer specifically to the harm that was caused when
+    harm with respect to that perspective was observed.**
+
+(*In other words the results do not refer to the harm caused for a
+perspective of interest when a weather phenomenon of an included weather
+event type occurred independently of whether or not it caused harm with
+respect to the perspective that was examined.*)
+
+In addition, due to the fact that it was decided to include only the
+weather event types for which there were available at least 10
+observations that corresponded to weather events that resulted in
+non-zero harm with respect to each perspective examined, the composition
+of weather event types for the three perspectives is different.
+
+For each perspective, it was consider appropriate to present three
+aspects in order to supply an insightful picture of the consequences
+caused by each weather event type:
+
+-   the overall average harm  
+-   the average harm of 90% of cases with lower impact  
+-   the average harm of 10% of cases with higher impact
+
+The number of observations as well as their skewness were summarized by
+each weather event types for every aspect and presented along with the
+corresponding average.
+
+Although the overall average harm was used as the primary criterion to
+determine the most harmful events, it should be examined along with the
+average harm for the two other subgroups, especially when the overall
+skewness for a weather event type of interest is high.
+
 <br>
 
 <font size="1">[back to start of this
@@ -18957,6 +19626,201 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ### 10.2.1 Overview of results for the harm on economy
+
+In order to display an overview of the results for the harm on economy
+by each weather event type the Figure 2 was created.
+
+    # Compose the Figure 1, by combining
+    #   - Multiplot 2.1
+    #   - Multiplot 2.2
+    #   - Multiplot 2.3
+    figure_2 <- arrangeGrob(
+      grobs = list(
+          ## TITLE
+          textGrob(
+              label = paste0(
+                  "FIGURE 2: SUMMARY OF HARM ON ECONOMY BY EACH WEATHER EVENT TYPE."
+              ),
+              gp=gpar(
+                  fontsize = 20, 
+                  fontface = "bold"
+              )
+          ),
+          ## PART 1.
+          multiplot_2_1,
+          ## PART 2
+          multiplot_2_2,
+          ## PART 3
+          multiplot_2_3,
+          ## CAPTION
+          textGrob(
+              label = paste0(
+                  "\n",
+                  "All details on the source data, the data processing procedure and other ",
+                  "aspects of the analysis from which these results were obtained ", "\n",
+                  "are available at the associated github repository: ",
+                  "https://github.com/jzstats/Reproducible-Research--2nd-Assignment",
+                "\n"
+            ),
+            gp=gpar(
+                fontsize = 14
+            )
+        )
+      ),
+      layout_matrix = matrix(
+          data = c(1,
+                   2,
+                   2,
+                   2,
+                   2,
+                   2,
+                   2,
+                   NA,
+                   3,
+                   3,
+                   3,
+                   3,
+                   3,
+                   NA,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   4,
+                   5
+          ),
+          byrow = TRUE,
+          ncol = 1
+      )
+    )
+
+The *Figure 2* consists of three parts, one for each of the three
+perspective examined:
+
+-   **PART 1**
+    -   Contains the *Multiplot 2.1* which was constructed at the
+        subsection [9.2.4 Visualize the results of the summary for the
+        harm on economy with respect to crop damage by each weather
+        event
+        type](#ind-9-2-4--Visualize-the-results-of-the-summary-for-the-harm-on-economy-with-respect-to-crop-damage-by-each-weather-event-type)
+        and displays the results for the harm on economy with respect to
+        property damage by each weather event type for all the aspects
+        that were examined. It consists of four plots:
+        -   The Plot 2.1.1
+            -   Displays the overall average property damage caused by
+                each weather event type based on all the cases of
+                weather events that resulted in non-zero property
+                damage.  
+        -   Plot 2.1.2
+            -   Displays the average property damage caused by each
+                weather event type based on 90% of weather events with
+                the lowest impact (for each weather event type) that
+                resulted in non-zero property damage.  
+        -   Plot 2.1.3
+            -   Displays the average property damage caused by each
+                weather event type based on 10% of weather events with
+                the highest impact (for each weather event type) that
+                resulted in non-zero property damage.  
+        -   Plot 2.1.4
+            -   Displays a comparison for each weather event type, of
+                the average property damage for the 90% of its
+                observations with the lowest impact versus the average
+                property damage for the 10% of its observations with the
+                highest impact based only on the weather events that
+                resulted in non-zero property damage.  
+-   **PART 2**
+    -   Contains the *Multiplot 2.2* which was constructed at the
+        subsection [9.2.4 Visualize the results of the summary for the
+        harm on economy with respect to crop damage by each weather
+        event
+        type](#ind-9-2-4--Visualize-the-results-of-the-summary-for-the-harm-on-economy-with-respect-to-crop-damage-by-each-weather-event-type)
+        and displays the results for the harm on economy with respect to
+        crop damage by each weather event type for all the aspects that
+        were examined. It consists of four plots:
+        -   Plot 2.2.1
+            -   Displays the overall average crop damage caused by each
+                weather event type based on all the cases of weather
+                events that resulted in non-zero crop damage.  
+        -   Plot 2.2.2
+            -   Displays the average crop damage caused by each weather
+                event type based on 90% of weather events with the
+                lowest impact (for each weather event type) that
+                resulted in non-zero crop damage.  
+        -   Plot 2.2.3
+            -   Displays the average crop damage caused by each weather
+                event type based on 10% of weather events with the
+                highest impact (for each weather event type) that
+                resulted in non-zero crop damage.  
+        -   Plot 2.2.4
+            -   Displays a comparison for each weather event type, of
+                the average crop damage for the 90% of its observations
+                with the lowest impact versus the average crop damage
+                for the 10% of its observations with the highest impact
+                based only on the weather events that resulted in
+                non-zero crop damage.  
+-   **PART 3**
+    -   Contains the *Multiplot 2.3* which was constructed at the
+        subsection [9.2.4 Visualize the results of the summary for the
+        harm on economy with respect to crop damage by each weather
+        event
+        type](#ind-9-2-4--Visualize-the-results-of-the-summary-for-the-harm-on-economy-with-respect-to-crop-damage-by-each-weather-event-type)
+        and displays the results for the harm on economy with respect to
+        economic damage by each weather event type for all the aspects
+        that were examined. It consists of four plots:
+        -   Plot 2.3.1
+            -   Displays the overall average economic damage caused by
+                each weather event type based on all the cases of
+                weather events that resulted in non-zero economic
+                damage.  
+        -   Plot 2.3.2
+            -   Displays the average economic damage caused by each
+                weather event type based on 90% of weather events with
+                the lowest impact (for each weather event type) that
+                resulted in non-zero economic damage.  
+        -   Plot 2.3.3
+            -   Displays the average economic damage caused by each
+                weather event type based on 10% of weather events with
+                the highest impact (for each weather event type) that
+                resulted in non-zero economic damage.  
+        -   The Plot 2.3.4
+            -   Displays a comparison for each weather event type, of
+                the average economic damage for the 90% of its
+                observations with the lowest impact versus the average
+                economic damage for the 10% of its observations with the
+                highest impact based only on the weather events that
+                resulted in non-zero economic damage.
+
+<!-- -->
+
+    # Display the Figure 2
+    grid.draw(figure_2)
+
+![](RepRes_analysis_files/figure-markdown_strict/display_figure_2-1.png)
+
+The *Figure 2* was exported (as a png file), in the folder of the
+working directory:
+
+-   *outputs –&gt; harm\_on\_economy –&gt; figures*
+
+with filename:
+
+-   *figure\_2.png*
+
+<!-- -->
+
+    # Export Figure 1
+    ggsave(
+      filename = "figure_2.png",
+      plot = figure_2,
+      device = "png",
+      path = directory_tree_____outputs[[
+        "filepath_____outputs_____harm_on_economy_____figures"
+        ]],
+      width = 15, 
+      height = 50, 
+      limitsize = FALSE
+    )
 
 <br>
 
@@ -18974,6 +19838,82 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 10.2.2 Most harmful event types with respect to property damage
 
+According to the summary for the harm on economy with respect to
+property damage by each weather event type (that were obtained at the
+section [9.1 Harm On Economy With Respect To Property Damage By Each
+Weather Event
+Type](#ind-9-1--Harm-On-Economy-With-Respect-To-Property-Damage-By-Each-Weather-Event-Type))
+out of the 37 included weather event types (for each of which at least
+10 observations that resulted in non-zero property damage  
+at United States in the period from 2001 to 2011 were available) there
+were 2 of them that stand out:
+
+1.  When a weather event of type **HURRICANE/TYPHOON** resulted in
+    property damage, it caused about 676106028$ of property damage on
+    average (based on 107 observations that had high positive skewness
+    equal to 4.9333). For 9 out of 10 times of such cases, an average of
+    81701511$ of property damage was observed (based on the 90% of cases
+    with the lower impact for which 96 observations were available, that
+    had high positive skewness equal to 3.4556), while for the remaining
+    1 out of 10 times it caused around 5863636364$ of property damage on
+    average (based on the 10% of cases with the higher impact for which
+    11 observations were available, that had moderate positive skewness
+    equal to 1.5154).  
+2.  When a weather event of type **STORM SURGE/TIDE** resulted in
+    property damage, it caused about 364969183$ of property damage on
+    average (based on 131 observations that had extreme positive
+    skewness equal to 9.6344). For 9 out of 10 times of such cases, an
+    average of 749256$ of property damage was observed (based on the 90%
+    of cases with the lower impact for which 117 observations were
+    available, that had moderate positive skewness equal to 2.9093),
+    while for the remaining 1 out of 10 times it caused around
+    3408807143$ of property damage on average (based on the 10% of cases
+    with the higher impact for which 14 observations were available,
+    that had moderate positive skewness equal to 2.7389).
+
+<!-- -->
+
+    # Create an interactive table to present present the results 
+    # for the harm on economy with respect to property damage.  
+    datatable(
+      data = summary_____harm_on_economy______property_damage[order(RANK)],
+      caption = paste0(
+        "Table 10.2.2-1: ",
+        "Harm on Population Health with respect to Property Damage ", 
+        "by Each Weather Event Type"
+      ),
+      colnames = c(
+        "RANK", 
+        "WEATHER EVENT TYPE", 
+        "NUMBER OF ALL AVAILABLE OBSERVATIONS", 
+        "AVERAGE PROPERTY DAMAGE FOR ALL AVAILABLE CASES", 
+        "SKEWNESS IN PROPERTY DAMAGE FOR ALL AVAILABLE CASES", 
+        "NUMBER OF OBSERVATIONS FOR THE 90% OF CASES WITH LOWEST IMPACT", 
+        "AVERAGE PROPERTY DAMAGE FOR THE 90% OF CASES WITH LOWEST IMPACT",
+        "SKEWNESS IN PROPERTY DAMAGE FOR THE 90% OF CASES WITH LOWEST IMPACT", 
+        "NUMBER OF OBSERVATIONS FOR THE 10% OF CASES WITH HIGHEST IMPACT", 
+        "AVERAGE PROPERTY DAMAGE FOR THE 10% OF CASES WITH HIGHEST IMPACT",
+        "SKEWNESS IN PROPERTY DAMAGE FOR THE 10% OF CASES WITH HIGHEST IMPACT"
+      ),
+      rownames = FALSE,
+      escape = TRUE,
+      options=list(
+        pageLength = nrow(summary_____harm_on_economy______property_damage),
+        dom = "t",
+        initComplete = JS(
+          "function(settings, json) {",
+          "$(this.api().table().header()).css({'font-size': '50%'});",
+          "}"
+        )
+      )
+    ) %>% 
+      formatStyle(columns = c(1, 3:11), fontSize = '50%')%>% 
+      formatStyle(columns = 2, fontSize = '35%') 
+
+<!--html_preserve-->
+
+<script type="application/json" data-for="htmlwidget-5f8515aacdf783e25a30">{"x":{"filter":"none","caption":"<caption>Table 10.2.2-1: Harm on Population Health with respect to Property Damage by Each Weather Event Type<\/caption>","data":[[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37],["HURRICANE/TYPHOON","STORM SURGE/TIDE","DROUGHT","TROPICAL STORM","FLOOD","TSUNAMI","WILDFIRE","ICE STORM","TORNADO","DEBRIS FLOW","COASTAL FLOOD","WINTER STORM","HIGH WIND","HIGH SURF","BLIZZARD","FLASH FLOOD","HAIL","HEAVY RAIN","FROST/FREEZE","HEAVY SNOW","WATERSPOUT","EXTREME COLD/WIND CHILL","EXCESSIVE HEAT","LAKE-EFFECT SNOW","COLD/WIND CHILL","DENSE FOG","LIGHTNING","AVALANCHE","MARINE HIGH WIND","THUNDERSTORM WIND","DUST STORM","WINTER WEATHER","STRONG WIND","TROPICAL DEPRESSION","MARINE THUNDERSTORM WIND","MARINE STRONG WIND","DUST DEVIL"],[107,131,30,363,7072,14,832,410,8552,189,152,930,3851,76,129,13902,14584,836,18,573,12,22,20,195,14,56,6162,33,18,73657,60,493,3179,35,127,34,60],[676106028.13,364969183.21,28198600,19818927.13,18944063.85,10290142.86,6015288.22,4816462.93,2226030.12,1721708.99,1538905,1473404.52,1271987.4,1235223.68,930023.26,815944.02,791457.69,554869.9,526666.67,455858.17,435683.33,406863.64,220160,205728.21,142142.86,130696.43,90542.51,83827.27,72056.11,71892.56,68983.33,55332.66,54852.14,49628.57,46121.26,12303.82,10067.17],[4.9333,9.6344,4.9802,18.5864,83.9862,2.7176,15.4642,8.6732,55.2385,6.0565,4.5996,29.7861,37.6952,5.0462,10.5403,61.0935,69.4449,11.4264,1.7679,7.0114,3.013,4.0178,4.0309,13.1024,1.5907,3.7347,22.3701,3.4882,3.812,167.8966,3.7794,9.2933,51.6282,5.4232,10.0994,5.3773,2.4345],[96,117,27,326,6364,12,748,369,7696,170,136,837,3465,68,116,12511,13125,752,16,515,10,19,18,175,12,50,5545,29,16,66291,54,443,2861,31,114,30,54],[81701510.52,749256.41,1881777.78,557517.02,164666.8,3038500,367232.35,557966.94,139607.53,207605.88,105393.82,101518.76,39282.1,121426.47,138215.52,52407.31,11733.18,27521.6,278750,93449.96,12820,129000,59955.56,42668.57,74166.67,66980,33598.84,9182.76,12313.12,8469.87,41648.15,17092.55,7192.28,14096.77,7845.61,1444.33,5445],[3.4556,2.9093,2.2218,2.8131,2.6823,1.3942,3.0582,3.9291,2.4389,3.0507,3.6252,2.3132,2.5791,5.4811,3.2308,2.9157,2.6538,2.3184,1.7125,2.0835,1.5256,1.3109,1.2512,1.993,1.9438,2.2666,1.8199,3.2832,1.3492,1.9784,1.0948,2.0384,2.1091,1.5089,1.617,3.7563,1.506],[11,14,3,37,708,2,84,41,856,19,16,93,386,8,13,1391,1459,84,2,58,2,3,2,20,2,6,617,4,2,7366,6,50,318,4,13,4,6],[5863636363.64,3408807142.86,265050000,189527567.57,187746440.68,53800000,56309880.95,43142926.83,20984334.11,15268947.37,13723750,13820376.34,12337593.26,10702500,7995384.62,7683383.11,7805771.76,5275892.86,2510000,3673793.1,2550000,2166666.67,1662000,1632500,550000,661666.67,602297.24,625000,550000,642671.02,315000,394140,483641.04,325000,381769.23,93750,51666.67],[1.5154,2.7389,0.6889,5.731,26.5242,0,4.8329,2.7942,17.7218,1.823,0.79,9.3405,11.8681,1.4321,3.105,20.0575,22.1209,3.4304,0,2.1232,0,0.6746,0,3.9738,0,1.5328,8.3012,0.0205,0,53.1415,0.7511,3.021,16.3191,1.1265,2.9182,1.1547,-0.2731]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>RANK<\/th>\n      <th>WEATHER EVENT TYPE<\/th>\n      <th>NUMBER OF ALL AVAILABLE OBSERVATIONS<\/th>\n      <th>AVERAGE PROPERTY DAMAGE FOR ALL AVAILABLE CASES<\/th>\n      <th>SKEWNESS IN PROPERTY DAMAGE FOR ALL AVAILABLE CASES<\/th>\n      <th>NUMBER OF OBSERVATIONS FOR THE 90% OF CASES WITH LOWEST IMPACT<\/th>\n      <th>AVERAGE PROPERTY DAMAGE FOR THE 90% OF CASES WITH LOWEST IMPACT<\/th>\n      <th>SKEWNESS IN PROPERTY DAMAGE FOR THE 90% OF CASES WITH LOWEST IMPACT<\/th>\n      <th>NUMBER OF OBSERVATIONS FOR THE 10% OF CASES WITH HIGHEST IMPACT<\/th>\n      <th>AVERAGE PROPERTY DAMAGE FOR THE 10% OF CASES WITH HIGHEST IMPACT<\/th>\n      <th>SKEWNESS IN PROPERTY DAMAGE FOR THE 10% OF CASES WITH HIGHEST IMPACT<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":37,"dom":"t","initComplete":"function(settings, json) {\n$(this.api().table().header()).css({'font-size': '50%'});\n}","columnDefs":[{"className":"dt-right","targets":[0,2,3,4,5,6,7,8,9,10]}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,25,37,50,100],"rowCallback":"function(row, data) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-size':'50%'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'font-size':'50%'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'font-size':'50%'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'font-size':'50%'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'font-size':'50%'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'font-size':'50%'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'font-size':'50%'});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'font-size':'50%'});\nvar value=data[9]; $(this.api().cell(row, 9).node()).css({'font-size':'50%'});\nvar value=data[10]; $(this.api().cell(row, 10).node()).css({'font-size':'50%'});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'font-size':'35%'});\n}"}},"evals":["options.initComplete","options.rowCallback"],"jsHooks":[]}</script>
+<!--/html_preserve-->
 <br>
 
 <font size="1">[back to start of this
@@ -18990,6 +19930,81 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 10.2.3 Most harmful event types with respect to crop damage
 
+According to the summary for the harm on economy with respect to crop
+damage by each weather event type (that were obtained at the section
+[9.2 Harm On Economy With Respect To Crop Damage By Each Weather Event
+Type](#ind-9-2--Harm-On-Economy-With-Respect-To-Crop-Damage-By-Each-Weather-Event-Type))
+out of the 16 included weather event types (for each of which at least
+10 observations that resulted in non-zero crop damage  
+at United States in the period from 2001 to 2011 were available) there
+were 2 of them that stand out:
+
+1.  When a weather event of type **HURRICANE/TYPHOON** resulted in crop
+    damage, it caused about 63684017$ of crop damage on average (based
+    on 48 observations that had high positive skewness equal to 5.6962).
+    For 9 out of 10 times of such cases, an average of 13275181$ of crop
+    damage was observed (based on the 90% of cases with the lower impact
+    for which 43 observations were available, that had moderate positive
+    skewness equal to 2.4986), while for the remaining 1 out of 10 times
+    it caused around 497200000$ of crop damage on average (based on the
+    10% of cases with the higher impact for which only 5 observations
+    were available, that had moderate positive skewness equal to
+    1.3378).  
+2.  When a weather event of type **DROUGHT** resulted in crop damage, it
+    caused about 42389146$ of crop damage on average (based on 158
+    observations that had high positive skewness equal to 4.9333). For 9
+    out of 10 times of such cases, an average of 11981373$ of crop
+    damage was observed (based on the 90% of cases with the lower impact
+    for which 142 observations were available, that had moderate
+    positive skewness equal to 2.3645), while for the remaining 1 out of
+    10 times it caused around 312258125$ of crop damage on average
+    (based on the 10% of cases with the higher impact for which 16
+    observations were available, that had moderate positive skewness
+    equal to 1.8881).
+
+<!-- -->
+
+    # Create an interactive table to present present the results 
+    # for the harm on economy with respect to crop damage.  
+    datatable(
+      data = summary_____harm_on_economy______crop_damage[order(RANK)],
+      caption = paste0(
+        "Table 10.2.3-1: ",
+        "Harm on Population Health with respect to Crop Damage ", 
+        "by Each Weather Event Type"
+      ),
+      colnames = c(
+        "RANK", 
+        "WEATHER EVENT TYPE", 
+        "NUMBER OF ALL AVAILABLE OBSERVATIONS", 
+        "AVERAGE CROP DAMAGE FOR ALL AVAILABLE CASES", 
+        "SKEWNESS IN CROP DAMAGE FOR ALL AVAILABLE CASES", 
+        "NUMBER OF OBSERVATIONS FOR THE 90% OF CASES WITH LOWEST IMPACT", 
+        "AVERAGE CROP DAMAGE FOR THE 90% OF CASES WITH LOWEST IMPACT",
+        "SKEWNESS IN CROP DAMAGE FOR THE 90% OF CASES WITH LOWEST IMPACT", 
+        "NUMBER OF OBSERVATIONS FOR THE 10% OF CASES WITH HIGHEST IMPACT", 
+        "AVERAGE CROP DAMAGE FOR THE 10% OF CASES WITH HIGHEST IMPACT",
+        "SKEWNESS IN CROP DAMAGE FOR THE 10% OF CASES WITH HIGHEST IMPACT"
+      ),
+      rownames = FALSE,
+      escape = TRUE,
+      options=list(
+        pageLength = nrow(summary_____harm_on_economy______crop_damage),
+        dom = "t",
+        initComplete = JS(
+          "function(settings, json) {",
+          "$(this.api().table().header()).css({'font-size': '50%'});",
+          "}"
+        )
+      )
+    ) %>% 
+      formatStyle(columns = c(1, 3:11), fontSize = '50%')%>% 
+      formatStyle(columns = 2, fontSize = '35%')
+
+<!--html_preserve-->
+
+<script type="application/json" data-for="htmlwidget-7c698221d87db591fe12">{"x":{"filter":"none","caption":"<caption>Table 10.2.3-1: Harm on Population Health with respect to Crop Damage by Each Weather Event Type<\/caption>","data":[[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],["HURRICANE/TYPHOON","DROUGHT","EXTREME COLD/WIND CHILL","FROST/FREEZE","TROPICAL STORM","HEAVY RAIN","HIGH WIND","WILDFIRE","FLOOD","STRONG WIND","FLASH FLOOD","HAIL","THUNDERSTORM WIND","TORNADO","LIGHTNING","WINTER STORM"],[48,158,11,106,52,75,123,91,1263,94,1296,5590,2321,889,50,10],[63684016.67,42389145.57,15612727.27,10772981.13,7928096.15,5368773.33,4039284.55,3269004.73,2859309.11,690994.68,645105.32,297866.58,262114.54,256468.4,65612,65300],[5.6962,4.9333,1.6402,5.8134,3.407,7.8538,7.5985,5.3055,19.0535,8.5291,13.5455,18.5382,13.484,27.0249,6.2946,2.6305],[43,142,9,95,46,67,110,81,1136,84,1166,5031,2088,800,45,9],[13275181.4,11981373.24,3187777.78,2259747.37,2266543.48,1554000,417018.18,241721.36,239073.42,2690.48,85099.91,41098.03,25999.93,56813.01,9568.89,17000],[2.4986,2.3645,0.5652,2.0012,2.9393,2.0373,2.8571,2.5162,3.6684,1.1555,2.0589,2.1288,2.9036,2.4138,1.857,1.5182],[5,16,2,11,6,8,13,10,127,10,130,559,233,89,5,1],[497200000,312258125,71525000,84296363.64,51333333.33,37317500,34689230.77,27790000,26297007.87,6472750,5667923.08,2608783.54,2378025.75,2051123.6,570000,500000],[1.3378,1.8881,0,1.8805,0.934,2.2474,2.2728,1.0727,6.7167,2.2953,4.1904,6.2946,4.3384,8.6783,1.3857,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>RANK<\/th>\n      <th>WEATHER EVENT TYPE<\/th>\n      <th>NUMBER OF ALL AVAILABLE OBSERVATIONS<\/th>\n      <th>AVERAGE CROP DAMAGE FOR ALL AVAILABLE CASES<\/th>\n      <th>SKEWNESS IN CROP DAMAGE FOR ALL AVAILABLE CASES<\/th>\n      <th>NUMBER OF OBSERVATIONS FOR THE 90% OF CASES WITH LOWEST IMPACT<\/th>\n      <th>AVERAGE CROP DAMAGE FOR THE 90% OF CASES WITH LOWEST IMPACT<\/th>\n      <th>SKEWNESS IN CROP DAMAGE FOR THE 90% OF CASES WITH LOWEST IMPACT<\/th>\n      <th>NUMBER OF OBSERVATIONS FOR THE 10% OF CASES WITH HIGHEST IMPACT<\/th>\n      <th>AVERAGE CROP DAMAGE FOR THE 10% OF CASES WITH HIGHEST IMPACT<\/th>\n      <th>SKEWNESS IN CROP DAMAGE FOR THE 10% OF CASES WITH HIGHEST IMPACT<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":16,"dom":"t","initComplete":"function(settings, json) {\n$(this.api().table().header()).css({'font-size': '50%'});\n}","columnDefs":[{"className":"dt-right","targets":[0,2,3,4,5,6,7,8,9,10]}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,16,25,50,100],"rowCallback":"function(row, data) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-size':'50%'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'font-size':'50%'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'font-size':'50%'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'font-size':'50%'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'font-size':'50%'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'font-size':'50%'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'font-size':'50%'});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'font-size':'50%'});\nvar value=data[9]; $(this.api().cell(row, 9).node()).css({'font-size':'50%'});\nvar value=data[10]; $(this.api().cell(row, 10).node()).css({'font-size':'50%'});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'font-size':'35%'});\n}"}},"evals":["options.initComplete","options.rowCallback"],"jsHooks":[]}</script>
+<!--/html_preserve-->
 <br>
 
 <font size="1">[back to start of this
@@ -19006,6 +20021,82 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 10.2.4 Most harmful event types with respect to economic damage
 
+According to the summary for the harm on economy with respect to
+economic damage by each weather event type (that were obtained at the
+section [9.3 Harm On Economy With Respect To Economic Damage By Each
+Weather Event
+Type](#ind-9-3--Harm-On-Economy-With-Respect-To-Economic-Damage-By-Each-Weather-Event-Type))
+out of the 16 included weather event types (for each of which at least
+10 observations that resulted in non-zero economic damage  
+at United States in the period from 2001 to 2011 were available) there
+were 2 of them that stand out:
+
+1.  When a weather event of type **HURRICANE/TYPHOON** resulted in
+    economic damage, it caused about 698149795$ economic damage on
+    average (based on 108 observations that had high positive skewness
+    equal to 4.7929). For 9 out of 10 times of such cases, an average of
+    92388431$ economic damage was observed (based on the 90% of cases
+    with the lower impact for which 97 observations were available, that
+    had high positive skewness equal to 3.0615), while for the remaining
+    1 out of 10 times it caused around 6039863636$ economic damage on
+    average (based on the 10% of cases with the higher impact for which
+    11 observations were available, that had moderate positive skewness
+    equal to 1.3803).  
+2.  When a weather event of type **STORM SURGE/TIDE** resulted in
+    economic damage, it caused about 364975672$ economic damage on
+    average (based on 131 observations that had extreme positive
+    skewness equal to 9.6344). For 9 out of 10 times of such cases, an
+    average of 756521$ economic damage was observed (based on the 90% of
+    cases with the lower impact for which 117 observations were
+    available, that had moderate positive skewness equal to 2.898),
+    while for the remaining 1 out of 10 times it caused around
+    3408807143$ economic damage on average (based on the 10% of cases
+    with the higher impact for which 14 observations were available,
+    that had moderate positive skewness equal to 2.7389).
+
+<!-- -->
+
+    # Create an interactive table to present present the results 
+    # for the harm on economy with respect to economic damage.  
+    datatable(
+      data = summary_____harm_on_economy______economic_damage[order(RANK)],
+      caption = paste0(
+        "Table 10.2.4-3: ",
+        "Harm on Population Health with respect to Economic Damage ", 
+        "by Each Weather Event Type "
+      ),
+      colnames = c(
+        "RANK", 
+        "WEATHER EVENT TYPE", 
+        "NUMBER OF ALL AVAILABLE OBSERVATIONS", 
+        "AVERAGE ECONOMIC DAMAGE FOR ALL AVAILABLE CASES", 
+        "SKEWNESS IN ECONOMIC DAMAGE FOR ALL AVAILABLE CASES", 
+        "NUMBER OF OBSERVATIONS FOR THE 90% OF CASES WITH LOWEST IMPACT", 
+        "AVERAGE ECONOMIC DAMAGE FOR THE 90% OF CASES WITH LOWEST IMPACT",
+        "SKEWNESS IN ECONOMIC DAMAGE FOR THE 90% OF CASES WITH LOWEST IMPACT", 
+        "NUMBER OF OBSERVATIONS FOR THE 10% OF CASES WITH HIGHEST IMPACT", 
+        "AVERAGE ECONOMIC DAMAGE FOR THE 10% OF CASES WITH HIGHEST IMPACT",
+        "SKEWNESS IN ECONOMIC DAMAGE FOR THE 10% OF CASES WITH HIGHEST IMPACT"
+      ),
+      rownames = FALSE,
+      escape = TRUE,
+      options=list(
+        pageLength = nrow(summary_____harm_on_economy______economic_damage),
+        dom = "t",
+        initComplete = JS(
+          "function(settings, json) {",
+          "$(this.api().table().header()).css({'font-size': '50%'});",
+          "}"
+        )
+      )
+    ) %>% 
+      formatStyle(columns = c(1, 3:11), fontSize = '50%')%>% 
+      formatStyle(columns = 2, fontSize = '35%') 
+
+<!--html_preserve-->
+
+<script type="application/json" data-for="htmlwidget-b7707b8331efbf8774ff">{"x":{"filter":"none","caption":"<caption>Table 10.2.4-3: Harm on Population Health with respect to Economic Damage by Each Weather Event Type <\/caption>","data":[[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37],["HURRICANE/TYPHOON","STORM SURGE/TIDE","DROUGHT","EXCESSIVE HEAT","TROPICAL STORM","FLOOD","TSUNAMI","FROST/FREEZE","WILDFIRE","EXTREME COLD/WIND CHILL","ICE STORM","TORNADO","DEBRIS FLOW","COASTAL FLOOD","WINTER STORM","HIGH WIND","HIGH SURF","HEAVY RAIN","BLIZZARD","FLASH FLOOD","HAIL","HEAVY SNOW","WATERSPOUT","LAKE-EFFECT SNOW","COLD/WIND CHILL","DENSE FOG","DUST STORM","LIGHTNING","WINTER WEATHER","AVALANCHE","THUNDERSTORM WIND","STRONG WIND","MARINE HIGH WIND","TROPICAL DEPRESSION","MARINE THUNDERSTORM WIND","MARINE STRONG WIND","DUST DEVIL"],[108,131,171,21,370,7368,14,120,878,32,410,8782,189,152,931,3863,76,883,129,13954,16305,573,12,195,16,56,62,6199,494,33,74183,3251,18,35,128,34,60],[698149794.54,364975671.76,44113701.75,23657390.48,20558193.38,18673144.26,10291571.43,9595133.33,6038951.29,5646593.75,4837597.07,2193692.78,1827619.05,1538905,1472523.31,1396649.1,1235223.68,981346.82,930023.26,872818.56,810039.45,456434.08,435683.33,205728.21,161875,130696.43,115145.16,90531.31,85585.02,83827.27,79583.71,73616.87,72056.11,49628.57,46151.56,12303.82,10067.17],[4.7929,9.6344,4.6871,4.2483,18.7288,85.7213,2.7178,6.1949,15.6629,3.5596,8.6435,55.916,5.6453,4.5996,29.8022,37.0482,5.0462,19.2418,10.5403,58.004,72.6945,7.0098,3.013,13.1024,1.2895,3.7347,5.4939,22.3186,19.5434,3.4882,166.2756,53.9812,3.812,5.4232,10.1387,5.3773,2.4345],[97,117,153,18,333,6631,12,108,790,28,369,7903,170,136,837,3476,68,794,116,12558,14674,515,10,175,14,50,55,5579,444,29,66764,2925,16,31,115,30,54],[92388431.03,756521.37,11645771.24,50622.22,759133.78,195162.24,3038500,1935796.3,372742.06,737178.57,558278.59,140911.55,207705.88,105393.82,101343.13,40092.49,121426.47,41307.61,138215.52,58604.66,23668.82,93750.93,12820,42668.57,106428.57,66980,43618.18,33493.67,17279.28,9182.76,8701.27,7036.27,12313.12,14096.77,7994.78,1444.33,5445],[3.0615,2.898,2.3438,1.5998,2.8851,2.8273,1.3942,2.0586,2.9959,2.4931,3.9294,2.4507,3.051,3.6252,2.2905,2.6098,5.4811,3.2517,3.2308,2.7688,2.8553,2.1045,1.5256,1.993,2.0722,2.2666,1.1697,1.8278,2.0606,3.2832,2.0023,2.127,1.3492,1.5089,1.6,3.7563,1.506],[11,14,18,3,37,737,2,12,88,4,41,879,19,16,94,387,8,89,13,1396,1631,58,2,20,2,6,7,620,50,4,7419,326,2,4,13,4,6],[6039863636.36,3408807142.86,320091111.11,165298000,198749729.73,184924838.67,53810000,78529166.67,56906056.82,40012500,43351463.41,20650040.96,16321578.95,13723750,13681861.7,13581121.45,10702500,9367764.04,7995384.62,8197244.17,7884964.38,3676810.34,2550000,1632500,550000,661666.67,677142.86,603778.06,692140,625000,717458.85,671004.14,550000,325000,383692.31,93750,51666.67],[1.3803,2.7389,1.5826,0.707,5.7297,27.063,0,1.9278,4.9125,0.0614,2.7892,17.9414,1.4998,0.79,9.3916,11.6651,1.4321,6.4431,3.105,19.1075,23.2194,2.1256,0,3.9738,0,1.5328,1.5197,8.2882,6.2142,0.0205,52.6573,17.0546,0,1.1265,2.9219,1.1547,-0.2731]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>RANK<\/th>\n      <th>WEATHER EVENT TYPE<\/th>\n      <th>NUMBER OF ALL AVAILABLE OBSERVATIONS<\/th>\n      <th>AVERAGE ECONOMIC DAMAGE FOR ALL AVAILABLE CASES<\/th>\n      <th>SKEWNESS IN ECONOMIC DAMAGE FOR ALL AVAILABLE CASES<\/th>\n      <th>NUMBER OF OBSERVATIONS FOR THE 90% OF CASES WITH LOWEST IMPACT<\/th>\n      <th>AVERAGE ECONOMIC DAMAGE FOR THE 90% OF CASES WITH LOWEST IMPACT<\/th>\n      <th>SKEWNESS IN ECONOMIC DAMAGE FOR THE 90% OF CASES WITH LOWEST IMPACT<\/th>\n      <th>NUMBER OF OBSERVATIONS FOR THE 10% OF CASES WITH HIGHEST IMPACT<\/th>\n      <th>AVERAGE ECONOMIC DAMAGE FOR THE 10% OF CASES WITH HIGHEST IMPACT<\/th>\n      <th>SKEWNESS IN ECONOMIC DAMAGE FOR THE 10% OF CASES WITH HIGHEST IMPACT<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":37,"dom":"t","initComplete":"function(settings, json) {\n$(this.api().table().header()).css({'font-size': '50%'});\n}","columnDefs":[{"className":"dt-right","targets":[0,2,3,4,5,6,7,8,9,10]}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,25,37,50,100],"rowCallback":"function(row, data) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-size':'50%'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'font-size':'50%'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'font-size':'50%'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'font-size':'50%'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'font-size':'50%'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'font-size':'50%'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'font-size':'50%'});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'font-size':'50%'});\nvar value=data[9]; $(this.api().cell(row, 9).node()).css({'font-size':'50%'});\nvar value=data[10]; $(this.api().cell(row, 10).node()).css({'font-size':'50%'});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'font-size':'35%'});\n}"}},"evals":["options.initComplete","options.rowCallback"],"jsHooks":[]}</script>
+<!--/html_preserve-->
 <br>
 
 <font size="1">[back to start of this
