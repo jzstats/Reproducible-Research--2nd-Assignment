@@ -19150,8 +19150,8 @@ with filename:
       path = directory_tree_____outputs[[
         "filepath_____outputs_____harm_on_population_health_____figures"
         ]],
-      width = 15, 
-      height = 50, 
+      width = 15,
+      height = 50,
       limitsize = FALSE
     )
 
@@ -19817,8 +19817,8 @@ with filename:
       path = directory_tree_____outputs[[
         "filepath_____outputs_____harm_on_economy_____figures"
         ]],
-      width = 15, 
-      height = 50, 
+      width = 15,
+      height = 50,
       limitsize = FALSE
     )
 
@@ -20122,6 +20122,19 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ------------------------------------------------------------------------
 
+To help in any attempt to reproduce the report with this analysis beyond
+the structure and the in-detail description of the procedure that took
+place during the execution of the script, several details are provided
+to make it as easy as possible.
+
+Specifically, in this chapter, information is supplied about:
+
+1.  [the r session](#ind-11-1--Session-Info)  
+2.  [the r options](#ind-11-2--Options)  
+3.  [the MD5 checksums of some important
+    files](#ind-11-3--MD5-Checksums)  
+4.  [the random seed](#ind-11-4--Random-Seed)
+
 <br>
 
 <font size="1">[back to start of this
@@ -20133,6 +20146,81 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 11.1 Session Info
 -----------------
+
+The details with respect to the operating system, R version as wells as
+the versions of the libraries used to create this report are supplied to
+help in any attempt to reproduce the report.
+
+    # Captures the session info.
+    session_info <- sessionInfo()
+
+    # Display the session info.
+    session_info
+
+    ## R version 3.6.3 (2020-02-29)
+    ## Platform: x86_64-pc-linux-gnu (64-bit)
+    ## Running under: Linux Mint 18.3
+    ## 
+    ## Matrix products: default
+    ## BLAS:   /usr/lib/libblas/libblas.so.3.6.0
+    ## LAPACK: /usr/lib/lapack/liblapack.so.3.6.0
+    ## 
+    ## locale:
+    ##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+    ##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+    ##  [5] LC_MONETARY=el_GR.UTF-8    LC_MESSAGES=en_US.UTF-8   
+    ##  [7] LC_PAPER=el_GR.UTF-8       LC_NAME=C                 
+    ##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+    ## [11] LC_MEASUREMENT=el_GR.UTF-8 LC_IDENTIFICATION=C       
+    ## 
+    ## attached base packages:
+    ## [1] grid      tools     stats     graphics  grDevices utils     datasets 
+    ## [8] methods   base     
+    ## 
+    ## other attached packages:
+    ##  [1] gridExtra_2.3     ggrepel_0.8.2     ggplot2_3.3.0     moments_0.14     
+    ##  [5] stringr_1.4.0     validate_0.9.3    data.table_1.12.8 rmdformats_0.3.7 
+    ##  [9] DT_0.13           magrittr_1.5      kableExtra_1.1.0  knitr_1.28       
+    ## [13] rmarkdown_2.1    
+    ## 
+    ## loaded via a namespace (and not attached):
+    ##  [1] settings_0.2.4    tidyselect_1.0.0  xfun_0.13         purrr_0.3.4      
+    ##  [5] colorspace_1.4-1  vctrs_0.2.4       htmltools_0.4.0   viridisLite_0.3.0
+    ##  [9] yaml_2.2.1        rlang_0.4.5       R.oo_1.23.0       pillar_1.4.3     
+    ## [13] glue_1.4.0        withr_2.2.0       R.utils_2.9.2     lifecycle_0.2.0  
+    ## [17] munsell_0.5.0     gtable_0.3.0      rvest_0.3.5       R.methodsS3_1.8.0
+    ## [21] htmlwidgets_1.5.1 evaluate_0.14     labeling_0.3      crosstalk_1.1.0.1
+    ## [25] highr_0.8         Rcpp_1.0.4.6      readr_1.3.1       scales_1.1.0     
+    ## [29] jsonlite_1.6.1    webshot_0.5.2     farver_2.0.3      hms_0.5.3        
+    ## [33] digest_0.6.25     stringi_1.4.6     bookdown_0.18     dplyr_0.8.5      
+    ## [37] tibble_3.0.1      crayon_1.3.4      pkgconfig_2.0.3   ellipsis_0.3.0   
+    ## [41] xml2_1.3.2        assertthat_0.2.1  httr_1.4.1        rstudioapi_0.11  
+    ## [45] R6_2.4.1          compiler_3.6.3
+
+An object with the information on the session was also exported at the
+folder of working directory:
+
+-   *outputs –&gt; reproducibility\_support –&gt; r\_session*
+
+with filename:
+
+-   *session\_info.R*
+
+<!-- -->
+
+    # Supply the filepath at which the R file with the session info will be exported.
+    filepath_____session_info <- file.path(
+    directory_tree_____outputs[[
+        "filepath_____outputs_____reproducibility_support_____r_session"
+      ]],
+      "session_info.R"
+    )
+
+    # Export the session info as an R file.
+    saveRDS(
+      object = session_info, 
+      file = filepath_____session_info
+    )
 
 <br>
 
@@ -20150,6 +20238,337 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 11.2 Options
 ------------
 
+The details with respect to the r options active while the script that
+produced the report were executed are supplied to help in any attempt to
+reproduce the report.
+
+    # Captures the R options. 
+    r_options <- options()
+
+    # Displays the R options
+    r_options
+
+    ## $add.smooth
+    ## [1] TRUE
+    ## 
+    ## $bitmapType
+    ## [1] "cairo"
+    ## 
+    ## $browser
+    ## [1] "xdg-open"
+    ## 
+    ## $browserNLdisabled
+    ## [1] FALSE
+    ## 
+    ## $CBoundsCheck
+    ## [1] FALSE
+    ## 
+    ## $check.bounds
+    ## [1] FALSE
+    ## 
+    ## $citation.bibtex.max
+    ## [1] 1
+    ## 
+    ## $continue
+    ## [1] "+ "
+    ## 
+    ## $contrasts
+    ##         unordered           ordered 
+    ## "contr.treatment"      "contr.poly" 
+    ## 
+    ## $datatable.alloccol
+    ## [1] 1024
+    ## 
+    ## $datatable.allow.cartesian
+    ## [1] FALSE
+    ## 
+    ## $datatable.auto.index
+    ## [1] TRUE
+    ## 
+    ## $datatable.dfdispatchwarn
+    ## [1] TRUE
+    ## 
+    ## $datatable.old.unique.by.key
+    ## [1] FALSE
+    ## 
+    ## $datatable.optimize
+    ## [1] Inf
+    ## 
+    ## $datatable.print.class
+    ## [1] FALSE
+    ## 
+    ## $datatable.print.colnames
+    ## [1] "auto"
+    ## 
+    ## $datatable.print.keys
+    ## [1] FALSE
+    ## 
+    ## $datatable.print.nrows
+    ## [1] 100
+    ## 
+    ## $datatable.print.rownames
+    ## [1] TRUE
+    ## 
+    ## $datatable.print.topn
+    ## [1] 5
+    ## 
+    ## $datatable.use.index
+    ## [1] TRUE
+    ## 
+    ## $datatable.verbose
+    ## [1] FALSE
+    ## 
+    ## $datatable.warnredundantby
+    ## [1] TRUE
+    ## 
+    ## $defaultPackages
+    ## [1] "datasets"  "utils"     "grDevices" "graphics"  "stats"     "methods"  
+    ## 
+    ## $demo.ask
+    ## [1] "default"
+    ## 
+    ## $deparse.cutoff
+    ## [1] 60
+    ## 
+    ## $device
+    ## function (width = 7, height = 7, ...) 
+    ## {
+    ##     grDevices::pdf(NULL, width, height, ...)
+    ## }
+    ## <bytecode: 0x473ae18>
+    ## <environment: namespace:knitr>
+    ## 
+    ## $device.ask.default
+    ## [1] FALSE
+    ## 
+    ## $digits
+    ## [1] 7
+    ## 
+    ## $dplyr.show_progress
+    ## [1] TRUE
+    ## 
+    ## $dvipscmd
+    ## [1] "dvips"
+    ## 
+    ## $echo
+    ## [1] FALSE
+    ## 
+    ## $editor
+    ## [1] "vi"
+    ## 
+    ## $encoding
+    ## [1] "native.enc"
+    ## 
+    ## $example.ask
+    ## [1] "default"
+    ## 
+    ## $expressions
+    ## [1] 5000
+    ## 
+    ## $help.search.types
+    ## [1] "vignette" "demo"     "help"    
+    ## 
+    ## $help.try.all.packages
+    ## [1] FALSE
+    ## 
+    ## $HTTPUserAgent
+    ## [1] "R (3.6.3 x86_64-pc-linux-gnu x86_64 linux-gnu)"
+    ## 
+    ## $httr_oauth_cache
+    ## [1] NA
+    ## 
+    ## $httr_oob_default
+    ## [1] FALSE
+    ## 
+    ## $internet.info
+    ## [1] 2
+    ## 
+    ## $keep.parse.data
+    ## [1] TRUE
+    ## 
+    ## $keep.parse.data.pkgs
+    ## [1] FALSE
+    ## 
+    ## $keep.source
+    ## [1] FALSE
+    ## 
+    ## $keep.source.pkgs
+    ## [1] FALSE
+    ## 
+    ## $knitr.in.progress
+    ## [1] TRUE
+    ## 
+    ## $knitr.table.format
+    ## [1] "html"
+    ## 
+    ## $locatorBell
+    ## [1] TRUE
+    ## 
+    ## $mailer
+    ## [1] "mailto"
+    ## 
+    ## $matprod
+    ## [1] "default"
+    ## 
+    ## $max.print
+    ## [1] 99999
+    ## 
+    ## $menu.graphics
+    ## [1] TRUE
+    ## 
+    ## $na.action
+    ## [1] "na.omit"
+    ## 
+    ## $nwarnings
+    ## [1] 50
+    ## 
+    ## $OutDec
+    ## [1] "."
+    ## 
+    ## $pager
+    ## [1] "/usr/lib/R/bin/pager"
+    ## 
+    ## $papersize
+    ## [1] "letter"
+    ## 
+    ## $PCRE_limit_recursion
+    ## [1] NA
+    ## 
+    ## $PCRE_study
+    ## [1] 10
+    ## 
+    ## $PCRE_use_JIT
+    ## [1] TRUE
+    ## 
+    ## $pdfviewer
+    ## [1] "/usr/bin/xdg-open"
+    ## 
+    ## $pkgType
+    ## [1] "source"
+    ## 
+    ## $printcmd
+    ## [1] "/usr/bin/lpr"
+    ## 
+    ## $prompt
+    ## [1] "> "
+    ## 
+    ## $readr.show_progress
+    ## [1] TRUE
+    ## 
+    ## $repos
+    ##                          CRAN 
+    ## "https://cloud.r-project.org" 
+    ## 
+    ## $rl_word_breaks
+    ## [1] " \t\n\"\\'`><=%;,|&{()}"
+    ## 
+    ## $scipen
+    ## [1] 0
+    ## 
+    ## $show.coef.Pvalues
+    ## [1] TRUE
+    ## 
+    ## $showErrorCalls
+    ## [1] TRUE
+    ## 
+    ## $show.error.messages
+    ## [1] TRUE
+    ## 
+    ## $show.signif.stars
+    ## [1] TRUE
+    ## 
+    ## $str
+    ## $str$strict.width
+    ## [1] "no"
+    ## 
+    ## $str$digits.d
+    ## [1] 3
+    ## 
+    ## $str$vec.len
+    ## [1] 4
+    ## 
+    ## $str$drop.deparse.attr
+    ## [1] TRUE
+    ## 
+    ## $str$formatNum
+    ## function (x, ...) 
+    ## format(x, trim = TRUE, drop0trailing = TRUE, ...)
+    ## <environment: 0x3adb3f0>
+    ## 
+    ## 
+    ## $str.dendrogram.last
+    ## [1] "`"
+    ## 
+    ## $stringsAsFactors
+    ## [1] TRUE
+    ## 
+    ## $texi2dvi
+    ## [1] "/usr/bin/texi2dvi"
+    ## 
+    ## $tikzMetricsDictionary
+    ## [1] "RepRes_analysis-tikzDictionary"
+    ## 
+    ## $timeout
+    ## [1] 60
+    ## 
+    ## $try.outFile
+    ## A connection with                            
+    ## description "output"        
+    ## class       "textConnection"
+    ## mode        "wr"            
+    ## text        "text"          
+    ## opened      "opened"        
+    ## can read    "no"            
+    ## can write   "yes"           
+    ## 
+    ## $ts.eps
+    ## [1] 1e-05
+    ## 
+    ## $ts.S.compat
+    ## [1] FALSE
+    ## 
+    ## $unzip
+    ## [1] "/usr/bin/unzip"
+    ## 
+    ## $useFancyQuotes
+    ## [1] FALSE
+    ## 
+    ## $verbose
+    ## [1] FALSE
+    ## 
+    ## $warn
+    ## [1] 0
+    ## 
+    ## $warning.length
+    ## [1] 1000
+    ## 
+    ## $width
+    ## [1] 80
+
+An object with the information for r option was also exported at the
+folder of working directory:
+
+-   *outputs –&gt; reproducibility\_support –&gt; r\_session*
+
+with filename:
+
+-   *r\_options.R*
+
+<!-- -->
+
+    # Supply the filepath at which the R file with the R options will be exported.
+    filepath_____r_options <- file.path(
+    directory_tree_____outputs[[
+        "filepath_____outputs_____reproducibility_support_____r_session"
+      ]],
+      "r_options.R"
+    )
+    # Export the R options as an R file.
+    saveRDS(
+      object = r_options, 
+      file = filepath_____r_options
+    )
+
 <br>
 
 <font size="1">[back to start of this
@@ -20166,6 +20585,27 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 11.3 MD5 Checksums
 ------------------
 
+To easily verify the integrity and validity of some important files that
+were either imported or exported through the execution of the script
+that produces the report with the analysis their MD5 checksums were
+computed and exported as txt files with the help of a utility function
+that was created and used,
+[export\_md5sums()](#ind-11-3-1--Create-a-utility-function-to-export-MD5-checksums).
+
+Three txt files with MD5 checksums were created:
+
+1.  [unprocessed\_data\_\_\_\_\_MD5\_checksum.txt](#ind-11-3-2--MD5-checksum-of-the-input-file-with-the-unprocessed-data)  
+2.  [processed\_data\_\_\_\_\_MD5\_checksum.txt](#ind-11-3-3--MD5-checksum-for-the-output-file-with-the-processed-data)  
+3.  [results\_\_\_\_\_MD5\_checksum.txt](#ind-11-3-4--MD5-checksum-of-the-output-files-with-the-results)
+
+and exported at the subdirectory of the working directory:
+
+-   *output –&gt; reproducibility\_support –&gt; MD5\_checksums*
+
+The [original files with the MD5
+Checksums](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/tree/master/outputs/reproducibility_support/MD5_checksums)
+have been uploaded to github.
+
 <br>
 
 <font size="1">[back to start of this
@@ -20178,6 +20618,112 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ### 11.3.1 Create a utility function to export MD5 checksums
+
+To create txt files with the MD5 checksums the utility function
+*export\_md5sums()* was created and used.
+
+It takes as input two arguments:
+
+1.  target\_files
+    -   the paths to the files of which we want to compute the MD5
+        checksums  
+2.  output\_file
+    -   the path at which the txt file with the MD5 checksums of the
+        target files will be exported
+
+Upon execution, it creates a txt file at the path denoted by the
+argument ‘output\_file’ in which it stores the MD5 checksums of the
+files found at the paths supplied via the ‘target\_files’ argument.
+
+The txt files consists of one row for each of the target files, which:
+
+-   begins with MD5 checksum  
+-   followed by two spaces  
+-   ends the the path of the file to which the MD5 corresponds
+
+<!-- -->
+
+    # utility function: export_md5sum()
+    #
+    # Creates and exports a txt file with the MD5 checksums of some target files.  
+    #
+    # Arguments:
+    #  'target_files'  :  A character vector with the paths of the target files,
+    #                     of which the MD5 checksums will be computed.
+    #                     All supplied files must exist.
+    #
+    #  'output_file'   :  A character string with the path to file 
+    #                     which will be created to store the MD5 checksums
+    #                     of the target files.
+    #                     The output file must end with the txt extenrgtion.
+    #                     Any number of directories can be included in the path 
+    #                     prior to the filename, that will be created 
+    #                     even if they don't exist. 
+    #
+    # Return: 
+    #  If the function executes to correctly it returns a named vector 
+    #  with the MD5 checksums of the target file, 
+    #  named after their corresponding paths. 
+
+    # Define a utility function to use in order to compute and export 
+    # the MD5 checksums of the files of interest. 
+    export_md5sum <- function(target_files, output_file = "MD5.txt") {
+
+      # Check the validity of the supplied arguments.
+      ## a single character string with a txt extention must have been supplied 
+      ## as the value of 'output_file' argument.
+      stopifnot(
+        is.character(output_file) &&
+          ( length(output_file) == 1 ) &&
+          ( tools::file_ext(output_file) == "txt" )
+      )
+      ## An character vector with arbitrary number of EXISTING files 
+      ## must have been supplied as the value of 'target_files' argument. 
+      do_all_target_files_exist <- file.exists(target_files) & !dir.exists(target_files)
+      if (!all(do_all_target_files_exist)) {
+        not_existing_target_files <- target_files[!do_all_target_files_exist]
+        stop(
+          "\n",
+          "The following supplied target files do not exists: ", "\n",
+          paste("\t", not_existing_target_files, "\n", sep = "")
+        )
+      }
+
+      # Computes the MD5 checksums of the target files.
+      md5_checksums_of_target_files <- tools::md5sum(target_files)
+
+      # Creates the content of that will be written inside the output file.
+      content_of_output_file <- paste(
+        unname(md5_checksums_of_target_files),
+        "  ",
+        names(md5_checksums_of_target_files)
+      )
+
+      # If the value of output file contains some directory name 
+      # it is identified and created.
+      dest_dir <- dirname(output_file)
+      if (!dir.exists(dest_dir)) {
+        dir.create(dest_dir)
+      }
+      # A blank output file is created.
+      file.create(output_file)
+
+      # If the output file was successfully created..
+      if (file.exists(output_file)) {
+        # ...it get populated with contents.
+        con_to_output_file <- file(output_file)
+        writeLines(text = content_of_output_file, con = output_file)
+        close(con = con_to_output_file)
+      } else {
+        # else the operation fails and the execution stops.
+        stop(
+          "\n",
+          "Failed to create the output file at the path:", "\n",
+          "\t", output_file,
+          "\n"
+        )
+      }
+    }
 
 <br>
 
@@ -20195,6 +20741,54 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 11.3.2 MD5 checksum of the input file with the unprocessed data
 
+The input file, *repdata\_data\_StormData.csv.bz2*, with the unprocessed
+data was downloaded from the
+[link](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2)
+that was supplied by the instructions of the assignment.
+
+The same file that was download and used to produce the original report
+for this analysis was also uploaded at the github and can be accessed
+from the following link:
+
+-   [link\_to\_add](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/repdata_data_StormData.csv.bz2).
+
+A txt file with the MD5 checksum of the input file,
+*repdata\_data\_StormData.csv.bz2*, was exported at the subdirectory of
+the working directory:
+
+-   *output –&gt; reproducibility\_support –&gt; MD5\_checksums*
+
+with name:
+
+-   *unprocessed\_data\_\_\_\_\_MD5\_checksum.txt*
+
+<!-- -->
+
+    # Supply the filepath at which the txt file with MD5 checksum 
+    # of the file with the unprocessed data will be exported.
+    filepath_____unprocessed_data_____MD5_checksum <- file.path(
+      directory_tree_____outputs[[
+        "filepath_____outputs_____reproducibility_support_____MD5_checksums"
+      ]],
+      "unprocessed_data_____MD5_checksum.txt"
+    ) 
+
+    # Create and export a txt file with MD5 checksum 
+    # of the file with the unprocessed data .
+    export_md5sum(
+      target_files = filepath_____unprocessed_data,
+      output_file = filepath_____unprocessed_data_____MD5_checksum
+    )
+
+To verify the input file with the unprocessed data,
+*repdata\_data\_StormData.csv.bz2*, compare the MD5 checksum contained
+at the file with name, *unprocessed\_data\_\_\_\_\_MD5\_checksum.txt*
+that was exported when you reproduced the analysis with the the original
+which was uploaded at github and can be accessed through the following
+link:
+
+-   [link\_to\_file](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/tree/master/outputs/reproducibility_support/MD5_checksums/unprocessed_data_____MD5_checksum.txt)
+
 <br>
 
 <font size="1">[back to start of this
@@ -20211,6 +20805,52 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 ### 11.3.3 MD5 checksum of the output file with the processed data
 
+An R file with the table with the processed data was
+[exported](#ind-7-3--Export-The-Table-With-The-Processed-Data) through
+the execution of the script.
+
+The original file have been uploaded at the github and can be accessed
+from the following link:
+
+-   [the link\_to\_add]()
+
+A txt file with the MD5 checksum of the output R file,
+*table\_with\_the\_processed\_data.R*, was exported at the subdirectory
+of the working directory:
+
+-   *output –&gt; reproducibility\_support –&gt; MD5\_checksums*
+
+with name:
+
+-   *processed\_data\_\_\_\_\_MD5\_checksum.txt*
+
+<!-- -->
+
+    # Supply the filepath at which the txt file with MD5 checksum 
+    # of the file with the table with the processed data will be exported.
+    filepath_____processed_data_____MD5_checksum <- file.path(
+      directory_tree_____outputs[[
+        "filepath_____outputs_____reproducibility_support_____MD5_checksums"
+      ]],
+      "processed_data_____MD5_checksum.txt"
+    )
+
+    # Create and export a txt file with MD5 checksum 
+    # of the file with the table with the processed data.
+    export_md5sum(
+      target_files = filepath_____processed_data,
+      output_file = filepath_____processed_data_____MD5_checksum
+    )
+
+To verify the table with the processed data,
+*table\_with\_the\_processed\_data.R*, compare the MD5 checksum
+contained at the file with name,
+*processed\_data\_\_\_\_\_MD5\_checksum.txt* that was exported when you
+reproduced the analysis with the the original which was uploaded at
+github and can be accessed through the following link:
+
+-   [link\_to\_file](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/tree/master/outputs/reproducibility_support/MD5_checksums/processed_data_____MD5_checksum.txt)
+
 <br>
 
 <font size="1">[back to start of this
@@ -20226,6 +20866,83 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 <br>
 
 ### 11.3.4 MD5 checksum of the output files with the results
+
+The results obtained in this analysis consist of 6 summary tables.
+
+Those that correspond to the results for the harm on population health
+(over each of the three perspectives examined) which were exported as R
+files through the execution of the script, with names:
+
+1.  summary\_\_\_\_\_harm\_on\_population\_health\_\_\_\_\_\_fatalities.R
+    -   for the [table with the summary for harm on population health
+        with respect to
+        fatalities](#ind-8-1-3--Summarize-the-processed-data-for-harm-on-population-health-with-respect-to-fatalities-by-each-weather-event-type)  
+2.  summary\_\_\_\_\_harm\_on\_population\_health\_\_\_\_\_\_injuries.R
+    -   for the [table with the summary for harm on population health
+        with respect to
+        injuries](#ind-8-2-3--Summarize-the-processed-data-for-harm-on-population-health-with-respect-to-injuries-by-each-weather-event-type)  
+3.  summary\_\_\_\_\_harm\_on\_population\_health\_\_\_\_\_\_casualties.R
+    -   for the [table with the summary for harm on population health
+        with respect to
+        casualties](#ind-8-3-3--Summarize-the-processed-data-for-harm-on-population-health-with-respect-to-casualties-by-each-weather-event-type)
+
+And those that correspond to the results for the harm on economy (over
+each of the three perspectives examined) which were exported as R files
+through the execution of the script, with names:
+
+1.  summary\_\_\_\_\_harm\_on\_economy\_\_\_\_\_\_property\_damage.R
+    -   for the [table with the summary for harm on economy with respect
+        to property
+        damage](#ind-9-1-3--Summarize-the-processed-data-for-harm-on-economy-with-respect-to-property-damage-by-each-weather-event-type)
+2.  summary\_\_\_\_\_harm\_on\_economy\_\_\_\_\_\_crop\_damage.R\*
+    -   for the [table with the summary for harm on economy with respect
+        to crop
+        damage](#ind-9-2-3--Summarize-the-processed-data-for-harm-on-economy-with-respect-to-crop-damage-by-each-weather-event-type)
+3.  summary\_\_\_\_\_harm\_on\_economy\_\_\_\_\_\_economic\_damage.R
+    -   for the [table with the summary for harm on economy with respect
+        to economic
+        damage](#ind-9-3-3--Summarize-the-processed-data-for-harm-on-economy-with-respect-to-economic-damage-by-each-weather-event-type)
+
+A txt file with the MD5 checksum of all 6 output R files described
+above, was exported at the subdirectory of the working directory:
+
+-   *output –&gt; reproducibility\_support –&gt; MD5\_checksums*
+
+with name:
+
+-   *resulsts\_\_\_\_\_MD5\_checksum.txt*
+
+<!-- -->
+
+    # Supply the filepath at which the txt file with MD5 checksums 
+    # of the files with the tables with the results will be exported.
+    filepath_____results_____MD5_checksum <- file.path(
+      directory_tree_____outputs[[
+        "filepath_____outputs_____reproducibility_support_____MD5_checksums"
+      ]],
+      "results_____MD5_checksum.txt"
+    )
+
+    # Create and export a txt file with MD5 checksums 
+    # of the files with the tables with the results.
+    export_md5sum(
+      target_files = c(
+        filepath_____summary_____harm_on_population_health______fatalities,
+        filepath_____summary_____harm_on_population_health______injuries,
+        filepath_____summary_____harm_on_population_health______casualties,
+        filepath_____summary_____harm_on_economy______property_damage,
+        filepath_____summary_____harm_on_economy______crop_damage,
+        filepath_____summary_____harm_on_economy______economic_damage
+      ),
+      output_file = filepath_____results_____MD5_checksum
+    )
+
+To verify the results compare the MD5 checksum contained at the file
+with name, *results\_\_\_\_\_MD5\_checksum.txt* that was exported when
+you reproduced the analysis with the the original which was uploaded at
+github and can be accessed through the link:
+
+-   [link\_to\_file](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/tree/master/outputs/reproducibility_support/MD5_checksums/results_____MD5_checksum.txt)
 
 <br>
 
@@ -20244,6 +20961,48 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 
 11.4 Random Seed
 ----------------
+
+At the beginning of the analysis a random seed was selected equal to
+**1234567890** to enhance the reproducibility of the report.
+
+If the procedure have been reproduced correctly, (with respect to random
+events) at this point it is expected to produce a sample from standard
+normal distribution with the following 5 values :
+
+-   -0.8630909  
+-   1.2425862  
+-   -0.9907543  
+-   -0.6637387  
+-   -1.3948365
+
+<!-- -->
+
+    # Creates 5 random values out of typical normal distributions 
+    # to check the reproducibility of random events.  
+    expected_values_of_final_random_event <- rnorm(5)
+
+    # Display the 5 random values. 
+    expected_values_of_final_random_event
+
+    ## [1] -2.2152999  0.4738228 -0.4869480 -0.5343663  1.3206245
+
+However, keep in mind that the only random events that took place
+through the execution of the script that produces this report happened
+at the creation of the plots:
+
+1.  [Plot 1.1.4](#Create-The-Plot-1-1-4)  
+2.  [Plot 1.2.4](#Create-The-Plot-1-2-4)  
+3.  [Plot 1.3.4](#Create-The-Plot-1-3-4)  
+4.  [Plot 2.1.4](#Create-The-Plot-2-1-4)  
+5.  [Plot 2.2.4](#Create-The-Plot-2-2-4)  
+6.  [Plot 2.3.4](#Create-The-Plot-2-3-4)
+
+by the function *geom\_repel\_label()* in order to assign randomly the
+positions of the labels.
+
+So even if the random seed is not the same only the labels in those
+plots should be in different places, while the actual results are
+expected to be the identical.
 
 <br>
 
