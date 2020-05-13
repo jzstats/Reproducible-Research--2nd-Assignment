@@ -14099,11 +14099,11 @@ If the procedure have been reproduced correctly,
 to produce a sample from standard normal distribution 
 with the following 5 values :  
 
-* -0.8630909  
-* 1.2425862  
-* -0.9907543  
-* -0.6637387   
-* -1.3948365  
+* -2.2152999  
+* 0.4738228 
+* -0.4869480 
+* -0.5343663  
+* 1.3206245
 
 ```{r produce_random_normal_values_for_control}
 
