@@ -783,17 +783,13 @@ library(gridExtra)
 
 ```
 
-*Note that the libraries:*  
+*Note that the library:*  
 
-- *prettydocs*  
-  - *was only used to produce the [Report(version:html_pretty)
-  ](https://jzstats.github.io/Reproducible-Research--2nd-Assignment/Report(version:html_pretty).html)*  
 - *rmdformats*  
-  - *was only used to produce the [Report(version:readthedown)
-](https://jzstats.github.io/Reproducible-Research--2nd-Assignment/Report(version:readthedown).html)*  
+  - *which was only used to produce the [Report
+](https://jzstats.github.io/Reproducible-Research--2nd-Assignment/Report.html)*  
 
-*are not essential to conduct the analysis 
-or were used for any other purpose in this project.* 
+*is not essential to conduct the analysis.* 
 
 <br>  
 
