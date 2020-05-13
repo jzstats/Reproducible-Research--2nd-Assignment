@@ -20323,7 +20323,7 @@ reproduce the report.
     ## {
     ##     grDevices::pdf(NULL, width, height, ...)
     ## }
-    ## <bytecode: 0x37a9e18>
+    ## <bytecode: 0x4198e18>
     ## <environment: namespace:knitr>
     ## 
     ## $device.ask.default
@@ -20481,7 +20481,7 @@ reproduce the report.
     ## $str$formatNum
     ## function (x, ...) 
     ## format(x, trim = TRUE, drop0trailing = TRUE, ...)
-    ## <environment: 0x2b4a3f0>
+    ## <environment: 0x35393f0>
     ## 
     ## 
     ## $str.dendrogram.last

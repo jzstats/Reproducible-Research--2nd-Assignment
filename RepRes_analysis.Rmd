@@ -1,5 +1,5 @@
 ---
-title: "Harm From Severe Weather Events To Population Health And Economy In United States."
+title: "Harm From Severe Weather Events To Population Health And Economy In United States"
 author: "JZstats"
 date: "4/26/2020"
 output: md_document
