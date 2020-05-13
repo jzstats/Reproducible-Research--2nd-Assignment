@@ -8959,7 +8959,7 @@ summary_____harm_on_economy______property_damage <-
     ## The total number of observation by each weather event type.
     "N" = .N,
     ## The average property damage caused by each weather event type.
-    "AVRG" = round(mean(PROPERTY_DAMAGE), 2),
+    "AVRG" = round(mean(PROPERTY_DAMAGE), 0),
     ## The skewness of property damage for the observations by each weather event type.
     "SKEWNESS" = round(skewness(PROPERTY_DAMAGE), 4),
     ## The number of observations for the 90% of cases with the lowest impact 
@@ -8967,7 +8967,7 @@ summary_____harm_on_economy______property_damage <-
     "N_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , .N],
     ## The average property damage caused by each weather event type 
     ## for the 90% of cases with the lowest impact.
-    "AVRG_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , round(mean(PROPERTY_DAMAGE), 2)],
+    "AVRG_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , round(mean(PROPERTY_DAMAGE), 0)],
     ## The skewness of property damage for the 90% of cases with the lowest impact 
     ## by each weather event type.
     "SKEWNESS_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , round(skewness(PROPERTY_DAMAGE), 4)],
@@ -8976,7 +8976,7 @@ summary_____harm_on_economy______property_damage <-
     "N_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , .N],
     ## The average property damage caused by each weather event type 
     ## for the 10% of cases with the highest impact.
-    "AVRG_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , round(mean(PROPERTY_DAMAGE), 2)],
+    "AVRG_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , round(mean(PROPERTY_DAMAGE), 0)],
     ## The skewness of property damage for the 10% of cases with the highest impact 
     ## by each weather event type.
     "SKEWNESS_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , round(skewness(PROPERTY_DAMAGE), 4)]
@@ -10175,7 +10175,7 @@ summary_____harm_on_economy______crop_damage <-
     ## The total number of observation by each weather event type.
     "N" = .N,
     ## The average crop damage caused by each weather event type.
-    "AVRG" = round(mean(CROP_DAMAGE), 2),
+    "AVRG" = round(mean(CROP_DAMAGE), 0),
     ## The skewness of crop damage for the observations by each weather event type.
     "SKEWNESS" = round(skewness(CROP_DAMAGE), 4),
     ## The number of observations for the 90% of cases with the lowest impact 
@@ -10183,7 +10183,7 @@ summary_____harm_on_economy______crop_damage <-
     "N_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , .N],
     ## The average crop damage caused by each weather event type 
     ## for the 90% of cases with the lowest impact.
-    "AVRG_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , round(mean(CROP_DAMAGE), 2)],
+    "AVRG_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , round(mean(CROP_DAMAGE), 0)],
     ## The skewness of crop damage for the 90% of cases with the lowest impact 
     ## by each weather event type.
     "SKEWNESS_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , round(skewness(CROP_DAMAGE), 4)],
@@ -10192,7 +10192,7 @@ summary_____harm_on_economy______crop_damage <-
     "N_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , .N],
     ## The average crop damage caused by each weather event type 
     ## for the 10% of cases with the highest impact.
-    "AVRG_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , round(mean(CROP_DAMAGE), 2)],
+    "AVRG_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , round(mean(CROP_DAMAGE), 0)],
     ## The skewness of crop damage for the 10% of cases with the highest impact 
     ## by each weather event type.
     "SKEWNESS_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , round(skewness(CROP_DAMAGE), 4)]
@@ -11391,7 +11391,7 @@ summary_____harm_on_economy______economic_damage <-
     ## The total number of observation by each weather event type.
     "N" = .N,
     ## The average economic damage caused by each weather event type.
-    "AVRG" = round(mean(ECONOMIC_DAMAGE), 2),
+    "AVRG" = round(mean(ECONOMIC_DAMAGE), 0),
     ## The skewness of economic damage for the observations by each weather event type.
     "SKEWNESS" = round(skewness(ECONOMIC_DAMAGE), 4),
     ## The number of observations for the 90% of cases with the lowest impact 
@@ -11399,7 +11399,7 @@ summary_____harm_on_economy______economic_damage <-
     "N_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , .N],
     ## The average economic damage caused by each weather event type 
     ## for the 90% of cases with the lowest impact.
-    "AVRG_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , round(mean(ECONOMIC_DAMAGE), 2)],
+    "AVRG_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , round(mean(ECONOMIC_DAMAGE), 0)],
     ## The skewness of economic damage for the 90% of cases with the lowest impact 
     ## by each weather event type.
     "SKEWNESS_LOW" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(0% - 90%]" , round(skewness(ECONOMIC_DAMAGE), 4)],
@@ -11408,7 +11408,7 @@ summary_____harm_on_economy______economic_damage <-
     "N_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , .N],
     ## The average economic damage caused by each weather event type 
     ## for the 10% of cases with the highest impact.
-    "AVRG_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , round(mean(ECONOMIC_DAMAGE), 2)],
+    "AVRG_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , round(mean(ECONOMIC_DAMAGE), 0)],
     ## The skewness of economic damage for the 10% of cases with the highest impact 
     ## by each weather event type.
     "SKEWNESS_HIGH" = .SD[BIN_GROUP_PER_EVENT_TYPE == "(90% - 100%]" , round(skewness(ECONOMIC_DAMAGE), 4)]
