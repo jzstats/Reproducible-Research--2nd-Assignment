@@ -315,13 +315,14 @@ that contains the code used to conduct the analysis can be found.
 When *knitted* directly from RStudio, it produces the Markdown file 
 [RepRes_____analysis.md
 ](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.md)
-with the analysis.  
+with the analysis. 
 
-In addition, it was rendered with appropriate scripts, 
+In addition, it was rendered with the script [render_____RepRes_analysis.R
+](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/render_____RepRes_analysis.R), 
 (as explained at the following section of this chapter, 
 [2.3 About The Report](#ind-2-3--About-The-Report))
-to produce some html variations of the report 
-that were used to populate the 
+to produce a *bookdown* variation 
+that was uploaded to Rpubs and used to populate the 
 [webpage](https://jzstats.github.io/Reproducible-Research--2nd-Assignment/) 
 that was created to showcase this project.  
 
@@ -344,42 +345,25 @@ The main Rmd file, [RepRes_analysis.Rmd
 that contains the code to conduct the analysis 
 and produces the Markdown document [RepRes_analysis.md
 ](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.md) 
-was rendered by appropriate scripts 
-to create alternative html versions of the report with the analysis, 
+was rendered with the script [render\_\_\_\_\_RepRes_analysis.R
+](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/render\_\_\_\_\_RepRes_analysis.R) 
+to create a *bookdown* version of the report with the analysis, 
 that are hosted at the [webpage
 ](https://jzstats.github.io/Reproducible-Research--2nd-Assignment/) 
 created to showcase the this project:  
 
-1. [Report(versions:html_document)
-](https://jzstats.github.io/Reproducible-Research--2nd-Assignment/Report(version:html_document).html)  
-   * The simplest version of the report 
-   that is a direct analog of the Markdown document [RepRes_analysis.md
-   ](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.md).
-   It was produced by rendering the [RepRes_analysis.Rmd
-   ](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.Rmd) 
-   with the script [render_report\_\_\_\_\_html_document.R
-   ](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/rendering_scripts/render_report\_\_\_\_\_html_document.R).  
-2. [Report(version:html_pretty)
-](https://jzstats.github.io/Reproducible-Research--2nd-Assignment/Report(version:html_pretty).html)  
-   * A more visually appealing version of the report 
-   powered by the [prettydocs
-   ](https://cran.rstudio.com/web/packages/prettydoc/index.html) library. 
-   It was produced by rendering the [RepRes_analysis.Rmd
-   ](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.Rmd) 
-   with the script [render_report\_\_\_\_\_html_pretty.R
-   ](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/rendering_scripts/render_report\_\_\_\_\_html_pretty.R).  
-3. [Report(version:readthedown)
-](https://jzstats.github.io/Reproducible-Research--2nd-Assignment/Report(version:readthedown).html)  
-   * A more visually appealing and practical 
-   (due to the sidepanel with contents that contains) 
-   book-like version of the report powered by the [rmdformats
-   ](https://cran.rstudio.com/web/packages/rmdformats/index.html) library. 
-   It was produced by rendering the [RepRes_analysis.Rmd
-   ](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.Rmd) 
-   with the script [render_report\_\_\_\_\_readthedown.R
-   ](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/rendering_scripts/render_report\_\_\_\_\_readthedown.R). 
-   This is the version that was uploaded to RPubs at this [link
-   ](https://rpubs.com/JZstats/Reproducible-Research--2nd-Assignment).  
+* [Report
+](https://jzstats.github.io/Reproducible-Research--2nd-Assignment/Report.html)  
+  * A more visually appealing and practical 
+  (due to the sidepanel with contents that contains) 
+  book-like version of the report powered by the [rmdformats
+  ](https://cran.rstudio.com/web/packages/rmdformats/index.html) library. 
+  It was produced by rendering the [RepRes_analysis.Rmd
+  ](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.Rmd) 
+  with the script [render\_\_\_\_\_RepRes_analysis.R
+](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/render\_\_\_\_\_RepRes_analysis.R) . 
+  This is the version that was uploaded to RPubs at this [link
+  ](https://rpubs.com/JZstats/Reproducible-Research--2nd-Assignment).  
 
 <br>  
 
