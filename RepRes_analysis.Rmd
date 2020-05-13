@@ -13871,7 +13871,8 @@ The same file that was download and used
 to produce the original report for this analysis was also uploaded at 
 the github and can be accessed from the following link: 
 
-* [link_to_add](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/repdata_data_StormData.csv.bz2).
+* [repdata_data_StormData.csv.bz2 on GitHub
+](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/repdata_data_StormData.csv.bz2)
 
 A txt file with the MD5 checksum of the input file, 
 *repdata_data_StormData.csv.bz2*, 
@@ -13911,7 +13912,7 @@ that was exported when you reproduced the analysis
 with the the original which was uploaded at github 
 and can be accessed through the following link:  
 
-* [link_to_file
+* [original unprocessed_data_____MD5_checksum.txt 
 ](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/tree/master/outputs/reproducibility_support/MD5_checksums/unprocessed_data_____MD5_checksum.txt)
 
 <br>  
@@ -13934,7 +13935,8 @@ through the execution of the script.
 The original file have been uploaded at the github 
 and can be accessed from the following link:  
 
-* [the link_to_add]() 
+* [table_with_the_processed_data.R
+](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/tree/master/outputs/processed_data) 
 
 A txt file with the MD5 checksum of the output R file, 
 *table_with_the_processed_data.R*, 
@@ -13974,7 +13976,7 @@ that was exported when you reproduced the analysis
 with the the original which was uploaded at github 
 and can be accessed through the following link:  
 
-* [link_to_file
+* [original processed_data_____MD5_checksum.txt
 ](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/tree/master/outputs/reproducibility_support/MD5_checksums/processed_data_____MD5_checksum.txt)
 
 <br>  
@@ -14071,7 +14073,7 @@ that was exported when you reproduced the analysis
 with the the original which was uploaded at github 
 and can be accessed through the link:  
 
-* [link_to_file
+* [original results_____MD5_checksum.txt
 ](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/tree/master/outputs/reproducibility_support/MD5_checksums/results_____MD5_checksum.txt)
 
 <br>  
