@@ -14202,7 +14202,150 @@ under the terms of MIT License.
 # 13 REFERENCES {#ind-13--REFERENCES}  
 ***  
 
+NATIONAL WEATHER SERVICE INSTRUCTION 10-1605, AUGUST 17, 2007. 
+URL https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2Fpd01016005curr.pdf
 
+<br> 
+
+Storm Data FAQ Page (2008). 
+URL https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2FNCDC%20Storm%20Events-FAQ%20Page.pdf
+
+<br> 
+
+The History of the Strom Events Database (2014).
+URL https://www.ncdc.noaa.gov/stormevents/versions.jsp
+
+<br>
+
+R Core Team (2020). 
+R: A language and environment for statistical computing. 
+R Foundation for Statistical Computing, Vienna, Austria. 
+URL https://www.R-project.org/.
+
+<br> 
+
+RStudio Team (2019). 
+RStudio: Integrated Development for R. RStudio, Inc., Boston, MA 
+URL http://www.rstudio.com/.
+
+<br>
+
+JJ Allaire and Yihui Xie and Jonathan McPherson and Javier Luraschi and Kevin
+Ushey and Aron Atkins and Hadley Wickham and Joe Cheng and Winston Chang and
+Richard Iannone (2020). 
+rmarkdown: Dynamic Documents for R. R package version 2.1. 
+URL https://rmarkdown.rstudio.com. 
+
+<br>
+
+Yihui Xie and J.J. Allaire and Garrett Grolemund (2018). 
+R Markdown: The Definitive Guide. 
+Chapman and Hall/CRC. 
+ISBN 9781138359338. 
+URL https://bookdown.org/yihui/rmarkdown.
+
+<br>
+
+Yihui Xie (2020). 
+knitr: A General-Purpose Package for Dynamic Report Generation in R. 
+R package version 1.28.
+
+<br>
+
+Yihui Xie (2015) Dynamic Documents with R and knitr. 
+2nd edition. 
+Chapman and Hall/CRC. 
+ISBN 978-1498716963
+
+<br>
+
+Yihui Xie (2014) knitr: A Comprehensive Tool for Reproducible Research in R. 
+In Victoria Stodden, Friedrich Leisch and Roger D. Peng, editors, 
+Implementing Reproducible Computational Research. 
+Chapman and Hall/CRC. 
+ISBN 978-1466561595
+
+<br>
+
+Hao Zhu (2019). 
+kableExtra: Construct Complex Table with 'kable' and Pipe Syntax. 
+package version 1.1.0. 
+https://CRAN.R-project.org/package=kableExtra
+
+<br>
+
+Stefan Milton Bache and Hadley Wickham (2014). 
+magrittr: A Forward-Pipe Operator for R. 
+R package version 1.5. 
+https://CRAN.R-project.org/package=magrittr
+
+<br>
+
+Yihui Xie, Joe Cheng and Xianying Tan (2020). 
+DT: A Wrapper of the JavaScript Library 'DataTables'. 
+R package version 0.13. 
+https://CRAN.R-project.org/package=DT
+
+<br>
+
+Julien Barnier (2020). 
+rmdformats: HTML Output Formats and Templates for 'rmarkdown' Documents. 
+R package version 0.3.7. 
+https://CRAN.R-project.org/package=rmdformats
+
+<br>
+
+Matt Dowle and Arun Srinivasan (2019). 
+data.table: Extension of `data.frame`. 
+R package version 1.12.8. 
+https://CRAN.R-project.org/package=data.table
+
+<br>
+
+van der Loo M, de Jonge E (2019). 
+“Data Validation Infrastructure for R.”
+_Journal of Statistical Software_, Accepted for publication. 
+<URL:https://CRAN.R-project.org/package=validate>.
+
+<br>  
+
+Hadley Wickham (2019). 
+stringr: Simple, Consistent Wrappers for Common String Operations. 
+R package version 1.4.0. 
+https://CRAN.R-project.org/package=stringr
+
+<br>  
+
+Lukasz Komsta and Frederick Novomestky (2015). 
+moments: Moments, cumulants, skewness, kurtosis and related tests. 
+R package version 0.14. 
+https://CRAN.R-project.org/package=moments
+
+<br>  
+
+H. Wickham. 
+ggplot2: Elegant Graphics for Data Analysis. 
+Springer-Verlag New York, 2016.  
+
+<br>  
+
+Kamil Slowikowski (2020). 
+ggrepel: Automatically Position Non-Overlapping Text Labels with 'ggplot2'. 
+R package version 0.8.2. 
+https://CRAN.R-project.org/package=ggrepel
+
+<br>  
+
+Baptiste Auguie (2017). 
+gridExtra: Miscellaneous Functions for "Grid" Graphics. 
+R package version 2.3. 
+https://CRAN.R-project.org/package=gridExtra
+
+<br>  
+
+Yan Holtz (2018). 
+PIMP MY RMD: GitHub Page with tips on refining an rmarkdown document. 
+URL https://holtzy.github.io/Pimp-my-rmd/#github-link
 
 <br>  
 
