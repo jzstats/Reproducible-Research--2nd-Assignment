@@ -20319,7 +20319,7 @@ reproduce the report.
     ## {
     ##     grDevices::pdf(NULL, width, height, ...)
     ## }
-    ## <bytecode: 0x1fb08d8>
+    ## <bytecode: 0x2cec8d8>
     ## <environment: namespace:knitr>
     ## 
     ## $device.ask.default
@@ -20477,7 +20477,7 @@ reproduce the report.
     ## $str$formatNum
     ## function (x, ...) 
     ## format(x, trim = TRUE, drop0trailing = TRUE, ...)
-    ## <environment: 0x23fd3f0>
+    ## <environment: 0x31393f0>
     ## 
     ## 
     ## $str.dendrogram.last
@@ -20957,11 +20957,11 @@ If the procedure have been reproduced correctly, (with respect to random
 events) at this point it is expected to produce a sample from standard
 normal distribution with the following 5 values :
 
--   -0.8630909  
--   1.2425862  
--   -0.9907543  
--   -0.6637387  
--   -1.3948365
+-   -2.2152999  
+-   0.4738228
+-   -0.4869480
+-   -0.5343663  
+-   1.3206245
 
 <!-- -->
 
