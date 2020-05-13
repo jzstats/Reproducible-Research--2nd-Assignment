@@ -20319,7 +20319,7 @@ reproduce the report.
     ## {
     ##     grDevices::pdf(NULL, width, height, ...)
     ## }
-    ## <bytecode: 0x361e830>
+    ## <bytecode: 0x1fb08d8>
     ## <environment: namespace:knitr>
     ## 
     ## $device.ask.default
@@ -20477,7 +20477,7 @@ reproduce the report.
     ## $str$formatNum
     ## function (x, ...) 
     ## format(x, trim = TRUE, drop0trailing = TRUE, ...)
-    ## <environment: 0x3a6b3f0>
+    ## <environment: 0x23fd3f0>
     ## 
     ## 
     ## $str.dendrogram.last
@@ -20734,7 +20734,8 @@ The same file that was download and used to produce the original report
 for this analysis was also uploaded at the github and can be accessed
 from the following link:
 
--   [link\_to\_add](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/repdata_data_StormData.csv.bz2).
+-   [repdata\_data\_StormData.csv.bz2 on
+    GitHub](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/repdata_data_StormData.csv.bz2)
 
 A txt file with the MD5 checksum of the input file,
 *repdata\_data\_StormData.csv.bz2*, was exported at the subdirectory of
@@ -20771,7 +20772,8 @@ that was exported when you reproduced the analysis with the the original
 which was uploaded at github and can be accessed through the following
 link:
 
--   [link\_to\_file](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/tree/master/outputs/reproducibility_support/MD5_checksums/unprocessed_data_____MD5_checksum.txt)
+-   [original
+    unprocessed\_data\_\_\_\_\_MD5\_checksum.txt](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/tree/master/outputs/reproducibility_support/MD5_checksums/unprocessed_data_____MD5_checksum.txt)
 
 <br>
 
@@ -20796,7 +20798,7 @@ the execution of the script.
 The original file have been uploaded at the github and can be accessed
 from the following link:
 
--   [the link\_to\_add]()
+-   [table\_with\_the\_processed\_data.R](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/tree/master/outputs/processed_data)
 
 A txt file with the MD5 checksum of the output R file,
 *table\_with\_the\_processed\_data.R*, was exported at the subdirectory
@@ -20833,7 +20835,8 @@ contained at the file with name,
 reproduced the analysis with the the original which was uploaded at
 github and can be accessed through the following link:
 
--   [link\_to\_file](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/tree/master/outputs/reproducibility_support/MD5_checksums/processed_data_____MD5_checksum.txt)
+-   [original
+    processed\_data\_\_\_\_\_MD5\_checksum.txt](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/tree/master/outputs/reproducibility_support/MD5_checksums/processed_data_____MD5_checksum.txt)
 
 <br>
 
@@ -20926,7 +20929,8 @@ with name, *results\_\_\_\_\_MD5\_checksum.txt* that was exported when
 you reproduced the analysis with the the original which was uploaded at
 github and can be accessed through the link:
 
--   [link\_to\_file](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/tree/master/outputs/reproducibility_support/MD5_checksums/results_____MD5_checksum.txt)
+-   [original
+    results\_\_\_\_\_MD5\_checksum.txt](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/tree/master/outputs/reproducibility_support/MD5_checksums/results_____MD5_checksum.txt)
 
 <br>
 
