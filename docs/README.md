@@ -1,6 +1,7 @@
 # Harm From Severe Weather Events To Population Health And Economy In United States.
 
-[**read the Report at RPubs**](https://rpubs.com/JZstats/Reproducible-Research--2nd-Assignment)  
+[read the Report at RPubs](https://rpubs.com/JZstats/Reproducible-Research--2nd-Assignment)  
+[read the Report at GitHub Pages](https://jzstats.github.io/Reproducible-Research--2nd-Assignment/Report.html)
 
 <br>  
 
@@ -64,34 +65,9 @@ can follow the procedure and understand the thought process
 behind the decision making at each stage.  
 
 
-<br>  
 
-## Variations of the Report  
 
-The main Rmd file, [RepRes_analysis.Rmd
-](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.Rmd) 
-that contains the code to conduct the analysis 
-and produces the Markdown document [RepRes_analysis.md
-](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.md) 
-was rendered by appropriate scripts 
-to create alternative html versions of the report with the analysis:  
 
-1. [Report(versions:html_document)
-](https://jzstats.github.io/Reproducible-Research--2nd-Assignment/Report(version:html_document).html)  
-   * The simplest version of the report 
-   that is a direct analog of the Markdown document [RepRes_analysis.md
-   ](https://github.com/jzstats/Reproducible-Research--2nd-Assignment/blob/master/RepRes_analysis.md).  
-2. [Report(version:html_pretty)
-](https://jzstats.github.io/Reproducible-Research--2nd-Assignment/Report(version:html_pretty).html)  
-   * A more visually appealing version of the report 
-   powered by the [prettydocs
-   ](https://cran.rstudio.com/web/packages/prettydoc/index.html) library.  
-3. [Report(version:readthedown)  
-](https://jzstats.github.io/Reproducible-Research--2nd-Assignment/Report(version:readthedown).html)  
-   * A more visually appealing and practical 
-   (due to the sidepanel with contents that contains) 
-   book-like version of the report powered by the [rmdformats
-   ](https://cran.rstudio.com/web/packages/rmdformats/index.html) library.  
 
 
 
