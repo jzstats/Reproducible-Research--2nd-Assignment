@@ -965,17 +965,13 @@ report.
     library(grid)
     library(gridExtra)
 
-*Note that the libraries:*
+*Note that the library:*
 
--   *prettydocs*
-    -   *was only used to produce the
-        [Report(version:html\_pretty)](https://jzstats.github.io/Reproducible-Research--2nd-Assignment/Report(version:html_pretty).html)*  
 -   *rmdformats*
-    -   *was only used to produce the
-        [Report(version:readthedown)](https://jzstats.github.io/Reproducible-Research--2nd-Assignment/Report(version:readthedown).html)*
+    -   *which was only used to produce the
+        [Report](https://jzstats.github.io/Reproducible-Research--2nd-Assignment/Report.html)*
 
-*are not essential to conduct the analysis or were used for any other
-purpose in this project.*
+*is not essential to conduct the analysis.*
 
 <br>
 
@@ -20172,13 +20168,13 @@ help in any attempt to reproduce the report.
     ## [13] rmarkdown_2.1    
     ## 
     ## loaded via a namespace (and not attached):
-    ##  [1] settings_0.2.4    tidyselect_1.0.0  xfun_0.13         purrr_0.3.4      
-    ##  [5] colorspace_1.4-1  vctrs_0.2.4       htmltools_0.4.0   viridisLite_0.3.0
-    ##  [9] yaml_2.2.1        rlang_0.4.5       R.oo_1.23.0       pillar_1.4.3     
+    ##  [1] settings_0.2.4    tidyselect_1.1.0  xfun_0.13         purrr_0.3.4      
+    ##  [5] colorspace_1.4-1  vctrs_0.3.0       htmltools_0.4.0   viridisLite_0.3.0
+    ##  [9] yaml_2.2.1        rlang_0.4.6       R.oo_1.23.0       pillar_1.4.4     
     ## [13] glue_1.4.0        withr_2.2.0       R.utils_2.9.2     lifecycle_0.2.0  
     ## [17] munsell_0.5.0     gtable_0.3.0      rvest_0.3.5       R.methodsS3_1.8.0
     ## [21] htmlwidgets_1.5.1 evaluate_0.14     labeling_0.3      crosstalk_1.1.0.1
-    ## [25] highr_0.8         Rcpp_1.0.4.6      readr_1.3.1       scales_1.1.0     
+    ## [25] highr_0.8         Rcpp_1.0.4.6      readr_1.3.1       scales_1.1.1     
     ## [29] jsonlite_1.6.1    webshot_0.5.2     farver_2.0.3      hms_0.5.3        
     ## [33] digest_0.6.25     stringi_1.4.6     bookdown_0.18     dplyr_0.8.5      
     ## [37] tibble_3.0.1      crayon_1.3.4      pkgconfig_2.0.3   ellipsis_0.3.0   
@@ -20323,7 +20319,7 @@ reproduce the report.
     ## {
     ##     grDevices::pdf(NULL, width, height, ...)
     ## }
-    ## <bytecode: 0x4198e18>
+    ## <bytecode: 0x361e830>
     ## <environment: namespace:knitr>
     ## 
     ## $device.ask.default
@@ -20481,7 +20477,7 @@ reproduce the report.
     ## $str$formatNum
     ## function (x, ...) 
     ## format(x, trim = TRUE, drop0trailing = TRUE, ...)
-    ## <environment: 0x35393f0>
+    ## <environment: 0x3a6b3f0>
     ## 
     ## 
     ## $str.dendrogram.last
@@ -21062,6 +21058,133 @@ CONTENTS*](#ind-1--TABLE-OF-CONTENTS)</font>
 =============
 
 ------------------------------------------------------------------------
+
+NATIONAL WEATHER SERVICE INSTRUCTION 10-1605, AUGUST 17, 2007. URL
+<a href="https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2Fpd01016005curr.pdf" class="uri">https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2Fpd01016005curr.pdf</a>
+
+<br>
+
+Storm Data FAQ Page (2008). URL
+<a href="https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2FNCDC%20Storm%20Events-FAQ%20Page.pdf" class="uri">https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2FNCDC%20Storm%20Events-FAQ%20Page.pdf</a>
+
+<br>
+
+The History of the Strom Events Database (2014). URL
+<a href="https://www.ncdc.noaa.gov/stormevents/versions.jsp" class="uri">https://www.ncdc.noaa.gov/stormevents/versions.jsp</a>
+
+<br>
+
+R Core Team (2020). R: A language and environment for statistical
+computing. R Foundation for Statistical Computing, Vienna, Austria. URL
+<a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.
+
+<br>
+
+RStudio Team (2019). RStudio: Integrated Development for R. RStudio,
+Inc., Boston, MA URL
+<a href="http://www.rstudio.com/" class="uri">http://www.rstudio.com/</a>.
+
+<br>
+
+JJ Allaire and Yihui Xie and Jonathan McPherson and Javier Luraschi and
+Kevin Ushey and Aron Atkins and Hadley Wickham and Joe Cheng and Winston
+Chang and Richard Iannone (2020). rmarkdown: Dynamic Documents for R. R
+package version 2.1. URL
+<a href="https://rmarkdown.rstudio.com" class="uri">https://rmarkdown.rstudio.com</a>.
+
+<br>
+
+Yihui Xie and J.J. Allaire and Garrett Grolemund (2018). R Markdown: The
+Definitive Guide. Chapman and Hall/CRC. ISBN 9781138359338. URL
+<a href="https://bookdown.org/yihui/rmarkdown" class="uri">https://bookdown.org/yihui/rmarkdown</a>.
+
+<br>
+
+Yihui Xie (2020). knitr: A General-Purpose Package for Dynamic Report
+Generation in R. R package version 1.28.
+
+<br>
+
+Yihui Xie (2015) Dynamic Documents with R and knitr. 2nd edition.
+Chapman and Hall/CRC. ISBN 978-1498716963
+
+<br>
+
+Yihui Xie (2014) knitr: A Comprehensive Tool for Reproducible Research
+in R. In Victoria Stodden, Friedrich Leisch and Roger D. Peng, editors,
+Implementing Reproducible Computational Research. Chapman and Hall/CRC.
+ISBN 978-1466561595
+
+<br>
+
+Hao Zhu (2019). kableExtra: Construct Complex Table with ‘kable’ and
+Pipe Syntax. package version 1.1.0.
+<a href="https://CRAN.R-project.org/package=kableExtra" class="uri">https://CRAN.R-project.org/package=kableExtra</a>
+
+<br>
+
+Stefan Milton Bache and Hadley Wickham (2014). magrittr: A Forward-Pipe
+Operator for R. R package version 1.5.
+<a href="https://CRAN.R-project.org/package=magrittr" class="uri">https://CRAN.R-project.org/package=magrittr</a>
+
+<br>
+
+Yihui Xie, Joe Cheng and Xianying Tan (2020). DT: A Wrapper of the
+JavaScript Library ‘DataTables’. R package version 0.13.
+<a href="https://CRAN.R-project.org/package=DT" class="uri">https://CRAN.R-project.org/package=DT</a>
+
+<br>
+
+Julien Barnier (2020). rmdformats: HTML Output Formats and Templates for
+‘rmarkdown’ Documents. R package version 0.3.7.
+<a href="https://CRAN.R-project.org/package=rmdformats" class="uri">https://CRAN.R-project.org/package=rmdformats</a>
+
+<br>
+
+Matt Dowle and Arun Srinivasan (2019). data.table: Extension of
+`data.frame`. R package version 1.12.8.
+<a href="https://CRAN.R-project.org/package=data.table" class="uri">https://CRAN.R-project.org/package=data.table</a>
+
+<br>
+
+van der Loo M, de Jonge E (2019). “Data Validation Infrastructure for
+R.” *Journal of Statistical Software*, Accepted for publication.
+&lt;URL:<a href="https://CRAN.R-project.org/package=validate" class="uri">https://CRAN.R-project.org/package=validate</a>&gt;.
+
+<br>
+
+Hadley Wickham (2019). stringr: Simple, Consistent Wrappers for Common
+String Operations. R package version 1.4.0.
+<a href="https://CRAN.R-project.org/package=stringr" class="uri">https://CRAN.R-project.org/package=stringr</a>
+
+<br>
+
+Lukasz Komsta and Frederick Novomestky (2015). moments: Moments,
+cumulants, skewness, kurtosis and related tests. R package version 0.14.
+<a href="https://CRAN.R-project.org/package=moments" class="uri">https://CRAN.R-project.org/package=moments</a>
+
+<br>
+
+H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag
+New York, 2016.
+
+<br>
+
+Kamil Slowikowski (2020). ggrepel: Automatically Position
+Non-Overlapping Text Labels with ‘ggplot2’. R package version 0.8.2.
+<a href="https://CRAN.R-project.org/package=ggrepel" class="uri">https://CRAN.R-project.org/package=ggrepel</a>
+
+<br>
+
+Baptiste Auguie (2017). gridExtra: Miscellaneous Functions for “Grid”
+Graphics. R package version 2.3.
+<a href="https://CRAN.R-project.org/package=gridExtra" class="uri">https://CRAN.R-project.org/package=gridExtra</a>
+
+<br>
+
+Yan Holtz (2018). PIMP MY RMD: GitHub Page with tips on refining an
+rmarkdown document. URL
+<a href="https://holtzy.github.io/Pimp-my-rmd/#github-link" class="uri">https://holtzy.github.io/Pimp-my-rmd/#github-link</a>
 
 <br>
 
