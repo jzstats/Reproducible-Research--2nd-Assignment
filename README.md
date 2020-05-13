@@ -1,5 +1,3 @@
-<br>
-
 About This Repository
 =====================
 

@@ -5,8 +5,6 @@ date: "5/13/2020"
 output: md_document
 ---
 
-<br> 
-
 # About This Repository 
 
 This repository was created to support the project:  
