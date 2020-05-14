@@ -11,7 +11,7 @@ The U.S. National Oceanic and Atmospheric Administration's (NOAA)
 *Storm Events Database*, was explored to identify 
 the most harmful weather event types, 
 among the weather phenomena defined in 
-_NATIONAL WEATHER SERVICE INSTRUCTION 10-1605, AUGUST 17, 2007 (*at chapter 7*)_,
+_NATIONAL WEATHER SERVICE INSTRUCTION 10-1605, AUGUST 17, 2007 (at chapter 7)_,
 with respect to population health and economy.  
 
 The raw data was loaded in R from the supplied file, 
