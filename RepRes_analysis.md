@@ -18642,7 +18642,7 @@ been encoded in the color of the bar associated with each of them.
         ) +
       ## Set proper limits to the plot.
         xlim(c(-0.5e9, 8.5e9)) +
-        ylim(c(-1e7, 8.5e7)) +
+        ylim(c(-1e7, 9.5e7)) +
       ## Supply descriptive labels. 
       labs(
         title = "Plot 2.3.4",
@@ -18798,10 +18798,6 @@ displays the complete picture for this perspective.
           nrow = 13
         )
     )
-
-    ## Warning: Removed 1 rows containing missing values (geom_point).
-
-    ## Warning: Removed 1 rows containing missing values (geom_label_repel).
 
 *(Note that the Multiplot 2.3 was NOT presented in this section due to
 the restrictions imposed by the assignment to include in the report at
@@ -20319,7 +20315,7 @@ reproduce the report.
     ## {
     ##     grDevices::pdf(NULL, width, height, ...)
     ## }
-    ## <bytecode: 0x2cec8d8>
+    ## <bytecode: 0x3a708d8>
     ## <environment: namespace:knitr>
     ## 
     ## $device.ask.default
@@ -20477,7 +20473,7 @@ reproduce the report.
     ## $str$formatNum
     ## function (x, ...) 
     ## format(x, trim = TRUE, drop0trailing = TRUE, ...)
-    ## <environment: 0x31393f0>
+    ## <environment: 0x3ebd3f0>
     ## 
     ## 
     ## $str.dendrogram.last
@@ -20972,7 +20968,7 @@ normal distribution with the following 5 values :
     # Display the 5 random values. 
     expected_values_of_final_random_event
 
-    ## [1] -2.2152999  0.4738228 -0.4869480 -0.5343663  1.3206245
+    ## [1] -0.5343663  1.3206245  1.5558662  2.6298662 -0.2373495
 
 However, keep in mind that the only random events that took place
 through the execution of the script that produces this report happened
