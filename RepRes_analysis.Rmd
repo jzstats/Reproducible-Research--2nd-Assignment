@@ -12039,7 +12039,7 @@ elementary_plot_2_3_4 <-
     ) +
   ## Set proper limits to the plot.
     xlim(c(-0.5e9, 8.5e9)) +
-    ylim(c(-1e7, 8.5e7)) +
+    ylim(c(-1e7, 9.5e7)) +
   ## Supply descriptive labels. 
   labs(
     title = "Plot 2.3.4",
