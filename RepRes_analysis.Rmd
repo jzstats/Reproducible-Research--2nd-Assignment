@@ -5502,8 +5502,8 @@ elementary_plot_1_1_1 <-
   labs(
     title = "Plot 1.1.1", 
     subtitle = "Aspect: Overall",
-    x = "Weather Event Types \n",
-    y = "Average Number of Fatalities\n"
+    x = "Average Number of Fatalities\n",
+    y = "Weather Event Types \n"
   ) +
   ## Select a theme.
   theme_linedraw() + 
@@ -6717,8 +6717,8 @@ elementary_plot_1_2_1 <-
   labs(
     title = "Plot 1.2.1", 
     subtitle = "Aspect: Overall",
-    x = "Weather Event Types \n",
-    y = "Average Number of Injuries\n"
+    x = "Average Number of Injuries\n",
+    y = "Weather Event Types \n"
   ) +
   ## Select a theme.
   theme_linedraw() + 
@@ -7932,8 +7932,8 @@ elementary_plot_1_3_1 <-
   labs(
     title = "Plot 1.3.1", 
     subtitle = "Aspect: Overall",
-    x = "Weather Event Types \n",
-    y = "Average Number of Casualties\n"
+    x = "Average Number of Casualties\n",
+    y = "Weather Event Types \n"
   ) +
   ## Select a theme.
   theme_linedraw() + 
@@ -9240,8 +9240,8 @@ elementary_plot_2_1_1 <-
   labs(
     title = "Plot 2.1.1", 
     subtitle = "Aspect: Overall",
-    x = "Weather Event Types \n",
-    y = "Average Number of Property Damage\n"
+    x = "Average Number of Property Damage\n",
+    y = "Weather Event Types \n"
   ) +
   ## Select a theme.
   theme_linedraw() + 
@@ -10450,8 +10450,8 @@ elementary_plot_2_2_1 <-
   labs(
     title = "Plot 2.2.1", 
     subtitle = "Aspect: Overall",
-    x = "Weather Event Types \n",
-    y = "Average Number of Crop Damage\n"
+    x = "Average Number of Crop Damage\n",
+    y = "Weather Event Types \n"
   ) +
   ## Select a theme.
   theme_linedraw() + 
@@ -11666,8 +11666,8 @@ elementary_plot_2_3_1 <-
   labs(
     title = "Plot 2.3.1", 
     subtitle = "Aspect: Overall",
-    x = "Weather Event Types \n",
-    y = "Average Number of Economic Damage\n"
+    x = "Average Number of Economic Damage\n",
+    y = "Weather Event Types \n"
   ) +
   ## Select a theme.
   theme_linedraw() + 
