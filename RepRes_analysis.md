@@ -10238,8 +10238,8 @@ of them.
       labs(
         title = "Plot 1.1.1", 
         subtitle = "Aspect: Overall",
-        x = "Weather Event Types \n",
-        y = "Average Number of Fatalities\n"
+        x = "Average Number of Fatalities\n",
+        y = "Weather Event Types \n"
       ) +
       ## Select a theme.
       theme_linedraw() + 
@@ -11805,8 +11805,8 @@ of them.
       labs(
         title = "Plot 1.2.1", 
         subtitle = "Aspect: Overall",
-        x = "Weather Event Types \n",
-        y = "Average Number of Injuries\n"
+        x = "Average Number of Injuries\n",
+        y = "Weather Event Types \n"
       ) +
       ## Select a theme.
       theme_linedraw() + 
@@ -13405,8 +13405,8 @@ of them.
       labs(
         title = "Plot 1.3.1", 
         subtitle = "Aspect: Overall",
-        x = "Weather Event Types \n",
-        y = "Average Number of Casualties\n"
+        x = "Average Number of Casualties\n",
+        y = "Weather Event Types \n"
       ) +
       ## Select a theme.
       theme_linedraw() + 
@@ -15163,8 +15163,8 @@ been encoded in the color of the bar associated with each of them.
       labs(
         title = "Plot 2.1.1", 
         subtitle = "Aspect: Overall",
-        x = "Weather Event Types \n",
-        y = "Average Number of Property Damage\n"
+        x = "Average Number of Property Damage\n",
+        y = "Weather Event Types \n"
       ) +
       ## Select a theme.
       theme_linedraw() + 
@@ -16597,8 +16597,8 @@ been encoded in the color of the bar associated with each of them.
       labs(
         title = "Plot 2.2.1", 
         subtitle = "Aspect: Overall",
-        x = "Weather Event Types \n",
-        y = "Average Number of Crop Damage\n"
+        x = "Average Number of Crop Damage\n",
+        y = "Weather Event Types \n"
       ) +
       ## Select a theme.
       theme_linedraw() + 
@@ -18269,8 +18269,8 @@ been encoded in the color of the bar associated with each of them.
       labs(
         title = "Plot 2.3.1", 
         subtitle = "Aspect: Overall",
-        x = "Weather Event Types \n",
-        y = "Average Number of Economic Damage\n"
+        x = "Average Number of Economic Damage\n",
+        y = "Weather Event Types \n"
       ) +
       ## Select a theme.
       theme_linedraw() + 
@@ -20315,7 +20315,7 @@ reproduce the report.
     ## {
     ##     grDevices::pdf(NULL, width, height, ...)
     ## }
-    ## <bytecode: 0x3a708d8>
+    ## <bytecode: 0x268c8d8>
     ## <environment: namespace:knitr>
     ## 
     ## $device.ask.default
@@ -20473,7 +20473,7 @@ reproduce the report.
     ## $str$formatNum
     ## function (x, ...) 
     ## format(x, trim = TRUE, drop0trailing = TRUE, ...)
-    ## <environment: 0x3ebd3f0>
+    ## <environment: 0x2ad93f0>
     ## 
     ## 
     ## $str.dendrogram.last
